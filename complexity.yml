@@ -1,0 +1,13 @@
+name: complexity
+channels:
+  - defaults
+  - conda-forge
+  - bioconda
+dependencies:
+  - _libgcc_mutex=0.1=main
+  - libgcc-ng=9.1.0=hdf63c60_0
+  - libstdcxx-ng=9.1.0=hdf63c60_0
+  - mummer=3.23=pl526_8
+  - perl=5.26.2=h14c3975_0
+prefix: /home/nu76fet/miniconda3/envs/complexity
+
