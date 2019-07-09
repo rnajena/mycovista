@@ -1,0 +1,5 @@
+path: {/mnt/prostlocal2/projects/st_mycoplasma_assembly/illumina}
+strains: {15DD0132,15DD0163,17DD0007,17DD0020}
+preprocessing: {trimmomatic,fastp}
+assembly: {spades}
+quality: {fastqc,quast}

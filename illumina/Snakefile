@@ -1,0 +1,145 @@
+#Illumina data pipeline
+
+#files and directories
+configfile: "config.yaml"
+
+END = '1 2'.split()
+PU = '1P 1U 2P 2U'.split()
+
+# expand("", path = config["path"])
+
+rule all:
+	input:
+		# quality check of the raw reads - fastQC
+		expand("{path}/quality/fastqc/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = config["strains"], paired_end = END),
+		# 
+		# first preprocessing - fastp
+		expand("{path}/preprocessing/{strain}/{strain}_1_fastp.fastq.gz", path = config["path"], strain = config["strains"]),
+		# 
+		# second preprocessing - trimmomatic
+		expand("{path}/preprocessing/{strain}/{strain}_1P.fastq.gz", path = config["path"], strain = config["strains"]),
+		# 
+		# quality check of the preprocessed reads - fastQC
+		expand("{path}/quality/fastqc/preprocessed/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], strain = config["strains"], paired_unpaired = PU),
+		# 
+		# assembly - SPAdes
+		expand("{path}/assembly/{strain}_spades/contigs.fasta", path = config["path"], strain = config["strains"]),
+		# 
+		# quality check of the assemblies - QUAST
+		expand("{path}/quality/quast/report.html", path = config["path"])
+
+
+#create folders
+rule create:
+	shell:
+		'python create.py'
+
+# quality check of all raw reads - fastQC
+rule fastqc:
+	input:
+		'{path}/raw_data/{strain}_{paired_end}.fastq.gz'
+	output:
+		html = '{path}/quality/fastqc/{strain}_{paired_end}_fastqc.html'
+		# zip='fastQC/{strain}_Illumina_{paired_end}_fastqc.zip'
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/read_quality.yml'
+	params:
+		outputdir = '{path}/quality/fastqc/'
+	threads: 8
+	shell:
+		'fastqc {input} -t {threads} -o {params.outputdir}'
+
+# first preprocessing - fastp
+rule fastp:
+	input:
+		forward = '{path}/raw_data/{strain}_1.fastq.gz',
+		reverse = '{path}/raw_data/{strain}_2.fastq.gz'
+	output:
+		forward = '{path}/preprocessing/{strain}/{strain}_1_fastp.fastq.gz',
+		reverse = '{path}/preprocessing/{strain}/{strain}_2_fastp.fastq.gz'
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
+	params:
+		outputdir = '{path}/preprocessing/{strain}/',
+		file = '{path}/preprocessing/{strain}/{strain}'
+	threads: 8
+	shell:
+		'fastp -w {threads} -i {input.forward} -I {input.reverse} -o {output.forward} -O {output.reverse} --json {params.file}.json --html {params.file}.html'
+
+# second preprocessing - trimmomatic
+rule trimmomatic:
+	input:
+		forward = rules.fastp.output.forward,
+		reverse = rules.fastp.output.reverse
+	output:
+		forwardP = '{path}/preprocessing/{strain}/{strain}_1P.fastq.gz',
+		forwardU = '{path}/preprocessing/{strain}/{strain}_1U.fastq.gz',
+		reverseP = '{path}/preprocessing/{strain}/{strain}_2P.fastq.gz',
+		reverseU = '{path}/preprocessing/{strain}/{strain}_2U.fastq.gz'
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
+	threads: 8
+	shell:
+		'trimmomatic PE -phred33 -threads {threads} {input.forward} {input.reverse} {output.forwardP} {output.forwardU} {output.reverseP} {output.reverseU} SLIDINGWINDOW:4:28 MINLEN:20'
+			# PE					for paired end reads
+			# -phred33				Illumina 1.9 uses phred +33
+			# SLIDINGWINDOW:4:28	quality score = 28, because the trimming can be done more restrictive due to the high coverage    window size = 4 to prevent to stop the trimming at a local score maximum within one read
+			# MINLEN:20				to get less random matches during mapping
+
+# quality check of all preprocessed reads - fastQC
+rule fastqc_preprocessing:
+	input:
+		'{path}/preprocessing/{strain}/{strain}_{paired_unpaired}.fastq.gz'
+	output:
+		html = '{path}/quality/fastqc/preprocessed/{strain}_{paired_unpaired}_fastqc.html'
+		# zip = '{path}/fastqc/preprocessed/{strain}_{paired_unpaired}_fastqc.zip'
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/read_quality.yml'
+	params:
+		outputdir = '{path}/quality/fastqc/preprocessed/'
+	threads: 8
+	shell:
+		'fastqc {input} -t {threads} -o {params.outputdir}'
+# assembly - SPAdes
+rule spades:
+	input:
+		forwardP = rules.trimmomatic.output.forwardP,
+		reverseP = rules.trimmomatic.output.reverseP,
+		forwardU = rules.trimmomatic.output.forwardU,
+		reverseU = rules.trimmomatic.output.reverseU
+	output:
+		contigs = '{path}/assembly/{strain}_spades/contigs.fasta'		#contains resulting contigs
+		# 'Illumina/assembly/spades/contigs.paths',					#contains paths in the assembly graph corresponding to contigs.fasta (see details below)
+		# 'Illumina/assembly/spades/scaffolds.fasta',				#contains resulting scaffolds (recommended for use as resulting sequences)
+		# 'Illumina/assembly/{strain}_spades/scaffolds.paths',		#contains paths in the assembly graph corresponding to scaffolds.fasta
+		# 'Illumina/assembly/spades/assembly_graph.gfa',			#contains SPAdes assembly graph and scaffolds paths in GFA 1.0 format
+		# 'Illumina/assembly/spades/assembly_graph.fastg',			#contains SPAdes assembly graph in FASTG format
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
+	params:
+		outputdir = '{path}/assembly/{strain}_spades/'
+	threads: 24 #default: 16
+	shell:
+		'spades.py -t {threads} -1 {input.forwardP} -2 {input.reverseP} --pe1-s {input.forwardU} --pe1-s {input.reverseU} --only-assembler --careful -o {params.outputdir}'
+		# -1	<filename>		file with forward paired-end reads
+		# -2	<filename>		file with reverse paired-end reads
+		# --pe1-s				file with unpaired reads from paired-end library (for example, paired end reads can become unpaired during the error correction procedure)
+		# --only-assembler		runs only assembling (without read error correction)
+		# --careful				tries to reduce number of mismatches and short indels
+
+# quality check of the assemblies - QUAST
+rule quast:
+	input:
+		strain01 = '{path}/assembly/15DD0132_spades/contigs.fasta',
+		strain02 = '{path}/assembly/15DD0163_spades/contigs.fasta',
+		strain03 = '{path}/assembly/17DD0007_spades/contigs.fasta',
+		strain04 = '{path}/assembly/17DD0020_spades/contigs.fasta'
+	output:
+		report = '{path}/quality/quast/report.html'
+		#...
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
+	params:
+		outputdir = '{path}/quality/quast/'
+	shell:
+		'quast {input.strain01} {input.strain02} {input.strain03} {input.strain04} -r /data/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/mycoplasma_bovis_referenceGenome.fasta -g /data/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
