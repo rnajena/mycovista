@@ -1,0 +1,177 @@
+{
+  "build": "py37_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "biopython",
+    "nanomath",
+    "numpy",
+    "pandas >=0.22.0",
+    "pysam >0.10.0.0",
+    "python >=3.7,<3.8.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/nanoget-1.8.0-py37_0",
+  "features": "",
+  "files": [
+    "lib/python3.7/site-packages/nanoget-1.8.0-py3.7.egg-info/PKG-INFO",
+    "lib/python3.7/site-packages/nanoget-1.8.0-py3.7.egg-info/SOURCES.txt",
+    "lib/python3.7/site-packages/nanoget-1.8.0-py3.7.egg-info/dependency_links.txt",
+    "lib/python3.7/site-packages/nanoget-1.8.0-py3.7.egg-info/requires.txt",
+    "lib/python3.7/site-packages/nanoget-1.8.0-py3.7.egg-info/top_level.txt",
+    "lib/python3.7/site-packages/nanoget/__init__.py",
+    "lib/python3.7/site-packages/nanoget/__pycache__/__init__.cpython-37.pyc",
+    "lib/python3.7/site-packages/nanoget/__pycache__/extraction_functions.cpython-37.pyc",
+    "lib/python3.7/site-packages/nanoget/__pycache__/nanoget.cpython-37.pyc",
+    "lib/python3.7/site-packages/nanoget/__pycache__/utils.cpython-37.pyc",
+    "lib/python3.7/site-packages/nanoget/__pycache__/version.cpython-37.pyc",
+    "lib/python3.7/site-packages/nanoget/extraction_functions.py",
+    "lib/python3.7/site-packages/nanoget/nanoget.py",
+    "lib/python3.7/site-packages/nanoget/utils.py",
+    "lib/python3.7/site-packages/nanoget/version.py",
+    "lib/python3.7/site-packages/scripts/__pycache__/test.cpython-37.pyc",
+    "lib/python3.7/site-packages/scripts/test.py"
+  ],
+  "fn": "nanoget-1.8.0-py37_0.tar.bz2",
+  "license": "MIT License",
+  "license_family": "MIT",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/nanoget-1.8.0-py37_0",
+    "type": 1
+  },
+  "md5": "1a89441d9d9489c953d427fbcf0fd59f",
+  "name": "nanoget",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/nanoget-1.8.0-py37_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/python3.7/site-packages/nanoget-1.8.0-py3.7.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "2d4d36ffa72fa5c560986cfc14540712f645e7c525f23bd78e726fb089b2dd83",
+        "sha256_in_prefix": "2d4d36ffa72fa5c560986cfc14540712f645e7c525f23bd78e726fb089b2dd83",
+        "size_in_bytes": 2455
+      },
+      {
+        "_path": "lib/python3.7/site-packages/nanoget-1.8.0-py3.7.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "4b21e61afbce750f2e2df27489b4379aa480b05b8095c6a9fb925e3109e2f2a1",
+        "sha256_in_prefix": "4b21e61afbce750f2e2df27489b4379aa480b05b8095c6a9fb925e3109e2f2a1",
+        "size_in_bytes": 333
+      },
+      {
+        "_path": "lib/python3.7/site-packages/nanoget-1.8.0-py3.7.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "lib/python3.7/site-packages/nanoget-1.8.0-py3.7.egg-info/requires.txt",
+        "path_type": "hardlink",
+        "sha256": "f579d16850151e65dc0b16d7a57b463f778073fd4efe228d00c8017bc2a46507",
+        "sha256_in_prefix": "f579d16850151e65dc0b16d7a57b463f778073fd4efe228d00c8017bc2a46507",
+        "size_in_bytes": 55
+      },
+      {
+        "_path": "lib/python3.7/site-packages/nanoget-1.8.0-py3.7.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "354ebffe25e8d3d034a817f4e1fb922f7b8c38370f71b341ee35c1462571e948",
+        "sha256_in_prefix": "354ebffe25e8d3d034a817f4e1fb922f7b8c38370f71b341ee35c1462571e948",
+        "size_in_bytes": 16
+      },
+      {
+        "_path": "lib/python3.7/site-packages/nanoget/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "05cb55abbff9d1aa32313c2170e3cc4d86b1a1366a6228207e7d80ee6a5e05bc",
+        "sha256_in_prefix": "05cb55abbff9d1aa32313c2170e3cc4d86b1a1366a6228207e7d80ee6a5e05bc",
+        "size_in_bytes": 56
+      },
+      {
+        "_path": "lib/python3.7/site-packages/nanoget/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "971c7f9ccabe609b401ae4ab4d102cb6cacfecdcb6ee5e222029a93f8455d6ed",
+        "sha256_in_prefix": "971c7f9ccabe609b401ae4ab4d102cb6cacfecdcb6ee5e222029a93f8455d6ed",
+        "size_in_bytes": 201
+      },
+      {
+        "_path": "lib/python3.7/site-packages/nanoget/__pycache__/extraction_functions.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "82418db5cefb45b29583d64e35e657c933972e5fe80179296e9f899fde5f8e80",
+        "sha256_in_prefix": "82418db5cefb45b29583d64e35e657c933972e5fe80179296e9f899fde5f8e80",
+        "size_in_bytes": 15966
+      },
+      {
+        "_path": "lib/python3.7/site-packages/nanoget/__pycache__/nanoget.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "2bea929b06c2d82ab41965245d869811a2b763ea6b22c75aee33f073f42d722d",
+        "sha256_in_prefix": "2bea929b06c2d82ab41965245d869811a2b763ea6b22c75aee33f073f42d722d",
+        "size_in_bytes": 5091
+      },
+      {
+        "_path": "lib/python3.7/site-packages/nanoget/__pycache__/utils.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "551b168e404065273005cca8887728c969134f6ce15c5e5e4571c672587edd08",
+        "sha256_in_prefix": "551b168e404065273005cca8887728c969134f6ce15c5e5e4571c672587edd08",
+        "size_in_bytes": 1456
+      },
+      {
+        "_path": "lib/python3.7/site-packages/nanoget/__pycache__/version.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "7a0ce93b503162be631061f28dd31873657f183e101f16c485e399f41e0be666",
+        "sha256_in_prefix": "7a0ce93b503162be631061f28dd31873657f183e101f16c485e399f41e0be666",
+        "size_in_bytes": 154
+      },
+      {
+        "_path": "lib/python3.7/site-packages/nanoget/extraction_functions.py",
+        "path_type": "hardlink",
+        "sha256": "0b8f978ee62ed421b0ad9badab16ffe0f4cdf498d7a66275048fe6bc3ca566c8",
+        "sha256_in_prefix": "0b8f978ee62ed421b0ad9badab16ffe0f4cdf498d7a66275048fe6bc3ca566c8",
+        "size_in_bytes": 16871
+      },
+      {
+        "_path": "lib/python3.7/site-packages/nanoget/nanoget.py",
+        "path_type": "hardlink",
+        "sha256": "0b047628d20c65a61c98f28863a26da602c540cc0ce30861dfdf2a65bdc4ea82",
+        "sha256_in_prefix": "0b047628d20c65a61c98f28863a26da602c540cc0ce30861dfdf2a65bdc4ea82",
+        "size_in_bytes": 5292
+      },
+      {
+        "_path": "lib/python3.7/site-packages/nanoget/utils.py",
+        "path_type": "hardlink",
+        "sha256": "1fb5a6f48d0b81ae5f28d94c557d44b03b28d67d732d65b42f616b5d9be2d610",
+        "sha256_in_prefix": "1fb5a6f48d0b81ae5f28d94c557d44b03b28d67d732d65b42f616b5d9be2d610",
+        "size_in_bytes": 1321
+      },
+      {
+        "_path": "lib/python3.7/site-packages/nanoget/version.py",
+        "path_type": "hardlink",
+        "sha256": "39cff117de003001ca664665079ac1b7588ed135d615a960eb930fe13daab7e0",
+        "sha256_in_prefix": "39cff117de003001ca664665079ac1b7588ed135d615a960eb930fe13daab7e0",
+        "size_in_bytes": 22
+      },
+      {
+        "_path": "lib/python3.7/site-packages/scripts/__pycache__/test.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "255fc764b77f07f83f87f20a10899cea0c505adc03dd7cf268a0d88e7468c3ad",
+        "sha256_in_prefix": "255fc764b77f07f83f87f20a10899cea0c505adc03dd7cf268a0d88e7468c3ad",
+        "size_in_bytes": 630
+      },
+      {
+        "_path": "lib/python3.7/site-packages/scripts/test.py",
+        "path_type": "hardlink",
+        "sha256": "724f37b6d3f3cce930f6d53a83d40551a7cd41ddf26c38a004db56af07ccda65",
+        "sha256_in_prefix": "724f37b6d3f3cce930f6d53a83d40551a7cd41ddf26c38a004db56af07ccda65",
+        "size_in_bytes": 537
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "nanoget==1.8.0=py37_0",
+  "sha256": "78695a35d7bfd83b81ba424d1ba457225f6a7990329720b8eec4f30affd3c145",
+  "size": 20416,
+  "subdir": "linux-64",
+  "timestamp": 1556434236135,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/nanoget-1.8.0-py37_0.tar.bz2",
+  "version": "1.8.0"
+}
