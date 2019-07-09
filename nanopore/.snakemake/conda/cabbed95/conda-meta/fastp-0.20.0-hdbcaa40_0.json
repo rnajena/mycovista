@@ -1,0 +1,45 @@
+{
+  "build": "hdbcaa40_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=7.3.0",
+    "libstdcxx-ng >=7.3.0",
+    "zlib >=1.2.11,<1.3.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/fastp-0.20.0-hdbcaa40_0",
+  "features": "",
+  "files": [
+    "bin/fastp"
+  ],
+  "fn": "fastp-0.20.0-hdbcaa40_0.tar.bz2",
+  "license": "MIT",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/fastp-0.20.0-hdbcaa40_0",
+    "type": 1
+  },
+  "md5": "195512b212aaee5e18da47657e5b76d9",
+  "name": "fastp",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/fastp-0.20.0-hdbcaa40_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/fastp",
+        "path_type": "hardlink",
+        "sha256": "d4602196b181709538e72ea8bb81a54b638731f092d3b789aab61b8ab6900911",
+        "sha256_in_prefix": "d4602196b181709538e72ea8bb81a54b638731f092d3b789aab61b8ab6900911",
+        "size_in_bytes": 7868728
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "fastp==0.20.0=hdbcaa40_0",
+  "sha256": "3e355b0e7b909438e7cd7bb78f253271856e51e386bc62ec39b3ce90b7576763",
+  "size": 2463937,
+  "subdir": "linux-64",
+  "timestamp": 1555490597901,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/fastp-0.20.0-hdbcaa40_0.tar.bz2",
+  "version": "0.20.0"
+}

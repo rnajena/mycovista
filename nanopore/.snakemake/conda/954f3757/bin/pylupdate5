@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /data/prostlocal2/projects/st_mycoplasma_assembly/git/nanopore/.snakemake/conda/954f3757/bin/python -m PyQt5.pylupdate_main ${1+"$@"}

@@ -1,0 +1,25 @@
+==> 2019-07-09 13:28:11 <==
+# cmd: /home/nu76fet/miniconda3/bin/conda-env create --file /data/prostlocal2/projects/st_mycoplasma_assembly/git/nanopore/.snakemake/conda/cabbed95.yaml --prefix /data/prostlocal2/projects/st_mycoplasma_assembly/git/nanopore/.snakemake/conda/cabbed95
+# conda version: 4.7.5
++bioconda::fastp-0.20.0-hdbcaa40_0
++bioconda::porechop-0.2.3_seqan2.1.1-py36h2d50403_3
++bioconda::trimmomatic-0.39-1
++conda-forge::ca-certificates-2019.6.16-hecc5488_0
++conda-forge::certifi-2019.6.16-py36_0
++conda-forge::libffi-3.2.1-he1b5a44_1006
++conda-forge::ncurses-6.1-hf484d3e_1002
++conda-forge::openjdk-11.0.1-h516909a_1016
++conda-forge::openssl-1.1.1b-h14c3975_1
++conda-forge::pip-19.1.1-py36_0
++conda-forge::python-3.6.7-h381d211_1004
++conda-forge::readline-7.0-hf8c457e_1001
++conda-forge::setuptools-41.0.1-py36_0
++conda-forge::sqlite-3.28.0-h8b20d00_0
++conda-forge::tk-8.6.9-hed695b0_1002
++conda-forge::wheel-0.33.4-py36_0
++conda-forge::xz-5.2.4-h14c3975_1001
++conda-forge::zlib-1.2.11-h14c3975_1004
++defaults::_libgcc_mutex-0.1-main
++defaults::libgcc-ng-9.1.0-hdf63c60_0
++defaults::libstdcxx-ng-9.1.0-hdf63c60_0
+# update specs: ['libgcc-ng==9.1.0=hdf63c60_0', 'wheel==0.33.4=py36_0', 'trimmomatic==0.39=1', 'pip==19.1.1=py36_0', 'xz==5.2.4=h14c3975_1001', 'sqlite==3.28.0=h8b20d00_0', 'openjdk==11.0.1=h516909a_1016', 'porechop==0.2.3_seqan2.1.1=py36h2d50403_3', 'tk==8.6.9=hed695b0_1002', 'python==3.6.7=h381d211_1004', 'ca-certificates==2019.6.16=hecc5488_0', 'libffi==3.2.1=he1b5a44_1006', 'readline==7.0=hf8c457e_1001', 'openssl==1.1.1b=h14c3975_1', 'certifi==2019.6.16=py36_0', 'libstdcxx-ng==9.1.0=hdf63c60_0', 'ncurses==6.1=hf484d3e_1002', 'fastp==0.20.0=hdbcaa40_0', 'setuptools==41.0.1=py36_0', 'zlib==1.2.11=h14c3975_1004']

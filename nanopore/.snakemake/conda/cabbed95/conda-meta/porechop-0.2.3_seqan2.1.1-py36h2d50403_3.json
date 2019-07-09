@@ -1,0 +1,214 @@
+{
+  "build": "py36h2d50403_3",
+  "build_number": 3,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "libstdcxx-ng >=4.9",
+    "python >=3.6,<3.7.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/porechop-0.2.3_seqan2.1.1-py36h2d50403_3",
+  "features": "",
+  "files": [
+    "bin/porechop",
+    "lib/python3.6/site-packages/porechop-0.2.3_seqan2.1.1-py3.6.egg-info/PKG-INFO",
+    "lib/python3.6/site-packages/porechop-0.2.3_seqan2.1.1-py3.6.egg-info/SOURCES.txt",
+    "lib/python3.6/site-packages/porechop-0.2.3_seqan2.1.1-py3.6.egg-info/dependency_links.txt",
+    "lib/python3.6/site-packages/porechop-0.2.3_seqan2.1.1-py3.6.egg-info/entry_points.txt",
+    "lib/python3.6/site-packages/porechop-0.2.3_seqan2.1.1-py3.6.egg-info/not-zip-safe",
+    "lib/python3.6/site-packages/porechop-0.2.3_seqan2.1.1-py3.6.egg-info/top_level.txt",
+    "lib/python3.6/site-packages/porechop/__init__.py",
+    "lib/python3.6/site-packages/porechop/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/porechop/__pycache__/adapters.cpython-36.pyc",
+    "lib/python3.6/site-packages/porechop/__pycache__/cpp_function_wrappers.cpython-36.pyc",
+    "lib/python3.6/site-packages/porechop/__pycache__/misc.cpython-36.pyc",
+    "lib/python3.6/site-packages/porechop/__pycache__/nanopore_read.cpython-36.pyc",
+    "lib/python3.6/site-packages/porechop/__pycache__/porechop.cpython-36.pyc",
+    "lib/python3.6/site-packages/porechop/__pycache__/version.cpython-36.pyc",
+    "lib/python3.6/site-packages/porechop/adapters.py",
+    "lib/python3.6/site-packages/porechop/cpp_function_wrappers.py",
+    "lib/python3.6/site-packages/porechop/cpp_functions.so",
+    "lib/python3.6/site-packages/porechop/misc.py",
+    "lib/python3.6/site-packages/porechop/nanopore_read.py",
+    "lib/python3.6/site-packages/porechop/porechop.py",
+    "lib/python3.6/site-packages/porechop/version.py"
+  ],
+  "fn": "porechop-0.2.3_seqan2.1.1-py36h2d50403_3.tar.bz2",
+  "license": "GPL-3.0-only AND BSD-3-Clause",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/porechop-0.2.3_seqan2.1.1-py36h2d50403_3",
+    "type": 1
+  },
+  "md5": "0d5a8a25b2b417023a79741b73cbc3e5",
+  "name": "porechop",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/porechop-0.2.3_seqan2.1.1-py36h2d50403_3.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/porechop",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "ce3fb8566a2c649bbe5aa4ffb88f9763b3b27b98fdef120b95f1f428496c7978",
+        "sha256_in_prefix": "ee4cc90d554bcb80c34b0fd3bc47498118b742c9397722d6da3b047e5c42caa2",
+        "size_in_bytes": 247
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop-0.2.3_seqan2.1.1-py3.6.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "049ba30a0fba8ba1afea8491b60a0008f58c17f69d5ab7da1f8b96902decaf37",
+        "sha256_in_prefix": "049ba30a0fba8ba1afea8491b60a0008f58c17f69d5ab7da1f8b96902decaf37",
+        "size_in_bytes": 25803
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop-0.2.3_seqan2.1.1-py3.6.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "19a39547949de775b68e8dbf9e6a7f97be9e9b488e4324be9fc45ed08c7280bd",
+        "sha256_in_prefix": "19a39547949de775b68e8dbf9e6a7f97be9e9b488e4324be9fc45ed08c7280bd",
+        "size_in_bytes": 554
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop-0.2.3_seqan2.1.1-py3.6.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop-0.2.3_seqan2.1.1-py3.6.egg-info/entry_points.txt",
+        "path_type": "hardlink",
+        "sha256": "c26dc6872c7a4db43b85d16c6b750cb09bce8871aeb69eff9a9940b3b13f9adf",
+        "sha256_in_prefix": "c26dc6872c7a4db43b85d16c6b750cb09bce8871aeb69eff9a9940b3b13f9adf",
+        "size_in_bytes": 53
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop-0.2.3_seqan2.1.1-py3.6.egg-info/not-zip-safe",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop-0.2.3_seqan2.1.1-py3.6.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "74c43a566d491f533b689615dc47d3ba8fed9efe276879c81f0403d197ad0444",
+        "sha256_in_prefix": "74c43a566d491f533b689615dc47d3ba8fed9efe276879c81f0403d197ad0444",
+        "size_in_bytes": 9
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "b39ec8978b28a77020d6d90ee73e3a086c494f1a77d94f464898dce09cc43a75",
+        "sha256_in_prefix": "b39ec8978b28a77020d6d90ee73e3a086c494f1a77d94f464898dce09cc43a75",
+        "size_in_bytes": 131
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/__pycache__/adapters.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "c3ec6e03670905d2147f0a8a817abae79a7ce51f89e6da8cf88ffdc6ab131ae0",
+        "sha256_in_prefix": "c3ec6e03670905d2147f0a8a817abae79a7ce51f89e6da8cf88ffdc6ab131ae0",
+        "size_in_bytes": 19139
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/__pycache__/cpp_function_wrappers.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "0bd5516f405ee75aa95bec6696a7c791a355a451aab6009a767229c5502b4757",
+        "sha256_in_prefix": "0bd5516f405ee75aa95bec6696a7c791a355a451aab6009a767229c5502b4757",
+        "size_in_bytes": 2257
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/__pycache__/misc.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "6f3cf04d4e23edcc84011339407605653d80560e96d4a77a6f04901ce71c6697",
+        "sha256_in_prefix": "6f3cf04d4e23edcc84011339407605653d80560e96d4a77a6f04901ce71c6697",
+        "size_in_bytes": 11700
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/__pycache__/nanopore_read.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "47ddab58f83d935eff943f513e7386a09979646225b54d30bc7cf6ba4a17e51a",
+        "sha256_in_prefix": "47ddab58f83d935eff943f513e7386a09979646225b54d30bc7cf6ba4a17e51a",
+        "size_in_bytes": 14517
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/__pycache__/porechop.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "afd3bdf0fb6ed88af17acce7907516fc965c01809bcecf75d94af4ae3c96ae2e",
+        "sha256_in_prefix": "afd3bdf0fb6ed88af17acce7907516fc965c01809bcecf75d94af4ae3c96ae2e",
+        "size_in_bytes": 24385
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/__pycache__/version.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "1a143c3aab0d79f5e9205d88ca4553e1c0b316b92aae6f61e0a0e58cc357727f",
+        "sha256_in_prefix": "1a143c3aab0d79f5e9205d88ca4553e1c0b316b92aae6f61e0a0e58cc357727f",
+        "size_in_bytes": 303
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/adapters.py",
+        "path_type": "hardlink",
+        "sha256": "f77762158adf949e196ada08d07658070f041fa375c8a28d019f7f141edbd02c",
+        "sha256_in_prefix": "f77762158adf949e196ada08d07658070f041fa375c8a28d019f7f141edbd02c",
+        "size_in_bytes": 28150
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/cpp_function_wrappers.py",
+        "path_type": "hardlink",
+        "sha256": "80d34307ebc9890b761b709a827d65903a683de621d64809982f0d7e2f3651dd",
+        "sha256_in_prefix": "80d34307ebc9890b761b709a827d65903a683de621d64809982f0d7e2f3651dd",
+        "size_in_bytes": 2740
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/cpp_functions.so",
+        "path_type": "hardlink",
+        "sha256": "38335545bdbe6dffbe19ba7d84d4e75979b927aafd9be89e589e4468aa45abe6",
+        "sha256_in_prefix": "38335545bdbe6dffbe19ba7d84d4e75979b927aafd9be89e589e4468aa45abe6",
+        "size_in_bytes": 89622
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/misc.py",
+        "path_type": "hardlink",
+        "sha256": "8cc8f2cb926fb3c1acedccec445b3082dcf42bea32b5b05389e77c4ae87dffdf",
+        "sha256_in_prefix": "8cc8f2cb926fb3c1acedccec445b3082dcf42bea32b5b05389e77c4ae87dffdf",
+        "size_in_bytes": 13007
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/nanopore_read.py",
+        "path_type": "hardlink",
+        "sha256": "0f5fbf0d75dd781085ac5138dcff39f079450b757eca7edcf957b36438b46bd3",
+        "sha256_in_prefix": "0f5fbf0d75dd781085ac5138dcff39f079450b757eca7edcf957b36438b46bd3",
+        "size_in_bytes": 23165
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/porechop.py",
+        "path_type": "hardlink",
+        "sha256": "4db0c8d1ff62f95245a9d1f68972916db5a6b1210e031b95b9b8938325fdb11e",
+        "sha256_in_prefix": "4db0c8d1ff62f95245a9d1f68972916db5a6b1210e031b95b9b8938325fdb11e",
+        "size_in_bytes": 36356
+      },
+      {
+        "_path": "lib/python3.6/site-packages/porechop/version.py",
+        "path_type": "hardlink",
+        "sha256": "27dc5af967dffa120f8daf0e0863a6aceb8b39c6404c6fed9b7c70b33295c687",
+        "sha256_in_prefix": "27dc5af967dffa120f8daf0e0863a6aceb8b39c6404c6fed9b7c70b33295c687",
+        "size_in_bytes": 164
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "porechop==0.2.3_seqan2.1.1=py36h2d50403_3",
+  "sha256": "7a3467577998299d065838a9ea907099008c39eb48beba1a6e370c4080f0ed93",
+  "size": 87195,
+  "subdir": "linux-64",
+  "timestamp": 1531692251573,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/porechop-0.2.3_seqan2.1.1-py36h2d50403_3.tar.bz2",
+  "version": "0.2.3_seqan2.1.1"
+}
