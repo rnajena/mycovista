@@ -1,2 +1,2 @@
-# mycoplasma_bovis_assembly
-Comparison of several assembly tool pipeline for Mycoplasma bovis strains
+# A comparison of short-read, long-read, and hybrid de novo assembly tools for *Mycoplasma bovis* strains
+Comparison of several assembly tool pipelines for genomes of Mycoplasma bovis strains
