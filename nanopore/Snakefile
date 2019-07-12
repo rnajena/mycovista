@@ -14,7 +14,7 @@ rule all:
 		expand("{path}/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz", path = config["path"], strain = config["strains"]),
 		expand("{path}/preprocessing/deepbinner/{strain}_deepbinner.fastq", path = config["path"], strain = config["strains"]),
 		# NanoPlot
-		expand("{path}/quality/nanoplot/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"])
+		expand("{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"])
 		
 rule create:
 	shell:
