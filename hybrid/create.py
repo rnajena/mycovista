@@ -40,3 +40,5 @@ for bacteria in strains:
             #     os.mkdir(path + '/polishing' + '/' + bacteria + '_' + preprocesser + '_' + assembler + '_' + polisher)
 for check in quality:
     os.mkdir(path + '/quality' + '/' + check)
+    for bacteria in strains:
+        os.mkdir(path + '/quality' + '/' + check + '/' + bacteria)

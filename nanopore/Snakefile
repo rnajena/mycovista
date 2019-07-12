@@ -126,11 +126,11 @@ rule nanoplot:
 	input:
 		'{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
-		'{path}/quality/nanoplot/{strain}_{demultiplex}NanoPlot-report.html'
+		'{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/read_quality.yml'
 	params:
-		outputdir = '{path}/quality/nanoplot/',
+		outputdir = '{path}/quality/nanoplot/{strain}/',
 		prefix = '{strain}_{demultiplex}'
 	threads: 8
 	shell:

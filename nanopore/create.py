@@ -36,7 +36,6 @@ for preprocesser in preprocessing:
             os.mkdir(path + '/postprocessing' + '/' + bacteria + '_' + preprocesser + '_' + assembler)
 for check in quality:
     os.mkdir(path + '/quality' + '/' + check)
-    if check != 'nanoplot':
-        for bacteria in strains:
-            os.mkdir(path + '/quality' + '/' + check + '/' + bacteria)
+    for bacteria in strains:
+        os.mkdir(path + '/quality' + '/' + check + '/' + bacteria)
 

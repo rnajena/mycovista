@@ -17,7 +17,7 @@ rule all:
 		expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz", path = config["path"], strain = config["strains"]),
 		expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq", path = config["path"], strain = config["strains"]),
 		# NanoPlot
-		expand("{path}/hybrid_new/quality/nanoplot/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"])
+		expand("{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"])
 
 
 # create folders for the following steps
@@ -294,11 +294,11 @@ rule nanoplot:
 	input:
 		'{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
-		'{path}/hybrid_new/quality/nanoplot/{strain}_{demultiplex}NanoPlot-report.html'
+		'{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/read_quality.yml'
 	params:
-		outputdir = '{path}/hybrid_new/quality/nanoplot/',
+		outputdir = '{path}/hybrid_new/quality/nanoplot/{strain}/',
 		prefix = '{strain}_{demultiplex}'
 	threads: 8
 	shell:
