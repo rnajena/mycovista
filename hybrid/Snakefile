@@ -12,8 +12,8 @@ rule all:
 		expand("{path}/hybrid_new/preprocessing/porechop/11DD0261_porechop.fastq", path = config["path"]),
 		# deepbinner
 		expand("{path}/hybrid_new/preprocessing/deepbinner/classifications", path = config["path"]),
-		expand("{path}/hybrid_new/preprocessing/deepbinner/bin/BC01.fastq.gz", path = config["path"]),
-		expand("{path}/hybrid_new/preprocessing/deepbinner/bin/11DD0261_deepbinner_untrimmed.fastq.gz", path = config["path"]),
+		expand("{path}/hybrid_new/preprocessing/deepbinner/barcode01.fastq.gz", path = config["path"]),
+		expand("{path}/hybrid_new/preprocessing/deepbinner/11DD0261_deepbinner_untrimmed.fastq.gz", path = config["path"]),
 		expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz", path = config["path"], strain = config["strains"]),
 		expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq", path = config["path"], strain = config["strains"]),
 		# NanoPlot
@@ -38,7 +38,7 @@ rule fastqc:
 		outputdir = '{path}/hybrid_new/quality/fastqc/'
 	threads: 8
 	shell:
-		'fastqc {input} -t {threads} -o {params.outputdir}'
+		'fastqc -t {threads} {input} -o {params.outputdir}'
 
 # first preprocessing of the short reads - fastp
 rule fastp:
@@ -209,18 +209,18 @@ rule deepbinner_bin:
 		classify = rules.deepbinner_classify.output.classify,
 		reads = '/data/fass2/reads/ont/celia/20190416_1339_20190416_myco2/called/2019-06-20/myco2_2019-06-20_13-00-46_20477.fastq'
 	output:
-		BC01 = '{path}/hybrid_new/preprocessing/deepbinner/bin/BC01.fastq.gz',
-		BC02 = '{path}/hybrid_new/preprocessing/deepbinner/bin/BC02.fastq.gz',
-		BC03 = '{path}/hybrid_new/preprocessing/deepbinner/bin/BC03.fastq.gz',
-		BC04 = '{path}/hybrid_new/preprocessing/deepbinner/bin/BC04.fastq.gz',
-		BC05 = '{path}/hybrid_new/preprocessing/deepbinner/bin/BC05.fastq.gz',
-		BC06 = '{path}/hybrid_new/preprocessing/deepbinner/bin/BC06.fastq.gz',
-		BC07 = '{path}/hybrid_new/preprocessing/deepbinner/bin/BC07.fastq.gz',
-		BC08 = '{path}/hybrid_new/preprocessing/deepbinner/bin/BC08.fastq.gz',
-		BC09 = '{path}/hybrid_new/preprocessing/deepbinner/bin/BC09.fastq.gz',
-		BC10 = '{path}/hybrid_new/preprocessing/deepbinner/bin/BC10.fastq.gz'
-		# BC11 = '{path}/hybrid_new/preprocessing/deepbinner/bin/BC11.fastq.gz'
-		# BC12 = '{path}/hybrid_new/preprocessing/deepbinner/bin/BC12.fastq.gz'
+		BC01 = '{path}/hybrid_new/preprocessing/deepbinner/barcode01.fastq.gz',
+		BC02 = '{path}/hybrid_new/preprocessing/deepbinner/barcode02.fastq.gz',
+		BC03 = '{path}/hybrid_new/preprocessing/deepbinner/barcode03.fastq.gz',
+		BC04 = '{path}/hybrid_new/preprocessing/deepbinner/barcode04.fastq.gz',
+		BC05 = '{path}/hybrid_new/preprocessing/deepbinner/barcode05.fastq.gz',
+		BC06 = '{path}/hybrid_new/preprocessing/deepbinner/barcode06.fastq.gz',
+		BC07 = '{path}/hybrid_new/preprocessing/deepbinner/barcode07.fastq.gz',
+		BC08 = '{path}/hybrid_new/preprocessing/deepbinner/barcode08.fastq.gz',
+		BC09 = '{path}/hybrid_new/preprocessing/deepbinner/barcode09.fastq.gz',
+		BC10 = '{path}/hybrid_new/preprocessing/deepbinner/barcode10.fastq.gz'
+		# BC11 = '{path}/hybrid_new/preprocessing/deepbinner/barcode11.fastq.gz'
+		# BC12 = '{path}/hybrid_new/preprocessing/deepbinner/barcode12.fastq.gz'
 	# conda:
 	# 	'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
 	params:
@@ -244,18 +244,18 @@ rule rename_deepbinner:
 		# BC11 = rules.deepbinner_bin.output.BC11,
 		# BC12 = rules.deepbinner_bin.output.BC12
 	output:
-		strain1 = '{path}/hybrid_new/preprocessing/deepbinner/bin/11DD0261_deepbinner_untrimmed.fastq.gz',
-		strain2 = '{path}/hybrid_new/preprocessing/deepbinner/bin/13DD0918_deepbinner_untrimmed.fastq.gz',
-		strain3 = '{path}/hybrid_new/preprocessing/deepbinner/bin/14DD0148_deepbinner_untrimmed.fastq.gz',
-		strain4 = '{path}/hybrid_new/preprocessing/deepbinner/bin/14DD0156_deepbinner_untrimmed.fastq.gz',
-		strain5 = '{path}/hybrid_new/preprocessing/deepbinner/bin/14DD0457ML_deepbinner_untrimmed.fastq.gz',
-		strain6 = '{path}/hybrid_new/preprocessing/deepbinner/bin/15DD0123_deepbinner_untrimmed.fastq.gz',
-		strain7 = '{path}/hybrid_new/preprocessing/deepbinner/bin/15DD0140_deepbinner_untrimmed.fastq.gz',
-		strain8 = '{path}/hybrid_new/preprocessing/deepbinner/bin/15DD0141_deepbinner_untrimmed.fastq.gz',
-		strain9 = '{path}/hybrid_new/preprocessing/deepbinner/bin/15DD0160_deepbinner_untrimmed.fastq.gz',
-		strain10 = '{path}/hybrid_new/preprocessing/deepbinner/bin/15DD0161_deepbinner_untrimmed.fastq.gz'
-		# strain11 = '{path}/hybrid_new/preprocessing/deepbinner/bin/...',
-		# strain12 = '{path}/hybrid_new/preprocessing/deepbinner/bin/...'
+		strain1 = '{path}/hybrid_new/preprocessing/deepbinner/11DD0261_deepbinner_untrimmed.fastq.gz',
+		strain2 = '{path}/hybrid_new/preprocessing/deepbinner/13DD0918_deepbinner_untrimmed.fastq.gz',
+		strain3 = '{path}/hybrid_new/preprocessing/deepbinner/14DD0148_deepbinner_untrimmed.fastq.gz',
+		strain4 = '{path}/hybrid_new/preprocessing/deepbinner/14DD0156_deepbinner_untrimmed.fastq.gz',
+		strain5 = '{path}/hybrid_new/preprocessing/deepbinner/14DD0457ML_deepbinner_untrimmed.fastq.gz',
+		strain6 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0123_deepbinner_untrimmed.fastq.gz',
+		strain7 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0140_deepbinner_untrimmed.fastq.gz',
+		strain8 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0141_deepbinner_untrimmed.fastq.gz',
+		strain9 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0160_deepbinner_untrimmed.fastq.gz',
+		strain10 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0161_deepbinner_untrimmed.fastq.gz'
+		# strain11 = '{path}/hybrid_new/preprocessing/deepbinner/...',
+		# strain12 = '{path}/hybrid_new/preprocessing/deepbinner/...'
 	shell:
 		'mv {input.BC01} {output.strain1} &&'
 		'mv {input.BC02} {output.strain2} &&'
@@ -273,7 +273,7 @@ rule rename_deepbinner:
 # adapter trimming after deepbinner with porechop
 rule porechop_after_deepbinner:
 	input:
-		deepbinner = '{path}/hybrid_new/preprocessing/deepbinner/bin/{strain}_deepbinner_untrimmed.fastq.gz'
+		deepbinner = '{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner_untrimmed.fastq.gz'
 	output:
 		trim = '{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz'
 	conda:
