@@ -9,8 +9,8 @@ rule all:
 		expand("{path}/preprocessing/porechop/15DD0163_porechop.fastq", path = config["path"]),
 		# deepbinner
 		expand("{path}/preprocessing/deepbinner/classifications", path = config["path"]),
-		expand("{path}/preprocessing/deepbinner/bin/BC10.fastq.gz", path = config["path"]),
-		expand("{path}/preprocessing/deepbinner/bin/15DD0163_deepbinner_untrimmed.fastq.gz", path = config["path"]),
+		expand("{path}/preprocessing/deepbinner/barcode10.fastq.gz", path = config["path"]),
+		expand("{path}/preprocessing/deepbinner/15DD0163_deepbinner_untrimmed.fastq.gz", path = config["path"]),
 		expand("{path}/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz", path = config["path"], strain = config["strains"]),
 		expand("{path}/preprocessing/deepbinner/{strain}_deepbinner.fastq", path = config["path"], strain = config["strains"]),
 		# NanoPlot
@@ -68,18 +68,18 @@ rule deepbinner_bin:
 		classify = rules.deepbinner_classify.output.classify,
 		reads = '/mnt/fass2/reads/ont/celia/mycoplasma_doubice_2018/called/2019-06-20/myco_doubice_2019-06-20_2019-06-20_12-29-43_16193.fastq'
 	output:
-		# BC01 = '{path}/preprocessing/deepbinner/bin/BC01.fastq.gz',
-		# BC02 = '{path}/preprocessing/deepbinner/bin/BC02.fastq.gz',
-		# BC03 = '{path}/preprocessing/deepbinner/bin/BC03.fastq.gz',
-		# BC04 = '{path}/preprocessing/deepbinner/bin/BC04.fastq.gz',
-		# BC05 = '{path}/preprocessing/deepbinner/bin/BC05.fastq.gz',
-		# BC06 = '{path}/preprocessing/deepbinner/bin/BC06.fastq.gz',
-		# BC07 = '{path}/preprocessing/deepbinner/bin/BC07.fastq.gz',
-		# BC08 = '{path}/preprocessing/deepbinner/bin/BC08.fastq.gz',
-		# BC09 = '{path}/preprocessing/deepbinner/bin/BC09.fastq.gz',
-		BC10 = '{path}/preprocessing/deepbinner/bin/BC10.fastq.gz',
-		BC11 = '{path}/preprocessing/deepbinner/bin/BC11.fastq.gz',
-		BC12 = '{path}/preprocessing/deepbinner/bin/BC12.fastq.gz'
+		# BC01 = '{path}/preprocessing/deepbinner/barcode01.fastq.gz',
+		# BC02 = '{path}/preprocessing/deepbinner/barcode02.fastq.gz',
+		# BC03 = '{path}/preprocessing/deepbinner/barcode03.fastq.gz',
+		# BC04 = '{path}/preprocessing/deepbinner/barcode04.fastq.gz',
+		# BC05 = '{path}/preprocessing/deepbinner/barcode05.fastq.gz',
+		# BC06 = '{path}/preprocessing/deepbinner/barcode06.fastq.gz',
+		# BC07 = '{path}/preprocessing/deepbinner/barcode07.fastq.gz',
+		# BC08 = '{path}/preprocessing/deepbinner/barcode08.fastq.gz',
+		# BC09 = '{path}/preprocessing/deepbinner/barcode09.fastq.gz',
+		BC10 = '{path}/preprocessing/deepbinner/barcode10.fastq.gz',
+		BC11 = '{path}/preprocessing/deepbinner/barcode11.fastq.gz',
+		BC12 = '{path}/preprocessing/deepbinner/barcode12.fastq.gz'
 	# conda:
 	# 	'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
 	params:
@@ -94,9 +94,9 @@ rule rename_deepbinner:
 		BC11 = rules.deepbinner_bin.output.BC11,
 		BC12 = rules.deepbinner_bin.output.BC12
 	output:
-		strain10 = '{path}/preprocessing/deepbinner/bin/15DD0163_deepbinner_untrimmed.fastq.gz',
-		strain11 = '{path}/preprocessing/deepbinner/bin/17DD0007_deepbinner_untrimmed.fastq.gz',
-		strain12 = '{path}/preprocessing/deepbinner/bin/17DD0020_deepbinner_untrimmed.fastq.gz'
+		strain10 = '{path}/preprocessing/deepbinner/15DD0163_deepbinner_untrimmed.fastq.gz',
+		strain11 = '{path}/preprocessing/deepbinner/17DD0007_deepbinner_untrimmed.fastq.gz',
+		strain12 = '{path}/preprocessing/deepbinner/17DD0020_deepbinner_untrimmed.fastq.gz'
 	shell:
 		'mv {input.BC10} {output.strain10} &&'
 		'mv {input.BC11} {output.strain11} &&'
@@ -105,7 +105,7 @@ rule rename_deepbinner:
 # adapter trimming after deepbinner with porechop
 rule porechop_after_deepbinner:
 	input:
-		deepbinner = '{path}/preprocessing/deepbinner/bin/{strain}_deepbinner_untrimmed.fastq.gz'
+		deepbinner = '{path}/preprocessing/deepbinner/{strain}_deepbinner_untrimmed.fastq.gz'
 	output:
 		trim = '{path}/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz'
 	conda:
