@@ -6,15 +6,24 @@ configfile: "config.yaml"
 rule all:
 	input:
 		# porechop
-		expand("{path}/preprocessing/porechop/15DD0163_porechop.fastq", path = config["path"]),
+		# expand("{path}/preprocessing/porechop/15DD0163_porechop.fastq", path = config["path"]),
+		# 
 		# deepbinner
-		expand("{path}/preprocessing/deepbinner/classifications", path = config["path"]),
-		expand("{path}/preprocessing/deepbinner/barcode10.fastq.gz", path = config["path"]),
-		expand("{path}/preprocessing/deepbinner/15DD0163_deepbinner_untrimmed.fastq.gz", path = config["path"]),
-		expand("{path}/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz", path = config["path"], strain = config["strains"]),
-		expand("{path}/preprocessing/deepbinner/{strain}_deepbinner.fastq", path = config["path"], strain = config["strains"]),
+		# expand("{path}/preprocessing/deepbinner/classifications", path = config["path"]),
+		# expand("{path}/preprocessing/deepbinner/barcode10.fastq.gz", path = config["path"]),
+		# expand("{path}/preprocessing/deepbinner/15DD0163_deepbinner_untrimmed.fastq.gz", path = config["path"]),
+		# expand("{path}/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz", path = config["path"], strain = config["strains"]),
+		# expand("{path}/preprocessing/deepbinner/{strain}_deepbinner.fastq", path = config["path"], strain = config["strains"]),
+		# 
 		# NanoPlot
-		expand("{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"])
+		# expand("{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"]),
+		# 
+		# Canu
+		expand("{path}/assembly/{strain}_{demultiplex}_canu/{strain}_{demultiplex}_canu.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"]),
+		# Flye
+		expand("{path}/assembly/{strain}_{demultiplex}_flye/{strain}_{demultiplex}_flye.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"]),
+		# wtdbg2
+		expand("{path}/assembly/{strain}_{demultiplex}_wtdbg2/{strain}_{demultiplex}_wtdbg2.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"])
 		
 rule create:
 	shell:
