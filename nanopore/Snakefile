@@ -194,19 +194,19 @@ rule wtdbg2:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
 	params:
 		ctg = '{path}/assembly/{strain}_{demultiplex}_wtdbg2/{strain}_{demultiplex}_wtdbg2'
-	threads: 16
+	threads: 24
 	shell:
 		'wtdbg2 -x nanopore -g 1000000 -i {input} -t {threads} -o {params.ctg}'
 
-# convert wtdbg2 ouput to fasta
-rule convert_wtdbg2:
+# convert wtdbg2 ouput (cgt.lay) to fasta
+rule wtdbg2_convert:
 	input:
 		ctg = rules.wtdbg2.output.ctg
 	output:
 		contigs = '{path}/assembly/{strain}_{demultiplex}_wtdbg2/{strain}_{demultiplex}_wtdbg2.contigs.fasta'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
-	threads: 16
+	threads: 24
 	shell:
 		'wtdbg-cns -t {threads} -i {input.ctg} -o {output.contigs}'
 
