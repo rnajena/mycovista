@@ -28,7 +28,7 @@ rule all:
 		# Racon
 		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"], assembler = config["assembly"]),
 		# medaka
-		expand("{path}/postprocessing/{strain}_{assembler}_{demultiplex}/consensus.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"], assembler = config["assembly"])
+		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"], assembler = config["assembly"]),
 		# 
 		# quast
 		expand("{path}/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"]),
@@ -277,11 +277,11 @@ rule medaka:
 		reads = '{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq',
 		racon_out = rules.move_racon_output.output.move
 	output:
-		medaka = '{path}/postprocessing/{strain}_{assembler}_{demultiplex}/consensus.fasta'
+		medaka = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/postprocessing.yml'
 	params:
-		outputdir = '{path}/postprocessing/{strain}_{assembler}_{demultiplex}/'
+		outputdir = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/'
 	threads: 16
 	shell:
 		'medaka_consensus -i {input.reads} -d {input.racon_out} -o {params.outputdir} -t {threads} -m r941_min_high'
@@ -289,12 +289,12 @@ rule medaka:
 # quality check with quast
 rule quast_strain:
 	input:
-		in1 = '{path}/postprocessing/{strain}_canu_porechop/consensus.fasta',
-		in2 = '{path}/postprocessing/{strain}_flye_porechop/consensus.fasta',
-		in3 = '{path}/postprocessing/{strain}_wtdbg2_porechop/consensus.fasta',
-		in4 = '{path}/postprocessing/{strain}_canu_deepbinner/consensus.fasta',
-		in5 = '{path}/postprocessing/{strain}_flye_deepbinner/consensus.fasta',
-		in6 = '{path}/postprocessing/{strain}_wtdbg2_deepbinner/consensus.fasta'
+		in1 = '{path}/postprocessing/{strain}_porechop_canu/consensus.fasta',
+		in2 = '{path}/postprocessing/{strain}_porechop_flye/consensus.fasta',
+		in3 = '{path}/postprocessing/{strain}_porechop_wtdbg2/consensus.fasta',
+		in4 = '{path}/postprocessing/{strain}_deepbinner_canu/consensus.fasta',
+		in5 = '{path}/postprocessing/{strain}_deepbinner_flye/consensus.fasta',
+		in6 = '{path}/postprocessing/{strain}_deepbinner_wtdbg2/consensus.fasta'
 	output:
 		report = '{path}/quality/quast/{strain}/report.html'
 		#...
@@ -309,24 +309,24 @@ rule quast_strain:
 # quality check with quast
 rule quast_all:
 	input:
-		in1 = '{path}/postprocessing/15DD0163_canu_porechop/consensus.fasta',
-		in2 = '{path}/postprocessing/15DD0163_flye_porechop/consensus.fasta',
-		in3 = '{path}/postprocessing/15DD0163_wtdbg2_porechop/consensus.fasta',
-		in4 = '{path}/postprocessing/15DD0163_canu_deepbinner/consensus.fasta',
-		in5 = '{path}/postprocessing/15DD0163_flye_deepbinner/consensus.fasta',
-		in6 = '{path}/postprocessing/15DD0163_wtdbg2_deepbinner/consensus.fasta',
-		in7 = '{path}/postprocessing/17DD0007_canu_porechop/consensus.fasta',
-		in8 = '{path}/postprocessing/17DD0007_flye_porechop/consensus.fasta',
-		in9 = '{path}/postprocessing/17DD0007_wtdbg2_porechop/consensus.fasta',
-		in10 = '{path}/postprocessing/17DD0007_canu_deepbinner/consensus.fasta',
-		in11 = '{path}/postprocessing/17DD0007_flye_deepbinner/consensus.fasta',
-		in12 = '{path}/postprocessing/17DD0007_wtdbg2_deepbinner/consensus.fasta',
-		in13 = '{path}/postprocessing/17DD0020_canu_porechop/consensus.fasta',
-		in14 = '{path}/postprocessing/17DD0020_flye_porechop/consensus.fasta',
-		in15 = '{path}/postprocessing/17DD0020_wtdbg2_porechop/consensus.fasta',
-		in16 = '{path}/postprocessing/17DD0020_canu_deepbinner/consensus.fasta',
-		in17 = '{path}/postprocessing/17DD0020_flye_deepbinner/consensus.fasta',
-		in18 = '{path}/postprocessing/17DD0020_wtdbg2_deepbinner/consensus.fasta'
+		in1 = '{path}/postprocessing/15DD0163_porechop_canu/consensus.fasta',
+		in2 = '{path}/postprocessing/15DD0163_porechop_flye/consensus.fasta',
+		in3 = '{path}/postprocessing/15DD0163_porechop_wtdbg2/consensus.fasta',
+		in4 = '{path}/postprocessing/15DD0163_deepbinner_canu/consensus.fasta',
+		in5 = '{path}/postprocessing/15DD0163_deepbinner_flye/consensus.fasta',
+		in6 = '{path}/postprocessing/15DD0163_deepbinner_wtdbg2/consensus.fasta',
+		in7 = '{path}/postprocessing/17DD0007_porechop_canu/consensus.fasta',
+		in8 = '{path}/postprocessing/17DD0007_porechop_flye/consensus.fasta',
+		in9 = '{path}/postprocessing/17DD0007_porechop_wtdbg2/consensus.fasta',
+		in10 = '{path}/postprocessing/17DD0007_deepbinner_canu/consensus.fasta',
+		in11 = '{path}/postprocessing/17DD0007_deepbinner_flye/consensus.fasta',
+		in12 = '{path}/postprocessing/17DD0007_deepbinner_wtdbg2/consensus.fasta',
+		in13 = '{path}/postprocessing/17DD0020_porechop_canu/consensus.fasta',
+		in14 = '{path}/postprocessing/17DD0020_porechop_flye/consensus.fasta',
+		in15 = '{path}/postprocessing/17DD0020_porechop_wtdbg2/consensus.fasta',
+		in16 = '{path}/postprocessing/17DD0020_deepbinner_canu/consensus.fasta',
+		in17 = '{path}/postprocessing/17DD0020_deepbinner_flye/consensus.fasta',
+		in18 = '{path}/postprocessing/17DD0020_deepbinner_wtdbg2/consensus.fasta'
 	output:
 		report = '{path}/quality/quast/report.html'
 		#...
