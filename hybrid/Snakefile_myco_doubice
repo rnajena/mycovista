@@ -21,7 +21,7 @@ rule create:
 	shell:
 		'python create.py'
 
-# SPAdes assembly
+# SPAdes
 rule spades_hybrid:
 	input:
 		forward = '{path}/illumina/preprocessing/{strain}/{strain}_1P.fastq.gz',
@@ -60,11 +60,11 @@ rule rename_spades:
 	shell:
 		'mv {input.contigs} {output.spades}'
 
-# Unicycler assembly
+# Unicycler
 rule unicycler:
 	input:
-		forward = '{path}/Illumina/preprocessing/{strain}/{strain}_1P.fastq.gz',
-		reverse = '{path}/Illumina/preprocessing/{strain}/{strain}_2P.fastq.gz',
+		forward = '{path}/illumina/preprocessing/{strain}/{strain}_1P.fastq.gz',
+		reverse = '{path}/illumina/preprocessing/{strain}/{strain}_2P.fastq.gz',
 		nanopore = '{path}/nanopore/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
 		contigs = '{path}/hybrid/assembly/{strain}_{demultiplex}_unicycler/assembly.fasta'
@@ -85,7 +85,7 @@ rule rename_unicycler:
 	shell:
 		'mv {input.contigs} {output.unicycler}'
 
-# quast
+# quality check separated by strain - quast
 rule quast_strain:
 	input:
 		in1 = '{path}/hybrid/assembly/{strain}_porechop_spades/{strain}_porechop_spades.contigs.fasta',
@@ -103,7 +103,7 @@ rule quast_strain:
 	shell:
 		'quast {input.in1} {input.in2} {input.in3} {input.in4} -r /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/mycoplasma_bovis_referenceGenome.fasta -g /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
 
-# quality check with quast
+# quality check - quast
 rule quast_all:
 	input:
 		in1 = '{path}/hybrid/assembly/15DD0163_porechop_spades/15DD0163_porechop_spades.contigs.fasta',
