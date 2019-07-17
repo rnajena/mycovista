@@ -9,7 +9,6 @@ if liste[0][:5] == 'path:':
     liste.pop(0)
 else:
     path = os.getcwd()
-# os.mkdir(path + '/raw_data')
 for i in range (len(liste)):
     parameter = liste[i].split(':')
     details = parameter[1]
@@ -21,24 +20,23 @@ for i in range (len(liste)):
     #     os.mkdir(path + '/' + parameter)
     if parameter == 'strains':
         strains = details
-    # if parameter == 'demultiplexing':
-    #     demultiplexing = details
+    if parameter == 'demultiplexing':
+        demultiplexing = details
     if parameter == 'assembly':
         os.mkdir(path + '/' + parameter)
         assembly = details
-    # if parameter == 'polishing':
-    #     polishing = details
+    if parameter == 'postprocessing':
+        polishing = details
     if parameter == 'quality':
         os.mkdir(path + '/' + parameter)
         quality = details
-# for preprocesser in demultiplexing:
+for preprocesser in demultiplexing:
 #     os.mkdir(path + '/demultiplexing' + '/' + preprocesser)
-for bacteria in strains:
-    for assembler in assembly:
-        os.mkdir(path + '/assembly' + '/' + bacteria + '_' + assembler)
-            # for polisher in polishing:
-            #     os.mkdir(path + '/polishing' + '/' + bacteria + '_' + preprocesser + '_' + assembler + '_' + polisher)
+    for bacteria in strains:
+        for assembler in assembly:
+            os.mkdir(path + '/assembly' + '/' + bacteria + '_' + preprocesser + '_' + assembler)
 for check in quality:
     os.mkdir(path + '/quality' + '/' + check)
     for bacteria in strains:
         os.mkdir(path + '/quality' + '/' + check + '/' + bacteria)
+# os.mkdir(path + '/raw_data')

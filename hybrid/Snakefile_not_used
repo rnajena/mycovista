@@ -1,25 +1,48 @@
+# hybrid assembly pipeline
+
+# files and directories
+configfile: "config_myco_doubice.yaml"
+
+PU = '1P 1U 2P 2U'.split() # paired_unpaired
+END = '1 2'.split() # paired_end
+
+rule all:
+	input:
+		# SPAdes and Unicycler
+		expand("{path}/hybrid/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"], assembler = config["assembly"]),
+		# 
+		# QUAST
+		expand("{path}/hybrid/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"]),
+		expand("{path}/hybrid/quality/quast/report.html", path = config["path"])
+
+
+# create folders for the following steps
+rule create:
+	shell:
+		'python create.py'
+
 # SPAdes assembly
 rule spades_hybrid:
 	input:
-		forward = '{path}/Illumina/preprocessing/trimmomatic/{strain}_Illumina_1P.fastq.gz',
-		forwardUnpaired = '{path}/Illumina/preprocessing/trimmomatic/{strain}_Illumina_1U.fastq.gz',
-		reverse = '{path}/Illumina/preprocessing/trimmomatic/{strain}_Illumina_2P.fastq.gz',
-		reverseUnpaired = '{path}/Illumina/preprocessing/trimmomatic/{strain}_Illumina_2U.fastq.gz',
-		nanopore = '{path}/nanopore/demultiplexing/porechop/{strain}_porechop.fastq'
+		forward = '{path}/illumina/preprocessing/{strain}/{strain}_1P.fastq.gz',
+		forwardUnpaired = '{path}/illumina/preprocessing/{strain}/{strain}_1U.fastq.gz',
+		reverse = '{path}/illumina/preprocessing/{strain}/{strain}_2P.fastq.gz',
+		reverseUnpaired = '{path}/illumina/preprocessing/{strain}/{strain}_2U.fastq.gz',
+		nanopore = '{path}/nanopore/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
-		contigs = '{path}/hybrid/assembly/{strain}_spades/contigs.fasta'	#contains resulting contigs
+		contigs = '{path}/hybrid/assembly/{strain}_{demultiplex}_spades/contigs.fasta'	#contains resulting contigs
 		# 'hybrid/assembly/{strain}_spades/contigs.paths',					#contains paths in the assembly graph corresponding to contigs.fasta (see details below)
 		# 'hybrid/assembly/{strain}_spades/scaffolds.fasta',				#contains resulting scaffolds (recommended for use as resulting sequences)
 		# 'hybrid/assembly/{strain}_spades/scaffolds.paths',				#contains paths in the assembly graph corresponding to scaffolds.fasta
 		# 'hybrid/assembly/{strain}_spades/assembly_graph.gfa',				#contains SPAdes assembly graph and scaffolds paths in GFA 1.0 format
 		# 'hybrid/assembly/{strain}_spades/assembly_graph.fastg'			#contains SPAdes assembly graph in FASTG format
 	conda:
-		'hybrid.yml'
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
 	params:
-		outputdir = '{path}/hybrid/assembly/{strain}_spades/'
+		outputdir = '{path}/hybrid/assembly/{strain}_{demultiplex}_spades/'
 	threads: 24 #default: 16
 	shell:
-		'spades.py -t {threads} --only-assembler --careful -1 {input.forward} -2 {input.reverse} --pe1-s {input.forwardUnpaired} --pe1-s {input.reverseUnpaired} --nanopore {input.nanopore} -o {params.outputdir}'
+		'spades.py -t {threads} --careful -1 {input.forward} -2 {input.reverse} --pe1-s {input.forwardUnpaired} --pe1-s {input.reverseUnpaired} --nanopore {input.nanopore} -o {params.outputdir}'
  		# --only-assembler		runs only assembling (without read error correction)
  		# --careful				tries to reduce number of mismatches and short indels
  		# --pacbio <filename>   file with PacBio reads
@@ -33,22 +56,22 @@ rule rename_spades:
 	input:
 		contigs = rules.spades_hybrid.output.contigs
 	output:
-		spades = '{path}/hybrid/assembly/{strain}_spades/{strain}_spades.contigs.fasta'
+		spades = '{path}/hybrid/assembly/{strain}_{demultiplex}_spades/{strain}_{demultiplex}_spades.contigs.fasta'
 	shell:
 		'mv {input.contigs} {output.spades}'
 
 # Unicycler assembly
 rule unicycler:
 	input:
-		forward='{path}/Illumina/preprocessing/trimmomatic/{strain}_Illumina_1P.fastq.gz',
-		reverse='{path}/Illumina/preprocessing/trimmomatic/{strain}_Illumina_2P.fastq.gz',
-		nanopore = '{path}/nanopore/demultiplexing/porechop/{strain}_porechop.fastq'
+		forward = '{path}/Illumina/preprocessing/{strain}/{strain}_1P.fastq.gz',
+		reverse = '{path}/Illumina/preprocessing/{strain}/{strain}_2P.fastq.gz',
+		nanopore = '{path}/nanopore/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
-		contigs = '{path}/hybrid/assembly/{strain}_unicycler/assembly.fasta'
+		contigs = '{path}/hybrid/assembly/{strain}_{demultiplex}_unicycler/assembly.fasta'
 	conda:
-		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/hybrid/hybrid.yml'
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
 	params:
-		outputdir = '{path}/hybrid/assembly/{strain}_unicycler/'
+		outputdir = '{path}/hybrid/assembly/{strain}_{demultiplex}_unicycler/'
 	threads: 24
 	shell:
 		'unicycler -t {threads} -1 {input.forward} -2 {input.reverse} -l {input.nanopore} -o {params.outputdir}'
@@ -58,6 +81,50 @@ rule rename_unicycler:
 	input:
 		contigs = rules.unicycler.output.contigs
 	output:
-		unicycler = '{path}/hybrid/assembly/{strain}_unicycler/{strain}_unicycler.contigs.fasta'
+		unicycler = '{path}/hybrid/assembly/{strain}_{demultiplex}_unicycler/{strain}_{demultiplex}_unicycler.contigs.fasta'
 	shell:
 		'mv {input.contigs} {output.unicycler}'
+
+# quast
+rule quast_strain:
+	input:
+		in1 = '{path}/hybrid/assembly/{strain}_porechop_spades/{strain}_porechop_spades.contigs.fasta',
+		in2 = '{path}/hybrid/assembly/{strain}_porechop_unicycler/{strain}_porechop_unicycler.contigs.fasta',
+		in3 = '{path}/hybrid/assembly/{strain}_deepbinner_spades/{strain}_deepbinner_spades.contigs.fasta',
+		in4 = '{path}/hybrid/assembly/{strain}_deepbinner_unicycler/{strain}_deepbinner_unicycler.contigs.fasta'
+	output:
+		report = '{path}/hybrid/quality/quast/{strain}/report.html'
+		#...
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
+	params:
+		outputdir = '{path}/hybrid/quality/quast/{strain}/'
+	threads: 16
+	shell:
+		'quast {input.in1} {input.in2} {input.in3} {input.in4} -r /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/mycoplasma_bovis_referenceGenome.fasta -g /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
+
+# quality check with quast
+rule quast_all:
+	input:
+		in1 = '{path}/hybrid/assembly/15DD0163_porechop_spades/15DD0163_porechop_spades.contigs.fasta',
+		in2 = '{path}/hybrid/assembly/15DD0163_porechop_unicycler/15DD0163_porechop_unicycler.contigs.fasta',
+		in3 = '{path}/hybrid/assembly/15DD0163_deepbinner_spades/15DD0163_deepbinner_spades.contigs.fasta',
+		in4 = '{path}/hybrid/assembly/15DD0163_deepbinner_unicycler/15DD0163_deepbinner_unicycler.contigs.fasta',
+		in5 = '{path}/hybrid/assembly/17DD0007_porechop_spades/17DD0007_porechop_spades.contigs.fasta',
+		in6 = '{path}/hybrid/assembly/17DD0007_porechop_unicycler/17DD0007_porechop_unicycler.contigs.fasta',
+		in7 = '{path}/hybrid/assembly/17DD0007_deepbinner_spades/17DD0007_deepbinner_spades.contigs.fasta',
+		in8 = '{path}/hybrid/assembly/17DD0007_deepbinner_unicycler/17DD0007_deepbinner_unicycler.contigs.fasta',
+		in9 = '{path}/hybrid/assembly/17DD0020_porechop_spades/17DD0020_porechop_spades.contigs.fasta',
+		in10 = '{path}/hybrid/assembly/17DD0020_porechop_unicycler/17DD0020_porechop_unicycler.contigs.fasta',
+		in11 = '{path}/hybrid/assembly/17DD0020_deepbinner_spades/17DD0020_deepbinner_spades.contigs.fasta',
+		in12 = '{path}/hybrid/assembly/17DD0020_deepbinner_unicycler/17DD0020_deepbinner_unicycler.contigs.fasta'
+	output:
+		report = '{path}/hybrid/quality/quast/report.html'
+		#...
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
+	params:
+		outputdir = '{path}/hybrid/quality/quast/'
+	threads: 16
+	shell:
+		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10} {input.in11} {input.in12} -r /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/mycoplasma_bovis_referenceGenome.fasta -g /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
