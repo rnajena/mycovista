@@ -20,7 +20,7 @@ for i in range (len(liste)):
     #     os.mkdir(path + '/' + parameter)
     if parameter == 'strains':
         strains = details
-    if parameter == 'demultiplexing':
+    if parameter == 'preprocessing':
         demultiplexing = details
     if parameter == 'assembly':
         os.mkdir(path + '/' + parameter)
