@@ -1,7 +1,7 @@
 #create folders for the output files from the nanopore data pipeline
 import os
 
-configfile = open('config.yaml', 'r').read()
+configfile = open('config_myco_doubice.yaml', 'r').read()
 liste = configfile.split('\n')
 if liste[0][:5] == 'path:':
     path = liste[0][7:len(liste[0]) - 1] + '/hybrid'
