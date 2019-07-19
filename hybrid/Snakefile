@@ -12,7 +12,7 @@ rule all:
 		expand("{path}/hybrid_new/preprocessing/porechop/11DD0261_porechop.fastq", path = config["path"]),
 		# deepbinner
 		expand("{path}/hybrid_new/preprocessing/deepbinner/classifications", path = config["path"]),
-		expand("{path}/hybrid_new/preprocessing/deepbinner/barcode01.fastq.gz", path = config["path"]),
+		# expand("{path}/hybrid_new/preprocessing/deepbinner/barcode01.fastq.gz", path = config["path"]),
 		expand("{path}/hybrid_new/preprocessing/deepbinner/11DD0261_deepbinner_untrimmed.fastq.gz", path = config["path"]),
 		expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz", path = config["path"], strain = config["strains"]),
 		expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq", path = config["path"], strain = config["strains"]),
