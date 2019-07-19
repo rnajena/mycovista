@@ -186,7 +186,7 @@ rule minimap2_racon_short:
 		reads_path = str(params.path) + '/hybrid/preprocessing/'
 		only_reads = str(params.strain) + '_all_short_unique.fastq'
 		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/hybrid/'
-		assembly_path = str(params.path) + '/nanopore/postprocessing/medaka/' +  str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
+		assembly_path = str(params.path) + '/nanopore/postprocessing/' +  str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
 		paf_path = str(params.path) + '/hybrid/postprocessing/racon_short/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
 		assembly_file = 'consensus.fasta'
 		for i in range(4):
