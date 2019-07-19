@@ -13,7 +13,7 @@ rule all:
 		# 
 		# QUAST
 		expand("{path}/hybrid/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"]),
-		expand("{path}/hybrid/quality/quast/report.html", path = config["path"])
+		expand("{path}/hybrid/quality/quast/report.html", path = config["path"]),
 		# 
 		# 
 		# get unique read ID for the short reads
