@@ -15,11 +15,13 @@ rule all:
 		# expand("{path}/hybrid/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"]),
 		# expand("{path}/hybrid/quality/quast/report.html", path = config["path"])
 		# 
+		# 
 		# get unique read ID for the short reads
 		expand("{path}/hybrid/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
 		# 
-		# 
-
+		# 4x Racon with short reads
+		expand("{path}/hybrid/postprocessing/racon_short/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"], assembler = config["assembly2"])
+		
 
 # create folders for the following steps
 rule create:
