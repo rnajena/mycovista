@@ -221,12 +221,12 @@ rule move_racon_short:
 
 rule quast_strain:
 	input:
-		in1 = '{path}/hybrid/postprocessing/racon_short/{strain}_porechop_canu_short4.contigs.fasta',
-		in2 = '{path}/hybrid/postprocessing/racon_short/{strain}_deepbinner_canu_short4.contigs.fasta',
-		in3 = '{path}/hybrid/postprocessing/racon_short/{strain}_porechop_flye_short4.contigs.fasta',
-		in4 = '{path}/hybrid/postprocessing/racon_short/{strain}_deepbinner_flye_short4.contigs.fasta',
-		in5 = '{path}/hybrid/postprocessing/racon_short/{strain}_porechop_wtdbg2_short4.contigs.fasta',
-		in6 = '{path}/hybrid/postprocessing/racon_short/{strain}_deepbinner_wtdbg2_short4.contigs.fasta'
+		in1 = '{path}/hybrid/postprocessing/racon_short/{strain}_porechop_canu/{strain}_porechop_canu_short4.contigs.fasta',
+		in2 = '{path}/hybrid/postprocessing/racon_short/{strain}_deepbinner_canu/{strain}_deepbinner_canu_short4.contigs.fasta',
+		in3 = '{path}/hybrid/postprocessing/racon_short/{strain}_porechop_flye/{strain}_porechop_flye_short4.contigs.fasta',
+		in4 = '{path}/hybrid/postprocessing/racon_short/{strain}_deepbinner_flye/{strain}_deepbinner_flye_short4.contigs.fasta',
+		in5 = '{path}/hybrid/postprocessing/racon_short/{strain}_porechop_wtdbg2/{strain}_porechop_wtdbg2_short4.contigs.fasta',
+		in6 = '{path}/hybrid/postprocessing/racon_short/{strain}_deepbinner_wtdbg2/{strain}_deepbinner_wtdbg2_short4.contigs.fasta'
 	output:
 		report = '{path}/hybrid/quality/quast/{strain}/report.html'
 		#...
@@ -241,24 +241,24 @@ rule quast_strain:
 # quality check with quast
 rule quast_all:
 	input:
-		in1 = '{path}/hybrid/postprocessing/racon_short/15DD0163_porechop_canu/consensus.fasta',
-		in2 = '{path}/hybrid/postprocessing/racon_short/15DD0163_porechop_flye/consensus.fasta',
-		in3 = '{path}/hybrid/postprocessing/racon_short/15DD0163_porechop_wtdbg2/consensus.fasta',
-		in4 = '{path}/hybrid/postprocessing/racon_short/15DD0163_deepbinner_canu/consensus.fasta',
-		in5 = '{path}/hybrid/postprocessing/racon_short/15DD0163_deepbinner_flye/consensus.fasta',
-		in6 = '{path}/hybrid/postprocessing/racon_short/15DD0163_deepbinner_wtdbg2/consensus.fasta',
-		in7 = '{path}/hybrid/postprocessing/racon_short/17DD0007_porechop_canu/consensus.fasta',
-		in8 = '{path}/hybrid/postprocessing/racon_short/17DD0007_porechop_flye/consensus.fasta',
-		in9 = '{path}/hybrid/postprocessing/racon_short/17DD0007_porechop_wtdbg2/consensus.fasta',
-		in10 = '{path}/hybrid/postprocessing/racon_short/17DD0007_deepbinner_canu/consensus.fasta',
-		in11 = '{path}/hybrid/postprocessing/racon_short/17DD0007_deepbinner_flye/consensus.fasta',
-		in12 = '{path}/hybrid/postprocessing/racon_short/17DD0007_deepbinner_wtdbg2/consensus.fasta',
-		in13 = '{path}/hybrid/postprocessing/racon_short/17DD0020_porechop_canu/consensus.fasta',
-		in14 = '{path}/hybrid/postprocessing/racon_short/17DD0020_porechop_flye/consensus.fasta',
-		in15 = '{path}/hybrid/postprocessing/racon_short/17DD0020_porechop_wtdbg2/consensus.fasta',
-		in16 = '{path}/hybrid/postprocessing/racon_short/17DD0020_deepbinner_canu/consensus.fasta',
-		in17 = '{path}/hybrid/postprocessing/racon_short/17DD0020_deepbinner_flye/consensus.fasta',
-		in18 = '{path}/hybrid/postprocessing/racon_short/17DD0020_deepbinner_wtdbg2/consensus.fasta'
+		in1 = '{path}/hybrid/postprocessing/racon_short/15DD0163_porechop_canu/15DD0163_porechop_canu_short4.contigs.fasta',
+		in2 = '{path}/hybrid/postprocessing/racon_short/15DD0163_porechop_flye/15DD0163_porechop_flye_short4.contigs.fasta',
+		in3 = '{path}/hybrid/postprocessing/racon_short/15DD0163_porechop_wtdbg2/15DD0163_porechop_wtdbg2_short4.contigs.fasta',
+		in4 = '{path}/hybrid/postprocessing/racon_short/15DD0163_deepbinner_canu/15DD0163_deepbinner_canu_short4.contigs.fasta',
+		in5 = '{path}/hybrid/postprocessing/racon_short/15DD0163_deepbinner_flye/15DD0163_deepbinner_flye_short4.contigs.fasta',
+		in6 = '{path}/hybrid/postprocessing/racon_short/15DD0163_deepbinner_wtdbg2//15DD0163_deepbinner_wtdbg2_short4.contigs.fasta',
+		in7 = '{path}/hybrid/postprocessing/racon_short/17DD0007_porechop_canu/17DD0007_porechop_canu_short4.contigs.fasta',
+		in8 = '{path}/hybrid/postprocessing/racon_short/17DD0007_porechop_flye/17DD0007_porechop_flye_short4.contigs.fasta',
+		in9 = '{path}/hybrid/postprocessing/racon_short/17DD0007_porechop_wtdbg2/17DD0007_porechop_wtdbg2_short4.contigs.fasta',
+		in10 = '{path}/hybrid/postprocessing/racon_short/17DD0007_deepbinner_canu/17DD0007_deepbinner_canu_short4.contigs.fasta',
+		in11 = '{path}/hybrid/postprocessing/racon_short/17DD0007_deepbinner_flye/17DD0007_deepbinner_flye_short4.contigs.fasta',
+		in12 = '{path}/hybrid/postprocessing/racon_short/17DD0007_deepbinner_wtdbg2/17DD0007_deepbinner_wtdbg2_short4.contigs.fasta',
+		in13 = '{path}/hybrid/postprocessing/racon_short/17DD0020_porechop_canu/17DD0020_porechop_canu_short4.contigs.fasta',
+		in14 = '{path}/hybrid/postprocessing/racon_short/17DD0020_porechop_flye/17DD0020_porechop_flye_short4.contigs.fasta',
+		in15 = '{path}/hybrid/postprocessing/racon_short/17DD0020_porechop_wtdbg2/17DD0020_porechop_wtdbg2_short4.contigs.fasta',
+		in16 = '{path}/hybrid/postprocessing/racon_short/17DD0020_deepbinner_canu/17DD0020_deepbinner_canu_short4.contigs.fasta',
+		in17 = '{path}/hybrid/postprocessing/racon_short/17DD0020_deepbinner_flye/17DD0020_deepbinner_flye_short4.contigs.fasta',
+		in18 = '{path}/hybrid/postprocessing/racon_short/17DD0020_deepbinner_wtdbg2/17DD0020_deepbinner_wtdbg2_short4.contigs.fasta'
 	output:
 		report = '{path}/hybrid/quality/quast/report.html'
 		#...
