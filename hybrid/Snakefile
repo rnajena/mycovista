@@ -438,8 +438,8 @@ rule minimap2_racon_short:
 			else:
 				minimap2_input_assembly = racon_path + out_assembly
 				racon_in_assembly = out_assembly
-			out_assembly = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '_long' + str(i + 1) + '.contigs.fasta'
-			paf = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '_long' + str(i + 1) + '.paf'
+			out_assembly = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '_short' + str(i + 1) + '.contigs.fasta'
+			paf = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '_short' + str(i + 1) + '.paf'
 			minimap2 = 'minimap2 -x sr -t 16 ' + minimap2_input_assembly + ' ' + reads_path + only_reads + ' > ' + paf_path + paf
 			print(minimap2 + '\n')
 			os.system(minimap2)

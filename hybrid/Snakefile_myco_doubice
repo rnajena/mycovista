@@ -9,15 +9,17 @@ END = '1 2'.split() # paired_end
 rule all:
 	input:
 		# SPAdes and Unicycler
-		# expand("{path}/hybrid/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"], assembler = config["assembly"]),
+		expand("{path}/hybrid/spades_and_unicycler/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"], assembler = config["assembly"]),
 		# 
-		# 
+		# QUAST
+		expand("{path}/hybrid/spades_and_unicycler/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"]),
+		expand("{path}/hybrid/spades_and_unicycler/quality/quast/report.html", path = config["path"])
 		# 
 		# get unique read ID for the short reads
-		# expand("{path}/hybrid/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
+		expand("{path}/hybrid/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
 		# 
 		# 4x Racon with short reads
-		# expand("{path}/hybrid/postprocessing/racon_short/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"], assembler = config["assembly2"]),
+		expand("{path}/hybrid/postprocessing/racon_short/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"], assembler = config["assembly2"]),
 		# 
 		# QUAST
 		expand("{path}/hybrid/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"]),
@@ -78,7 +80,7 @@ rule unicycler:
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
 	params:
-		outputdir = '{path}/hybrid/assembly/{strain}_{demultiplex}_unicycler/'
+		outputdir = '{path}/hybrid/spades_and_unicycler/assembly/{strain}_{demultiplex}_unicycler/'
 	threads: 24
 	shell:
 		'unicycler -t {threads} -1 {input.forward} -2 {input.reverse} -l {input.nanopore} -o {params.outputdir}'
@@ -105,7 +107,7 @@ rule quast_strain_spades_and_unicycler:
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
 	params:
-		outputdir = '{path}/hybrid/quality/quast/{strain}/'
+		outputdir = '{path}/hybrid/spades_and_unicycler/quality/quast/{strain}/'
 	threads: 16
 	shell:
 		'quast {input.in1} {input.in2} {input.in3} {input.in4} -r /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/mycoplasma_bovis_referenceGenome.fasta -g /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
@@ -138,6 +140,7 @@ rule quast_all_spades_and_unicycler:
 
 
 
+# second hybrid approach
 # concatenate all short reads separated by strain for postprocessing of the long reads assemblies later
 rule concat_short:
 	input:
