@@ -13,7 +13,7 @@ rule all:
 		# 
 		# QUAST
 		expand("{path}/hybrid/spades_and_unicycler/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"]),
-		expand("{path}/hybrid/spades_and_unicycler/quality/quast/report.html", path = config["path"])
+		expand("{path}/hybrid/spades_and_unicycler/quality/quast/report.html", path = config["path"]),
 		# 
 		# get unique read ID for the short reads
 		expand("{path}/hybrid/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
