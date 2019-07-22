@@ -1,0 +1,86 @@
+{
+  "build": "py_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/bioconda/noarch",
+  "constrains": [],
+  "depends": [
+    "python"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/screamingbackpack-0.2.333-py_1",
+  "features": "",
+  "files": [
+    "bin/screamingBackpack",
+    "lib/python3.6/site-packages/screamingbackpack/__init__.py",
+    "lib/python3.6/site-packages/screamingbackpack/fileEntity.py",
+    "lib/python3.6/site-packages/screamingbackpack/manifestManager.py",
+    "lib/python3.6/site-packages/screamingbackpack/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/screamingbackpack/__pycache__/fileEntity.cpython-36.pyc",
+    "lib/python3.6/site-packages/screamingbackpack/__pycache__/manifestManager.cpython-36.pyc"
+  ],
+  "fn": "screamingbackpack-0.2.333-py_1.tar.bz2",
+  "license": "GPLv3",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/screamingbackpack-0.2.333-py_1",
+    "type": 1
+  },
+  "md5": "1f7a554f302c3caf29326171ec24d17e",
+  "name": "screamingbackpack",
+  "noarch": "python",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/screamingbackpack-0.2.333-py_1.tar.bz2",
+  "package_type": "noarch_python",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "python-scripts/screamingBackpack",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "08211d9587d9529bbe8b418c8bafa40abca62157a4733e424ec1904fb0d3b338",
+        "sha256_in_prefix": "055c0f65db66c5dda5a578f91084b3c503d115b9abdce2ce08f258a4597dc867",
+        "size_in_bytes": 7473
+      },
+      {
+        "_path": "site-packages/screamingbackpack/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "site-packages/screamingbackpack/fileEntity.py",
+        "path_type": "hardlink",
+        "sha256": "3e845c8fb8606fbc8af615cd176dfeedbcaee92b738547e99bc7784727020b10",
+        "sha256_in_prefix": "3e845c8fb8606fbc8af615cd176dfeedbcaee92b738547e99bc7784727020b10",
+        "size_in_bytes": 4536
+      },
+      {
+        "_path": "site-packages/screamingbackpack/manifestManager.py",
+        "path_type": "hardlink",
+        "sha256": "a7c314040207e4e31c37132fb8931cbe709b53551b5e93256d923cf0daa50b66",
+        "sha256_in_prefix": "a7c314040207e4e31c37132fb8931cbe709b53551b5e93256d923cf0daa50b66",
+        "size_in_bytes": 18443
+      },
+      {
+        "_path": "lib/python3.6/site-packages/screamingbackpack/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/screamingbackpack/__pycache__/fileEntity.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/screamingbackpack/__pycache__/manifestManager.cpython-36.pyc",
+        "path_type": "pyc_file"
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "screamingbackpack==0.2.333=py_1",
+  "sha256": "1ba5fcfc21b3670565f1a6fbbfd26be5f44a5bcf5eeb1ad265778429f44cb3c7",
+  "size": 9432,
+  "subdir": "noarch",
+  "timestamp": 1529632129689,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/noarch/screamingbackpack-0.2.333-py_1.tar.bz2",
+  "version": "0.2.333"
+}

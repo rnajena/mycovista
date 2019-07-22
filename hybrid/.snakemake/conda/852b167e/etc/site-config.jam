@@ -1,0 +1,4 @@
+import os ;
+local CXXFLAGS = [ os.environ CXXFLAGS ] ;
+local LDFLAGS = [ os.environ LDFLAGS ] ;
+using gcc : custom : x86_64-conda_cos6-linux-gnu-c++ : <compileflags>-I/data/prostlocal2/projects/st_mycoplasma_assembly/git/hybrid/.snakemake/conda/852b167e/include $(CXXFLAGS) -Wno-deprecated-declarations <linkflags>-L/data/prostlocal2/projects/st_mycoplasma_assembly/git/hybrid/.snakemake/conda/852b167e/lib $(LDFLAGS) ;

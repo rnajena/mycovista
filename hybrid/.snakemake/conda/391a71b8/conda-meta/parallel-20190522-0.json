@@ -1,0 +1,539 @@
+{
+  "build": "0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "constrains": [],
+  "depends": [
+    "perl"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/parallel-20190522-0",
+  "features": "",
+  "files": [
+    "bin/env_parallel",
+    "bin/env_parallel.ash",
+    "bin/env_parallel.bash",
+    "bin/env_parallel.csh",
+    "bin/env_parallel.dash",
+    "bin/env_parallel.fish",
+    "bin/env_parallel.ksh",
+    "bin/env_parallel.mksh",
+    "bin/env_parallel.pdksh",
+    "bin/env_parallel.sh",
+    "bin/env_parallel.tcsh",
+    "bin/env_parallel.zsh",
+    "bin/niceload",
+    "bin/parallel",
+    "bin/parcat",
+    "bin/parset",
+    "bin/sem",
+    "bin/sql",
+    "share/doc/parallel/env_parallel.html",
+    "share/doc/parallel/env_parallel.pdf",
+    "share/doc/parallel/env_parallel.texi",
+    "share/doc/parallel/niceload.html",
+    "share/doc/parallel/niceload.pdf",
+    "share/doc/parallel/niceload.texi",
+    "share/doc/parallel/parallel.html",
+    "share/doc/parallel/parallel.pdf",
+    "share/doc/parallel/parallel.texi",
+    "share/doc/parallel/parallel_alternatives.html",
+    "share/doc/parallel/parallel_alternatives.pdf",
+    "share/doc/parallel/parallel_alternatives.texi",
+    "share/doc/parallel/parallel_book.html",
+    "share/doc/parallel/parallel_book.pdf",
+    "share/doc/parallel/parallel_book.texi",
+    "share/doc/parallel/parallel_cheat.pdf",
+    "share/doc/parallel/parallel_design.html",
+    "share/doc/parallel/parallel_design.pdf",
+    "share/doc/parallel/parallel_design.texi",
+    "share/doc/parallel/parallel_tutorial.html",
+    "share/doc/parallel/parallel_tutorial.pdf",
+    "share/doc/parallel/parallel_tutorial.texi",
+    "share/doc/parallel/parcat.html",
+    "share/doc/parallel/parcat.pdf",
+    "share/doc/parallel/parcat.texi",
+    "share/doc/parallel/parset.html",
+    "share/doc/parallel/parset.pdf",
+    "share/doc/parallel/parset.texi",
+    "share/doc/parallel/sem.html",
+    "share/doc/parallel/sem.pdf",
+    "share/doc/parallel/sem.texi",
+    "share/doc/parallel/sql.html",
+    "share/doc/parallel/sql.pdf",
+    "share/doc/parallel/sql.texi",
+    "share/man/man1/env_parallel.1",
+    "share/man/man1/niceload.1",
+    "share/man/man1/parallel.1",
+    "share/man/man1/parcat.1",
+    "share/man/man1/parset.1",
+    "share/man/man1/sem.1",
+    "share/man/man1/sql.1",
+    "share/man/man7/parallel_alternatives.7",
+    "share/man/man7/parallel_book.7",
+    "share/man/man7/parallel_design.7",
+    "share/man/man7/parallel_tutorial.7"
+  ],
+  "fn": "parallel-20190522-0.tar.bz2",
+  "license": "GPL-3",
+  "license_family": "GPL",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/parallel-20190522-0",
+    "type": 1
+  },
+  "md5": "11aaf478238bcdbccb813de3929597c9",
+  "name": "parallel",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/parallel-20190522-0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/env_parallel",
+        "path_type": "hardlink",
+        "sha256": "8b28e58b2241a4dc044285afc7626321cd1aefa9ceab929fd5a4803b9c7c8c80",
+        "sha256_in_prefix": "8b28e58b2241a4dc044285afc7626321cd1aefa9ceab929fd5a4803b9c7c8c80",
+        "size_in_bytes": 4586
+      },
+      {
+        "_path": "bin/env_parallel.ash",
+        "path_type": "hardlink",
+        "sha256": "33279096b725acf93090936a6daf9b97f7e635c876671d31d4a6e5d40242df29",
+        "sha256_in_prefix": "33279096b725acf93090936a6daf9b97f7e635c876671d31d4a6e5d40242df29",
+        "size_in_bytes": 12859
+      },
+      {
+        "_path": "bin/env_parallel.bash",
+        "path_type": "hardlink",
+        "sha256": "559b6de637e03c741c404d5fc4b1696c1a3110d5d63f95932b9c7fe18ced287d",
+        "sha256_in_prefix": "559b6de637e03c741c404d5fc4b1696c1a3110d5d63f95932b9c7fe18ced287d",
+        "size_in_bytes": 12911
+      },
+      {
+        "_path": "bin/env_parallel.csh",
+        "path_type": "hardlink",
+        "sha256": "3f987215a0d6ec0ce283acc1436a717339b269dce411e31d184b5cb7d45ee62d",
+        "sha256_in_prefix": "3f987215a0d6ec0ce283acc1436a717339b269dce411e31d184b5cb7d45ee62d",
+        "size_in_bytes": 5212
+      },
+      {
+        "_path": "bin/env_parallel.dash",
+        "path_type": "hardlink",
+        "sha256": "7546814053115efd8342eb94c97a307c6dc02fe1180b3dbe400246d96b8e45e1",
+        "sha256_in_prefix": "7546814053115efd8342eb94c97a307c6dc02fe1180b3dbe400246d96b8e45e1",
+        "size_in_bytes": 12862
+      },
+      {
+        "_path": "bin/env_parallel.fish",
+        "path_type": "hardlink",
+        "sha256": "cd9343145dc855d291ed46aa558939dcb861f4e901270078454889aa430e37df",
+        "sha256_in_prefix": "cd9343145dc855d291ed46aa558939dcb861f4e901270078454889aa430e37df",
+        "size_in_bytes": 6457
+      },
+      {
+        "_path": "bin/env_parallel.ksh",
+        "path_type": "hardlink",
+        "sha256": "7a2e35fb589514191471ff5927cd6c72b54d4a5670ed15740d160c12019c1102",
+        "sha256_in_prefix": "7a2e35fb589514191471ff5927cd6c72b54d4a5670ed15740d160c12019c1102",
+        "size_in_bytes": 12171
+      },
+      {
+        "_path": "bin/env_parallel.mksh",
+        "path_type": "hardlink",
+        "sha256": "721880902833e80e01b5b357ce219bb02841700a14d0d8c960fdfd500bb4a848",
+        "sha256_in_prefix": "721880902833e80e01b5b357ce219bb02841700a14d0d8c960fdfd500bb4a848",
+        "size_in_bytes": 12229
+      },
+      {
+        "_path": "bin/env_parallel.pdksh",
+        "path_type": "hardlink",
+        "sha256": "6a3d8d7f51e7d651cadfa8293648973297d5baa3a2d74d7defd032f2fb12386c",
+        "sha256_in_prefix": "6a3d8d7f51e7d651cadfa8293648973297d5baa3a2d74d7defd032f2fb12386c",
+        "size_in_bytes": 6711
+      },
+      {
+        "_path": "bin/env_parallel.sh",
+        "path_type": "hardlink",
+        "sha256": "17efff670ec6f3393a54340196e591d39036baa0f9117c53646e01aef611f083",
+        "sha256_in_prefix": "17efff670ec6f3393a54340196e591d39036baa0f9117c53646e01aef611f083",
+        "size_in_bytes": 12847
+      },
+      {
+        "_path": "bin/env_parallel.tcsh",
+        "path_type": "hardlink",
+        "sha256": "689b2b91b3f09b867f51e27162deb87a784ae9faf3ce4d9df1f687e81d272e24",
+        "sha256_in_prefix": "689b2b91b3f09b867f51e27162deb87a784ae9faf3ce4d9df1f687e81d272e24",
+        "size_in_bytes": 5215
+      },
+      {
+        "_path": "bin/env_parallel.zsh",
+        "path_type": "hardlink",
+        "sha256": "f1f586ee6bd3e26e897d0363d211e661656f87fe3f5f571626f9bd47a9e12b41",
+        "sha256_in_prefix": "f1f586ee6bd3e26e897d0363d211e661656f87fe3f5f571626f9bd47a9e12b41",
+        "size_in_bytes": 12254
+      },
+      {
+        "_path": "bin/niceload",
+        "path_type": "hardlink",
+        "sha256": "47660774688e17f5f7b1c840493e51bf9c363b1ce2fc7b76671679fcd0162557",
+        "sha256_in_prefix": "47660774688e17f5f7b1c840493e51bf9c363b1ce2fc7b76671679fcd0162557",
+        "size_in_bytes": 33098
+      },
+      {
+        "_path": "bin/parallel",
+        "path_type": "hardlink",
+        "sha256": "5eb1793131fa31b8dfb365f0487d2f7da9aea79f5716e663b4216c1f5fdba914",
+        "sha256_in_prefix": "5eb1793131fa31b8dfb365f0487d2f7da9aea79f5716e663b4216c1f5fdba914",
+        "size_in_bytes": 378762
+      },
+      {
+        "_path": "bin/parcat",
+        "path_type": "hardlink",
+        "sha256": "1a175f5cf24facc686e301d69791adce72d3aeea8935f4647e1556eacd502196",
+        "sha256_in_prefix": "1a175f5cf24facc686e301d69791adce72d3aeea8935f4647e1556eacd502196",
+        "size_in_bytes": 4028
+      },
+      {
+        "_path": "bin/parset",
+        "path_type": "hardlink",
+        "sha256": "1ed14a3840424a87c1202d11edfbd33463f91752a8996d0dea59818dd7c837a9",
+        "sha256_in_prefix": "1ed14a3840424a87c1202d11edfbd33463f91752a8996d0dea59818dd7c837a9",
+        "size_in_bytes": 4023
+      },
+      {
+        "_path": "bin/sem",
+        "path_type": "softlink",
+        "sha256": "5eb1793131fa31b8dfb365f0487d2f7da9aea79f5716e663b4216c1f5fdba914",
+        "size_in_bytes": 378762
+      },
+      {
+        "_path": "bin/sql",
+        "path_type": "hardlink",
+        "sha256": "5f6eaffca48489d971f08ae98e1d4b21739d2127e476dc1df8745e8f60bd5ab6",
+        "sha256_in_prefix": "5f6eaffca48489d971f08ae98e1d4b21739d2127e476dc1df8745e8f60bd5ab6",
+        "size_in_bytes": 31656
+      },
+      {
+        "_path": "share/doc/parallel/env_parallel.html",
+        "path_type": "hardlink",
+        "sha256": "eae9fbc55ac156baece087e1cc7a42c37d0eb377ae023fca12610a25ad977989",
+        "sha256_in_prefix": "eae9fbc55ac156baece087e1cc7a42c37d0eb377ae023fca12610a25ad977989",
+        "size_in_bytes": 31447
+      },
+      {
+        "_path": "share/doc/parallel/env_parallel.pdf",
+        "path_type": "hardlink",
+        "sha256": "5b40eb0ceb8fc43ed3cba53fe916cbb77839b0f46e04530dd3acfe6b308c9701",
+        "sha256_in_prefix": "5b40eb0ceb8fc43ed3cba53fe916cbb77839b0f46e04530dd3acfe6b308c9701",
+        "size_in_bytes": 64118
+      },
+      {
+        "_path": "share/doc/parallel/env_parallel.texi",
+        "path_type": "hardlink",
+        "sha256": "72d2f6fc2ff7416c58ffc8c21673e7e24d55647ae8f683de37730e0dbf67ae24",
+        "sha256_in_prefix": "72d2f6fc2ff7416c58ffc8c21673e7e24d55647ae8f683de37730e0dbf67ae24",
+        "size_in_bytes": 27629
+      },
+      {
+        "_path": "share/doc/parallel/niceload.html",
+        "path_type": "hardlink",
+        "sha256": "43d84efb90c519bf6ceb6d7e04b77d53959ea13f6391e990d175153e7fc294ab",
+        "sha256_in_prefix": "43d84efb90c519bf6ceb6d7e04b77d53959ea13f6391e990d175153e7fc294ab",
+        "size_in_bytes": 14656
+      },
+      {
+        "_path": "share/doc/parallel/niceload.pdf",
+        "path_type": "hardlink",
+        "sha256": "c645d0f3dc962052c7d8e1f7627bf2514e63484402aa516315bec96e969d63bb",
+        "sha256_in_prefix": "c645d0f3dc962052c7d8e1f7627bf2514e63484402aa516315bec96e969d63bb",
+        "size_in_bytes": 41913
+      },
+      {
+        "_path": "share/doc/parallel/niceload.texi",
+        "path_type": "hardlink",
+        "sha256": "4f3d50e84c11cda45213fb158c83891e5c6072e37ddbdff7d59496f653fa2678",
+        "sha256_in_prefix": "4f3d50e84c11cda45213fb158c83891e5c6072e37ddbdff7d59496f653fa2678",
+        "size_in_bytes": 13784
+      },
+      {
+        "_path": "share/doc/parallel/parallel.html",
+        "path_type": "hardlink",
+        "sha256": "c08941ff8e11e4bb166a7263d1d533f4497d4fa14588e62aab09e9caa0b325d5",
+        "sha256_in_prefix": "c08941ff8e11e4bb166a7263d1d533f4497d4fa14588e62aab09e9caa0b325d5",
+        "size_in_bytes": 200264
+      },
+      {
+        "_path": "share/doc/parallel/parallel.pdf",
+        "path_type": "hardlink",
+        "sha256": "3dedc66ec2937374f5ebe7cd7f12fc71d690a6d16d8f9f3548da7dc0853bfd35",
+        "sha256_in_prefix": "3dedc66ec2937374f5ebe7cd7f12fc71d690a6d16d8f9f3548da7dc0853bfd35",
+        "size_in_bytes": 432603
+      },
+      {
+        "_path": "share/doc/parallel/parallel.texi",
+        "path_type": "hardlink",
+        "sha256": "9f960d91bee48b99ae002ff9b089e4c9ded9becf769c5517a3de0a0655c6a036",
+        "sha256_in_prefix": "9f960d91bee48b99ae002ff9b089e4c9ded9becf769c5517a3de0a0655c6a036",
+        "size_in_bytes": 188711
+      },
+      {
+        "_path": "share/doc/parallel/parallel_alternatives.html",
+        "path_type": "hardlink",
+        "sha256": "52b7bb4f8d76dbf27fb40a1c39dae38c43c2a0b203d09c089e65f765a64d98a6",
+        "sha256_in_prefix": "52b7bb4f8d76dbf27fb40a1c39dae38c43c2a0b203d09c089e65f765a64d98a6",
+        "size_in_bytes": 102030
+      },
+      {
+        "_path": "share/doc/parallel/parallel_alternatives.pdf",
+        "path_type": "hardlink",
+        "sha256": "8f908c50593baa4f8296e3c7d06a31bf1691beaa1f4946937e1278ffad7c74ce",
+        "sha256_in_prefix": "8f908c50593baa4f8296e3c7d06a31bf1691beaa1f4946937e1278ffad7c74ce",
+        "size_in_bytes": 217146
+      },
+      {
+        "_path": "share/doc/parallel/parallel_alternatives.texi",
+        "path_type": "hardlink",
+        "sha256": "c8c9344320f2b7daf34a8d27d62219d3d2e95738eedae9fa4e1a32e66b7150ed",
+        "sha256_in_prefix": "c8c9344320f2b7daf34a8d27d62219d3d2e95738eedae9fa4e1a32e66b7150ed",
+        "size_in_bytes": 89270
+      },
+      {
+        "_path": "share/doc/parallel/parallel_book.html",
+        "path_type": "hardlink",
+        "sha256": "af87eee4f1d03878ba18745e7eb87e6e744e4c48f89ec65ae99cf9e94eafc543",
+        "sha256_in_prefix": "af87eee4f1d03878ba18745e7eb87e6e744e4c48f89ec65ae99cf9e94eafc543",
+        "size_in_bytes": 15631
+      },
+      {
+        "_path": "share/doc/parallel/parallel_book.pdf",
+        "path_type": "hardlink",
+        "sha256": "9958f14cf026cb0d797da6ba68c0103bc97866177ffb8acf937917abcbcd6d62",
+        "sha256_in_prefix": "9958f14cf026cb0d797da6ba68c0103bc97866177ffb8acf937917abcbcd6d62",
+        "size_in_bytes": 42307
+      },
+      {
+        "_path": "share/doc/parallel/parallel_book.texi",
+        "path_type": "hardlink",
+        "sha256": "ac3228b8badd8bdf3808172ebc222f2955b868cceeb69a20c4b204ecdbe5bb73",
+        "sha256_in_prefix": "ac3228b8badd8bdf3808172ebc222f2955b868cceeb69a20c4b204ecdbe5bb73",
+        "size_in_bytes": 13259
+      },
+      {
+        "_path": "share/doc/parallel/parallel_cheat.pdf",
+        "path_type": "hardlink",
+        "sha256": "0e93cae8a2a4221d3d239122ae6a15340fda9dad306c5129ead7a66dbdcc6597",
+        "sha256_in_prefix": "0e93cae8a2a4221d3d239122ae6a15340fda9dad306c5129ead7a66dbdcc6597",
+        "size_in_bytes": 150553
+      },
+      {
+        "_path": "share/doc/parallel/parallel_design.html",
+        "path_type": "hardlink",
+        "sha256": "962cafd53c5174eff6bc4a18a75894e38f372eb4107481c810b1ca643bdf0971",
+        "sha256_in_prefix": "962cafd53c5174eff6bc4a18a75894e38f372eb4107481c810b1ca643bdf0971",
+        "size_in_bytes": 58536
+      },
+      {
+        "_path": "share/doc/parallel/parallel_design.pdf",
+        "path_type": "hardlink",
+        "sha256": "14726cb20e064a3d7ae51886ef1b182555466e0d4ade588a4e88f02b4be8a2d2",
+        "sha256_in_prefix": "14726cb20e064a3d7ae51886ef1b182555466e0d4ade588a4e88f02b4be8a2d2",
+        "size_in_bytes": 151299
+      },
+      {
+        "_path": "share/doc/parallel/parallel_design.texi",
+        "path_type": "hardlink",
+        "sha256": "5a5e15eab7680b1f2448fb58d804c1d094b28392a64b4bde4f2d1f4236c1c501",
+        "sha256_in_prefix": "5a5e15eab7680b1f2448fb58d804c1d094b28392a64b4bde4f2d1f4236c1c501",
+        "size_in_bytes": 53153
+      },
+      {
+        "_path": "share/doc/parallel/parallel_tutorial.html",
+        "path_type": "hardlink",
+        "sha256": "67cb10a33c911026e60070e58583d5e04496426750806138a6e105f76b0f5ad9",
+        "sha256_in_prefix": "67cb10a33c911026e60070e58583d5e04496426750806138a6e105f76b0f5ad9",
+        "size_in_bytes": 101183
+      },
+      {
+        "_path": "share/doc/parallel/parallel_tutorial.pdf",
+        "path_type": "hardlink",
+        "sha256": "dbd37387c5ee36cfe81b44e08fdbdf4ca80350e0daad42eba2e64a3992a1bad6",
+        "sha256_in_prefix": "dbd37387c5ee36cfe81b44e08fdbdf4ca80350e0daad42eba2e64a3992a1bad6",
+        "size_in_bytes": 214451
+      },
+      {
+        "_path": "share/doc/parallel/parallel_tutorial.texi",
+        "path_type": "hardlink",
+        "sha256": "e06beda689290a38567069b290ffbde3b9d48eba471f3263242d256ab146d290",
+        "sha256_in_prefix": "e06beda689290a38567069b290ffbde3b9d48eba471f3263242d256ab146d290",
+        "size_in_bytes": 92638
+      },
+      {
+        "_path": "share/doc/parallel/parcat.html",
+        "path_type": "hardlink",
+        "sha256": "3e54c4a4c5e37821760992b12473a8c41ca45023a67ebc1f36b169ce59b5700b",
+        "sha256_in_prefix": "3e54c4a4c5e37821760992b12473a8c41ca45023a67ebc1f36b169ce59b5700b",
+        "size_in_bytes": 5991
+      },
+      {
+        "_path": "share/doc/parallel/parcat.pdf",
+        "path_type": "hardlink",
+        "sha256": "9b4cabf234d8e126cd9712639add090fc7741e6bd44aed22119761130229e349",
+        "sha256_in_prefix": "9b4cabf234d8e126cd9712639add090fc7741e6bd44aed22119761130229e349",
+        "size_in_bytes": 25357
+      },
+      {
+        "_path": "share/doc/parallel/parcat.texi",
+        "path_type": "hardlink",
+        "sha256": "8bd744fcbd54c31d4c1ea8b76a56d7613ad9a7ecf3def4ab03bdc767462fb3a0",
+        "sha256_in_prefix": "8bd744fcbd54c31d4c1ea8b76a56d7613ad9a7ecf3def4ab03bdc767462fb3a0",
+        "size_in_bytes": 5107
+      },
+      {
+        "_path": "share/doc/parallel/parset.html",
+        "path_type": "hardlink",
+        "sha256": "d618b4398136272139709a31685736e06b040dbf30c5979f50937aa7df01c5cf",
+        "sha256_in_prefix": "d618b4398136272139709a31685736e06b040dbf30c5979f50937aa7df01c5cf",
+        "size_in_bytes": 10047
+      },
+      {
+        "_path": "share/doc/parallel/parset.pdf",
+        "path_type": "hardlink",
+        "sha256": "5b33203f125fd164d4a54064e3030854e7ce015a4a0e04206a11027495ce98a9",
+        "sha256_in_prefix": "5b33203f125fd164d4a54064e3030854e7ce015a4a0e04206a11027495ce98a9",
+        "size_in_bytes": 31786
+      },
+      {
+        "_path": "share/doc/parallel/parset.texi",
+        "path_type": "hardlink",
+        "sha256": "bb0cba72b8c8bc0c0e9eed8efb11a5d35dd97e8fdde10b51aa194cc92acdfd7f",
+        "sha256_in_prefix": "bb0cba72b8c8bc0c0e9eed8efb11a5d35dd97e8fdde10b51aa194cc92acdfd7f",
+        "size_in_bytes": 8433
+      },
+      {
+        "_path": "share/doc/parallel/sem.html",
+        "path_type": "hardlink",
+        "sha256": "9d08b206d3b3abae07ff7c8d80411251920e7fef680a400e8119b011cb2c42cc",
+        "sha256_in_prefix": "9d08b206d3b3abae07ff7c8d80411251920e7fef680a400e8119b011cb2c42cc",
+        "size_in_bytes": 12440
+      },
+      {
+        "_path": "share/doc/parallel/sem.pdf",
+        "path_type": "hardlink",
+        "sha256": "65fc19bc936c9c05909456e45629ff74f6be5025721d2abe0039b2e9f5ddeecb",
+        "sha256_in_prefix": "65fc19bc936c9c05909456e45629ff74f6be5025721d2abe0039b2e9f5ddeecb",
+        "size_in_bytes": 38320
+      },
+      {
+        "_path": "share/doc/parallel/sem.texi",
+        "path_type": "hardlink",
+        "sha256": "6f90c24e65238fbbb8da5fb1f5152323faebb2441dfe007c1864d2af7e1e9554",
+        "sha256_in_prefix": "6f90c24e65238fbbb8da5fb1f5152323faebb2441dfe007c1864d2af7e1e9554",
+        "size_in_bytes": 11457
+      },
+      {
+        "_path": "share/doc/parallel/sql.html",
+        "path_type": "hardlink",
+        "sha256": "35bb9bc25e1a8473582cb7f14b65c76f7c4ca403c7788bb0b605cc4668b3d6d6",
+        "sha256_in_prefix": "35bb9bc25e1a8473582cb7f14b65c76f7c4ca403c7788bb0b605cc4668b3d6d6",
+        "size_in_bytes": 15520
+      },
+      {
+        "_path": "share/doc/parallel/sql.pdf",
+        "path_type": "hardlink",
+        "sha256": "24c1d2c5200ee3dc321d6512f08facba8f588b2c305320cd9e208e938e907594",
+        "sha256_in_prefix": "24c1d2c5200ee3dc321d6512f08facba8f588b2c305320cd9e208e938e907594",
+        "size_in_bytes": 41633
+      },
+      {
+        "_path": "share/doc/parallel/sql.texi",
+        "path_type": "hardlink",
+        "sha256": "963e71c31dc3bffc587a95cbc028806e2bd13dd52e73096265c47d10dad92871",
+        "sha256_in_prefix": "963e71c31dc3bffc587a95cbc028806e2bd13dd52e73096265c47d10dad92871",
+        "size_in_bytes": 13722
+      },
+      {
+        "_path": "share/man/man1/env_parallel.1",
+        "path_type": "hardlink",
+        "sha256": "e03ecf1a2e9b64eec84c86695c46dfc0e4bd00db46d7385536e03108f4b2576a",
+        "sha256_in_prefix": "e03ecf1a2e9b64eec84c86695c46dfc0e4bd00db46d7385536e03108f4b2576a",
+        "size_in_bytes": 31468
+      },
+      {
+        "_path": "share/man/man1/niceload.1",
+        "path_type": "hardlink",
+        "sha256": "592b781fb6177840fc032e1f981f817e64f5de94dd3e06b39019604c7cb2dc57",
+        "sha256_in_prefix": "592b781fb6177840fc032e1f981f817e64f5de94dd3e06b39019604c7cb2dc57",
+        "size_in_bytes": 16760
+      },
+      {
+        "_path": "share/man/man1/parallel.1",
+        "path_type": "hardlink",
+        "sha256": "ce1407ae0a0883c57e783c86facefd9810f7f1bb2852eafcce5ee04ed37b24fd",
+        "sha256_in_prefix": "ce1407ae0a0883c57e783c86facefd9810f7f1bb2852eafcce5ee04ed37b24fd",
+        "size_in_bytes": 189999
+      },
+      {
+        "_path": "share/man/man1/parcat.1",
+        "path_type": "hardlink",
+        "sha256": "3c4cde7e906294b30f3080ea5d65d27dee8c6181ebd59b61086681ca66638921",
+        "sha256_in_prefix": "3c4cde7e906294b30f3080ea5d65d27dee8c6181ebd59b61086681ca66638921",
+        "size_in_bytes": 8517
+      },
+      {
+        "_path": "share/man/man1/parset.1",
+        "path_type": "hardlink",
+        "sha256": "2a4a562fa992a7d3ccfb0196d440aa2f9c65f88cc623d76fca0ed76ec57aa43a",
+        "sha256_in_prefix": "2a4a562fa992a7d3ccfb0196d440aa2f9c65f88cc623d76fca0ed76ec57aa43a",
+        "size_in_bytes": 11918
+      },
+      {
+        "_path": "share/man/man1/sem.1",
+        "path_type": "hardlink",
+        "sha256": "9e78ffa794aa6e38f56599ebabb30bb2943ba41b693797a0304c3a44649e9739",
+        "sha256_in_prefix": "9e78ffa794aa6e38f56599ebabb30bb2943ba41b693797a0304c3a44649e9739",
+        "size_in_bytes": 14657
+      },
+      {
+        "_path": "share/man/man1/sql.1",
+        "path_type": "hardlink",
+        "sha256": "f668d6b06a7e6739e46b58c652d32abf49963d8912ed0e3bd59d43de21a8757d",
+        "sha256_in_prefix": "f668d6b06a7e6739e46b58c652d32abf49963d8912ed0e3bd59d43de21a8757d",
+        "size_in_bytes": 17249
+      },
+      {
+        "_path": "share/man/man7/parallel_alternatives.7",
+        "path_type": "hardlink",
+        "sha256": "1096b21ed2df5dc17ddda54c81e7b34ba67301026e7b3dce6af373cd2679a43a",
+        "sha256_in_prefix": "1096b21ed2df5dc17ddda54c81e7b34ba67301026e7b3dce6af373cd2679a43a",
+        "size_in_bytes": 96559
+      },
+      {
+        "_path": "share/man/man7/parallel_book.7",
+        "path_type": "hardlink",
+        "sha256": "089e37d59cc70ab110c4afe23ce7d3755fc055bf39d2986424e29c1aa69691d7",
+        "sha256_in_prefix": "089e37d59cc70ab110c4afe23ce7d3755fc055bf39d2986424e29c1aa69691d7",
+        "size_in_bytes": 16476
+      },
+      {
+        "_path": "share/man/man7/parallel_design.7",
+        "path_type": "hardlink",
+        "sha256": "b48428b05be7579c0527782d81a94f0cf18e057d41317bb9802aba700c28b8ee",
+        "sha256_in_prefix": "b48428b05be7579c0527782d81a94f0cf18e057d41317bb9802aba700c28b8ee",
+        "size_in_bytes": 57096
+      },
+      {
+        "_path": "share/man/man7/parallel_tutorial.7",
+        "path_type": "hardlink",
+        "sha256": "1caccf791e9b22a49cefc8bb2c6775d1f386baf35ced54abf3b2e8bdb7c488b5",
+        "sha256_in_prefix": "1caccf791e9b22a49cefc8bb2c6775d1f386baf35ced54abf3b2e8bdb7c488b5",
+        "size_in_bytes": 95935
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "parallel==20190522=0",
+  "sha256": "19645c8184d05c86fd0d9b88decbb069fb979eacdb8681002aebd156750aab56",
+  "size": 1633594,
+  "subdir": "linux-64",
+  "timestamp": 1558629463809,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/parallel-20190522-0.tar.bz2",
+  "version": "20190522"
+}

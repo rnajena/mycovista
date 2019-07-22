@@ -1,0 +1,284 @@
+{
+  "build": "py37he860b03_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=7.3.0",
+    "libstdcxx-ng >=7.3.0",
+    "perl",
+    "python >=3.7,<3.8.0a0",
+    "tbb >=2019.5",
+    "zlib >=1.2.11,<1.3.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/bowtie2-2.3.5-py37he860b03_0",
+  "features": "",
+  "files": [
+    "bin/bowtie2",
+    "bin/bowtie2-align-l",
+    "bin/bowtie2-align-s",
+    "bin/bowtie2-build",
+    "bin/bowtie2-build-l",
+    "bin/bowtie2-build-s",
+    "bin/bowtie2-inspect",
+    "bin/bowtie2-inspect-l",
+    "bin/bowtie2-inspect-s",
+    "bin/scripts/convert_quals.pl",
+    "bin/scripts/gen_2b_occ_lookup.pl",
+    "bin/scripts/gen_occ_lookup.pl",
+    "bin/scripts/gen_solqual_lookup.pl",
+    "bin/scripts/infer_fraglen.pl",
+    "bin/scripts/make_a_thaliana_tair.sh",
+    "bin/scripts/make_b_taurus_UMD3.sh",
+    "bin/scripts/make_c_elegans.sh",
+    "bin/scripts/make_canFam2.sh",
+    "bin/scripts/make_d_melanogaster.sh",
+    "bin/scripts/make_e_coli.sh",
+    "bin/scripts/make_h_sapiens_ncbi36.sh",
+    "bin/scripts/make_h_sapiens_ncbi37.sh",
+    "bin/scripts/make_hg18.sh",
+    "bin/scripts/make_hg19.sh",
+    "bin/scripts/make_m_musculus_ncbi37.sh",
+    "bin/scripts/make_mm10.sh",
+    "bin/scripts/make_mm9.sh",
+    "bin/scripts/make_rn4.sh",
+    "bin/scripts/make_s_cerevisiae.sh"
+  ],
+  "fn": "bowtie2-2.3.5-py37he860b03_0.tar.bz2",
+  "license": "GPLv3",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/bowtie2-2.3.5-py37he860b03_0",
+    "type": 1
+  },
+  "md5": "e78af366baac9113b1824faab2578dd1",
+  "name": "bowtie2",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/bowtie2-2.3.5-py37he860b03_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/bowtie2",
+        "path_type": "hardlink",
+        "sha256": "e392006c5ad28576105406c4a12c25a046cc86f8a728995fe8025ca15b4dcd43",
+        "sha256_in_prefix": "e392006c5ad28576105406c4a12c25a046cc86f8a728995fe8025ca15b4dcd43",
+        "size_in_bytes": 19782
+      },
+      {
+        "_path": "bin/bowtie2-align-l",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/bowtie2_1554125862557/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place",
+        "sha256": "f79a7638f0e827a665cbb8d7f6536db46968e3550d2d604b8d6794615ba63ae4",
+        "sha256_in_prefix": "9796c5fcb8d19534ad6d6720440ba08d862c3b6fc1557764bba7e6d3dc87600f",
+        "size_in_bytes": 13263640
+      },
+      {
+        "_path": "bin/bowtie2-align-s",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/bowtie2_1554125862557/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place",
+        "sha256": "9393821509903990354fe4566eb543cc690666763e926398f72f3ed849f40cec",
+        "sha256_in_prefix": "801c783e35346d7665784bb5874a52d8b5465a1b3f00f5f77abeea773f66ceab",
+        "size_in_bytes": 13330736
+      },
+      {
+        "_path": "bin/bowtie2-build",
+        "path_type": "hardlink",
+        "sha256": "81fb96eabc728ea9aac75778b5df1b8067a8cc02482f8a237eba7ca64f75b071",
+        "sha256_in_prefix": "81fb96eabc728ea9aac75778b5df1b8067a8cc02482f8a237eba7ca64f75b071",
+        "size_in_bytes": 2848
+      },
+      {
+        "_path": "bin/bowtie2-build-l",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/bowtie2_1554125862557/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place",
+        "sha256": "7fc11794959fbdaa41fa239cad519c13b0a872661d2347ead1e3cc7b3f141297",
+        "sha256_in_prefix": "40782e71a3cdb784b9854abf3faa8d54e16be19729db78bc8e6896406e8dd043",
+        "size_in_bytes": 3928936
+      },
+      {
+        "_path": "bin/bowtie2-build-s",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/bowtie2_1554125862557/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place",
+        "sha256": "372771298c9d0bf1b047a65ed6f5237479859d2425981650a41e538a012028f7",
+        "sha256_in_prefix": "44c06a756165e1a623e30533d40c63f0dc9b7e292f29f29f88a6e7274c17f834",
+        "size_in_bytes": 3982120
+      },
+      {
+        "_path": "bin/bowtie2-inspect",
+        "path_type": "hardlink",
+        "sha256": "df3608a92774136248804aa8a57f2ea8832b7c33bd60ebb4c242b6843d1cdf7f",
+        "sha256_in_prefix": "df3608a92774136248804aa8a57f2ea8832b7c33bd60ebb4c242b6843d1cdf7f",
+        "size_in_bytes": 2772
+      },
+      {
+        "_path": "bin/bowtie2-inspect-l",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/bowtie2_1554125862557/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place",
+        "sha256": "225df495cb872f0608ae8f3a0f2d324417f7f09eba611a6ed042c6c0a4da48fb",
+        "sha256_in_prefix": "68ee4c8d0062cb55f5dd5c7555f7139a349ae80af69cf91c531698ee69138829",
+        "size_in_bytes": 2131512
+      },
+      {
+        "_path": "bin/bowtie2-inspect-s",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/bowtie2_1554125862557/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place",
+        "sha256": "98809f109b11ebddafeb40b257b5b3ed4f248860bfbe39f57ce62deb75b8419e",
+        "sha256_in_prefix": "324e9da9150836307398152507481fc65e9a0f4320f7cb312828b62d53af243e",
+        "size_in_bytes": 2159232
+      },
+      {
+        "_path": "bin/scripts/convert_quals.pl",
+        "path_type": "hardlink",
+        "sha256": "1e6c11a4cec76a830411e59019438d9150bbdafffe26fa5884971d5078678f6b",
+        "sha256_in_prefix": "1e6c11a4cec76a830411e59019438d9150bbdafffe26fa5884971d5078678f6b",
+        "size_in_bytes": 3378
+      },
+      {
+        "_path": "bin/scripts/gen_2b_occ_lookup.pl",
+        "path_type": "hardlink",
+        "sha256": "b0e1fedb14dd7bd801f4b2a76cece3e34a80bc4e2efea3bc3bca30d2b4a659ba",
+        "sha256_in_prefix": "b0e1fedb14dd7bd801f4b2a76cece3e34a80bc4e2efea3bc3bca30d2b4a659ba",
+        "size_in_bytes": 3038
+      },
+      {
+        "_path": "bin/scripts/gen_occ_lookup.pl",
+        "path_type": "hardlink",
+        "sha256": "ea47b13edfb00b8b6389e80ee32dafadeddfadce2240c4bf3c1dbf83534ad1ac",
+        "sha256_in_prefix": "ea47b13edfb00b8b6389e80ee32dafadeddfadce2240c4bf3c1dbf83534ad1ac",
+        "size_in_bytes": 6672
+      },
+      {
+        "_path": "bin/scripts/gen_solqual_lookup.pl",
+        "path_type": "hardlink",
+        "sha256": "a3a7c9a61af33ffcbb5bdaeb21578fe215f36ff4a5a13369dbc3bcedcd8ea81f",
+        "sha256_in_prefix": "a3a7c9a61af33ffcbb5bdaeb21578fe215f36ff4a5a13369dbc3bcedcd8ea81f",
+        "size_in_bytes": 2068
+      },
+      {
+        "_path": "bin/scripts/infer_fraglen.pl",
+        "path_type": "hardlink",
+        "sha256": "61f4c0618efd3943ad683b19f6552c7427b75db32f61b05ddcfc6517bbe3a713",
+        "sha256_in_prefix": "61f4c0618efd3943ad683b19f6552c7427b75db32f61b05ddcfc6517bbe3a713",
+        "size_in_bytes": 4107
+      },
+      {
+        "_path": "bin/scripts/make_a_thaliana_tair.sh",
+        "path_type": "hardlink",
+        "sha256": "64693c6c312e26c696c7e29847fde9817265be8677607ed2b28eae8d5c841330",
+        "sha256_in_prefix": "64693c6c312e26c696c7e29847fde9817265be8677607ed2b28eae8d5c841330",
+        "size_in_bytes": 1192
+      },
+      {
+        "_path": "bin/scripts/make_b_taurus_UMD3.sh",
+        "path_type": "hardlink",
+        "sha256": "c48f06fb30dea7ff7dcb3b2849ff5f6dafac94583872e2655b541c8c06b4829d",
+        "sha256_in_prefix": "c48f06fb30dea7ff7dcb3b2849ff5f6dafac94583872e2655b541c8c06b4829d",
+        "size_in_bytes": 1466
+      },
+      {
+        "_path": "bin/scripts/make_c_elegans.sh",
+        "path_type": "hardlink",
+        "sha256": "0811d17bac37dbf2ff0dae49788e6995e77f31c3b0d1afc4498c548b5bb2df9a",
+        "sha256_in_prefix": "0811d17bac37dbf2ff0dae49788e6995e77f31c3b0d1afc4498c548b5bb2df9a",
+        "size_in_bytes": 1101
+      },
+      {
+        "_path": "bin/scripts/make_canFam2.sh",
+        "path_type": "hardlink",
+        "sha256": "2da0cdef132bbf0c25a384dbd94d6e562eb869838a4eb1d537f682252ce43c67",
+        "sha256_in_prefix": "2da0cdef132bbf0c25a384dbd94d6e562eb869838a4eb1d537f682252ce43c67",
+        "size_in_bytes": 1322
+      },
+      {
+        "_path": "bin/scripts/make_d_melanogaster.sh",
+        "path_type": "hardlink",
+        "sha256": "64c35cc467d5de3fb99ec5e1e2ae0e252b80ff04fdada1be0ed16e730bd1138a",
+        "sha256_in_prefix": "64c35cc467d5de3fb99ec5e1e2ae0e252b80ff04fdada1be0ed16e730bd1138a",
+        "size_in_bytes": 1313
+      },
+      {
+        "_path": "bin/scripts/make_e_coli.sh",
+        "path_type": "hardlink",
+        "sha256": "6a62ddd51758e7a7136099c40548eb433062431f29d2a3cf623a0f4d70abf242",
+        "sha256_in_prefix": "6a62ddd51758e7a7136099c40548eb433062431f29d2a3cf623a0f4d70abf242",
+        "size_in_bytes": 1099
+      },
+      {
+        "_path": "bin/scripts/make_h_sapiens_ncbi36.sh",
+        "path_type": "hardlink",
+        "sha256": "393a7f3b8415c2d65de61ded8a480195f313e783d1ff125930319285939c9a69",
+        "sha256_in_prefix": "393a7f3b8415c2d65de61ded8a480195f313e783d1ff125930319285939c9a69",
+        "size_in_bytes": 2458
+      },
+      {
+        "_path": "bin/scripts/make_h_sapiens_ncbi37.sh",
+        "path_type": "hardlink",
+        "sha256": "6d90b66862dd3750ac58b2918d582dc5636169a1d7b6b99c946ac237b6caa35c",
+        "sha256_in_prefix": "6d90b66862dd3750ac58b2918d582dc5636169a1d7b6b99c946ac237b6caa35c",
+        "size_in_bytes": 3517
+      },
+      {
+        "_path": "bin/scripts/make_hg18.sh",
+        "path_type": "hardlink",
+        "sha256": "f5dcdd43fbe2c13d6a7de96b6266fdac094d0adb2030e81677dff7042e76c2da",
+        "sha256_in_prefix": "f5dcdd43fbe2c13d6a7de96b6266fdac094d0adb2030e81677dff7042e76c2da",
+        "size_in_bytes": 2188
+      },
+      {
+        "_path": "bin/scripts/make_hg19.sh",
+        "path_type": "hardlink",
+        "sha256": "9c5a0236c59d3108befe7bf0c40434c24fff15c286d43ebcdda3856969d6413d",
+        "sha256_in_prefix": "9c5a0236c59d3108befe7bf0c40434c24fff15c286d43ebcdda3856969d6413d",
+        "size_in_bytes": 3127
+      },
+      {
+        "_path": "bin/scripts/make_m_musculus_ncbi37.sh",
+        "path_type": "hardlink",
+        "sha256": "c7561a772493177f814bb5f1c13d002ff076548e191f70d9742dda8ed872745d",
+        "sha256_in_prefix": "c7561a772493177f814bb5f1c13d002ff076548e191f70d9742dda8ed872745d",
+        "size_in_bytes": 1634
+      },
+      {
+        "_path": "bin/scripts/make_mm10.sh",
+        "path_type": "hardlink",
+        "sha256": "c8bfc5fa24432d9a407b3fbb20ed4b1705213c42ffd09dd03e662638416be9f0",
+        "sha256_in_prefix": "c8bfc5fa24432d9a407b3fbb20ed4b1705213c42ffd09dd03e662638416be9f0",
+        "size_in_bytes": 2596
+      },
+      {
+        "_path": "bin/scripts/make_mm9.sh",
+        "path_type": "hardlink",
+        "sha256": "7d68d4347976e1c501005d64dd031b4964f43fab8b32739441a79be401fe03a9",
+        "sha256_in_prefix": "7d68d4347976e1c501005d64dd031b4964f43fab8b32739441a79be401fe03a9",
+        "size_in_bytes": 1895
+      },
+      {
+        "_path": "bin/scripts/make_rn4.sh",
+        "path_type": "hardlink",
+        "sha256": "e18e60e9e76e332c9f99fb46281256004815a36b51143a3ff0c7d18892c69ee2",
+        "sha256_in_prefix": "e18e60e9e76e332c9f99fb46281256004815a36b51143a3ff0c7d18892c69ee2",
+        "size_in_bytes": 1978
+      },
+      {
+        "_path": "bin/scripts/make_s_cerevisiae.sh",
+        "path_type": "hardlink",
+        "sha256": "faf6ebc915991e356ec2707bbf6d5095c00b9a62f54b717cc1302e59f1e21dd0",
+        "sha256_in_prefix": "faf6ebc915991e356ec2707bbf6d5095c00b9a62f54b717cc1302e59f1e21dd0",
+        "size_in_bytes": 1131
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "bowtie2==2.3.5=py37he860b03_0",
+  "sha256": "155eb5c44ad4930f750ca65f01f3f2d31e988c0e5b30067409ed80dab3ca46f9",
+  "size": 12588231,
+  "subdir": "linux-64",
+  "timestamp": 1554126543321,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/bowtie2-2.3.5-py37he860b03_0.tar.bz2",
+  "version": "2.3.5"
+}

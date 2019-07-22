@@ -1,0 +1,1478 @@
+{
+  "build": "py_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/bioconda/noarch",
+  "constrains": [],
+  "depends": [
+    "python"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/dendropy-4.4.0-py_1",
+  "features": "",
+  "files": [
+    "bin/sumlabels.py",
+    "bin/sumtrees.py",
+    "lib/python3.6/site-packages/DendroPy-4.4.0-py2.7.egg-info/PKG-INFO",
+    "lib/python3.6/site-packages/DendroPy-4.4.0-py2.7.egg-info/SOURCES.txt",
+    "lib/python3.6/site-packages/DendroPy-4.4.0-py2.7.egg-info/dependency_links.txt",
+    "lib/python3.6/site-packages/DendroPy-4.4.0-py2.7.egg-info/entry_points.txt",
+    "lib/python3.6/site-packages/DendroPy-4.4.0-py2.7.egg-info/requires.txt",
+    "lib/python3.6/site-packages/DendroPy-4.4.0-py2.7.egg-info/top_level.txt",
+    "lib/python3.6/site-packages/DendroPy-4.4.0-py2.7.egg-info/zip-safe",
+    "lib/python3.6/site-packages/dendropy/__init__.py",
+    "lib/python3.6/site-packages/dendropy/__main__.py",
+    "lib/python3.6/site-packages/dendropy/calculate/__init__.py",
+    "lib/python3.6/site-packages/dendropy/calculate/combinatorics.py",
+    "lib/python3.6/site-packages/dendropy/calculate/mathfn.py",
+    "lib/python3.6/site-packages/dendropy/calculate/phylogeneticdistance.py",
+    "lib/python3.6/site-packages/dendropy/calculate/popgenstat.py",
+    "lib/python3.6/site-packages/dendropy/calculate/probability.py",
+    "lib/python3.6/site-packages/dendropy/calculate/profiledistance.py",
+    "lib/python3.6/site-packages/dendropy/calculate/statistics.py",
+    "lib/python3.6/site-packages/dendropy/calculate/treecompare.py",
+    "lib/python3.6/site-packages/dendropy/calculate/treemeasure.py",
+    "lib/python3.6/site-packages/dendropy/calculate/treescore.py",
+    "lib/python3.6/site-packages/dendropy/calculate/treesum.py",
+    "lib/python3.6/site-packages/dendropy/dataio/__init__.py",
+    "lib/python3.6/site-packages/dendropy/dataio/fastareader.py",
+    "lib/python3.6/site-packages/dendropy/dataio/fastawriter.py",
+    "lib/python3.6/site-packages/dendropy/dataio/ioservice.py",
+    "lib/python3.6/site-packages/dendropy/dataio/newick.py",
+    "lib/python3.6/site-packages/dendropy/dataio/newickreader.py",
+    "lib/python3.6/site-packages/dendropy/dataio/newickwriter.py",
+    "lib/python3.6/site-packages/dendropy/dataio/newickyielder.py",
+    "lib/python3.6/site-packages/dendropy/dataio/nexmlreader.py",
+    "lib/python3.6/site-packages/dendropy/dataio/nexmlwriter.py",
+    "lib/python3.6/site-packages/dendropy/dataio/nexmlyielder.py",
+    "lib/python3.6/site-packages/dendropy/dataio/nexusprocessing.py",
+    "lib/python3.6/site-packages/dendropy/dataio/nexusreader.py",
+    "lib/python3.6/site-packages/dendropy/dataio/nexuswriter.py",
+    "lib/python3.6/site-packages/dendropy/dataio/nexusyielder.py",
+    "lib/python3.6/site-packages/dendropy/dataio/phylipreader.py",
+    "lib/python3.6/site-packages/dendropy/dataio/phylipwriter.py",
+    "lib/python3.6/site-packages/dendropy/dataio/tokenizer.py",
+    "lib/python3.6/site-packages/dendropy/dataio/xmlprocessing.py",
+    "lib/python3.6/site-packages/dendropy/datamodel/__init__.py",
+    "lib/python3.6/site-packages/dendropy/datamodel/basemodel.py",
+    "lib/python3.6/site-packages/dendropy/datamodel/charmatrixmodel.py",
+    "lib/python3.6/site-packages/dendropy/datamodel/charstatemodel.py",
+    "lib/python3.6/site-packages/dendropy/datamodel/datasetmodel.py",
+    "lib/python3.6/site-packages/dendropy/datamodel/taxonmodel.py",
+    "lib/python3.6/site-packages/dendropy/datamodel/treecollectionmodel.py",
+    "lib/python3.6/site-packages/dendropy/datamodel/treemodel.py",
+    "lib/python3.6/site-packages/dendropy/interop/__init__.py",
+    "lib/python3.6/site-packages/dendropy/interop/ape.py",
+    "lib/python3.6/site-packages/dendropy/interop/biopython.py",
+    "lib/python3.6/site-packages/dendropy/interop/entrez.py",
+    "lib/python3.6/site-packages/dendropy/interop/ete.py",
+    "lib/python3.6/site-packages/dendropy/interop/gbif.py",
+    "lib/python3.6/site-packages/dendropy/interop/genbank.py",
+    "lib/python3.6/site-packages/dendropy/interop/muscle.py",
+    "lib/python3.6/site-packages/dendropy/interop/paup.py",
+    "lib/python3.6/site-packages/dendropy/interop/raxml.py",
+    "lib/python3.6/site-packages/dendropy/interop/rspr.py",
+    "lib/python3.6/site-packages/dendropy/interop/rstats.py",
+    "lib/python3.6/site-packages/dendropy/interop/seqgen.py",
+    "lib/python3.6/site-packages/dendropy/legacy/__init__.py",
+    "lib/python3.6/site-packages/dendropy/legacy/coalescent.py",
+    "lib/python3.6/site-packages/dendropy/legacy/continuous.py",
+    "lib/python3.6/site-packages/dendropy/legacy/ncbi.py",
+    "lib/python3.6/site-packages/dendropy/legacy/popgensim.py",
+    "lib/python3.6/site-packages/dendropy/legacy/popgenstat.py",
+    "lib/python3.6/site-packages/dendropy/legacy/reconcile.py",
+    "lib/python3.6/site-packages/dendropy/legacy/seqmodel.py",
+    "lib/python3.6/site-packages/dendropy/legacy/seqsim.py",
+    "lib/python3.6/site-packages/dendropy/legacy/treecalc.py",
+    "lib/python3.6/site-packages/dendropy/legacy/treemanip.py",
+    "lib/python3.6/site-packages/dendropy/legacy/treesim.py",
+    "lib/python3.6/site-packages/dendropy/legacy/treesplit.py",
+    "lib/python3.6/site-packages/dendropy/legacy/treesum.py",
+    "lib/python3.6/site-packages/dendropy/mathlib/__init__.py",
+    "lib/python3.6/site-packages/dendropy/mathlib/mathfn.py",
+    "lib/python3.6/site-packages/dendropy/mathlib/probability.py",
+    "lib/python3.6/site-packages/dendropy/mathlib/statistics.py",
+    "lib/python3.6/site-packages/dendropy/model/__init__.py",
+    "lib/python3.6/site-packages/dendropy/model/birthdeath.py",
+    "lib/python3.6/site-packages/dendropy/model/coalescent.py",
+    "lib/python3.6/site-packages/dendropy/model/continuous.py",
+    "lib/python3.6/site-packages/dendropy/model/discrete.py",
+    "lib/python3.6/site-packages/dendropy/model/multispeciescoalescent.py",
+    "lib/python3.6/site-packages/dendropy/model/parsimony.py",
+    "lib/python3.6/site-packages/dendropy/model/protractedspeciation.py",
+    "lib/python3.6/site-packages/dendropy/model/reconcile.py",
+    "lib/python3.6/site-packages/dendropy/model/treeshape.py",
+    "lib/python3.6/site-packages/dendropy/simulate/__init__.py",
+    "lib/python3.6/site-packages/dendropy/simulate/charsim.py",
+    "lib/python3.6/site-packages/dendropy/simulate/popgensim.py",
+    "lib/python3.6/site-packages/dendropy/simulate/treesim.py",
+    "lib/python3.6/site-packages/dendropy/utility/__init__.py",
+    "lib/python3.6/site-packages/dendropy/utility/bibtex.py",
+    "lib/python3.6/site-packages/dendropy/utility/bitprocessing.py",
+    "lib/python3.6/site-packages/dendropy/utility/cli.py",
+    "lib/python3.6/site-packages/dendropy/utility/constants.py",
+    "lib/python3.6/site-packages/dendropy/utility/container.py",
+    "lib/python3.6/site-packages/dendropy/utility/debug.py",
+    "lib/python3.6/site-packages/dendropy/utility/deprecate.py",
+    "lib/python3.6/site-packages/dendropy/utility/error.py",
+    "lib/python3.6/site-packages/dendropy/utility/filesys.py",
+    "lib/python3.6/site-packages/dendropy/utility/libexec/__init__.py",
+    "lib/python3.6/site-packages/dendropy/utility/messaging.py",
+    "lib/python3.6/site-packages/dendropy/utility/metavar.py",
+    "lib/python3.6/site-packages/dendropy/utility/processio.py",
+    "lib/python3.6/site-packages/dendropy/utility/terminal.py",
+    "lib/python3.6/site-packages/dendropy/utility/textprocessing.py",
+    "lib/python3.6/site-packages/dendropy/utility/timeprocessing.py",
+    "lib/python3.6/site-packages/dendropy/utility/urlio.py",
+    "lib/python3.6/site-packages/dendropy/utility/vcsinfo.py",
+    "lib/python3.6/site-packages/dendropy/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/__pycache__/__main__.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/calculate/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/calculate/__pycache__/combinatorics.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/calculate/__pycache__/mathfn.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/calculate/__pycache__/phylogeneticdistance.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/calculate/__pycache__/popgenstat.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/calculate/__pycache__/probability.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/calculate/__pycache__/profiledistance.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/calculate/__pycache__/statistics.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/calculate/__pycache__/treecompare.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/calculate/__pycache__/treemeasure.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/calculate/__pycache__/treescore.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/calculate/__pycache__/treesum.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/fastareader.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/fastawriter.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/ioservice.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/newick.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/newickreader.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/newickwriter.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/newickyielder.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/nexmlreader.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/nexmlwriter.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/nexmlyielder.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/nexusprocessing.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/nexusreader.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/nexuswriter.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/nexusyielder.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/phylipreader.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/phylipwriter.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/tokenizer.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/dataio/__pycache__/xmlprocessing.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/basemodel.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/charmatrixmodel.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/charstatemodel.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/datasetmodel.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/taxonmodel.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/treecollectionmodel.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/treemodel.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/interop/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/interop/__pycache__/ape.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/interop/__pycache__/biopython.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/interop/__pycache__/entrez.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/interop/__pycache__/ete.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/interop/__pycache__/gbif.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/interop/__pycache__/genbank.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/interop/__pycache__/muscle.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/interop/__pycache__/paup.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/interop/__pycache__/raxml.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/interop/__pycache__/rspr.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/interop/__pycache__/rstats.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/interop/__pycache__/seqgen.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/legacy/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/legacy/__pycache__/coalescent.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/legacy/__pycache__/continuous.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/legacy/__pycache__/ncbi.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/legacy/__pycache__/popgensim.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/legacy/__pycache__/popgenstat.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/legacy/__pycache__/reconcile.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/legacy/__pycache__/seqmodel.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/legacy/__pycache__/seqsim.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/legacy/__pycache__/treecalc.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/legacy/__pycache__/treemanip.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/legacy/__pycache__/treesim.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/legacy/__pycache__/treesplit.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/legacy/__pycache__/treesum.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/mathlib/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/mathlib/__pycache__/mathfn.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/mathlib/__pycache__/probability.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/mathlib/__pycache__/statistics.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/model/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/model/__pycache__/birthdeath.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/model/__pycache__/coalescent.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/model/__pycache__/continuous.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/model/__pycache__/discrete.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/model/__pycache__/multispeciescoalescent.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/model/__pycache__/parsimony.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/model/__pycache__/protractedspeciation.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/model/__pycache__/reconcile.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/model/__pycache__/treeshape.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/simulate/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/simulate/__pycache__/charsim.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/simulate/__pycache__/popgensim.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/simulate/__pycache__/treesim.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/bibtex.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/bitprocessing.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/cli.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/constants.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/container.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/debug.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/deprecate.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/error.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/filesys.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/libexec/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/messaging.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/metavar.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/processio.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/terminal.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/textprocessing.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/timeprocessing.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/urlio.cpython-36.pyc",
+    "lib/python3.6/site-packages/dendropy/utility/__pycache__/vcsinfo.cpython-36.pyc"
+  ],
+  "fn": "dendropy-4.4.0-py_1.tar.bz2",
+  "license": "BSD License",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/dendropy-4.4.0-py_1",
+    "type": 1
+  },
+  "md5": "b63b8c63e22e367887b3de5dee745622",
+  "name": "dendropy",
+  "noarch": "python",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/dendropy-4.4.0-py_1.tar.bz2",
+  "package_type": "noarch_python",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "python-scripts/sumlabels.py",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "0e796b250f52efa2ed2db8e71439ea2ca6882f2234107087c2dd609a8df2571c",
+        "sha256_in_prefix": "62a74125c391dc8ebf829c85fef60a00d811d4de48ec2eaea4c07fa572bbab84",
+        "size_in_bytes": 12158
+      },
+      {
+        "_path": "python-scripts/sumtrees.py",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "b2f509974b7ca3d4db1b5d1aaa769630abce1608fb14e0d981f42890402f101e",
+        "sha256_in_prefix": "254d8ff4e0237cd4c67959c01a7c295cb6a09f3ecb59c068234e6e9b45b33a7b",
+        "size_in_bytes": 103461
+      },
+      {
+        "_path": "site-packages/DendroPy-4.4.0-py2.7.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "7107730951a5b75aeb4ca1106a76c1cb6039f2eb94587d2823f10ad49ed21f2d",
+        "sha256_in_prefix": "7107730951a5b75aeb4ca1106a76c1cb6039f2eb94587d2823f10ad49ed21f2d",
+        "size_in_bytes": 3784
+      },
+      {
+        "_path": "site-packages/DendroPy-4.4.0-py2.7.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "22cfd63ae564fd17f4bb8536a84733750fd421a73c4d542e721760ab2ac1882b",
+        "sha256_in_prefix": "22cfd63ae564fd17f4bb8536a84733750fd421a73c4d542e721760ab2ac1882b",
+        "size_in_bytes": 47731
+      },
+      {
+        "_path": "site-packages/DendroPy-4.4.0-py2.7.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "site-packages/DendroPy-4.4.0-py2.7.egg-info/entry_points.txt",
+        "path_type": "hardlink",
+        "sha256": "38066c289a6f64645ee9d9dce3cb67b7b096483b3fcff8af7e67ffff417c6f6d",
+        "sha256_in_prefix": "38066c289a6f64645ee9d9dce3cb67b7b096483b3fcff8af7e67ffff417c6f6d",
+        "size_in_bytes": 23
+      },
+      {
+        "_path": "site-packages/DendroPy-4.4.0-py2.7.egg-info/requires.txt",
+        "path_type": "hardlink",
+        "sha256": "4e34d3b17ef5dd1e34865d1d3245f1a40158ec9bc19ea6d3547423a3fb96e916",
+        "sha256_in_prefix": "4e34d3b17ef5dd1e34865d1d3245f1a40158ec9bc19ea6d3547423a3fb96e916",
+        "size_in_bytes": 11
+      },
+      {
+        "_path": "site-packages/DendroPy-4.4.0-py2.7.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "9a9b6cd57a02ad4ddc3030b160c5b01ed0e07cfe86f6388c3a1bb047df1876ad",
+        "sha256_in_prefix": "9a9b6cd57a02ad4ddc3030b160c5b01ed0e07cfe86f6388c3a1bb047df1876ad",
+        "size_in_bytes": 9
+      },
+      {
+        "_path": "site-packages/DendroPy-4.4.0-py2.7.egg-info/zip-safe",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "site-packages/dendropy/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e506236d25cd4280a90e0dabe6bd756a6a564305b8dba62c6bad77715993349e",
+        "sha256_in_prefix": "e506236d25cd4280a90e0dabe6bd756a6a564305b8dba62c6bad77715993349e",
+        "size_in_bytes": 8858
+      },
+      {
+        "_path": "site-packages/dendropy/__main__.py",
+        "path_type": "hardlink",
+        "sha256": "b0736c1d36a834a82c0a78a8ffc9c365f03198d4bac8da117d75f1e33469b5fb",
+        "sha256_in_prefix": "b0736c1d36a834a82c0a78a8ffc9c365f03198d4bac8da117d75f1e33469b5fb",
+        "size_in_bytes": 727
+      },
+      {
+        "_path": "site-packages/dendropy/calculate/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "c0be8abb954643e20f21261ed90fffbc11d5db062ddeb9ef4df8e6f39e5cc5c0",
+        "sha256_in_prefix": "c0be8abb954643e20f21261ed90fffbc11d5db062ddeb9ef4df8e6f39e5cc5c0",
+        "size_in_bytes": 635
+      },
+      {
+        "_path": "site-packages/dendropy/calculate/combinatorics.py",
+        "path_type": "hardlink",
+        "sha256": "b370b88fe724df4785683de15dee2c554c44d435d9a82686ac7f952521bc6518",
+        "sha256_in_prefix": "b370b88fe724df4785683de15dee2c554c44d435d9a82686ac7f952521bc6518",
+        "size_in_bytes": 1946
+      },
+      {
+        "_path": "site-packages/dendropy/calculate/mathfn.py",
+        "path_type": "hardlink",
+        "sha256": "0452223a80276704071b8c2535d6b70e3792931be9d22c760066c95580e1b51d",
+        "sha256_in_prefix": "0452223a80276704071b8c2535d6b70e3792931be9d22c760066c95580e1b51d",
+        "size_in_bytes": 976
+      },
+      {
+        "_path": "site-packages/dendropy/calculate/phylogeneticdistance.py",
+        "path_type": "hardlink",
+        "sha256": "9c35c4f28e0d054efebd31a327827452713556b0f65b87dd02bcb8eda664aa28",
+        "sha256_in_prefix": "9c35c4f28e0d054efebd31a327827452713556b0f65b87dd02bcb8eda664aa28",
+        "size_in_bytes": 67554
+      },
+      {
+        "_path": "site-packages/dendropy/calculate/popgenstat.py",
+        "path_type": "hardlink",
+        "sha256": "a80560d87e8a57fb5cbc8c26fa56dd33cddb595bb5e0d78368f1a314459e00bc",
+        "sha256_in_prefix": "a80560d87e8a57fb5cbc8c26fa56dd33cddb595bb5e0d78368f1a314459e00bc",
+        "size_in_bytes": 17079
+      },
+      {
+        "_path": "site-packages/dendropy/calculate/probability.py",
+        "path_type": "hardlink",
+        "sha256": "f0aa87fb7f0a23bfd64486f263ad96399e5c13b6846f214da4e4c337842eeaad",
+        "sha256_in_prefix": "f0aa87fb7f0a23bfd64486f263ad96399e5c13b6846f214da4e4c337842eeaad",
+        "size_in_bytes": 10059
+      },
+      {
+        "_path": "site-packages/dendropy/calculate/profiledistance.py",
+        "path_type": "hardlink",
+        "sha256": "5765fdd6da55b8d6e25d61069271b340479d3bac9110e780e52df1281bf0bbdf",
+        "sha256_in_prefix": "5765fdd6da55b8d6e25d61069271b340479d3bac9110e780e52df1281bf0bbdf",
+        "size_in_bytes": 14503
+      },
+      {
+        "_path": "site-packages/dendropy/calculate/statistics.py",
+        "path_type": "hardlink",
+        "sha256": "725cf43039743629fe570513c84b158f85726614e4af3a9790bfb2e64b13b800",
+        "sha256_in_prefix": "725cf43039743629fe570513c84b158f85726614e4af3a9790bfb2e64b13b800",
+        "size_in_bytes": 16255
+      },
+      {
+        "_path": "site-packages/dendropy/calculate/treecompare.py",
+        "path_type": "hardlink",
+        "sha256": "1f2914a128bb3496661e45322d28c5359f1f8c8fac446722c3b4f74e61686ce0",
+        "sha256_in_prefix": "1f2914a128bb3496661e45322d28c5359f1f8c8fac446722c3b4f74e61686ce0",
+        "size_in_bytes": 36697
+      },
+      {
+        "_path": "site-packages/dendropy/calculate/treemeasure.py",
+        "path_type": "hardlink",
+        "sha256": "1da4e3924d3ca10210f8023b584ccdd38747606bba1bc7a5452326003db72442",
+        "sha256_in_prefix": "1da4e3924d3ca10210f8023b584ccdd38747606bba1bc7a5452326003db72442",
+        "size_in_bytes": 8805
+      },
+      {
+        "_path": "site-packages/dendropy/calculate/treescore.py",
+        "path_type": "hardlink",
+        "sha256": "5aff8ab6796cec952298f2f540c4db4b4ca1bd041e2246fe0c836f526b753f0f",
+        "sha256_in_prefix": "5aff8ab6796cec952298f2f540c4db4b4ca1bd041e2246fe0c836f526b753f0f",
+        "size_in_bytes": 939
+      },
+      {
+        "_path": "site-packages/dendropy/calculate/treesum.py",
+        "path_type": "hardlink",
+        "sha256": "12aa95c6ebba26fb9f651e2422e2b6834be4b4da0e835235a7643250c07f0c0a",
+        "sha256_in_prefix": "12aa95c6ebba26fb9f651e2422e2b6834be4b4da0e835235a7643250c07f0c0a",
+        "size_in_bytes": 19906
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "22215f8884a5a37e65d818ff7633b528fe7feff50df6e189d3df00ef63321bb1",
+        "sha256_in_prefix": "22215f8884a5a37e65d818ff7633b528fe7feff50df6e189d3df00ef63321bb1",
+        "size_in_bytes": 4229
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/fastareader.py",
+        "path_type": "hardlink",
+        "sha256": "4ca7d7770ca6f0f55f6970e37be19d68f50cd033cfa7fb605d42a632e08f9ad8",
+        "sha256_in_prefix": "4ca7d7770ca6f0f55f6970e37be19d68f50cd033cfa7fb605d42a632e08f9ad8",
+        "size_in_bytes": 7357
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/fastawriter.py",
+        "path_type": "hardlink",
+        "sha256": "65758537f7ce3c4e2ecc3f2cd45efabd9a3ce47262091b8e3df9f90bd379dfe5",
+        "sha256_in_prefix": "65758537f7ce3c4e2ecc3f2cd45efabd9a3ce47262091b8e3df9f90bd379dfe5",
+        "size_in_bytes": 2322
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/ioservice.py",
+        "path_type": "hardlink",
+        "sha256": "65bb05109297c1da3c3f415484a5ca9bae3b78bc803304c9459e6fd00056cc18",
+        "sha256_in_prefix": "65bb05109297c1da3c3f415484a5ca9bae3b78bc803304c9459e6fd00056cc18",
+        "size_in_bytes": 21671
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/newick.py",
+        "path_type": "hardlink",
+        "sha256": "c0be8abb954643e20f21261ed90fffbc11d5db062ddeb9ef4df8e6f39e5cc5c0",
+        "sha256_in_prefix": "c0be8abb954643e20f21261ed90fffbc11d5db062ddeb9ef4df8e6f39e5cc5c0",
+        "size_in_bytes": 635
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/newickreader.py",
+        "path_type": "hardlink",
+        "sha256": "389f3a791ffe0bcbfdfce4193852e492847d8229ea88c0d5eb87c5986e73f48f",
+        "sha256_in_prefix": "389f3a791ffe0bcbfdfce4193852e492847d8229ea88c0d5eb87c5986e73f48f",
+        "size_in_bytes": 35600
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/newickwriter.py",
+        "path_type": "hardlink",
+        "sha256": "e2d0a12b98dcd1e5cd6ea56747b999efd0b9821fd444d102b3f143dd0f9f1822",
+        "sha256_in_prefix": "e2d0a12b98dcd1e5cd6ea56747b999efd0b9821fd444d102b3f143dd0f9f1822",
+        "size_in_bytes": 21000
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/newickyielder.py",
+        "path_type": "hardlink",
+        "sha256": "cc5e905843e3c04e949cef86f1fd9ab06f2c1a954a0f7c5594852f4dd80e33e3",
+        "sha256_in_prefix": "cc5e905843e3c04e949cef86f1fd9ab06f2c1a954a0f7c5594852f4dd80e33e3",
+        "size_in_bytes": 2929
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/nexmlreader.py",
+        "path_type": "hardlink",
+        "sha256": "0c16cc7e829710d695defe5cc160617cabcbb045a9e0f94b80a17fe48cf6552c",
+        "sha256_in_prefix": "0c16cc7e829710d695defe5cc160617cabcbb045a9e0f94b80a17fe48cf6552c",
+        "size_in_bytes": 42510
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/nexmlwriter.py",
+        "path_type": "hardlink",
+        "sha256": "f01585996e957130ff8f58b4c199b78d4ee6418fb03cc9515b3247cd32948a22",
+        "sha256_in_prefix": "f01585996e957130ff8f58b4c199b78d4ee6418fb03cc9515b3247cd32948a22",
+        "size_in_bytes": 30579
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/nexmlyielder.py",
+        "path_type": "hardlink",
+        "sha256": "2168898307e2b6a9f91fdb0c8760183d5e715725ac3f4a86f2efd1482918ff3c",
+        "sha256_in_prefix": "2168898307e2b6a9f91fdb0c8760183d5e715725ac3f4a86f2efd1482918ff3c",
+        "size_in_bytes": 3661
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/nexusprocessing.py",
+        "path_type": "hardlink",
+        "sha256": "fedcb42d0bf17deaa7439b1e2de8ce2aba7d62f27477bf562939b2dc54333e93",
+        "sha256_in_prefix": "fedcb42d0bf17deaa7439b1e2de8ce2aba7d62f27477bf562939b2dc54333e93",
+        "size_in_bytes": 20490
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/nexusreader.py",
+        "path_type": "hardlink",
+        "sha256": "1e99cf67a9a05fa22bc14e1d6be7807b2ffd50091641ac5d990c90240d2a44c9",
+        "sha256_in_prefix": "1e99cf67a9a05fa22bc14e1d6be7807b2ffd50091641ac5d990c90240d2a44c9",
+        "size_in_bytes": 69587
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/nexuswriter.py",
+        "path_type": "hardlink",
+        "sha256": "1b5b3cf0caf2f2b07dcd71d96313736a079f4d9f52a80822befe1b155cae880a",
+        "sha256_in_prefix": "1b5b3cf0caf2f2b07dcd71d96313736a079f4d9f52a80822befe1b155cae880a",
+        "size_in_bytes": 27452
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/nexusyielder.py",
+        "path_type": "hardlink",
+        "sha256": "8bbd6600de4866c3bec5f1ba7a259d9b1ca7771421e3263951e41a6d5f57babe",
+        "sha256_in_prefix": "8bbd6600de4866c3bec5f1ba7a259d9b1ca7771421e3263951e41a6d5f57babe",
+        "size_in_bytes": 8445
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/phylipreader.py",
+        "path_type": "hardlink",
+        "sha256": "b69059b6d53fe88cc8cdc3b740adddbd286d7366b74ebe0d3d3db37379d95d7f",
+        "sha256_in_prefix": "b69059b6d53fe88cc8cdc3b740adddbd286d7366b74ebe0d3d3db37379d95d7f",
+        "size_in_bytes": 14057
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/phylipwriter.py",
+        "path_type": "hardlink",
+        "sha256": "f1cfef6dc19bfb41dd3f3dedc1d68c21a4be8c3132aa87d9da692b5362978128",
+        "sha256_in_prefix": "f1cfef6dc19bfb41dd3f3dedc1d68c21a4be8c3132aa87d9da692b5362978128",
+        "size_in_bytes": 5172
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/tokenizer.py",
+        "path_type": "hardlink",
+        "sha256": "19394a473f828ad77cc5041ac2435434d9bafe69dd600e8eef69ff5b8d2ab1bc",
+        "sha256_in_prefix": "19394a473f828ad77cc5041ac2435434d9bafe69dd600e8eef69ff5b8d2ab1bc",
+        "size_in_bytes": 10952
+      },
+      {
+        "_path": "site-packages/dendropy/dataio/xmlprocessing.py",
+        "path_type": "hardlink",
+        "sha256": "f659c4dd087d57a1285928b51ea27d180967bd99084957c1ce9970251759b02a",
+        "sha256_in_prefix": "f659c4dd087d57a1285928b51ea27d180967bd99084957c1ce9970251759b02a",
+        "size_in_bytes": 6153
+      },
+      {
+        "_path": "site-packages/dendropy/datamodel/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "c0be8abb954643e20f21261ed90fffbc11d5db062ddeb9ef4df8e6f39e5cc5c0",
+        "sha256_in_prefix": "c0be8abb954643e20f21261ed90fffbc11d5db062ddeb9ef4df8e6f39e5cc5c0",
+        "size_in_bytes": 635
+      },
+      {
+        "_path": "site-packages/dendropy/datamodel/basemodel.py",
+        "path_type": "hardlink",
+        "sha256": "63c47f92f73f1b46958652cbe174195eb16983fe0456315afa4eb7e0981b0485",
+        "sha256_in_prefix": "63c47f92f73f1b46958652cbe174195eb16983fe0456315afa4eb7e0981b0485",
+        "size_in_bytes": 61282
+      },
+      {
+        "_path": "site-packages/dendropy/datamodel/charmatrixmodel.py",
+        "path_type": "hardlink",
+        "sha256": "20c8db84553c9c512656cc79163a8fbf77cf2185f9cb6ec2dae24db22a2f46f0",
+        "sha256_in_prefix": "20c8db84553c9c512656cc79163a8fbf77cf2185f9cb6ec2dae24db22a2f46f0",
+        "size_in_bytes": 82823
+      },
+      {
+        "_path": "site-packages/dendropy/datamodel/charstatemodel.py",
+        "path_type": "hardlink",
+        "sha256": "96b7271fb7d7c495a1b60ebe30a289d276f66388d2b9308d2e15036c6cb2944c",
+        "sha256_in_prefix": "96b7271fb7d7c495a1b60ebe30a289d276f66388d2b9308d2e15036c6cb2944c",
+        "size_in_bytes": 56918
+      },
+      {
+        "_path": "site-packages/dendropy/datamodel/datasetmodel.py",
+        "path_type": "hardlink",
+        "sha256": "7946203a892342fb325e95b8f615f6454df83c3ccd12bf7c2b0af4595e8e4a3d",
+        "sha256_in_prefix": "7946203a892342fb325e95b8f615f6454df83c3ccd12bf7c2b0af4595e8e4a3d",
+        "size_in_bytes": 28021
+      },
+      {
+        "_path": "site-packages/dendropy/datamodel/taxonmodel.py",
+        "path_type": "hardlink",
+        "sha256": "aeaeac1861ea5ff9231be3190df619afec66eab9fb30932ba6b71430d3098f31",
+        "sha256_in_prefix": "aeaeac1861ea5ff9231be3190df619afec66eab9fb30932ba6b71430d3098f31",
+        "size_in_bytes": 85376
+      },
+      {
+        "_path": "site-packages/dendropy/datamodel/treecollectionmodel.py",
+        "path_type": "hardlink",
+        "sha256": "f9521ae98aa3eacc0976279dbe136846fcd329f3ce23d34798298ee28309011d",
+        "sha256_in_prefix": "f9521ae98aa3eacc0976279dbe136846fcd329f3ce23d34798298ee28309011d",
+        "size_in_bytes": 127612
+      },
+      {
+        "_path": "site-packages/dendropy/datamodel/treemodel.py",
+        "path_type": "hardlink",
+        "sha256": "1d643920ba92936f3c47ce2468adb65f991e5cd843adcc9b4d3b8bca3a0ba2a3",
+        "sha256_in_prefix": "1d643920ba92936f3c47ce2468adb65f991e5cd843adcc9b4d3b8bca3a0ba2a3",
+        "size_in_bytes": 279557
+      },
+      {
+        "_path": "site-packages/dendropy/interop/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "a93f573740b916b7e8c0b354153a8177b284755c321a921ca0580b52259a60d2",
+        "sha256_in_prefix": "a93f573740b916b7e8c0b354153a8177b284755c321a921ca0580b52259a60d2",
+        "size_in_bytes": 690
+      },
+      {
+        "_path": "site-packages/dendropy/interop/ape.py",
+        "path_type": "hardlink",
+        "sha256": "3b1ec56ca2f20843421cc3c19e2eeab04a140023e145acc92dce2d82e7b1c8dc",
+        "sha256_in_prefix": "3b1ec56ca2f20843421cc3c19e2eeab04a140023e145acc92dce2d82e7b1c8dc",
+        "size_in_bytes": 7439
+      },
+      {
+        "_path": "site-packages/dendropy/interop/biopython.py",
+        "path_type": "hardlink",
+        "sha256": "b71c54745c53f39d7f5007c3a81be6954ee8cb5b1dfdd530ad401b3fde002ea9",
+        "sha256_in_prefix": "b71c54745c53f39d7f5007c3a81be6954ee8cb5b1dfdd530ad401b3fde002ea9",
+        "size_in_bytes": 1823
+      },
+      {
+        "_path": "site-packages/dendropy/interop/entrez.py",
+        "path_type": "hardlink",
+        "sha256": "4e69c56cc86053827d17828edccb56dd363bd13067338aa5fa93f236f83cefb7",
+        "sha256_in_prefix": "4e69c56cc86053827d17828edccb56dd363bd13067338aa5fa93f236f83cefb7",
+        "size_in_bytes": 2974
+      },
+      {
+        "_path": "site-packages/dendropy/interop/ete.py",
+        "path_type": "hardlink",
+        "sha256": "23ccf902e1c463ed435c9d98426c46c831c0ca44ba08f22edd700d2e63863362",
+        "sha256_in_prefix": "23ccf902e1c463ed435c9d98426c46c831c0ca44ba08f22edd700d2e63863362",
+        "size_in_bytes": 2475
+      },
+      {
+        "_path": "site-packages/dendropy/interop/gbif.py",
+        "path_type": "hardlink",
+        "sha256": "99a387ae997e87a79e4b1e932024e8789b4a280ef284bdca15a54b22d863380e",
+        "sha256_in_prefix": "99a387ae997e87a79e4b1e932024e8789b4a280ef284bdca15a54b22d863380e",
+        "size_in_bytes": 15903
+      },
+      {
+        "_path": "site-packages/dendropy/interop/genbank.py",
+        "path_type": "hardlink",
+        "sha256": "0158a0630b1696f06f05ceabdb8b17625a18461d13c6687bbb3d8a7214dfa37e",
+        "sha256_in_prefix": "0158a0630b1696f06f05ceabdb8b17625a18461d13c6687bbb3d8a7214dfa37e",
+        "size_in_bytes": 37177
+      },
+      {
+        "_path": "site-packages/dendropy/interop/muscle.py",
+        "path_type": "hardlink",
+        "sha256": "2ecb954e940e5fbcbf9740706a7a8b9c4deea59001b8a221794aa8146c401b06",
+        "sha256_in_prefix": "2ecb954e940e5fbcbf9740706a7a8b9c4deea59001b8a221794aa8146c401b06",
+        "size_in_bytes": 1311
+      },
+      {
+        "_path": "site-packages/dendropy/interop/paup.py",
+        "path_type": "hardlink",
+        "sha256": "47ce1d016071da72d00cdd3127952d4c7e0b7aedb43519f4ce68566a3a81a6e9",
+        "sha256_in_prefix": "47ce1d016071da72d00cdd3127952d4c7e0b7aedb43519f4ce68566a3a81a6e9",
+        "size_in_bytes": 38864
+      },
+      {
+        "_path": "site-packages/dendropy/interop/raxml.py",
+        "path_type": "hardlink",
+        "sha256": "c4ffef583fa7e6d1e17a0a080b2fe13f76b8ac443b400890444e21bb979748a6",
+        "sha256_in_prefix": "c4ffef583fa7e6d1e17a0a080b2fe13f76b8ac443b400890444e21bb979748a6",
+        "size_in_bytes": 37123
+      },
+      {
+        "_path": "site-packages/dendropy/interop/rspr.py",
+        "path_type": "hardlink",
+        "sha256": "16f390f2a2a04712f6fcd15da62cba21ff362b7867505b0a6dafad35266c9173",
+        "sha256_in_prefix": "16f390f2a2a04712f6fcd15da62cba21ff362b7867505b0a6dafad35266c9173",
+        "size_in_bytes": 5412
+      },
+      {
+        "_path": "site-packages/dendropy/interop/rstats.py",
+        "path_type": "hardlink",
+        "sha256": "ad195937e404dadc714254e1241566584d871f061917fd022722265252f46108",
+        "sha256_in_prefix": "ad195937e404dadc714254e1241566584d871f061917fd022722265252f46108",
+        "size_in_bytes": 5343
+      },
+      {
+        "_path": "site-packages/dendropy/interop/seqgen.py",
+        "path_type": "hardlink",
+        "sha256": "aac90d0cff5c3e7957251f58f93bab036d54f4e2a92980359047b7601d6c442f",
+        "sha256_in_prefix": "aac90d0cff5c3e7957251f58f93bab036d54f4e2a92980359047b7601d6c442f",
+        "size_in_bytes": 7124
+      },
+      {
+        "_path": "site-packages/dendropy/legacy/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "de6b1c7cb99027ebd8de9eaae05db2bf7a51072f3bc064f6bd431e8be2c63a0f",
+        "sha256_in_prefix": "de6b1c7cb99027ebd8de9eaae05db2bf7a51072f3bc064f6bd431e8be2c63a0f",
+        "size_in_bytes": 636
+      },
+      {
+        "_path": "site-packages/dendropy/legacy/coalescent.py",
+        "path_type": "hardlink",
+        "sha256": "456bddd5a3b5346bd7c81401bf1e1176b5a0764fd0469dae19aff2ad00f0e894",
+        "sha256_in_prefix": "456bddd5a3b5346bd7c81401bf1e1176b5a0764fd0469dae19aff2ad00f0e894",
+        "size_in_bytes": 5630
+      },
+      {
+        "_path": "site-packages/dendropy/legacy/continuous.py",
+        "path_type": "hardlink",
+        "sha256": "64b70f495d191e688af271c06056d39a4a0202d3328753cf15597ef2b8a761c8",
+        "sha256_in_prefix": "64b70f495d191e688af271c06056d39a4a0202d3328753cf15597ef2b8a761c8",
+        "size_in_bytes": 2235
+      },
+      {
+        "_path": "site-packages/dendropy/legacy/ncbi.py",
+        "path_type": "hardlink",
+        "sha256": "53140ba1a463e230fc38bc32a639a8b57376ace79b252dd4e9a172f0c71a652a",
+        "sha256_in_prefix": "53140ba1a463e230fc38bc32a639a8b57376ace79b252dd4e9a172f0c71a652a",
+        "size_in_bytes": 12162
+      },
+      {
+        "_path": "site-packages/dendropy/legacy/popgensim.py",
+        "path_type": "hardlink",
+        "sha256": "bc3017bc4cb287bacf6e7bc9cbd0879477263df1b3fb8cbb449f487a01f61257",
+        "sha256_in_prefix": "bc3017bc4cb287bacf6e7bc9cbd0879477263df1b3fb8cbb449f487a01f61257",
+        "size_in_bytes": 1352
+      },
+      {
+        "_path": "site-packages/dendropy/legacy/popgenstat.py",
+        "path_type": "hardlink",
+        "sha256": "39ae6eef0751d6500c21fde59c9870c0b2e5a4e6cb9661348b0d6c2804e158fd",
+        "sha256_in_prefix": "39ae6eef0751d6500c21fde59c9870c0b2e5a4e6cb9661348b0d6c2804e158fd",
+        "size_in_bytes": 5266
+      },
+      {
+        "_path": "site-packages/dendropy/legacy/reconcile.py",
+        "path_type": "hardlink",
+        "sha256": "5911288e132cfa1ef1f863e61be5f24c85e1ca4d0f87a045735adfc5c399103b",
+        "sha256_in_prefix": "5911288e132cfa1ef1f863e61be5f24c85e1ca4d0f87a045735adfc5c399103b",
+        "size_in_bytes": 2348
+      },
+      {
+        "_path": "site-packages/dendropy/legacy/seqmodel.py",
+        "path_type": "hardlink",
+        "sha256": "36ab41566e3eaed58c3398356d89c6687724ebbbfb4b7504e9217580a1e72582",
+        "sha256_in_prefix": "36ab41566e3eaed58c3398356d89c6687724ebbbfb4b7504e9217580a1e72582",
+        "size_in_bytes": 2768
+      },
+      {
+        "_path": "site-packages/dendropy/legacy/seqsim.py",
+        "path_type": "hardlink",
+        "sha256": "f134bbe29143c0e4db4273330a50e8acb4627d94e79a066acb5e1250c18f67bd",
+        "sha256_in_prefix": "f134bbe29143c0e4db4273330a50e8acb4627d94e79a066acb5e1250c18f67bd",
+        "size_in_bytes": 4483
+      },
+      {
+        "_path": "site-packages/dendropy/legacy/treecalc.py",
+        "path_type": "hardlink",
+        "sha256": "a964084f647fe33bf97f0afe300a12f908931bf4a7c6530030b4740907df5c32",
+        "sha256_in_prefix": "a964084f647fe33bf97f0afe300a12f908931bf4a7c6530030b4740907df5c32",
+        "size_in_bytes": 7282
+      },
+      {
+        "_path": "site-packages/dendropy/legacy/treemanip.py",
+        "path_type": "hardlink",
+        "sha256": "c09cb3bfa8eec94e0ec9256ad2f9059764949e7323f262d3154ab4405799c7ba",
+        "sha256_in_prefix": "c09cb3bfa8eec94e0ec9256ad2f9059764949e7323f262d3154ab4405799c7ba",
+        "size_in_bytes": 3194
+      },
+      {
+        "_path": "site-packages/dendropy/legacy/treesim.py",
+        "path_type": "hardlink",
+        "sha256": "a6b38cf32735469d39029817b1a75e5be6ddcb0a0df808bc820462ea9b76397c",
+        "sha256_in_prefix": "a6b38cf32735469d39029817b1a75e5be6ddcb0a0df808bc820462ea9b76397c",
+        "size_in_bytes": 5943
+      },
+      {
+        "_path": "site-packages/dendropy/legacy/treesplit.py",
+        "path_type": "hardlink",
+        "sha256": "e68dffbf3c6516fa5c1b5641cfe29b84b3341ad352bac1c25f842cfcaf596864",
+        "sha256_in_prefix": "e68dffbf3c6516fa5c1b5641cfe29b84b3341ad352bac1c25f842cfcaf596864",
+        "size_in_bytes": 8270
+      },
+      {
+        "_path": "site-packages/dendropy/legacy/treesum.py",
+        "path_type": "hardlink",
+        "sha256": "0470d2123329f76ac2843d6a13e49342dc31cf6c81be082cf055ee3bfc6ac592",
+        "sha256_in_prefix": "0470d2123329f76ac2843d6a13e49342dc31cf6c81be082cf055ee3bfc6ac592",
+        "size_in_bytes": 1921
+      },
+      {
+        "_path": "site-packages/dendropy/mathlib/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "de6b1c7cb99027ebd8de9eaae05db2bf7a51072f3bc064f6bd431e8be2c63a0f",
+        "sha256_in_prefix": "de6b1c7cb99027ebd8de9eaae05db2bf7a51072f3bc064f6bd431e8be2c63a0f",
+        "size_in_bytes": 636
+      },
+      {
+        "_path": "site-packages/dendropy/mathlib/mathfn.py",
+        "path_type": "hardlink",
+        "sha256": "71cdad9413ba093810f375aa92e8cfd41bd2400050d7ab94b949b15043fce584",
+        "sha256_in_prefix": "71cdad9413ba093810f375aa92e8cfd41bd2400050d7ab94b949b15043fce584",
+        "size_in_bytes": 751
+      },
+      {
+        "_path": "site-packages/dendropy/mathlib/probability.py",
+        "path_type": "hardlink",
+        "sha256": "c6e5c170a4fab41345a446e513e960b354f20e728773b1c676067d4f95332255",
+        "sha256_in_prefix": "c6e5c170a4fab41345a446e513e960b354f20e728773b1c676067d4f95332255",
+        "size_in_bytes": 761
+      },
+      {
+        "_path": "site-packages/dendropy/mathlib/statistics.py",
+        "path_type": "hardlink",
+        "sha256": "3a2190c921cbec470b1fde5d8d299ea925b399567431f7876b02fc3091b3ad2c",
+        "sha256_in_prefix": "3a2190c921cbec470b1fde5d8d299ea925b399567431f7876b02fc3091b3ad2c",
+        "size_in_bytes": 759
+      },
+      {
+        "_path": "site-packages/dendropy/model/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "de6b1c7cb99027ebd8de9eaae05db2bf7a51072f3bc064f6bd431e8be2c63a0f",
+        "sha256_in_prefix": "de6b1c7cb99027ebd8de9eaae05db2bf7a51072f3bc064f6bd431e8be2c63a0f",
+        "size_in_bytes": 636
+      },
+      {
+        "_path": "site-packages/dendropy/model/birthdeath.py",
+        "path_type": "hardlink",
+        "sha256": "6054ac048ca114ef5da4502acbe4dd8d3d628c8af65714101be7c0c16058fba2",
+        "sha256_in_prefix": "6054ac048ca114ef5da4502acbe4dd8d3d628c8af65714101be7c0c16058fba2",
+        "size_in_bytes": 59779
+      },
+      {
+        "_path": "site-packages/dendropy/model/coalescent.py",
+        "path_type": "hardlink",
+        "sha256": "15c9a4990e8884e60e75062fff006bc2b9753d398b6ecd1d07850eca621c9c9a",
+        "sha256_in_prefix": "15c9a4990e8884e60e75062fff006bc2b9753d398b6ecd1d07850eca621c9c9a",
+        "size_in_bytes": 30624
+      },
+      {
+        "_path": "site-packages/dendropy/model/continuous.py",
+        "path_type": "hardlink",
+        "sha256": "2819f0ec25682e0b0bb544e955d764788be6a507b2a3cc36043175610fe16e50",
+        "sha256_in_prefix": "2819f0ec25682e0b0bb544e955d764788be6a507b2a3cc36043175610fe16e50",
+        "size_in_bytes": 22472
+      },
+      {
+        "_path": "site-packages/dendropy/model/discrete.py",
+        "path_type": "hardlink",
+        "sha256": "6ce2e5dda2069a6f01b6cce2986117d6aee06dfb756f8ace0b15f77aa38f5d6d",
+        "sha256_in_prefix": "6ce2e5dda2069a6f01b6cce2986117d6aee06dfb756f8ace0b15f77aa38f5d6d",
+        "size_in_bytes": 21846
+      },
+      {
+        "_path": "site-packages/dendropy/model/multispeciescoalescent.py",
+        "path_type": "hardlink",
+        "sha256": "a844bc0c44e3286b7cf7fd0536a77964bac084374e415bf4b8c9d6245b5cf4f5",
+        "sha256_in_prefix": "a844bc0c44e3286b7cf7fd0536a77964bac084374e415bf4b8c9d6245b5cf4f5",
+        "size_in_bytes": 15557
+      },
+      {
+        "_path": "site-packages/dendropy/model/parsimony.py",
+        "path_type": "hardlink",
+        "sha256": "2514569a5233a2048093dde522dd711b042cfda0e4988c1889519271118a8ef1",
+        "sha256_in_prefix": "2514569a5233a2048093dde522dd711b042cfda0e4988c1889519271118a8ef1",
+        "size_in_bytes": 15046
+      },
+      {
+        "_path": "site-packages/dendropy/model/protractedspeciation.py",
+        "path_type": "hardlink",
+        "sha256": "8c1abdefabd6f5f1cd7eff970d6a48e601139eb46c0e47de2f623334e73b52dd",
+        "sha256_in_prefix": "8c1abdefabd6f5f1cd7eff970d6a48e601139eb46c0e47de2f623334e73b52dd",
+        "size_in_bytes": 45561
+      },
+      {
+        "_path": "site-packages/dendropy/model/reconcile.py",
+        "path_type": "hardlink",
+        "sha256": "b3dc047fed2dbfb661851728e259b3327dfead5cbbb65ae0a68d25f0c58a918e",
+        "sha256_in_prefix": "b3dc047fed2dbfb661851728e259b3327dfead5cbbb65ae0a68d25f0c58a918e",
+        "size_in_bytes": 26132
+      },
+      {
+        "_path": "site-packages/dendropy/model/treeshape.py",
+        "path_type": "hardlink",
+        "sha256": "32d8926ef4ab943db347aa37458f93e92aff369e59ca94c7ff2a7aaf740709fa",
+        "sha256_in_prefix": "32d8926ef4ab943db347aa37458f93e92aff369e59ca94c7ff2a7aaf740709fa",
+        "size_in_bytes": 1092
+      },
+      {
+        "_path": "site-packages/dendropy/simulate/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "bb4b44dde4b705b7e1a6a84e46e1e03113d01b81635f9d7aee0abddcb536b86f",
+        "sha256_in_prefix": "bb4b44dde4b705b7e1a6a84e46e1e03113d01b81635f9d7aee0abddcb536b86f",
+        "size_in_bytes": 760
+      },
+      {
+        "_path": "site-packages/dendropy/simulate/charsim.py",
+        "path_type": "hardlink",
+        "sha256": "6ca1d5994f5cfc75478c704ebf20ad0d1d8e580b44e32eaa3c843072e8dcf908",
+        "sha256_in_prefix": "6ca1d5994f5cfc75478c704ebf20ad0d1d8e580b44e32eaa3c843072e8dcf908",
+        "size_in_bytes": 1251
+      },
+      {
+        "_path": "site-packages/dendropy/simulate/popgensim.py",
+        "path_type": "hardlink",
+        "sha256": "0e7479cc185214d7a732821fa21e26bc4a707f8e68502b0fa29a99914d625c52",
+        "sha256_in_prefix": "0e7479cc185214d7a732821fa21e26bc4a707f8e68502b0fa29a99914d625c52",
+        "size_in_bytes": 10766
+      },
+      {
+        "_path": "site-packages/dendropy/simulate/treesim.py",
+        "path_type": "hardlink",
+        "sha256": "1ea5212ff6a799f827e70f5b73eff13c5813a26ff640a0f26dc97eecdd7a944b",
+        "sha256_in_prefix": "1ea5212ff6a799f827e70f5b73eff13c5813a26ff640a0f26dc97eecdd7a944b",
+        "size_in_bytes": 1902
+      },
+      {
+        "_path": "site-packages/dendropy/utility/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "fc0876186f699035dab89898df5a298f7accea263ffb957660845e709b2da1ac",
+        "sha256_in_prefix": "fc0876186f699035dab89898df5a298f7accea263ffb957660845e709b2da1ac",
+        "size_in_bytes": 690
+      },
+      {
+        "_path": "site-packages/dendropy/utility/bibtex.py",
+        "path_type": "hardlink",
+        "sha256": "0e1fe99618a1e6621b659c6fb2128505422a80da14ce7d84cf3ec7fca1e52cd3",
+        "sha256_in_prefix": "0e1fe99618a1e6621b659c6fb2128505422a80da14ce7d84cf3ec7fca1e52cd3",
+        "size_in_bytes": 10625
+      },
+      {
+        "_path": "site-packages/dendropy/utility/bitprocessing.py",
+        "path_type": "hardlink",
+        "sha256": "2ce79cb098e8e2bf8891f39212e0fad1c47cb37bb974b21e512ad3800df2f43d",
+        "sha256_in_prefix": "2ce79cb098e8e2bf8891f39212e0fad1c47cb37bb974b21e512ad3800df2f43d",
+        "size_in_bytes": 3368
+      },
+      {
+        "_path": "site-packages/dendropy/utility/cli.py",
+        "path_type": "hardlink",
+        "sha256": "26990ed2de77cbcbe7bd67221349d35471459ab469782307a17253df0cad69e8",
+        "sha256_in_prefix": "26990ed2de77cbcbe7bd67221349d35471459ab469782307a17253df0cad69e8",
+        "size_in_bytes": 8612
+      },
+      {
+        "_path": "site-packages/dendropy/utility/constants.py",
+        "path_type": "hardlink",
+        "sha256": "4997a7fc7e3ec908d6a3b2b3f571d34fa681e598abd0a3697358b6767f48b2e3",
+        "sha256_in_prefix": "4997a7fc7e3ec908d6a3b2b3f571d34fa681e598abd0a3697358b6767f48b2e3",
+        "size_in_bytes": 749
+      },
+      {
+        "_path": "site-packages/dendropy/utility/container.py",
+        "path_type": "hardlink",
+        "sha256": "d01afdc8a2b4ab81f3dc3a7136e3a94fcd8161d7b848bc7257d07fd6a19568ba",
+        "sha256_in_prefix": "d01afdc8a2b4ab81f3dc3a7136e3a94fcd8161d7b848bc7257d07fd6a19568ba",
+        "size_in_bytes": 43460
+      },
+      {
+        "_path": "site-packages/dendropy/utility/debug.py",
+        "path_type": "hardlink",
+        "sha256": "6cdd1d81cf69d25aa4c7f8363e5950f4a395df212b7380d4cb299c45e2229d28",
+        "sha256_in_prefix": "6cdd1d81cf69d25aa4c7f8363e5950f4a395df212b7380d4cb299c45e2229d28",
+        "size_in_bytes": 1230
+      },
+      {
+        "_path": "site-packages/dendropy/utility/deprecate.py",
+        "path_type": "hardlink",
+        "sha256": "12086f47abbaa824ab1d6cb03b40edbb5c8c767cfdb1ce5c05dc7f02ff389a20",
+        "sha256_in_prefix": "12086f47abbaa824ab1d6cb03b40edbb5c8c767cfdb1ce5c05dc7f02ff389a20",
+        "size_in_bytes": 2633
+      },
+      {
+        "_path": "site-packages/dendropy/utility/error.py",
+        "path_type": "hardlink",
+        "sha256": "90dfe3d25e2369718c527385917e635ef1bb7438a494875f17f724996e3207fb",
+        "sha256_in_prefix": "90dfe3d25e2369718c527385917e635ef1bb7438a494875f17f724996e3207fb",
+        "size_in_bytes": 6755
+      },
+      {
+        "_path": "site-packages/dendropy/utility/filesys.py",
+        "path_type": "hardlink",
+        "sha256": "510cb4ba42674302607e8af8d6288983dc571617b4d0067925f026c8ff6dde4f",
+        "sha256_in_prefix": "510cb4ba42674302607e8af8d6288983dc571617b4d0067925f026c8ff6dde4f",
+        "size_in_bytes": 12550
+      },
+      {
+        "_path": "site-packages/dendropy/utility/libexec/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "560c38ca6dab83f65bd189ffdb956b5488884f3dc780c7ca56740f56a0d4705b",
+        "sha256_in_prefix": "560c38ca6dab83f65bd189ffdb956b5488884f3dc780c7ca56740f56a0d4705b",
+        "size_in_bytes": 1208
+      },
+      {
+        "_path": "site-packages/dendropy/utility/messaging.py",
+        "path_type": "hardlink",
+        "sha256": "eb173c0773baf683b985614b904c98289f729b27186c1900449fa59e4598ad59",
+        "sha256_in_prefix": "eb173c0773baf683b985614b904c98289f729b27186c1900449fa59e4598ad59",
+        "size_in_bytes": 6601
+      },
+      {
+        "_path": "site-packages/dendropy/utility/metavar.py",
+        "path_type": "hardlink",
+        "sha256": "650a33bff218b2281b3b3c64daf7d27ba3e85eb9101efa6b907503e88f3bba38",
+        "sha256_in_prefix": "650a33bff218b2281b3b3c64daf7d27ba3e85eb9101efa6b907503e88f3bba38",
+        "size_in_bytes": 1468
+      },
+      {
+        "_path": "site-packages/dendropy/utility/processio.py",
+        "path_type": "hardlink",
+        "sha256": "12305ce8e61f059bda095ba0098f5ecf6844eb3e9dfed3cae53d4a72ff7ca534",
+        "sha256_in_prefix": "12305ce8e61f059bda095ba0098f5ecf6844eb3e9dfed3cae53d4a72ff7ca534",
+        "size_in_bytes": 3722
+      },
+      {
+        "_path": "site-packages/dendropy/utility/terminal.py",
+        "path_type": "hardlink",
+        "sha256": "f0d5aa433705210429991b33b66825af72342d2293583b3d1c62a61b34b264ae",
+        "sha256_in_prefix": "f0d5aa433705210429991b33b66825af72342d2293583b3d1c62a61b34b264ae",
+        "size_in_bytes": 2383
+      },
+      {
+        "_path": "site-packages/dendropy/utility/textprocessing.py",
+        "path_type": "hardlink",
+        "sha256": "300597e91a4cd7975e6f6020a31274114f51c4f399ad107bc9067f3b8cce12b6",
+        "sha256_in_prefix": "300597e91a4cd7975e6f6020a31274114f51c4f399ad107bc9067f3b8cce12b6",
+        "size_in_bytes": 7576
+      },
+      {
+        "_path": "site-packages/dendropy/utility/timeprocessing.py",
+        "path_type": "hardlink",
+        "sha256": "821a9691223e0066ce34772e66dcb5df0acfd3492e098a113b6cb09e7b37fc08",
+        "sha256_in_prefix": "821a9691223e0066ce34772e66dcb5df0acfd3492e098a113b6cb09e7b37fc08",
+        "size_in_bytes": 2384
+      },
+      {
+        "_path": "site-packages/dendropy/utility/urlio.py",
+        "path_type": "hardlink",
+        "sha256": "9047f6eb46f58eff0c15f4788ce9ec32b1c34a3c48adf144013de656c10dd6c1",
+        "sha256_in_prefix": "9047f6eb46f58eff0c15f4788ce9ec32b1c34a3c48adf144013de656c10dd6c1",
+        "size_in_bytes": 1341
+      },
+      {
+        "_path": "site-packages/dendropy/utility/vcsinfo.py",
+        "path_type": "hardlink",
+        "sha256": "d6e36c7561b5c2141276ca5d4f9ac77415fe94c7da8454672cfd7fa393563920",
+        "sha256_in_prefix": "d6e36c7561b5c2141276ca5d4f9ac77415fe94c7da8454672cfd7fa393563920",
+        "size_in_bytes": 7582
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/__pycache__/__main__.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/calculate/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/calculate/__pycache__/combinatorics.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/calculate/__pycache__/mathfn.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/calculate/__pycache__/phylogeneticdistance.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/calculate/__pycache__/popgenstat.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/calculate/__pycache__/probability.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/calculate/__pycache__/profiledistance.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/calculate/__pycache__/statistics.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/calculate/__pycache__/treecompare.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/calculate/__pycache__/treemeasure.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/calculate/__pycache__/treescore.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/calculate/__pycache__/treesum.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/fastareader.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/fastawriter.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/ioservice.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/newick.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/newickreader.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/newickwriter.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/newickyielder.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/nexmlreader.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/nexmlwriter.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/nexmlyielder.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/nexusprocessing.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/nexusreader.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/nexuswriter.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/nexusyielder.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/phylipreader.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/phylipwriter.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/tokenizer.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/dataio/__pycache__/xmlprocessing.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/basemodel.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/charmatrixmodel.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/charstatemodel.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/datasetmodel.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/taxonmodel.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/treecollectionmodel.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/datamodel/__pycache__/treemodel.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/interop/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/interop/__pycache__/ape.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/interop/__pycache__/biopython.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/interop/__pycache__/entrez.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/interop/__pycache__/ete.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/interop/__pycache__/gbif.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/interop/__pycache__/genbank.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/interop/__pycache__/muscle.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/interop/__pycache__/paup.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/interop/__pycache__/raxml.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/interop/__pycache__/rspr.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/interop/__pycache__/rstats.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/interop/__pycache__/seqgen.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/legacy/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/legacy/__pycache__/coalescent.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/legacy/__pycache__/continuous.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/legacy/__pycache__/ncbi.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/legacy/__pycache__/popgensim.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/legacy/__pycache__/popgenstat.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/legacy/__pycache__/reconcile.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/legacy/__pycache__/seqmodel.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/legacy/__pycache__/seqsim.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/legacy/__pycache__/treecalc.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/legacy/__pycache__/treemanip.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/legacy/__pycache__/treesim.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/legacy/__pycache__/treesplit.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/legacy/__pycache__/treesum.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/mathlib/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/mathlib/__pycache__/mathfn.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/mathlib/__pycache__/probability.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/mathlib/__pycache__/statistics.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/model/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/model/__pycache__/birthdeath.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/model/__pycache__/coalescent.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/model/__pycache__/continuous.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/model/__pycache__/discrete.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/model/__pycache__/multispeciescoalescent.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/model/__pycache__/parsimony.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/model/__pycache__/protractedspeciation.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/model/__pycache__/reconcile.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/model/__pycache__/treeshape.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/simulate/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/simulate/__pycache__/charsim.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/simulate/__pycache__/popgensim.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/simulate/__pycache__/treesim.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/bibtex.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/bitprocessing.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/cli.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/constants.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/container.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/debug.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/deprecate.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/error.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/filesys.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/libexec/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/messaging.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/metavar.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/processio.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/terminal.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/textprocessing.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/timeprocessing.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/urlio.cpython-36.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.6/site-packages/dendropy/utility/__pycache__/vcsinfo.cpython-36.pyc",
+        "path_type": "pyc_file"
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "dendropy==4.4.0=py_1",
+  "sha256": "3fb3070543dd79815bc9d32f3dbb6ebe79fb255cef20ab983810320b3601e978",
+  "size": 305829,
+  "subdir": "noarch",
+  "timestamp": 1554899388743,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/noarch/dendropy-4.4.0-py_1.tar.bz2",
+  "version": "4.4.0"
+}

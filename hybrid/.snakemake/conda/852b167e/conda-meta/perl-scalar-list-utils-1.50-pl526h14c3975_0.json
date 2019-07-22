@@ -1,0 +1,86 @@
+{
+  "build": "pl526h14c3975_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=7.3.0",
+    "perl >=5.26.2,<5.26.3.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/perl-scalar-list-utils-1.50-pl526h14c3975_0",
+  "features": "",
+  "files": [
+    "lib/site_perl/5.26.2/x86_64-linux-thread-multi/List/Util.pm",
+    "lib/site_perl/5.26.2/x86_64-linux-thread-multi/List/Util/XS.pm",
+    "lib/site_perl/5.26.2/x86_64-linux-thread-multi/Scalar/Util.pm",
+    "lib/site_perl/5.26.2/x86_64-linux-thread-multi/Sub/Util.pm",
+    "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/List/Util/.packlist",
+    "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/List/Util/Util.so"
+  ],
+  "fn": "perl-scalar-list-utils-1.50-pl526h14c3975_0.tar.bz2",
+  "license": "perl_5",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/perl-scalar-list-utils-1.50-pl526h14c3975_0",
+    "type": 1
+  },
+  "md5": "a1910bb206f24807e980790ae4272148",
+  "name": "perl-scalar-list-utils",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/perl-scalar-list-utils-1.50-pl526h14c3975_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/site_perl/5.26.2/x86_64-linux-thread-multi/List/Util.pm",
+        "path_type": "hardlink",
+        "sha256": "ea5f6a490e4470aacf76b8707b85883d2184e6e479e7d6e9fc6ae8ff11aeaefb",
+        "sha256_in_prefix": "ea5f6a490e4470aacf76b8707b85883d2184e6e479e7d6e9fc6ae8ff11aeaefb",
+        "size_in_bytes": 21126
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/x86_64-linux-thread-multi/List/Util/XS.pm",
+        "path_type": "hardlink",
+        "sha256": "1efe7fbd6c52a7d40a738072636a23a95c4e687c7e233df338f60146bccef953",
+        "sha256_in_prefix": "1efe7fbd6c52a7d40a738072636a23a95c4e687c7e233df338f60146bccef953",
+        "size_in_bytes": 1018
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/x86_64-linux-thread-multi/Scalar/Util.pm",
+        "path_type": "hardlink",
+        "sha256": "36a595e6f80d2e0048e83f56689cef4a7c8411151e2111c8482c2b6a71262343",
+        "sha256_in_prefix": "36a595e6f80d2e0048e83f56689cef4a7c8411151e2111c8482c2b6a71262343",
+        "size_in_bytes": 9938
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/x86_64-linux-thread-multi/Sub/Util.pm",
+        "path_type": "hardlink",
+        "sha256": "35675ad0c7823b0cd93e0572497d83290933af9b88d7b14002599c29e499ac25",
+        "sha256_in_prefix": "35675ad0c7823b0cd93e0572497d83290933af9b88d7b14002599c29e499ac25",
+        "size_in_bytes": 4514
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/List/Util/.packlist",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "ebf3cb87880f74e483a5c377203a8cbee9dd953a1c1060449bb50cb39e40b381",
+        "sha256_in_prefix": "66bf01d45d9e5fc890bfccd12cbf6365fe6a3cdd1e0f60624901fa49a1b6c8f6",
+        "size_in_bytes": 1089
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/List/Util/Util.so",
+        "path_type": "hardlink",
+        "sha256": "4e28589ee5d413babc0e5e7af8701e7dc885737cdf8ae4065a38b3f39cfb931a",
+        "sha256_in_prefix": "4e28589ee5d413babc0e5e7af8701e7dc885737cdf8ae4065a38b3f39cfb931a",
+        "size_in_bytes": 62080
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "perl-scalar-list-utils==1.50=pl526h14c3975_0",
+  "sha256": "f4056987799ef923d153692a7bda8ad7d387ce49c32d6fb02443dff57ada25e6",
+  "size": 38717,
+  "subdir": "linux-64",
+  "timestamp": 1557972077166,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/perl-scalar-list-utils-1.50-pl526h14c3975_0.tar.bz2",
+  "version": "1.50"
+}

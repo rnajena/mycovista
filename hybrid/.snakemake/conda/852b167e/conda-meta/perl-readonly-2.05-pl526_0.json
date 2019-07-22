@@ -1,0 +1,61 @@
+{
+  "build": "pl526_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "perl >=5.26.2,<5.26.3.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/perl-readonly-2.05-pl526_0",
+  "features": "",
+  "files": [
+    "lib/site_perl/5.26.2/Readonly.pm",
+    "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/Readonly/.packlist",
+    "man/man3/Readonly.3"
+  ],
+  "fn": "perl-readonly-2.05-pl526_0.tar.bz2",
+  "license": "perl_5",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/perl-readonly-2.05-pl526_0",
+    "type": 1
+  },
+  "md5": "bccc10364be7bdde1b6a6126f8feaa97",
+  "name": "perl-readonly",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/perl-readonly-2.05-pl526_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/site_perl/5.26.2/Readonly.pm",
+        "path_type": "hardlink",
+        "sha256": "3c0cf4f2294be1a36e4e9015db481ac8faeaae7ae1bdaf804454fde21a46d079",
+        "sha256_in_prefix": "3c0cf4f2294be1a36e4e9015db481ac8faeaae7ae1bdaf804454fde21a46d079",
+        "size_in_bytes": 28243
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/Readonly/.packlist",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "37e64b5a2ee8143e94aa90b2a505ce10cb9a10c8678cd90054ce2c04edc4cba1",
+        "sha256_in_prefix": "e15472df3fad1652c49898ab7844e081fec1b60266a01045b13eaef5fb552780",
+        "size_in_bytes": 202
+      },
+      {
+        "_path": "man/man3/Readonly.3",
+        "path_type": "hardlink",
+        "sha256": "cee7115d9388673a7a31d58d43cbdfaf61527c60fce8774eaf17cf351a533702",
+        "sha256_in_prefix": "cee7115d9388673a7a31d58d43cbdfaf61527c60fce8774eaf17cf351a533702",
+        "size_in_bytes": 23451
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "perl-readonly==2.05=pl526_0",
+  "sha256": "1ac36b659b4d50cc96c6e1480ecc314e46d4559f1009987b97f504c11a25915d",
+  "size": 17693,
+  "subdir": "linux-64",
+  "timestamp": 1545065130344,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/perl-readonly-2.05-pl526_0.tar.bz2",
+  "version": "2.05"
+}

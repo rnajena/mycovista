@@ -1,0 +1,94 @@
+{
+  "build": "pl526_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "perl >=5.26.2,<5.26.3.0a0",
+    "perl-pathtools"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/perl-config-general-2.63-pl526_0",
+  "features": "",
+  "files": [
+    "lib/site_perl/5.26.2/Config/General.pm",
+    "lib/site_perl/5.26.2/Config/General/Extended.pm",
+    "lib/site_perl/5.26.2/Config/General/Interpolated.pm",
+    "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/Config/General/.packlist",
+    "man/man3/Config::General.3",
+    "man/man3/Config::General::Extended.3",
+    "man/man3/Config::General::Interpolated.3"
+  ],
+  "fn": "perl-config-general-2.63-pl526_0.tar.bz2",
+  "license": "perl_5",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/perl-config-general-2.63-pl526_0",
+    "type": 1
+  },
+  "md5": "4c03b6281b2943e483ab6ef82dfc875e",
+  "name": "perl-config-general",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/perl-config-general-2.63-pl526_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/site_perl/5.26.2/Config/General.pm",
+        "path_type": "hardlink",
+        "sha256": "49b72504a81d020e840736faebc7d8679d7fddc2b694ee96aa9c32a15c03744a",
+        "sha256_in_prefix": "49b72504a81d020e840736faebc7d8679d7fddc2b694ee96aa9c32a15c03744a",
+        "size_in_bytes": 85849
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Config/General/Extended.pm",
+        "path_type": "hardlink",
+        "sha256": "81dc7ea6a26dfa64babf2943630df3b68a915c4879ae6d07419aed4fce681a91",
+        "sha256_in_prefix": "81dc7ea6a26dfa64babf2943630df3b68a915c4879ae6d07419aed4fce681a91",
+        "size_in_bytes": 14805
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Config/General/Interpolated.pm",
+        "path_type": "hardlink",
+        "sha256": "8d667b170cf7358af6e05f2cd426f29d16db88f554758025766a2ff4b35fe680",
+        "sha256_in_prefix": "8d667b170cf7358af6e05f2cd426f29d16db88f554758025766a2ff4b35fe680",
+        "size_in_bytes": 8651
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/Config/General/.packlist",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "9f30c6225d23efc5ea0e29f58d2d111b554889d93d1a3888c0c51639f5962c6b",
+        "sha256_in_prefix": "f9026d280b97182edebd3c0adb87fe8803f4de85dbb47d5d44a51efca68c9b9e",
+        "size_in_bytes": 794
+      },
+      {
+        "_path": "man/man3/Config::General.3",
+        "path_type": "hardlink",
+        "sha256": "27d472f11235fe90278ee37ef769d3f894522ede51c5e3b18783ecb180ce2c20",
+        "sha256_in_prefix": "27d472f11235fe90278ee37ef769d3f894522ede51c5e3b18783ecb180ce2c20",
+        "size_in_bytes": 46650
+      },
+      {
+        "_path": "man/man3/Config::General::Extended.3",
+        "path_type": "hardlink",
+        "sha256": "8f6b6ddea5287bd94e18771261a8e957711bc2eac2cc69c06db647a5165a471c",
+        "sha256_in_prefix": "8f6b6ddea5287bd94e18771261a8e957711bc2eac2cc69c06db647a5165a471c",
+        "size_in_bytes": 10756
+      },
+      {
+        "_path": "man/man3/Config::General::Interpolated.3",
+        "path_type": "hardlink",
+        "sha256": "0565321aba5d78b20be18f711c4bc93309010df880fb4ed43c3341ad6a0db20c",
+        "sha256_in_prefix": "0565321aba5d78b20be18f711c4bc93309010df880fb4ed43c3341ad6a0db20c",
+        "size_in_bytes": 5497
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "perl-config-general==2.63=pl526_0",
+  "sha256": "1ac4a125f2d7c8c4497179c7a28a638a5ba32daf03c5af2191391ab49b3ba43c",
+  "size": 42414,
+  "subdir": "linux-64",
+  "timestamp": 1547407618553,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/perl-config-general-2.63-pl526_0.tar.bz2",
+  "version": "2.63"
+}

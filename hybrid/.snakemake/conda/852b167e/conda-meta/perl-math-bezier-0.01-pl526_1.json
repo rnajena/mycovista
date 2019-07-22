@@ -1,0 +1,71 @@
+{
+  "build": "pl526_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "perl >=5.26.2,<5.27.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/perl-math-bezier-0.01-pl526_1",
+  "features": "",
+  "files": [
+    "lib/5.26.2/x86_64-linux-thread-multi/perllocal.pod",
+    "lib/site_perl/5.26.2/Math/Bezier.pm",
+    "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/Math/Bezier/.packlist",
+    "man/man3/Math::Bezier.3"
+  ],
+  "fn": "perl-math-bezier-0.01-pl526_1.tar.bz2",
+  "license": "unknown",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/perl-math-bezier-0.01-pl526_1",
+    "type": 1
+  },
+  "md5": "77c5b19744caed2069116f7c826f25cf",
+  "name": "perl-math-bezier",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/perl-math-bezier-0.01-pl526_1.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/5.26.2/x86_64-linux-thread-multi/perllocal.pod",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "d8425adaa2ed3d10f7a13ca1221bfebcb05754423efcd14d654d6d66846df07d",
+        "sha256_in_prefix": "e16d1a8402213ac81b4b5aea7d14e80f9a9d2a21200ed5a4e865e398366144fa",
+        "size_in_bytes": 255
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Math/Bezier.pm",
+        "path_type": "hardlink",
+        "sha256": "24dc57b2a883a035bde3a0522e24c6a3ad6320f2fc7b2cdaeb19c66ddd03b438",
+        "sha256_in_prefix": "24dc57b2a883a035bde3a0522e24c6a3ad6320f2fc7b2cdaeb19c66ddd03b438",
+        "size_in_bytes": 5804
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/Math/Bezier/.packlist",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "b0e93949bd8628152a84ee755a57661d0d6f6461d7f276c05fb5d9ba5db90c01",
+        "sha256_in_prefix": "c110b0b169d23a75cbf2284785ffd28c9152f710d58d7436fbf3282c3b43ff67",
+        "size_in_bytes": 222
+      },
+      {
+        "_path": "man/man3/Math::Bezier.3",
+        "path_type": "hardlink",
+        "sha256": "19df6157483bb3239cad401db0f2fca606afabb453e38cb4badf9495b37718a9",
+        "sha256_in_prefix": "19df6157483bb3239cad401db0f2fca606afabb453e38cb4badf9495b37718a9",
+        "size_in_bytes": 5096
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "perl-math-bezier==0.01=pl526_1",
+  "sha256": "933ec20cf2378d15e41683f86e364802ffd247f5bad80969ea136ebcb51bab66",
+  "size": 7832,
+  "subdir": "linux-64",
+  "timestamp": 1530920162638,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/perl-math-bezier-0.01-pl526_1.tar.bz2",
+  "version": "0.01"
+}

@@ -1,0 +1,61 @@
+{
+  "build": "pl526_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "perl >=5.26.2,<5.27.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/perl-set-intspan-1.19-pl526_1",
+  "features": "",
+  "files": [
+    "lib/site_perl/5.26.2/Set/IntSpan.pm",
+    "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/Set/IntSpan/.packlist",
+    "man/man3/Set::IntSpan.3"
+  ],
+  "fn": "perl-set-intspan-1.19-pl526_1.tar.bz2",
+  "license": "unknown",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/perl-set-intspan-1.19-pl526_1",
+    "type": 1
+  },
+  "md5": "420e8cef769ac53b3812a96d29ebfcb2",
+  "name": "perl-set-intspan",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/perl-set-intspan-1.19-pl526_1.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/site_perl/5.26.2/Set/IntSpan.pm",
+        "path_type": "hardlink",
+        "sha256": "88af25449e371317ee8ccae202960afc2512853177061ddd1c2666315d5b5b71",
+        "sha256_in_prefix": "88af25449e371317ee8ccae202960afc2512853177061ddd1c2666315d5b5b71",
+        "size_in_bytes": 51949
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/Set/IntSpan/.packlist",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "27d12cd23a8de3e9e54efb5a7ef0613778e978f3770d46e2e9a806bf4effe812",
+        "sha256_in_prefix": "2a2934a7cb339ecf6e4bf708fa9845971550ad0138cbbee6683efb695392be10",
+        "size_in_bytes": 222
+      },
+      {
+        "_path": "man/man3/Set::IntSpan.3",
+        "path_type": "hardlink",
+        "sha256": "1831ad868b7576057f07622b7b45ef27bce9feca5b25bb0c0f1253b46003da17",
+        "sha256_in_prefix": "1831ad868b7576057f07622b7b45ef27bce9feca5b25bb0c0f1253b46003da17",
+        "size_in_bytes": 41024
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "perl-set-intspan==1.19=pl526_1",
+  "sha256": "9bbdc7b1492e7edfa6139322655d47b30e4ff6f8a8372b41ff71a5f80330c1d2",
+  "size": 22034,
+  "subdir": "linux-64",
+  "timestamp": 1531058931678,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/perl-set-intspan-1.19-pl526_1.tar.bz2",
+  "version": "1.19"
+}

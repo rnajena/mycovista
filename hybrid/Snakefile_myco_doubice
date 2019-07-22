@@ -246,7 +246,7 @@ rule quast_all:
 		in3 = '{path}/hybrid/postprocessing/racon_short/15DD0163_porechop_wtdbg2/15DD0163_porechop_wtdbg2_short4.contigs.fasta',
 		in4 = '{path}/hybrid/postprocessing/racon_short/15DD0163_deepbinner_canu/15DD0163_deepbinner_canu_short4.contigs.fasta',
 		in5 = '{path}/hybrid/postprocessing/racon_short/15DD0163_deepbinner_flye/15DD0163_deepbinner_flye_short4.contigs.fasta',
-		in6 = '{path}/hybrid/postprocessing/racon_short/15DD0163_deepbinner_wtdbg2//15DD0163_deepbinner_wtdbg2_short4.contigs.fasta',
+		in6 = '{path}/hybrid/postprocessing/racon_short/15DD0163_deepbinner_wtdbg2/15DD0163_deepbinner_wtdbg2_short4.contigs.fasta',
 		in7 = '{path}/hybrid/postprocessing/racon_short/17DD0007_porechop_canu/17DD0007_porechop_canu_short4.contigs.fasta',
 		in8 = '{path}/hybrid/postprocessing/racon_short/17DD0007_porechop_flye/17DD0007_porechop_flye_short4.contigs.fasta',
 		in9 = '{path}/hybrid/postprocessing/racon_short/17DD0007_porechop_wtdbg2/17DD0007_porechop_wtdbg2_short4.contigs.fasta',

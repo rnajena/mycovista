@@ -1,0 +1,61 @@
+{
+  "build": "pl526_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "perl >=5.26.2,<5.26.3.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/perl-text-format-0.59-pl526_2",
+  "features": "",
+  "files": [
+    "lib/site_perl/5.26.2/Text/Format.pm",
+    "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/Text/Format/.packlist",
+    "man/man3/Text::Format.3"
+  ],
+  "fn": "perl-text-format-0.59-pl526_2.tar.bz2",
+  "license": "perl_5",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/perl-text-format-0.59-pl526_2",
+    "type": 1
+  },
+  "md5": "60952ff891dc84027436676527de58ba",
+  "name": "perl-text-format",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/perl-text-format-0.59-pl526_2.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/site_perl/5.26.2/Text/Format.pm",
+        "path_type": "hardlink",
+        "sha256": "d1d491354e5fae72ec7c39c5c7cc5c7014d57c22a7dc6bc5ee386b2eab4434f5",
+        "sha256_in_prefix": "d1d491354e5fae72ec7c39c5c7cc5c7014d57c22a7dc6bc5ee386b2eab4434f5",
+        "size_in_bytes": 29526
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/Text/Format/.packlist",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "32e5c1757e6d2dea45a349f77b62c0b06488491d14957a0771f2acef404b9aba",
+        "sha256_in_prefix": "76702ce46887aa150f986a9f9ee1e46eadb7297f29985a18aa7f7440b6cd768d",
+        "size_in_bytes": 222
+      },
+      {
+        "_path": "man/man3/Text::Format.3",
+        "path_type": "hardlink",
+        "sha256": "f3ccc5224c7dd53bbc8d265650509e33335814c001358950cbf5879903a60703",
+        "sha256_in_prefix": "f3ccc5224c7dd53bbc8d265650509e33335814c001358950cbf5879903a60703",
+        "size_in_bytes": 18280
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "perl-text-format==0.59=pl526_2",
+  "sha256": "93546644862c990170692f3df26a3a5d02f0532a747150c49ed4aac698dcf956",
+  "size": 16139,
+  "subdir": "linux-64",
+  "timestamp": 1552535001967,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/perl-text-format-0.59-pl526_2.tar.bz2",
+  "version": "0.59"
+}

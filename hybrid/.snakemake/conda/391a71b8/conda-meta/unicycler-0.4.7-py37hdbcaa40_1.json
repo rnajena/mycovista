@@ -1,0 +1,658 @@
+{
+  "build": "py37hdbcaa40_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "blast",
+    "bowtie2",
+    "freebayes",
+    "libgcc-ng >=7.3.0",
+    "libstdcxx-ng >=7.3.0",
+    "miniasm",
+    "openjdk",
+    "pilon",
+    "python >=3.7,<3.8.0a0",
+    "racon",
+    "samtools >=1.0",
+    "spades >=3.6.2",
+    "zlib >=1.2.11,<1.3.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/unicycler-0.4.7-py37hdbcaa40_1",
+  "features": "",
+  "files": [
+    "bin/unicycler",
+    "bin/unicycler_align",
+    "bin/unicycler_check",
+    "bin/unicycler_polish",
+    "bin/unicycler_scrub",
+    "lib/python3.7/site-packages/unicycler-0.4.7.dist-info/INSTALLER",
+    "lib/python3.7/site-packages/unicycler-0.4.7.dist-info/LICENSE",
+    "lib/python3.7/site-packages/unicycler-0.4.7.dist-info/METADATA",
+    "lib/python3.7/site-packages/unicycler-0.4.7.dist-info/RECORD",
+    "lib/python3.7/site-packages/unicycler-0.4.7.dist-info/WHEEL",
+    "lib/python3.7/site-packages/unicycler-0.4.7.dist-info/entry_points.txt",
+    "lib/python3.7/site-packages/unicycler-0.4.7.dist-info/top_level.txt",
+    "lib/python3.7/site-packages/unicycler/__init__.py",
+    "lib/python3.7/site-packages/unicycler/__pycache__/__init__.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/alignment.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/assembly_graph.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/assembly_graph_copy_depth.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/assembly_graph_segment.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/blast_func.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/bridge_common.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/bridge_long_read.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/bridge_long_read_simple.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/bridge_loop_unroll.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/bridge_miniasm.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/bridge_spades_contig.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/cpp_wrappers.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/log.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/miniasm_assembly.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/minimap_alignment.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/misc.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/path_finding.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/pilon_func.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/read_ref.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/settings.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/spades_func.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/string_graph.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/unicycler.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/unicycler_align.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/unicycler_check.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/unicycler_polish.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/unicycler_scrub.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/vcf_func.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/__pycache__/version.cpython-37.pyc",
+    "lib/python3.7/site-packages/unicycler/alignment.py",
+    "lib/python3.7/site-packages/unicycler/assembly_graph.py",
+    "lib/python3.7/site-packages/unicycler/assembly_graph_copy_depth.py",
+    "lib/python3.7/site-packages/unicycler/assembly_graph_segment.py",
+    "lib/python3.7/site-packages/unicycler/blast_func.py",
+    "lib/python3.7/site-packages/unicycler/bridge_common.py",
+    "lib/python3.7/site-packages/unicycler/bridge_long_read.py",
+    "lib/python3.7/site-packages/unicycler/bridge_long_read_simple.py",
+    "lib/python3.7/site-packages/unicycler/bridge_loop_unroll.py",
+    "lib/python3.7/site-packages/unicycler/bridge_miniasm.py",
+    "lib/python3.7/site-packages/unicycler/bridge_spades_contig.py",
+    "lib/python3.7/site-packages/unicycler/cpp_functions.so",
+    "lib/python3.7/site-packages/unicycler/cpp_wrappers.py",
+    "lib/python3.7/site-packages/unicycler/gene_data/lambda_phage.fasta",
+    "lib/python3.7/site-packages/unicycler/gene_data/start_genes.fasta",
+    "lib/python3.7/site-packages/unicycler/log.py",
+    "lib/python3.7/site-packages/unicycler/miniasm_assembly.py",
+    "lib/python3.7/site-packages/unicycler/minimap_alignment.py",
+    "lib/python3.7/site-packages/unicycler/misc.py",
+    "lib/python3.7/site-packages/unicycler/path_finding.py",
+    "lib/python3.7/site-packages/unicycler/pilon_func.py",
+    "lib/python3.7/site-packages/unicycler/read_ref.py",
+    "lib/python3.7/site-packages/unicycler/settings.py",
+    "lib/python3.7/site-packages/unicycler/spades_func.py",
+    "lib/python3.7/site-packages/unicycler/string_graph.py",
+    "lib/python3.7/site-packages/unicycler/unicycler.py",
+    "lib/python3.7/site-packages/unicycler/unicycler_align.py",
+    "lib/python3.7/site-packages/unicycler/unicycler_check.py",
+    "lib/python3.7/site-packages/unicycler/unicycler_polish.py",
+    "lib/python3.7/site-packages/unicycler/unicycler_scrub.py",
+    "lib/python3.7/site-packages/unicycler/vcf_func.py",
+    "lib/python3.7/site-packages/unicycler/version.py"
+  ],
+  "fn": "unicycler-0.4.7-py37hdbcaa40_1.tar.bz2",
+  "license": "GPL-3.0",
+  "license_family": "GPL",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/unicycler-0.4.7-py37hdbcaa40_1",
+    "type": 1
+  },
+  "md5": "ac9de76b9353e0d9e3f131a86f0d9e14",
+  "name": "unicycler",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/unicycler-0.4.7-py37hdbcaa40_1.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/unicycler",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "abf25e2ef64587bba769400fa529ff22ec3a13bb3ab5dfc265f3277332be6ffc",
+        "sha256_in_prefix": "7cca27ebe2ed1a45ba7108e5be1bea58446e9cc06f52184fd1b05be34a3b8b24",
+        "size_in_bytes": 281
+      },
+      {
+        "_path": "bin/unicycler_align",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "ba5fac7eda83e413289a3e4edd0a24a872686ae57b80cc4e49bd6d9a92bc228b",
+        "sha256_in_prefix": "4bde11bb4cd74e7327665ef3fcc1fbaba4c166eb8b89e57218ca9c094e7a2d0d",
+        "size_in_bytes": 287
+      },
+      {
+        "_path": "bin/unicycler_check",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "6c21fc2bcb54401a44f1fe659191c34258dabdd357938352739b1ba2fcfb8adc",
+        "sha256_in_prefix": "1c416fe8ff70b4391f8b35843fcbf96f54cead63904ff8232cf489a3f195d126",
+        "size_in_bytes": 287
+      },
+      {
+        "_path": "bin/unicycler_polish",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "64fe3cedf28ea99b3aed1ccd4f7621bc6071fa2a3f5d32f2d083dab257864d50",
+        "sha256_in_prefix": "023f1b3a57d265ab9cc87f072711c2c6ce60856fc3f72d8d2c5d8f87e8995825",
+        "size_in_bytes": 288
+      },
+      {
+        "_path": "bin/unicycler_scrub",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "7407e1938fb43a1697e403203f1297d982c2cad28df8cc211fd7f8b04b6c8912",
+        "sha256_in_prefix": "cc0314b6e949700277c65330034417096491321a61025cb0c5a960dd6a9f44ba",
+        "size_in_bytes": 287
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler-0.4.7.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "sha256_in_prefix": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "size_in_bytes": 4
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler-0.4.7.dist-info/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+        "sha256_in_prefix": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+        "size_in_bytes": 35147
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler-0.4.7.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "f6686e3e1b82dae84c0e289108ada5584edd80d85a077ff36c24d300d3694ced",
+        "sha256_in_prefix": "f6686e3e1b82dae84c0e289108ada5584edd80d85a077ff36c24d300d3694ced",
+        "size_in_bytes": 46914
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler-0.4.7.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "efb933422518b3372e62997b10182f85c4d268b1bfe55d12e77716a3f03af1f6",
+        "sha256_in_prefix": "efb933422518b3372e62997b10182f85c4d268b1bfe55d12e77716a3f03af1f6",
+        "size_in_bytes": 5452
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler-0.4.7.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "d2b1c339a9dad78873b1ab9ad89d8bed9b64eacb68e363b49e826deced346631",
+        "sha256_in_prefix": "d2b1c339a9dad78873b1ab9ad89d8bed9b64eacb68e363b49e826deced346631",
+        "size_in_bytes": 93
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler-0.4.7.dist-info/entry_points.txt",
+        "path_type": "hardlink",
+        "sha256": "ee3a19c6143ff0c4d6957209d8238d5edaa3b5b1422bdf5031ed77176dc1202b",
+        "sha256_in_prefix": "ee3a19c6143ff0c4d6957209d8238d5edaa3b5b1422bdf5031ed77176dc1202b",
+        "size_in_bytes": 254
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler-0.4.7.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "4b9fe9f16e05a93381a1f10d199c481c9516239c14ac880e5ad8aca494ee7bd0",
+        "sha256_in_prefix": "4b9fe9f16e05a93381a1f10d199c481c9516239c14ac880e5ad8aca494ee7bd0",
+        "size_in_bytes": 10
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "68f1eeaba1e7b225f9fc876369d08d098cf0cc374e2eba662492609c278a94ff",
+        "sha256_in_prefix": "68f1eeaba1e7b225f9fc876369d08d098cf0cc374e2eba662492609c278a94ff",
+        "size_in_bytes": 136
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/alignment.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "0ec7b773aeb967f8c301e7d6be96c1d9db36b558c4a728fb43bc20369ba9d352",
+        "sha256_in_prefix": "0ec7b773aeb967f8c301e7d6be96c1d9db36b558c4a728fb43bc20369ba9d352",
+        "size_in_bytes": 11280
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/assembly_graph.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "b2c0401bbad37cdd53ac19840da1566d998febf4c044b6b5fd33fe65353ab006",
+        "sha256_in_prefix": "b2c0401bbad37cdd53ac19840da1566d998febf4c044b6b5fd33fe65353ab006",
+        "size_in_bytes": 87789
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/assembly_graph_copy_depth.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "87acd791fece69fcb4e554bfb4a086713718c7f7f110402190554e0b0d030e56",
+        "sha256_in_prefix": "87acd791fece69fcb4e554bfb4a086713718c7f7f110402190554e0b0d030e56",
+        "size_in_bytes": 14921
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/assembly_graph_segment.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "7f3c074774bf8a26523fbe7e41c70d0a02b24e0ffff379f9c1c6c3ab808cc7e0",
+        "sha256_in_prefix": "7f3c074774bf8a26523fbe7e41c70d0a02b24e0ffff379f9c1c6c3ab808cc7e0",
+        "size_in_bytes": 7991
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/blast_func.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "05c25001ca14be041e94651f97ee683cf7dd7e4200fa7fb2ce98c5cb9b631f0e",
+        "sha256_in_prefix": "05c25001ca14be041e94651f97ee683cf7dd7e4200fa7fb2ce98c5cb9b631f0e",
+        "size_in_bytes": 4286
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/bridge_common.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "ed4f4e78c2abc53119ad1601d36259bc72a2f99e255868e3148026c37ec3b420",
+        "sha256_in_prefix": "ed4f4e78c2abc53119ad1601d36259bc72a2f99e255868e3148026c37ec3b420",
+        "size_in_bytes": 5671
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/bridge_long_read.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "adfeb064eeb3e67db8c5ab900027fb6694f64f4256ad15894faffe3add1d42ed",
+        "sha256_in_prefix": "adfeb064eeb3e67db8c5ab900027fb6694f64f4256ad15894faffe3add1d42ed",
+        "size_in_bytes": 16408
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/bridge_long_read_simple.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "060327ca7b30dc6ed20de688e0d993ea33f3b57af6bf8b7038e103882f527c39",
+        "sha256_in_prefix": "060327ca7b30dc6ed20de688e0d993ea33f3b57af6bf8b7038e103882f527c39",
+        "size_in_bytes": 14535
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/bridge_loop_unroll.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "c362a299fea9b0202eb27f5e8248df92df1ce6ff17bc027fb4b6fe31c949a77d",
+        "sha256_in_prefix": "c362a299fea9b0202eb27f5e8248df92df1ce6ff17bc027fb4b6fe31c949a77d",
+        "size_in_bytes": 6208
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/bridge_miniasm.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "0e6ea2e10be7e8291bfc7a0edd98e46415cf50ffa347ea04f8928583466f8edc",
+        "sha256_in_prefix": "0e6ea2e10be7e8291bfc7a0edd98e46415cf50ffa347ea04f8928583466f8edc",
+        "size_in_bytes": 7095
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/bridge_spades_contig.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "2f59759521ce966845a5de55a4b30980fb75e106a8b4dd47af099926f88368e7",
+        "sha256_in_prefix": "2f59759521ce966845a5de55a4b30980fb75e106a8b4dd47af099926f88368e7",
+        "size_in_bytes": 8234
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/cpp_wrappers.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "6ec187eead4b917d14c430b8b045ccdf968cf6dfdda7db5f513fc80f23b42985",
+        "sha256_in_prefix": "6ec187eead4b917d14c430b8b045ccdf968cf6dfdda7db5f513fc80f23b42985",
+        "size_in_bytes": 9043
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/log.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "67e65ff52714bc2df735bb3663afe3fe3e03b21de7b229fbae524b28abf9c709",
+        "sha256_in_prefix": "67e65ff52714bc2df735bb3663afe3fe3e03b21de7b229fbae524b28abf9c709",
+        "size_in_bytes": 5933
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/miniasm_assembly.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "b7f14c0e1c531875eee4ac0ea2b4b59d280b0eaeb9fee20772c5328663148260",
+        "sha256_in_prefix": "b7f14c0e1c531875eee4ac0ea2b4b59d280b0eaeb9fee20772c5328663148260",
+        "size_in_bytes": 21741
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/minimap_alignment.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "9e488a0ebb0712295406e06b44814fda6e5e5a370b60884373cfa5e18d1b0f84",
+        "sha256_in_prefix": "9e488a0ebb0712295406e06b44814fda6e5e5a370b60884373cfa5e18d1b0f84",
+        "size_in_bytes": 11530
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/misc.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "19c9cf065440a52ea79ea12d28022a3c67fcfbbbd4771b9e7ba66d3b16dea951",
+        "sha256_in_prefix": "19c9cf065440a52ea79ea12d28022a3c67fcfbbbd4771b9e7ba66d3b16dea951",
+        "size_in_bytes": 36866
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/path_finding.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "684d1be6d29f18e5f4cd489b630c85925c16a495ecbe929882d13ce9b6a78748",
+        "sha256_in_prefix": "684d1be6d29f18e5f4cd489b630c85925c16a495ecbe929882d13ce9b6a78748",
+        "size_in_bytes": 10676
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/pilon_func.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "3af3b44bc1b1c0522fed8c10f43bc6f1e135a933c3a90b4af7a0f710c7c01f88",
+        "sha256_in_prefix": "3af3b44bc1b1c0522fed8c10f43bc6f1e135a933c3a90b4af7a0f710c7c01f88",
+        "size_in_bytes": 10970
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/read_ref.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "2c36704069dacd5317f92d9a447a95cb22c844135df84ac76d6eccbf164fe6d7",
+        "sha256_in_prefix": "2c36704069dacd5317f92d9a447a95cb22c844135df84ac76d6eccbf164fe6d7",
+        "size_in_bytes": 14018
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/settings.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "1d8ff382ba11a39fafe106989720b6362dc12682a3f27d364a67948ee4882e05",
+        "sha256_in_prefix": "1d8ff382ba11a39fafe106989720b6362dc12682a3f27d364a67948ee4882e05",
+        "size_in_bytes": 3255
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/spades_func.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "e938a18040f20e6054b44678b7e0f4e14d4bb41276eeb9d0df0f0829718f78ae",
+        "sha256_in_prefix": "e938a18040f20e6054b44678b7e0f4e14d4bb41276eeb9d0df0f0829718f78ae",
+        "size_in_bytes": 15285
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/string_graph.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "b14ec8e67d4759538e4611e69da41e3dc808fbf7e5a3d13b93d4760a486abf58",
+        "sha256_in_prefix": "b14ec8e67d4759538e4611e69da41e3dc808fbf7e5a3d13b93d4760a486abf58",
+        "size_in_bytes": 24668
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/unicycler.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "e3e758e94fc7c36f8a89d68bd626854838e922165bc494ea23ea348eee8cd92e",
+        "sha256_in_prefix": "e3e758e94fc7c36f8a89d68bd626854838e922165bc494ea23ea348eee8cd92e",
+        "size_in_bytes": 34011
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/unicycler_align.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "dd07156f33847182ffe9d73e901c5b1e53462a28f3d03ff142974dc02e313a3c",
+        "sha256_in_prefix": "dd07156f33847182ffe9d73e901c5b1e53462a28f3d03ff142974dc02e313a3c",
+        "size_in_bytes": 18111
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/unicycler_check.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "8d15ea988ac8d3f38d307c7e0b51fd12e52b4d7e0e084d920750cb21c550e058",
+        "sha256_in_prefix": "8d15ea988ac8d3f38d307c7e0b51fd12e52b4d7e0e084d920750cb21c550e058",
+        "size_in_bytes": 35877
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/unicycler_polish.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "6450a8a9328d7a1a0b222cbe9ba0cd04727670cead2e2b98aa6bbfea1398ad71",
+        "sha256_in_prefix": "6450a8a9328d7a1a0b222cbe9ba0cd04727670cead2e2b98aa6bbfea1398ad71",
+        "size_in_bytes": 45911
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/unicycler_scrub.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "702c8a89b370b9dfee3bca01827afab0bec02352709d4f6d8af6b02cd0c93fd9",
+        "sha256_in_prefix": "702c8a89b370b9dfee3bca01827afab0bec02352709d4f6d8af6b02cd0c93fd9",
+        "size_in_bytes": 17473
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/vcf_func.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "24fef3dfd3ca6de2355bb237d0e80f97c466babcc010d99b7b33e65b64171d3a",
+        "sha256_in_prefix": "24fef3dfd3ca6de2355bb237d0e80f97c466babcc010d99b7b33e65b64171d3a",
+        "size_in_bytes": 4183
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/__pycache__/version.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "7678f60263d3a2635447373744d190efcb43fedab488d9cbd8b2262c914693ed",
+        "sha256_in_prefix": "7678f60263d3a2635447373744d190efcb43fedab488d9cbd8b2262c914693ed",
+        "size_in_bytes": 1021
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/alignment.py",
+        "path_type": "hardlink",
+        "sha256": "87269322753910fae4e45c31b28df3cb0ad4adc98cbebdde35323663d17d4026",
+        "sha256_in_prefix": "87269322753910fae4e45c31b28df3cb0ad4adc98cbebdde35323663d17d4026",
+        "size_in_bytes": 15408
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/assembly_graph.py",
+        "path_type": "hardlink",
+        "sha256": "e094a3ae5c179c60c04d216985d4fe798d356aae560c59618dd2dcdd7e43bfe8",
+        "sha256_in_prefix": "e094a3ae5c179c60c04d216985d4fe798d356aae560c59618dd2dcdd7e43bfe8",
+        "size_in_bytes": 123221
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/assembly_graph_copy_depth.py",
+        "path_type": "hardlink",
+        "sha256": "bc877f017a5ac309bd1564d35a73dc34f85da02f451513179fb1d72793c463c0",
+        "sha256_in_prefix": "bc877f017a5ac309bd1564d35a73dc34f85da02f451513179fb1d72793c463c0",
+        "size_in_bytes": 20829
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/assembly_graph_segment.py",
+        "path_type": "hardlink",
+        "sha256": "99b0897c52aa2ef0a47f562b692feceac40cb6a608ff736ec44d66fe6d41248b",
+        "sha256_in_prefix": "99b0897c52aa2ef0a47f562b692feceac40cb6a608ff736ec44d66fe6d41248b",
+        "size_in_bytes": 8417
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/blast_func.py",
+        "path_type": "hardlink",
+        "sha256": "dec7fb4f6fa811e05663a93e39e92c83a745758673f10072e0d595088921f1d2",
+        "sha256_in_prefix": "dec7fb4f6fa811e05663a93e39e92c83a745758673f10072e0d595088921f1d2",
+        "size_in_bytes": 5533
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/bridge_common.py",
+        "path_type": "hardlink",
+        "sha256": "16fa69f3f667cbe1a3e15cfd1edb361cef0ff1990c605214a6b9928f339ce242",
+        "sha256_in_prefix": "16fa69f3f667cbe1a3e15cfd1edb361cef0ff1990c605214a6b9928f339ce242",
+        "size_in_bytes": 7208
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/bridge_long_read.py",
+        "path_type": "hardlink",
+        "sha256": "374c706f7d219a2c5497a2800fd4c0dbd1ada9b4abf72d2abff7c31abb654fce",
+        "sha256_in_prefix": "374c706f7d219a2c5497a2800fd4c0dbd1ada9b4abf72d2abff7c31abb654fce",
+        "size_in_bytes": 34402
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/bridge_long_read_simple.py",
+        "path_type": "hardlink",
+        "sha256": "241f769025ffeb27e9c4b26132285ad2166018cff404c008ff7c6ea82f48613f",
+        "sha256_in_prefix": "241f769025ffeb27e9c4b26132285ad2166018cff404c008ff7c6ea82f48613f",
+        "size_in_bytes": 23908
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/bridge_loop_unroll.py",
+        "path_type": "hardlink",
+        "sha256": "54ae404a3d6cb08c47bba71e4b878dd50565781cc7e1c71df623af15e695a2ec",
+        "sha256_in_prefix": "54ae404a3d6cb08c47bba71e4b878dd50565781cc7e1c71df623af15e695a2ec",
+        "size_in_bytes": 9272
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/bridge_miniasm.py",
+        "path_type": "hardlink",
+        "sha256": "f46c890a84f035aa14c3359f81cbe02ddafb9ef308ebe0e19071713db9b1dd19",
+        "sha256_in_prefix": "f46c890a84f035aa14c3359f81cbe02ddafb9ef308ebe0e19071713db9b1dd19",
+        "size_in_bytes": 11669
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/bridge_spades_contig.py",
+        "path_type": "hardlink",
+        "sha256": "b2e92dfa589714e615dcb111b67b2000816cfe70389366718d273fabcb3b6f01",
+        "sha256_in_prefix": "b2e92dfa589714e615dcb111b67b2000816cfe70389366718d273fabcb3b6f01",
+        "size_in_bytes": 11297
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/cpp_functions.so",
+        "path_type": "hardlink",
+        "sha256": "48fe121cc9ed7361f2782555a223832cc66784d08655def14453581759286997",
+        "sha256_in_prefix": "48fe121cc9ed7361f2782555a223832cc66784d08655def14453581759286997",
+        "size_in_bytes": 1416496
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/cpp_wrappers.py",
+        "path_type": "hardlink",
+        "sha256": "00635c8c99080d12616cba933e11b0d3e1e461e77f649f1a88e17ae09f28651a",
+        "sha256_in_prefix": "00635c8c99080d12616cba933e11b0d3e1e461e77f649f1a88e17ae09f28651a",
+        "size_in_bytes": 20337
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/gene_data/lambda_phage.fasta",
+        "path_type": "hardlink",
+        "sha256": "e09be10c6977e5738b574fe1c029b2fb0cbfc4432491baed82cfd70a9124c31b",
+        "sha256_in_prefix": "e09be10c6977e5738b574fe1c029b2fb0cbfc4432491baed82cfd70a9124c31b",
+        "size_in_bytes": 49238
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/gene_data/start_genes.fasta",
+        "path_type": "hardlink",
+        "sha256": "b71cbfc29c4a0212bfa02b2e091b2f40a7ec2d855e4a301d17ed9d13ecce323d",
+        "sha256_in_prefix": "b71cbfc29c4a0212bfa02b2e091b2f40a7ec2d855e4a301d17ed9d13ecce323d",
+        "size_in_bytes": 1390354
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/log.py",
+        "path_type": "hardlink",
+        "sha256": "86c8bed42062d67c0b54811e19234e82a728f4370dc7f6019ed49699ff2be64e",
+        "sha256_in_prefix": "86c8bed42062d67c0b54811e19234e82a728f4370dc7f6019ed49699ff2be64e",
+        "size_in_bytes": 7105
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/miniasm_assembly.py",
+        "path_type": "hardlink",
+        "sha256": "5afe98eac5eec6a376b09245904e5d9c8d5bbfc75236a861b1b03aceff7e3925",
+        "sha256_in_prefix": "5afe98eac5eec6a376b09245904e5d9c8d5bbfc75236a861b1b03aceff7e3925",
+        "size_in_bytes": 40463
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/minimap_alignment.py",
+        "path_type": "hardlink",
+        "sha256": "6f0737a4019235d214349b886b3dece1a5e4b2572c15c5d62f8b0e8340044241",
+        "sha256_in_prefix": "6f0737a4019235d214349b886b3dece1a5e4b2572c15c5d62f8b0e8340044241",
+        "size_in_bytes": 14470
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/misc.py",
+        "path_type": "hardlink",
+        "sha256": "35c5cf9f7bf606bee693d06ecf45b6dbd9af990914e4f3c28304a8366c77bae0",
+        "sha256_in_prefix": "35c5cf9f7bf606bee693d06ecf45b6dbd9af990914e4f3c28304a8366c77bae0",
+        "size_in_bytes": 42052
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/path_finding.py",
+        "path_type": "hardlink",
+        "sha256": "5db42dd46798988b7f63f636bf197961fc00ab0256cdda4b91ed3e2eafdf6b44",
+        "sha256_in_prefix": "5db42dd46798988b7f63f636bf197961fc00ab0256cdda4b91ed3e2eafdf6b44",
+        "size_in_bytes": 18464
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/pilon_func.py",
+        "path_type": "hardlink",
+        "sha256": "44aa36b3ce07d889d326597f050edd9c4a461bc9030f4ab4333365f584f59b42",
+        "sha256_in_prefix": "44aa36b3ce07d889d326597f050edd9c4a461bc9030f4ab4333365f584f59b42",
+        "size_in_bytes": 15649
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/read_ref.py",
+        "path_type": "hardlink",
+        "sha256": "b9606bedc1559fdcb84db56087cfac4a7e7bad55867de2f78f0fc96e841852f0",
+        "sha256_in_prefix": "b9606bedc1559fdcb84db56087cfac4a7e7bad55867de2f78f0fc96e841852f0",
+        "size_in_bytes": 17936
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/settings.py",
+        "path_type": "hardlink",
+        "sha256": "a7cd23f30c9c5714db61764a0e56295e85fdc3550c76b78d85f60d2e0c4b54ea",
+        "sha256_in_prefix": "a7cd23f30c9c5714db61764a0e56295e85fdc3550c76b78d85f60d2e0c4b54ea",
+        "size_in_bytes": 9539
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/spades_func.py",
+        "path_type": "hardlink",
+        "sha256": "9a77a647394bbe5405081b8ce13c386f2d06bf54b4f7d0b0cb8e02f19e0f87b3",
+        "sha256_in_prefix": "9a77a647394bbe5405081b8ce13c386f2d06bf54b4f7d0b0cb8e02f19e0f87b3",
+        "size_in_bytes": 25177
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/string_graph.py",
+        "path_type": "hardlink",
+        "sha256": "87b788b0d4913cd53111d3ad51fa60bc8e59801f4a1bb445ad39693d3633d7af",
+        "sha256_in_prefix": "87b788b0d4913cd53111d3ad51fa60bc8e59801f4a1bb445ad39693d3633d7af",
+        "size_in_bytes": 34599
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/unicycler.py",
+        "path_type": "hardlink",
+        "sha256": "ebd90d032ac8c9800afb955115e4ee118978bfc2693d2ee6a055750c84d3d42c",
+        "sha256_in_prefix": "ebd90d032ac8c9800afb955115e4ee118978bfc2693d2ee6a055750c84d3d42c",
+        "size_in_bytes": 57602
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/unicycler_align.py",
+        "path_type": "hardlink",
+        "sha256": "90cb8d1ffc2a503fa408c141e4d940d13da7fec37ff95693c3b114a824b783eb",
+        "sha256_in_prefix": "90cb8d1ffc2a503fa408c141e4d940d13da7fec37ff95693c3b114a824b783eb",
+        "size_in_bytes": 28076
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/unicycler_check.py",
+        "path_type": "hardlink",
+        "sha256": "2f52f732631ab9eea2d5de0a6645f6cb0a925ce25f04221b4f9a6d2124109006",
+        "sha256_in_prefix": "2f52f732631ab9eea2d5de0a6645f6cb0a925ce25f04221b4f9a6d2124109006",
+        "size_in_bytes": 56959
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/unicycler_polish.py",
+        "path_type": "hardlink",
+        "sha256": "b18af4b1f76f0e1350b69ec3405c21dbadf0789222fd271a6756aae29ea317ee",
+        "sha256_in_prefix": "b18af4b1f76f0e1350b69ec3405c21dbadf0789222fd271a6756aae29ea317ee",
+        "size_in_bytes": 72829
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/unicycler_scrub.py",
+        "path_type": "hardlink",
+        "sha256": "6c2abadbb8729285ef989e2bceec7eab659bb4f743cb5888d0941c2d14634aa2",
+        "sha256_in_prefix": "6c2abadbb8729285ef989e2bceec7eab659bb4f743cb5888d0941c2d14634aa2",
+        "size_in_bytes": 25378
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/vcf_func.py",
+        "path_type": "hardlink",
+        "sha256": "c69876156b77bbe735b13b04af68b111a2ddbb93f07a5f5e3aebc282ed1c238b",
+        "sha256_in_prefix": "c69876156b77bbe735b13b04af68b111a2ddbb93f07a5f5e3aebc282ed1c238b",
+        "size_in_bytes": 5111
+      },
+      {
+        "_path": "lib/python3.7/site-packages/unicycler/version.py",
+        "path_type": "hardlink",
+        "sha256": "32738acf246f0743245358ea3e346332ca284eee28c0ab74da4f15c58c16d8bd",
+        "sha256_in_prefix": "32738acf246f0743245358ea3e346332ca284eee28c0ab74da4f15c58c16d8bd",
+        "size_in_bytes": 875
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "unicycler==0.4.7=py37hdbcaa40_1",
+  "sha256": "0056175ad55282d991711b7e3b944cf3f96487c8b53351df285af2252b53b148",
+  "size": 1281394,
+  "subdir": "linux-64",
+  "timestamp": 1559168251475,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/unicycler-0.4.7-py37hdbcaa40_1.tar.bz2",
+  "version": "0.4.7"
+}

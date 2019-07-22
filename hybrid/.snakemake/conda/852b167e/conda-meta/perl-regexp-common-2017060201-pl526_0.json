@@ -1,0 +1,573 @@
+{
+  "build": "pl526_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "perl >=5.26.2,<5.26.3.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/perl-regexp-common-2017060201-pl526_0",
+  "features": "",
+  "files": [
+    "lib/site_perl/5.26.2/Regexp/Common.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/CC.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/SEN.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/RFC1035.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/RFC1738.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/RFC1808.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/RFC2384.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/RFC2396.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/RFC2806.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/fax.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/file.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/ftp.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/gopher.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/http.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/news.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/pop.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/prospero.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/tel.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/telnet.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/tv.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/URI/wais.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/_support.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/balanced.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/comment.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/delimited.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/lingua.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/list.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/net.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/number.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/profanity.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/whitespace.pm",
+    "lib/site_perl/5.26.2/Regexp/Common/zip.pm",
+    "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/Regexp/Common/.packlist",
+    "man/man3/Regexp::Common.3",
+    "man/man3/Regexp::Common::CC.3",
+    "man/man3/Regexp::Common::SEN.3",
+    "man/man3/Regexp::Common::URI.3",
+    "man/man3/Regexp::Common::URI::RFC1035.3",
+    "man/man3/Regexp::Common::URI::RFC1738.3",
+    "man/man3/Regexp::Common::URI::RFC1808.3",
+    "man/man3/Regexp::Common::URI::RFC2384.3",
+    "man/man3/Regexp::Common::URI::RFC2396.3",
+    "man/man3/Regexp::Common::URI::RFC2806.3",
+    "man/man3/Regexp::Common::URI::fax.3",
+    "man/man3/Regexp::Common::URI::file.3",
+    "man/man3/Regexp::Common::URI::ftp.3",
+    "man/man3/Regexp::Common::URI::gopher.3",
+    "man/man3/Regexp::Common::URI::http.3",
+    "man/man3/Regexp::Common::URI::news.3",
+    "man/man3/Regexp::Common::URI::pop.3",
+    "man/man3/Regexp::Common::URI::prospero.3",
+    "man/man3/Regexp::Common::URI::tel.3",
+    "man/man3/Regexp::Common::URI::telnet.3",
+    "man/man3/Regexp::Common::URI::tv.3",
+    "man/man3/Regexp::Common::URI::wais.3",
+    "man/man3/Regexp::Common::_support.3",
+    "man/man3/Regexp::Common::balanced.3",
+    "man/man3/Regexp::Common::comment.3",
+    "man/man3/Regexp::Common::delimited.3",
+    "man/man3/Regexp::Common::lingua.3",
+    "man/man3/Regexp::Common::list.3",
+    "man/man3/Regexp::Common::net.3",
+    "man/man3/Regexp::Common::number.3",
+    "man/man3/Regexp::Common::profanity.3",
+    "man/man3/Regexp::Common::whitespace.3",
+    "man/man3/Regexp::Common::zip.3"
+  ],
+  "fn": "perl-regexp-common-2017060201-pl526_0.tar.bz2",
+  "license": "mit",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/perl-regexp-common-2017060201-pl526_0",
+    "type": 1
+  },
+  "md5": "7b6a10fecd71fddc1ef37f8af8fb97b1",
+  "name": "perl-regexp-common",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/perl-regexp-common-2017060201-pl526_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common.pm",
+        "path_type": "hardlink",
+        "sha256": "ccafea2abbebf6f4e76004c4a174f7e690480a4992fc0b812c721eb6f58b7371",
+        "sha256_in_prefix": "ccafea2abbebf6f4e76004c4a174f7e690480a4992fc0b812c721eb6f58b7371",
+        "size_in_bytes": 26469
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/CC.pm",
+        "path_type": "hardlink",
+        "sha256": "a692f0f48d68b470d406a8ccc26b159d0e11f7a40c85d6e4683db26b2784d4fd",
+        "sha256_in_prefix": "a692f0f48d68b470d406a8ccc26b159d0e11f7a40c85d6e4683db26b2784d4fd",
+        "size_in_bytes": 3095
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/SEN.pm",
+        "path_type": "hardlink",
+        "sha256": "655ca521e0afab984ddc6506f73b3ce36807a8bce33c4be6b88678b057cabfb5",
+        "sha256_in_prefix": "655ca521e0afab984ddc6506f73b3ce36807a8bce33c4be6b88678b057cabfb5",
+        "size_in_bytes": 3561
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI.pm",
+        "path_type": "hardlink",
+        "sha256": "bb045313f8c33aa993d2e3a9dc6f7b1a0fba799f8d64b1450e1fb64fb59d094e",
+        "sha256_in_prefix": "bb045313f8c33aa993d2e3a9dc6f7b1a0fba799f8d64b1450e1fb64fb59d094e",
+        "size_in_bytes": 3337
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/RFC1035.pm",
+        "path_type": "hardlink",
+        "sha256": "ee9a2fac78002d827d29cfb6dd64b15841fafa6a4b9092efe8f641998e88b9c6",
+        "sha256_in_prefix": "ee9a2fac78002d827d29cfb6dd64b15841fafa6a4b9092efe8f641998e88b9c6",
+        "size_in_bytes": 2052
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/RFC1738.pm",
+        "path_type": "hardlink",
+        "sha256": "4b5d5b306360a4db73b5f717aafde2219d09d8b0e27cdf98afcf0663ffd3655d",
+        "sha256_in_prefix": "4b5d5b306360a4db73b5f717aafde2219d09d8b0e27cdf98afcf0663ffd3655d",
+        "size_in_bytes": 4837
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/RFC1808.pm",
+        "path_type": "hardlink",
+        "sha256": "72fec4b96bfb5737b373e25e7610ca71f238b67f3a7ac47d4112af81be95d75f",
+        "sha256_in_prefix": "72fec4b96bfb5737b373e25e7610ca71f238b67f3a7ac47d4112af81be95d75f",
+        "size_in_bytes": 4396
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/RFC2384.pm",
+        "path_type": "hardlink",
+        "sha256": "93cccb40e58b89129913d8d16827cacd1e79429c9fe99db8fa65ad0a81e5140e",
+        "sha256_in_prefix": "93cccb40e58b89129913d8d16827cacd1e79429c9fe99db8fa65ad0a81e5140e",
+        "size_in_bytes": 2356
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/RFC2396.pm",
+        "path_type": "hardlink",
+        "sha256": "4ef518fc136fef5a5ec6b50a074fa5a723ff285709435aee009569b8d764c9d1",
+        "sha256_in_prefix": "4ef518fc136fef5a5ec6b50a074fa5a723ff285709435aee009569b8d764c9d1",
+        "size_in_bytes": 5181
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/RFC2806.pm",
+        "path_type": "hardlink",
+        "sha256": "bed3bd9cd4f1fb86fd06f4128786c715011e50ad347af57289f2fc87b5ff04a1",
+        "sha256_in_prefix": "bed3bd9cd4f1fb86fd06f4128786c715011e50ad347af57289f2fc87b5ff04a1",
+        "size_in_bytes": 8081
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/fax.pm",
+        "path_type": "hardlink",
+        "sha256": "fdcb3e3600856886664031332028a0440c3b53b22aeb50bc0094e6a752902d17",
+        "sha256_in_prefix": "fdcb3e3600856886664031332028a0440c3b53b22aeb50bc0094e6a752902d17",
+        "size_in_bytes": 2771
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/file.pm",
+        "path_type": "hardlink",
+        "sha256": "45b60259fa7fc11918a0164c33c340189f88bb7be35e8930da61719565e8aa43",
+        "sha256_in_prefix": "45b60259fa7fc11918a0164c33c340189f88bb7be35e8930da61719565e8aa43",
+        "size_in_bytes": 2094
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/ftp.pm",
+        "path_type": "hardlink",
+        "sha256": "6f2bc6d6ef9f86742243dbbd441078ee0210bcaee75aa5a84c155e04e2ed927a",
+        "sha256_in_prefix": "6f2bc6d6ef9f86742243dbbd441078ee0210bcaee75aa5a84c155e04e2ed927a",
+        "size_in_bytes": 5507
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/gopher.pm",
+        "path_type": "hardlink",
+        "sha256": "510025da4d6419736b5efa2f49a2cb18e83d0d3fe92a73b88dde3f34df63965f",
+        "sha256_in_prefix": "510025da4d6419736b5efa2f49a2cb18e83d0d3fe92a73b88dde3f34df63965f",
+        "size_in_bytes": 4544
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/http.pm",
+        "path_type": "hardlink",
+        "sha256": "5cf82dfc8687247fa3beae51a2419e4b83901b9d887a47fe0029085f2e35228d",
+        "sha256_in_prefix": "5cf82dfc8687247fa3beae51a2419e4b83901b9d887a47fe0029085f2e35228d",
+        "size_in_bytes": 2922
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/news.pm",
+        "path_type": "hardlink",
+        "sha256": "2510d6ceecec6b0b3f0cb4f3b9361adaf5992a654d21eed1b03096182218219b",
+        "sha256_in_prefix": "2510d6ceecec6b0b3f0cb4f3b9361adaf5992a654d21eed1b03096182218219b",
+        "size_in_bytes": 2825
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/pop.pm",
+        "path_type": "hardlink",
+        "sha256": "cd06a0b3469e4585ecf9a2d7d373a8ebc15fa4cf440696cfacb523cccb6fde97",
+        "sha256_in_prefix": "cd06a0b3469e4585ecf9a2d7d373a8ebc15fa4cf440696cfacb523cccb6fde97",
+        "size_in_bytes": 2092
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/prospero.pm",
+        "path_type": "hardlink",
+        "sha256": "120f398aec9aadc24732ae0e118f6298f41665c1ffd5182d40a46ec308b79491",
+        "sha256_in_prefix": "120f398aec9aadc24732ae0e118f6298f41665c1ffd5182d40a46ec308b79491",
+        "size_in_bytes": 2170
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/tel.pm",
+        "path_type": "hardlink",
+        "sha256": "2cc14197a674505a7e27737aa3780b18a823ee4c095e6c3a1e185892d61cd97b",
+        "sha256_in_prefix": "2cc14197a674505a7e27737aa3780b18a823ee4c095e6c3a1e185892d61cd97b",
+        "size_in_bytes": 2807
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/telnet.pm",
+        "path_type": "hardlink",
+        "sha256": "b8cff946921716a5a4becb1be9af58f95b78a549291d92b0ea5aa0fd9d56a5ed",
+        "sha256_in_prefix": "b8cff946921716a5a4becb1be9af58f95b78a549291d92b0ea5aa0fd9d56a5ed",
+        "size_in_bytes": 2314
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/tv.pm",
+        "path_type": "hardlink",
+        "sha256": "85610bce5715a81c57f4ac4089a3310050f9355dc3742ff51a9b0ad24bb9136e",
+        "sha256_in_prefix": "85610bce5715a81c57f4ac4089a3310050f9355dc3742ff51a9b0ad24bb9136e",
+        "size_in_bytes": 2024
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/URI/wais.pm",
+        "path_type": "hardlink",
+        "sha256": "0492212d53d7c5fdd52468084d9abc224654c6e5951ec734d3a8389bfb5b5c35",
+        "sha256_in_prefix": "0492212d53d7c5fdd52468084d9abc224654c6e5951ec734d3a8389bfb5b5c35",
+        "size_in_bytes": 2465
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/_support.pm",
+        "path_type": "hardlink",
+        "sha256": "60ad605e2b4969aa989663f56899a6f424886fb7e55af7a6e03d915ed2286f02",
+        "sha256_in_prefix": "60ad605e2b4969aa989663f56899a6f424886fb7e55af7a6e03d915ed2286f02",
+        "size_in_bytes": 2072
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/balanced.pm",
+        "path_type": "hardlink",
+        "sha256": "89e328534040663c2a04afd9d6e380cefa474c2424c334efd6a497943382cfd8",
+        "sha256_in_prefix": "89e328534040663c2a04afd9d6e380cefa474c2424c334efd6a497943382cfd8",
+        "size_in_bytes": 5309
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/comment.pm",
+        "path_type": "hardlink",
+        "sha256": "d1a9a4a25f0775e33ca5190d2ac7d47d502d1ce87dbf874ecf389d4b65d7442c",
+        "sha256_in_prefix": "d1a9a4a25f0775e33ca5190d2ac7d47d502d1ce87dbf874ecf389d4b65d7442c",
+        "size_in_bytes": 31352
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/delimited.pm",
+        "path_type": "hardlink",
+        "sha256": "348de1c89d4e17d08d91adea1f6c6ec40f29116c0f3fd3bcfb4e0bd359b67035",
+        "sha256_in_prefix": "348de1c89d4e17d08d91adea1f6c6ec40f29116c0f3fd3bcfb4e0bd359b67035",
+        "size_in_bytes": 12278
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/lingua.pm",
+        "path_type": "hardlink",
+        "sha256": "324791546f6bb49df48e40af8b924d4f6648b2dd2173d79a618cf22b43d70312",
+        "sha256_in_prefix": "324791546f6bb49df48e40af8b924d4f6648b2dd2173d79a618cf22b43d70312",
+        "size_in_bytes": 2445
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/list.pm",
+        "path_type": "hardlink",
+        "sha256": "eaf3d0ca3b3b0878bbf59954d06a9b20043a0d51a1766ee01e8808b0df88a3bb",
+        "sha256_in_prefix": "eaf3d0ca3b3b0878bbf59954d06a9b20043a0d51a1766ee01e8808b0df88a3bb",
+        "size_in_bytes": 4253
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/net.pm",
+        "path_type": "hardlink",
+        "sha256": "48a7cf62ac3a7001ea9c49d22742614dd62b59d18f396ebbea320324abc32e40",
+        "sha256_in_prefix": "48a7cf62ac3a7001ea9c49d22742614dd62b59d18f396ebbea320324abc32e40",
+        "size_in_bytes": 13196
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/number.pm",
+        "path_type": "hardlink",
+        "sha256": "dd1d2df60dd2d6fcd939daedf33e94fa60471d6f43795e5197332fa34aa24922",
+        "sha256_in_prefix": "dd1d2df60dd2d6fcd939daedf33e94fa60471d6f43795e5197332fa34aa24922",
+        "size_in_bytes": 14992
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/profanity.pm",
+        "path_type": "hardlink",
+        "sha256": "4dd337d3983458f2e12c09d44f541e0812dd79062a6eb5371962dd105f22586f",
+        "sha256_in_prefix": "4dd337d3983458f2e12c09d44f541e0812dd79062a6eb5371962dd105f22586f",
+        "size_in_bytes": 4472
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/whitespace.pm",
+        "path_type": "hardlink",
+        "sha256": "140a6c3db839eb6ca0dd0b5951faefff84d68c0003d0b512c440d37a455285af",
+        "sha256_in_prefix": "140a6c3db839eb6ca0dd0b5951faefff84d68c0003d0b512c440d37a455285af",
+        "size_in_bytes": 1962
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Regexp/Common/zip.pm",
+        "path_type": "hardlink",
+        "sha256": "a18daa12f74cbb9c94eaeb6e7cbae3dcc3228e82da6f081e180ca4be0f9b0afe",
+        "sha256_in_prefix": "a18daa12f74cbb9c94eaeb6e7cbae3dcc3228e82da6f081e180ca4be0f9b0afe",
+        "size_in_bytes": 194986
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/Regexp/Common/.packlist",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "ed5223efa34ddc307b188a6b2beda93694369cbf84d0175768d2a87befc0d06e",
+        "sha256_in_prefix": "4e64bdfe24da0da275ba1fcd39f223b2d3fb881d0c535135adb31ed08d189261",
+        "size_in_bytes": 8798
+      },
+      {
+        "_path": "man/man3/Regexp::Common.3",
+        "path_type": "hardlink",
+        "sha256": "9122fb1f73626f69be718c33fa07cc32cf86bd7b82040570042360f0f2918486",
+        "sha256_in_prefix": "9122fb1f73626f69be718c33fa07cc32cf86bd7b82040570042360f0f2918486",
+        "size_in_bytes": 25552
+      },
+      {
+        "_path": "man/man3/Regexp::Common::CC.3",
+        "path_type": "hardlink",
+        "sha256": "72cc75642f449cc8f506b1d28e88352c038b9ab978863ba95318a3b030b6325e",
+        "sha256_in_prefix": "72cc75642f449cc8f506b1d28e88352c038b9ab978863ba95318a3b030b6325e",
+        "size_in_bytes": 4262
+      },
+      {
+        "_path": "man/man3/Regexp::Common::SEN.3",
+        "path_type": "hardlink",
+        "sha256": "ddd3eb34d804f44e093a2c3e362efe62761a393ed6d1fd9fe202a201879cba3d",
+        "sha256_in_prefix": "ddd3eb34d804f44e093a2c3e362efe62761a393ed6d1fd9fe202a201879cba3d",
+        "size_in_bytes": 4745
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI.3",
+        "path_type": "hardlink",
+        "sha256": "362eada989b07e07c9b0b69ca1d5c81f13f581a6619631b31c6fcc8fe68dd92b",
+        "sha256_in_prefix": "362eada989b07e07c9b0b69ca1d5c81f13f581a6619631b31c6fcc8fe68dd92b",
+        "size_in_bytes": 5159
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::RFC1035.3",
+        "path_type": "hardlink",
+        "sha256": "a035cb09fa6c447727efce77a6481601619a4baafebb276e0b59486f3d099098",
+        "sha256_in_prefix": "a035cb09fa6c447727efce77a6481601619a4baafebb276e0b59486f3d099098",
+        "size_in_bytes": 3476
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::RFC1738.3",
+        "path_type": "hardlink",
+        "sha256": "3c284a82d08a2c50ff959b9ab00145e2a0e57bf63b4682f2552b0f0df4d49368",
+        "sha256_in_prefix": "3c284a82d08a2c50ff959b9ab00145e2a0e57bf63b4682f2552b0f0df4d49368",
+        "size_in_bytes": 3374
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::RFC1808.3",
+        "path_type": "hardlink",
+        "sha256": "457dea4417eb474f306a98a926bb16a84a8e45e4af1fa12b997c733b8dadd74e",
+        "sha256_in_prefix": "457dea4417eb474f306a98a926bb16a84a8e45e4af1fa12b997c733b8dadd74e",
+        "size_in_bytes": 3454
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::RFC2384.3",
+        "path_type": "hardlink",
+        "sha256": "6dddf516cc1811ad5d4f9ca189c9d660d7911307d7b434a6632270a1c3a3799f",
+        "sha256_in_prefix": "6dddf516cc1811ad5d4f9ca189c9d660d7911307d7b434a6632270a1c3a3799f",
+        "size_in_bytes": 3321
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::RFC2396.3",
+        "path_type": "hardlink",
+        "sha256": "e0825195e4c669d37daba32dcfa82b03d282136deb9c624edc8957cc8972bd68",
+        "sha256_in_prefix": "e0825195e4c669d37daba32dcfa82b03d282136deb9c624edc8957cc8972bd68",
+        "size_in_bytes": 3502
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::RFC2806.3",
+        "path_type": "hardlink",
+        "sha256": "a054599ca00e5eee39833c15a3ef92cbfa0c89caf715db393fa393d07735e3b6",
+        "sha256_in_prefix": "a054599ca00e5eee39833c15a3ef92cbfa0c89caf715db393fa393d07735e3b6",
+        "size_in_bytes": 3539
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::fax.3",
+        "path_type": "hardlink",
+        "sha256": "db9307e1cc86bfe43d01d8666ae7d30a76b761e0c3514292903933b0daf6b0c0",
+        "sha256_in_prefix": "db9307e1cc86bfe43d01d8666ae7d30a76b761e0c3514292903933b0daf6b0c0",
+        "size_in_bytes": 4863
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::file.3",
+        "path_type": "hardlink",
+        "sha256": "13e11ee56195d810573a63069edab977eb7f83e7e92141ed10df3faaebc59d27",
+        "sha256_in_prefix": "13e11ee56195d810573a63069edab977eb7f83e7e92141ed10df3faaebc59d27",
+        "size_in_bytes": 4346
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::ftp.3",
+        "path_type": "hardlink",
+        "sha256": "b57aa28c5ccf80ad5b592f64975dbddd2562f94a5fac75700cc1426790d88b4c",
+        "sha256_in_prefix": "b57aa28c5ccf80ad5b592f64975dbddd2562f94a5fac75700cc1426790d88b4c",
+        "size_in_bytes": 7615
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::gopher.3",
+        "path_type": "hardlink",
+        "sha256": "13219797ecae1bb8ed8c627d1d2b8729538fa5f859df7c088c043aa4206066bf",
+        "sha256_in_prefix": "13219797ecae1bb8ed8c627d1d2b8729538fa5f859df7c088c043aa4206066bf",
+        "size_in_bytes": 6361
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::http.3",
+        "path_type": "hardlink",
+        "sha256": "a9eeff62f17052da81881d562ca108a08797fdde999929cbf3f6dab79407677d",
+        "sha256_in_prefix": "a9eeff62f17052da81881d562ca108a08797fdde999929cbf3f6dab79407677d",
+        "size_in_bytes": 5153
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::news.3",
+        "path_type": "hardlink",
+        "sha256": "90933e2672bb63ac8206bca6082ec6d9d49b0eb695fec9d2a753fd40527a268c",
+        "sha256_in_prefix": "90933e2672bb63ac8206bca6082ec6d9d49b0eb695fec9d2a753fd40527a268c",
+        "size_in_bytes": 5117
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::pop.3",
+        "path_type": "hardlink",
+        "sha256": "8e000c08b4b2c13c5fa04b737f20419d148b9564b14de9be5cdb20edc0b222ed",
+        "sha256_in_prefix": "8e000c08b4b2c13c5fa04b737f20419d148b9564b14de9be5cdb20edc0b222ed",
+        "size_in_bytes": 4227
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::prospero.3",
+        "path_type": "hardlink",
+        "sha256": "1c094ca3fc0e343e1c660c3035d1c636b90629b78090d9287fb85f4ffae2fa68",
+        "sha256_in_prefix": "1c094ca3fc0e343e1c660c3035d1c636b90629b78090d9287fb85f4ffae2fa68",
+        "size_in_bytes": 4322
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::tel.3",
+        "path_type": "hardlink",
+        "sha256": "19dee3feebbb9ed0573bf0c6851d465e43efbca1d4ddbf78370c0b8911c05337",
+        "sha256_in_prefix": "19dee3feebbb9ed0573bf0c6851d465e43efbca1d4ddbf78370c0b8911c05337",
+        "size_in_bytes": 4875
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::telnet.3",
+        "path_type": "hardlink",
+        "sha256": "69fabe2bfe8e2504ae1d0938e7a32a26dbb0868cecc81985921172a167bd4bff",
+        "sha256_in_prefix": "69fabe2bfe8e2504ae1d0938e7a32a26dbb0868cecc81985921172a167bd4bff",
+        "size_in_bytes": 4638
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::tv.3",
+        "path_type": "hardlink",
+        "sha256": "b549836130830448c350067060ebda5c65724dc8d7cf2c033a7da04940db0ed4",
+        "sha256_in_prefix": "b549836130830448c350067060ebda5c65724dc8d7cf2c033a7da04940db0ed4",
+        "size_in_bytes": 4123
+      },
+      {
+        "_path": "man/man3/Regexp::Common::URI::wais.3",
+        "path_type": "hardlink",
+        "sha256": "d54204373bc3c6e016b246a19d0916f0323942fcbf51886f58dc1f69b95c0798",
+        "sha256_in_prefix": "d54204373bc3c6e016b246a19d0916f0323942fcbf51886f58dc1f69b95c0798",
+        "size_in_bytes": 4820
+      },
+      {
+        "_path": "man/man3/Regexp::Common::_support.3",
+        "path_type": "hardlink",
+        "sha256": "d68bef0ee50f499cc1530596de47f2937979f19b8601bc6bd904663b3ad0c2b7",
+        "sha256_in_prefix": "d68bef0ee50f499cc1530596de47f2937979f19b8601bc6bd904663b3ad0c2b7",
+        "size_in_bytes": 3509
+      },
+      {
+        "_path": "man/man3/Regexp::Common::balanced.3",
+        "path_type": "hardlink",
+        "sha256": "48832a22d98ea65878e297c096dd955b59ab537c4745ece0344f5eac01cb4dad",
+        "sha256_in_prefix": "48832a22d98ea65878e297c096dd955b59ab537c4745ece0344f5eac01cb4dad",
+        "size_in_bytes": 5908
+      },
+      {
+        "_path": "man/man3/Regexp::Common::comment.3",
+        "path_type": "hardlink",
+        "sha256": "60733d4d2cb994cc98063a4d2aeacfac246346599e59da2f5c5fd47843eb9fda",
+        "sha256_in_prefix": "60733d4d2cb994cc98063a4d2aeacfac246346599e59da2f5c5fd47843eb9fda",
+        "size_in_bytes": 31219
+      },
+      {
+        "_path": "man/man3/Regexp::Common::delimited.3",
+        "path_type": "hardlink",
+        "sha256": "1a4209fa14786b6a68d168b8a2878677d5e5c4e510be715c1a8f74ac50444f59",
+        "sha256_in_prefix": "1a4209fa14786b6a68d168b8a2878677d5e5c4e510be715c1a8f74ac50444f59",
+        "size_in_bytes": 7778
+      },
+      {
+        "_path": "man/man3/Regexp::Common::lingua.3",
+        "path_type": "hardlink",
+        "sha256": "5ef99bf53b405dcf7cea50f0ef2aadd1cdd90fff682d4573ae19e98886a476ee",
+        "sha256_in_prefix": "5ef99bf53b405dcf7cea50f0ef2aadd1cdd90fff682d4573ae19e98886a476ee",
+        "size_in_bytes": 4130
+      },
+      {
+        "_path": "man/man3/Regexp::Common::list.3",
+        "path_type": "hardlink",
+        "sha256": "1af1077d63a283dd787e28a81ee4e9401f7025e95b5d5a9ce0cb676b0d01de2f",
+        "sha256_in_prefix": "1af1077d63a283dd787e28a81ee4e9401f7025e95b5d5a9ce0cb676b0d01de2f",
+        "size_in_bytes": 6402
+      },
+      {
+        "_path": "man/man3/Regexp::Common::net.3",
+        "path_type": "hardlink",
+        "sha256": "7d44d15f22793a14f55c13cb08d45befa74c42b0cf82134f993cfe8310dfa23a",
+        "sha256_in_prefix": "7d44d15f22793a14f55c13cb08d45befa74c42b0cf82134f993cfe8310dfa23a",
+        "size_in_bytes": 13516
+      },
+      {
+        "_path": "man/man3/Regexp::Common::number.3",
+        "path_type": "hardlink",
+        "sha256": "07588ffb4a00449a385ead66061edde5d1144b9b98cb4a5a0cbe5801b5264fae",
+        "sha256_in_prefix": "07588ffb4a00449a385ead66061edde5d1144b9b98cb4a5a0cbe5801b5264fae",
+        "size_in_bytes": 14643
+      },
+      {
+        "_path": "man/man3/Regexp::Common::profanity.3",
+        "path_type": "hardlink",
+        "sha256": "38a6f843dbbc7b58cbb9d9b70b8c957d3a04d4c90f4aeac47f56563488e7750b",
+        "sha256_in_prefix": "38a6f843dbbc7b58cbb9d9b70b8c957d3a04d4c90f4aeac47f56563488e7750b",
+        "size_in_bytes": 4448
+      },
+      {
+        "_path": "man/man3/Regexp::Common::whitespace.3",
+        "path_type": "hardlink",
+        "sha256": "3fead24ca097e45a1310476b76a2bf7f076d05c61aa59159a074891a75fbef12",
+        "sha256_in_prefix": "3fead24ca097e45a1310476b76a2bf7f076d05c61aa59159a074891a75fbef12",
+        "size_in_bytes": 4092
+      },
+      {
+        "_path": "man/man3/Regexp::Common::zip.3",
+        "path_type": "hardlink",
+        "sha256": "59b0b93273f6b81f1da1a42622bc03e590560eb68572737913ffdde9b0886f0b",
+        "sha256_in_prefix": "59b0b93273f6b81f1da1a42622bc03e590560eb68572737913ffdde9b0886f0b",
+        "size_in_bytes": 25464
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "perl-regexp-common==2017060201=pl526_0",
+  "sha256": "37689943ffd32bfcfcf9a8f39f5aaf403394e3d9da4d96a8c62bc872b5d2878c",
+  "size": 95444,
+  "subdir": "linux-64",
+  "timestamp": 1534860638002,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/perl-regexp-common-2017060201-pl526_0.tar.bz2",
+  "version": "2017060201"
+}

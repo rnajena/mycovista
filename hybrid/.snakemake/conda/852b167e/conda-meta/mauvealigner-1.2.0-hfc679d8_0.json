@@ -1,0 +1,323 @@
+{
+  "build": "hfc679d8_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "boost-cpp >=1.65.1,<1.65.2.0a0",
+    "libgcc-ng >=4.9",
+    "libgenome",
+    "libmems",
+    "libmuscle",
+    "libstdcxx-ng >=4.9"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/mauvealigner-1.2.0-hfc679d8_0",
+  "features": "",
+  "files": [
+    "bin/addUnalignedIntervals",
+    "bin/alignmentProjector",
+    "bin/backbone_global_to_local",
+    "bin/bbAnalyze",
+    "bin/bbFilter",
+    "bin/coordinateTranslate",
+    "bin/createBackboneMFA",
+    "bin/extractBCITrees",
+    "bin/getAlignmentWindows",
+    "bin/getOrthologList",
+    "bin/makeBadgerMatrix",
+    "bin/mauveAligner",
+    "bin/mauveStatic",
+    "bin/mauveToXMFA",
+    "bin/mfa2xmfa",
+    "bin/progressiveMauve",
+    "bin/progressiveMauveStatic",
+    "bin/projectAndStrip",
+    "bin/randomGeneSample",
+    "bin/repeatoire",
+    "bin/scoreAlignment",
+    "bin/stripGapColumns",
+    "bin/stripSubsetLCBs",
+    "bin/toGrimmFormat",
+    "bin/toMultiFastA",
+    "bin/toRawSequence",
+    "bin/uniqueMerCount",
+    "bin/uniquifyTrees",
+    "bin/xmfa2maf"
+  ],
+  "fn": "mauvealigner-1.2.0-hfc679d8_0.tar.bz2",
+  "license": "GPL-2.0",
+  "license_family": "GPL",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/mauvealigner-1.2.0-hfc679d8_0",
+    "type": 1
+  },
+  "md5": "c867332dfa91628a461df45dffb9a535",
+  "name": "mauvealigner",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/mauvealigner-1.2.0-hfc679d8_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/addUnalignedIntervals",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "83d11699bb018f71a739840ed654cc49665b038dab424d52843878639545b732",
+        "sha256_in_prefix": "8bf282a213215fb914d066e615d4316a53fddb48ae9438bb0e9012cc7d86bf98",
+        "size_in_bytes": 167528
+      },
+      {
+        "_path": "bin/alignmentProjector",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "5fac3bce257d6816f39fe7419ec6ca67dc733e16b4e82802558d9c5c3c5252df",
+        "sha256_in_prefix": "e8b709d0bee92e58b375f9a02a04615f176dd9b0f909497d44169552f144370d",
+        "size_in_bytes": 263656
+      },
+      {
+        "_path": "bin/backbone_global_to_local",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "30714a1aca511baaa570a8c53edc5fbfe1c576d487d2721e1d0bc60923121967",
+        "sha256_in_prefix": "8bb1d1534efb179159c8b51ad11d8c91450033abf24be331923119e7ef1b4569",
+        "size_in_bytes": 180384
+      },
+      {
+        "_path": "bin/bbAnalyze",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "080f958529d851b8751960b6579e4ed65e1f111ff7ec32c10209042d31c73f33",
+        "sha256_in_prefix": "a93b09fa6657633c12555ad31d7a4b68391a34ec751712751d9600fc784ce325",
+        "size_in_bytes": 446992
+      },
+      {
+        "_path": "bin/bbFilter",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "b635f645b75eb80bd90780007d85a8172f53ce8e274d8dcbd0c1575feaf746d6",
+        "sha256_in_prefix": "e22b3179b908e0005c06c7ed0ec6260feebcb6df87ae1248d0c84926991bcf48",
+        "size_in_bytes": 124616
+      },
+      {
+        "_path": "bin/coordinateTranslate",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "9f6c51e2bbba3242bd99b7d2527c5aee54ef874ba0479a88a397ddbb0c7b86fe",
+        "sha256_in_prefix": "5926f38f52e570c6791212fb82ecd733dbf26eed92f7c9d060437e8d573bb654",
+        "size_in_bytes": 163680
+      },
+      {
+        "_path": "bin/createBackboneMFA",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "2019a387bc3fd4968b5123be225aaabb68af2fe686d04f4ac5b871e28c283ee6",
+        "sha256_in_prefix": "932c0a942b633738174f93e91230a01b15a2f681f4ac81b2c5506ca504611d7a",
+        "size_in_bytes": 159368
+      },
+      {
+        "_path": "bin/extractBCITrees",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "003607c83e8519097b12efed2afa8e5f569d88d06284d2de164bff4cdd673b54",
+        "sha256_in_prefix": "dd645808bd90dd89c2aa30a7fb6ed781acd3e246fef2c2feeb470c4174cb3fb0",
+        "size_in_bytes": 120200
+      },
+      {
+        "_path": "bin/getAlignmentWindows",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "c21b047b5a73e29ffe92f0bf099663fb19a5de609d2a023c5855e0536c8c34e3",
+        "sha256_in_prefix": "5d92d6d91b0066f52667033529e0d9ef31844f017186e658ae9d2ed93c2a1562",
+        "size_in_bytes": 201688
+      },
+      {
+        "_path": "bin/getOrthologList",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "97e897cb1e6e1b5198f141ab844331b223d37621e68874c822bf2a969910e519",
+        "sha256_in_prefix": "e94f3acdfbe41dcf1bc6d79db1b032b5441856da813f3b10b77c9a14343820ee",
+        "size_in_bytes": 267056
+      },
+      {
+        "_path": "bin/makeBadgerMatrix",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "95191045f5268f9047d695bd19c60d4467e8ed408a2c0bd48615a53eb347a2d1",
+        "sha256_in_prefix": "acd9d95d618ad9fa8040d02cd8f798e672ed115b2f37c35889a5199dd906f556",
+        "size_in_bytes": 163840
+      },
+      {
+        "_path": "bin/mauveAligner",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "866fd8e25ad532f4530f10c0e6d12f0b44d3af5a0af161b8f5b24bbba2765122",
+        "sha256_in_prefix": "5fc8b438067a794898323f4614cb691bb9136d44fd6532ee820e0d2f25038751",
+        "size_in_bytes": 247416
+      },
+      {
+        "_path": "bin/mauveStatic",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "866fd8e25ad532f4530f10c0e6d12f0b44d3af5a0af161b8f5b24bbba2765122",
+        "sha256_in_prefix": "5fc8b438067a794898323f4614cb691bb9136d44fd6532ee820e0d2f25038751",
+        "size_in_bytes": 247416
+      },
+      {
+        "_path": "bin/mauveToXMFA",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "d624423e91f75b597f9e70752339d443dc9ed04f913d9b4986d1f73a04be6d1d",
+        "sha256_in_prefix": "e4efb28060cedbe777bba069d61e2a3f74e37dbf9591ca17f0899d629a5d883d",
+        "size_in_bytes": 158384
+      },
+      {
+        "_path": "bin/mfa2xmfa",
+        "path_type": "hardlink",
+        "sha256": "d0dc4a38b736230829daa62e48e58c03ba3b657d7d073df1c0ad6cea674988ed",
+        "sha256_in_prefix": "d0dc4a38b736230829daa62e48e58c03ba3b657d7d073df1c0ad6cea674988ed",
+        "size_in_bytes": 24968
+      },
+      {
+        "_path": "bin/progressiveMauve",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "0061cbe3d3aeae0e05ab5550b3399071b0bc723a1f925af681a99eaf221771d9",
+        "sha256_in_prefix": "a6057425e03699f9241cbbd1cd4c347af62ae4959f90e939dbee83dc663a6de4",
+        "size_in_bytes": 352592
+      },
+      {
+        "_path": "bin/progressiveMauveStatic",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "0061cbe3d3aeae0e05ab5550b3399071b0bc723a1f925af681a99eaf221771d9",
+        "sha256_in_prefix": "a6057425e03699f9241cbbd1cd4c347af62ae4959f90e939dbee83dc663a6de4",
+        "size_in_bytes": 352592
+      },
+      {
+        "_path": "bin/projectAndStrip",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "d25bacb3437fcae65415d5d3f4582182e836ed85a3354c0108d01d954049a1ec",
+        "sha256_in_prefix": "89028010e870205348f47fffb0f50da3a354b4091b04645c3d417e45d2e5d044",
+        "size_in_bytes": 222752
+      },
+      {
+        "_path": "bin/randomGeneSample",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "66735a3014ea7e3bf236285bda80d1707911877d2414a59a6f73e5a214a89bfb",
+        "sha256_in_prefix": "f143c15d41d149d0b66aa65f66e69e9ac83cbfeafddb5f0ab2963c494b472eee",
+        "size_in_bytes": 228760
+      },
+      {
+        "_path": "bin/repeatoire",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "65b3c80ecad7a26e008ad4f82feed46770650121f63ace1e7e09ac2a78a57b90",
+        "sha256_in_prefix": "797554d35cd9bd0e9d0b5171666e44ee15b576ffa0169a37e90240c979a67b0b",
+        "size_in_bytes": 617600
+      },
+      {
+        "_path": "bin/scoreAlignment",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "ddda9b0cc168cc9820ae1e170282fc4e1252af03699c33fbd3c2bf1d9b2fc286",
+        "sha256_in_prefix": "da10beec8a21d4efbe4a208cfe9b311372774dfcb7dd0ee7e567808ef764cd22",
+        "size_in_bytes": 183280
+      },
+      {
+        "_path": "bin/stripGapColumns",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "1fb9295dc0b46f688e5ef407b9a789941b015ef4a103b12e3fe73cc16e4e397a",
+        "sha256_in_prefix": "2072d4ae67c6a0cd34c683c678750ff1ee41037614ba3c7ccb1127077c530012",
+        "size_in_bytes": 168144
+      },
+      {
+        "_path": "bin/stripSubsetLCBs",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "16ec5ad96a05a46c85cc52c4c888fb4822865275758c217bc96b87d72fb5f1cc",
+        "sha256_in_prefix": "af973aade37ffafbda032940792dae13040a79d3cce589b89a6dbc628841b890",
+        "size_in_bytes": 180440
+      },
+      {
+        "_path": "bin/toGrimmFormat",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "640121460bd16603047c64d494624e0f625297c04eb515a57e71e31210000c59",
+        "sha256_in_prefix": "a92fa01f74bfcf46f8142d0a76d047a4fc711a4790a24c403fbfe0155fbf7dcb",
+        "size_in_bytes": 159272
+      },
+      {
+        "_path": "bin/toMultiFastA",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "d958c28d26d5fc9e6518c978967b40b81694d17febceb23bea8482d114323477",
+        "sha256_in_prefix": "7cbc2fb6157feaf24da6c4b63591533406d1a7f2bd532b804d6efb9ff060da78",
+        "size_in_bytes": 158480
+      },
+      {
+        "_path": "bin/toRawSequence",
+        "path_type": "hardlink",
+        "sha256": "21301ea7dfc4227cfc67001792d0a9c5720f0989f1687ce7b4b2dcf22bb648f3",
+        "sha256_in_prefix": "21301ea7dfc4227cfc67001792d0a9c5720f0989f1687ce7b4b2dcf22bb648f3",
+        "size_in_bytes": 16264
+      },
+      {
+        "_path": "bin/uniqueMerCount",
+        "path_type": "hardlink",
+        "sha256": "56968df69390ff3f40b5eb08687c3aab16fdd331295e0569fbfe1865ee726a36",
+        "sha256_in_prefix": "56968df69390ff3f40b5eb08687c3aab16fdd331295e0569fbfe1865ee726a36",
+        "size_in_bytes": 16264
+      },
+      {
+        "_path": "bin/uniquifyTrees",
+        "path_type": "hardlink",
+        "sha256": "33f2c6f2d75ed2235940ac1b90c83a11efe296c8b221d16bc72793badc13581f",
+        "sha256_in_prefix": "33f2c6f2d75ed2235940ac1b90c83a11efe296c8b221d16bc72793badc13581f",
+        "size_in_bytes": 94056
+      },
+      {
+        "_path": "bin/xmfa2maf",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/mauvealigner_1530021745882/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "d80fdb9c5c8e6f2083aad5a729b6191b11696ad56054a2d55d30351a6770a414",
+        "sha256_in_prefix": "f961027fac72cf3d46f98d1c32ef78f9a8b8e1ab77ffad5898e27513827eb754",
+        "size_in_bytes": 175048
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "mauvealigner==1.2.0=hfc679d8_0",
+  "sha256": "af93c27bd6224077af7c7a224c5fff7a9308e320c766d0187e980747f21f44bd",
+  "size": 1615749,
+  "subdir": "linux-64",
+  "timestamp": 1530021960868,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/mauvealigner-1.2.0-hfc679d8_0.tar.bz2",
+  "version": "1.2.0"
+}

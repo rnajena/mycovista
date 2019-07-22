@@ -1,0 +1,946 @@
+{
+  "build": "py36_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "dendropy >=4.0.0",
+    "matplotlib >=1.3.1",
+    "numpy >=1.8.0",
+    "pysam >=0.8.3",
+    "python 3.6*",
+    "scipy >=0.9.0",
+    "screamingbackpack >=0.2.333"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/checkm-genome-1.0.7-py36_0",
+  "features": "",
+  "files": [
+    "bin/checkm",
+    "lib/python3.6/site-packages/checkm/DATA_CONFIG",
+    "lib/python3.6/site-packages/checkm/PCA.py",
+    "lib/python3.6/site-packages/checkm/VERSION",
+    "lib/python3.6/site-packages/checkm/__init__.py",
+    "lib/python3.6/site-packages/checkm/__pycache__/PCA.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/aminoAcidIdentity.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/binComparer.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/binStatistics.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/binUnion.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/common.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/customHelpFormatter.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/defaultValues.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/genomicSignatures.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/hmmer.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/hmmerAligner.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/hmmerModelParser.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/main.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/markerGeneFinder.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/markerSets.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/merger.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/pplacer.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/prettytable.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/prodigal.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/profile.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/resultsParser.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/ssuFinder.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/timeKeeper.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/treeParser.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/__pycache__/unbinned.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/aminoAcidIdentity.py",
+    "lib/python3.6/site-packages/checkm/binComparer.py",
+    "lib/python3.6/site-packages/checkm/binStatistics.py",
+    "lib/python3.6/site-packages/checkm/binTools.py",
+    "lib/python3.6/site-packages/checkm/binUnion.py",
+    "lib/python3.6/site-packages/checkm/checkmData.py",
+    "lib/python3.6/site-packages/checkm/common.py",
+    "lib/python3.6/site-packages/checkm/coverage.py",
+    "lib/python3.6/site-packages/checkm/coverageWindows.py",
+    "lib/python3.6/site-packages/checkm/customHelpFormatter.py",
+    "lib/python3.6/site-packages/checkm/defaultValues.py",
+    "lib/python3.6/site-packages/checkm/genomicSignatures.py",
+    "lib/python3.6/site-packages/checkm/hmmer.py",
+    "lib/python3.6/site-packages/checkm/hmmerAligner.py",
+    "lib/python3.6/site-packages/checkm/hmmerModelParser.py",
+    "lib/python3.6/site-packages/checkm/main.py",
+    "lib/python3.6/site-packages/checkm/markerGeneFinder.py",
+    "lib/python3.6/site-packages/checkm/markerSets.py",
+    "lib/python3.6/site-packages/checkm/merger.py",
+    "lib/python3.6/site-packages/checkm/plot/AbstractPlot.py",
+    "lib/python3.6/site-packages/checkm/plot/__init__.py",
+    "lib/python3.6/site-packages/checkm/plot/__pycache__/AbstractPlot.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/plot/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/plot/__pycache__/binQAPlot.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/plot/__pycache__/cumulativeLengthPlot.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/plot/__pycache__/distributionPlots.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/plot/__pycache__/gcBiasPlots.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/plot/__pycache__/gcPlots.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/plot/__pycache__/lengthHistogram.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/plot/__pycache__/markerGenePosPlot.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/plot/__pycache__/nxPlot.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/plot/__pycache__/parallelCoordPlot.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/plot/__pycache__/pcaPlot.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/plot/__pycache__/tetraDistPlots.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/plot/binQAPlot.py",
+    "lib/python3.6/site-packages/checkm/plot/codingDensityPlots.py",
+    "lib/python3.6/site-packages/checkm/plot/cumulativeLengthPlot.py",
+    "lib/python3.6/site-packages/checkm/plot/distributionPlots.py",
+    "lib/python3.6/site-packages/checkm/plot/gcBiasPlots.py",
+    "lib/python3.6/site-packages/checkm/plot/gcPlots.py",
+    "lib/python3.6/site-packages/checkm/plot/lengthHistogram.py",
+    "lib/python3.6/site-packages/checkm/plot/markerGenePosPlot.py",
+    "lib/python3.6/site-packages/checkm/plot/nxPlot.py",
+    "lib/python3.6/site-packages/checkm/plot/parallelCoordPlot.py",
+    "lib/python3.6/site-packages/checkm/plot/pcaPlot.py",
+    "lib/python3.6/site-packages/checkm/plot/tetraDistPlots.py",
+    "lib/python3.6/site-packages/checkm/pplacer.py",
+    "lib/python3.6/site-packages/checkm/prettytable.py",
+    "lib/python3.6/site-packages/checkm/prodigal.py",
+    "lib/python3.6/site-packages/checkm/profile.py",
+    "lib/python3.6/site-packages/checkm/resultsParser.py",
+    "lib/python3.6/site-packages/checkm/ssuFinder.py",
+    "lib/python3.6/site-packages/checkm/taxonParser.py",
+    "lib/python3.6/site-packages/checkm/test/__init__.py",
+    "lib/python3.6/site-packages/checkm/test/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/test/__pycache__/test_aminoAcidIdentity.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/test/__pycache__/test_binStatistics.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/test/__pycache__/test_genomicSignatures.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/test/__pycache__/test_markerSets.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/test/__pycache__/test_seqUtils.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/test/__pycache__/test_taxonomyUtils.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/test/test_aminoAcidIdentity.py",
+    "lib/python3.6/site-packages/checkm/test/test_binStatistics.py",
+    "lib/python3.6/site-packages/checkm/test/test_ecoli.py",
+    "lib/python3.6/site-packages/checkm/test/test_genomicSignatures.py",
+    "lib/python3.6/site-packages/checkm/test/test_markerSets.py",
+    "lib/python3.6/site-packages/checkm/test/test_seqUtils.py",
+    "lib/python3.6/site-packages/checkm/test/test_taxonomyUtils.py",
+    "lib/python3.6/site-packages/checkm/timeKeeper.py",
+    "lib/python3.6/site-packages/checkm/treeParser.py",
+    "lib/python3.6/site-packages/checkm/unbinned.py",
+    "lib/python3.6/site-packages/checkm/uniqueMarkers.py",
+    "lib/python3.6/site-packages/checkm/util/__init__.py",
+    "lib/python3.6/site-packages/checkm/util/__pycache__/__init__.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/util/__pycache__/pfam.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/util/__pycache__/seqUtils.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/util/__pycache__/taxonomyUtils.cpython-36.pyc",
+    "lib/python3.6/site-packages/checkm/util/img.py",
+    "lib/python3.6/site-packages/checkm/util/pfam.py",
+    "lib/python3.6/site-packages/checkm/util/seqUtils.py",
+    "lib/python3.6/site-packages/checkm/util/taxonomyUtils.py",
+    "lib/python3.6/site-packages/checkm_genome-1.0.7-py3.6.egg-info"
+  ],
+  "fn": "checkm-genome-1.0.7-py36_0.tar.bz2",
+  "license": "GPL3",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/checkm-genome-1.0.7-py36_0",
+    "type": 1
+  },
+  "md5": "c362b0570b0bd0ab9a062eff25b04e9b",
+  "name": "checkm-genome",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/checkm-genome-1.0.7-py36_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/checkm",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "ef4e149e0b1e0950942dd53d77cbdba76a64fa6dd4ff65bf611ac4edbc4ebfbb",
+        "sha256_in_prefix": "307688ef0704af68644b9dcf012ff7482c2013f693c1a25e12d1d58f58e13d9e",
+        "size_in_bytes": 57903
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/DATA_CONFIG",
+        "path_type": "hardlink",
+        "sha256": "8ce7f3cd7757e544c3e644610d44d13ae22d8c3ef5640cfdf97994bc66099912",
+        "sha256_in_prefix": "8ce7f3cd7757e544c3e644610d44d13ae22d8c3ef5640cfdf97994bc66099912",
+        "size_in_bytes": 190
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/PCA.py",
+        "path_type": "hardlink",
+        "sha256": "93f4f1b63a3b7efe3df32b5a673488ec4e84493ed5dd7184415be35a24687326",
+        "sha256_in_prefix": "93f4f1b63a3b7efe3df32b5a673488ec4e84493ed5dd7184415be35a24687326",
+        "size_in_bytes": 4654
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/VERSION",
+        "path_type": "hardlink",
+        "sha256": "6d6b9230dd8b8aac527f8929b7c2fc1fa0365deccca856216de979d6f5c6a6fe",
+        "sha256_in_prefix": "6d6b9230dd8b8aac527f8929b7c2fc1fa0365deccca856216de979d6f5c6a6fe",
+        "size_in_bytes": 6
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/PCA.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "021e338f419f054bb07bf71c7265c5f90bf54135d035fabf270e2f162075a1a0",
+        "sha256_in_prefix": "021e338f419f054bb07bf71c7265c5f90bf54135d035fabf270e2f162075a1a0",
+        "size_in_bytes": 3942
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "0fa0642469abad5cf47b17401df38eb493b2d5cf0dfa1ab3d2364ab7105b002b",
+        "sha256_in_prefix": "0fa0642469abad5cf47b17401df38eb493b2d5cf0dfa1ab3d2364ab7105b002b",
+        "size_in_bytes": 129
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/aminoAcidIdentity.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "fa55ae2b0d5d82aa936249eb71c962b0e5619e89b36ba36ece8a8bfe69394057",
+        "sha256_in_prefix": "fa55ae2b0d5d82aa936249eb71c962b0e5619e89b36ba36ece8a8bfe69394057",
+        "size_in_bytes": 3264
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/binComparer.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "c50a9ded51962b436d1349aa539e60d972d883f7950edafc4f5783218aa2bc62",
+        "sha256_in_prefix": "c50a9ded51962b436d1349aa539e60d972d883f7950edafc4f5783218aa2bc62",
+        "size_in_bytes": 4613
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/binStatistics.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "3f70c9807e33fff985d2cd8112dcc2659d25bfe96fb76eabaf64a2d403335a00",
+        "sha256_in_prefix": "3f70c9807e33fff985d2cd8112dcc2659d25bfe96fb76eabaf64a2d403335a00",
+        "size_in_bytes": 7424
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/binUnion.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "26057819975510ca12f9eb8e88fda80e527383e71efbe747d26184ee8f50690b",
+        "sha256_in_prefix": "26057819975510ca12f9eb8e88fda80e527383e71efbe747d26184ee8f50690b",
+        "size_in_bytes": 5893
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/common.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "6ee6c0ce846061fc4fc79a5ff8f4b4a22989aa7308752b51bcdba207f7a81f2f",
+        "sha256_in_prefix": "6ee6c0ce846061fc4fc79a5ff8f4b4a22989aa7308752b51bcdba207f7a81f2f",
+        "size_in_bytes": 3344
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/customHelpFormatter.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "f43bd49ae429f98172f725d3acbe5f2e4cda3b5dc6e4dfdc8841781e6d70db0a",
+        "sha256_in_prefix": "f43bd49ae429f98172f725d3acbe5f2e4cda3b5dc6e4dfdc8841781e6d70db0a",
+        "size_in_bytes": 2527
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/defaultValues.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "e01ebeb9649007a4f6946e485bc3e147d542c5f5bf12308c5aa3480e12a3ac5e",
+        "sha256_in_prefix": "e01ebeb9649007a4f6946e485bc3e147d542c5f5bf12308c5aa3480e12a3ac5e",
+        "size_in_bytes": 2560
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/genomicSignatures.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "2ab9d0eb7bd0a5e49e8df512df951346b77484ae5a48365ad925dbefa9d3d599",
+        "sha256_in_prefix": "2ab9d0eb7bd0a5e49e8df512df951346b77484ae5a48365ad925dbefa9d3d599",
+        "size_in_bytes": 5212
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/hmmer.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "4ff22db2a1edc3b0d8e11d8b232e223d0df91adc13593417316fc7adbb8a5b14",
+        "sha256_in_prefix": "4ff22db2a1edc3b0d8e11d8b232e223d0df91adc13593417316fc7adbb8a5b14",
+        "size_in_bytes": 8116
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/hmmerAligner.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "0a06260eb2232dc58df14893844591d1d8390ced15712f215503da3b1236a088",
+        "sha256_in_prefix": "0a06260eb2232dc58df14893844591d1d8390ced15712f215503da3b1236a088",
+        "size_in_bytes": 13235
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/hmmerModelParser.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "4070143ea14af65497c792c21c895f8a3466479ed34bca5c77d44bdf9f7b3ddb",
+        "sha256_in_prefix": "4070143ea14af65497c792c21c895f8a3466479ed34bca5c77d44bdf9f7b3ddb",
+        "size_in_bytes": 3143
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/main.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "535af29bc609fc754d94c6aa4e15ed7f042dd2c9d24dc7e18c18e529cc602ce4",
+        "sha256_in_prefix": "535af29bc609fc754d94c6aa4e15ed7f042dd2c9d24dc7e18c18e529cc602ce4",
+        "size_in_bytes": 35757
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/markerGeneFinder.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "eb7156735b97c08f6bb05ae72a697a37bd1c431a9cd3eba873277fa5cfd01874",
+        "sha256_in_prefix": "eb7156735b97c08f6bb05ae72a697a37bd1c431a9cd3eba873277fa5cfd01874",
+        "size_in_bytes": 4027
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/markerSets.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "7ee2b3fcd6beaf60dc458a73d02e1789ead76ac891a58d056d8a82a8ab5ec54a",
+        "sha256_in_prefix": "7ee2b3fcd6beaf60dc458a73d02e1789ead76ac891a58d056d8a82a8ab5ec54a",
+        "size_in_bytes": 14009
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/merger.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "f067a608b89716e8f737c67800da7923c3012c3801fd74f5ec74b83bfb8425fe",
+        "sha256_in_prefix": "f067a608b89716e8f737c67800da7923c3012c3801fd74f5ec74b83bfb8425fe",
+        "size_in_bytes": 2495
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/pplacer.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "4bd794bf4624339f53882f1436e522f94dc2fe4313f32ee61d37d9383bba7759",
+        "sha256_in_prefix": "4bd794bf4624339f53882f1436e522f94dc2fe4313f32ee61d37d9383bba7759",
+        "size_in_bytes": 3843
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/prettytable.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "8e1c1bfa8d16949adf44215d2fa4df3719ea1274dd397a2dce652aa156f977b3",
+        "sha256_in_prefix": "8e1c1bfa8d16949adf44215d2fa4df3719ea1274dd397a2dce652aa156f977b3",
+        "size_in_bytes": 45101
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/prodigal.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "107fce34c40a70192feaf1bef7313f3203842c285fe82383a0d70a17776ad8d1",
+        "sha256_in_prefix": "107fce34c40a70192feaf1bef7313f3203842c285fe82383a0d70a17776ad8d1",
+        "size_in_bytes": 5772
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/profile.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "a77337add95d7ab3f67d42d8e91bd3b0c15a3a73698608a240beda386703989b",
+        "sha256_in_prefix": "a77337add95d7ab3f67d42d8e91bd3b0c15a3a73698608a240beda386703989b",
+        "size_in_bytes": 2594
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/resultsParser.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "9006cbffb61e09f2e575e0b665614f3c28640b69c12f860bb903580defd5d0e2",
+        "sha256_in_prefix": "9006cbffb61e09f2e575e0b665614f3c28640b69c12f860bb903580defd5d0e2",
+        "size_in_bytes": 20486
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/ssuFinder.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "0c39a13e8f8d8902f66717737b23ab6378edf27a90da0cc6893127987347ec4a",
+        "sha256_in_prefix": "0c39a13e8f8d8902f66717737b23ab6378edf27a90da0cc6893127987347ec4a",
+        "size_in_bytes": 5770
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/timeKeeper.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "adab4a548c397e444333dcb76dd13d42507ea8f00f1578c20a1e2f9df32b0ae1",
+        "sha256_in_prefix": "adab4a548c397e444333dcb76dd13d42507ea8f00f1578c20a1e2f9df32b0ae1",
+        "size_in_bytes": 1501
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/treeParser.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "681df7d5a86a5cc7b93586b7674d848a2ba0b54b0ed0e156a845d821aaeca2dd",
+        "sha256_in_prefix": "681df7d5a86a5cc7b93586b7674d848a2ba0b54b0ed0e156a845d821aaeca2dd",
+        "size_in_bytes": 16912
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/__pycache__/unbinned.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "a73fb7c491dbd26fc8621be6cbbf9a3e97ed3b5a110f67a78477b80f45e43428",
+        "sha256_in_prefix": "a73fb7c491dbd26fc8621be6cbbf9a3e97ed3b5a110f67a78477b80f45e43428",
+        "size_in_bytes": 1953
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/aminoAcidIdentity.py",
+        "path_type": "hardlink",
+        "sha256": "3061d1983cdd8fb1726baa623fa5ee0c79e2386959fdacbc918cb88daf740128",
+        "sha256_in_prefix": "3061d1983cdd8fb1726baa623fa5ee0c79e2386959fdacbc918cb88daf740128",
+        "size_in_bytes": 6527
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/binComparer.py",
+        "path_type": "hardlink",
+        "sha256": "36f8080fa2cd836826a66130fe0bb8818eb444805b82af0b63a7439aa6c3427d",
+        "sha256_in_prefix": "36f8080fa2cd836826a66130fe0bb8818eb444805b82af0b63a7439aa6c3427d",
+        "size_in_bytes": 8767
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/binStatistics.py",
+        "path_type": "hardlink",
+        "sha256": "7cc96979d4d0ba5d1e668ce63784727d247a9e7939e987defb83f89146cb4336",
+        "sha256_in_prefix": "7cc96979d4d0ba5d1e668ce63784727d247a9e7939e987defb83f89146cb4336",
+        "size_in_bytes": 11325
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/binTools.py",
+        "path_type": "hardlink",
+        "sha256": "7070a389c1f3d9043fa9989ddc832e15299e2d91a5a44905af1f0d74af9ed7ce",
+        "sha256_in_prefix": "7070a389c1f3d9043fa9989ddc832e15299e2d91a5a44905af1f0d74af9ed7ce",
+        "size_in_bytes": 11782
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/binUnion.py",
+        "path_type": "hardlink",
+        "sha256": "12d2d72c100c93b92ccec835183891a36a545b41496d8c73950664d1d0dab518",
+        "sha256_in_prefix": "12d2d72c100c93b92ccec835183891a36a545b41496d8c73950664d1d0dab518",
+        "size_in_bytes": 11214
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/checkmData.py",
+        "path_type": "hardlink",
+        "sha256": "f0281dea96a482f375aa30c547ca2a3d5ac8097d8efc399719290aed82c53ce4",
+        "sha256_in_prefix": "f0281dea96a482f375aa30c547ca2a3d5ac8097d8efc399719290aed82c53ce4",
+        "size_in_bytes": 10873
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/common.py",
+        "path_type": "hardlink",
+        "sha256": "e125bc97bfbd78d553e2971068875cb20d9dba16a2517a09121b101b76dc5cec",
+        "sha256_in_prefix": "e125bc97bfbd78d553e2971068875cb20d9dba16a2517a09121b101b76dc5cec",
+        "size_in_bytes": 4699
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/coverage.py",
+        "path_type": "hardlink",
+        "sha256": "0358484abff0a4e2195351ff8d7f85b16d903dd62db03cb5d2b5db448430e7e9",
+        "sha256_in_prefix": "0358484abff0a4e2195351ff8d7f85b16d903dd62db03cb5d2b5db448430e7e9",
+        "size_in_bytes": 14625
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/coverageWindows.py",
+        "path_type": "hardlink",
+        "sha256": "8e3fca0a4d3ab620e8f19476bf5b7d701c59b8f6e66ddd69d6e3536d1ac1a811",
+        "sha256_in_prefix": "8e3fca0a4d3ab620e8f19476bf5b7d701c59b8f6e66ddd69d6e3536d1ac1a811",
+        "size_in_bytes": 10582
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/customHelpFormatter.py",
+        "path_type": "hardlink",
+        "sha256": "032c84d5ecf0cbe66931dce70a8ca37bb305135583b17dd5080e7b0fa3ecf514",
+        "sha256_in_prefix": "032c84d5ecf0cbe66931dce70a8ca37bb305135583b17dd5080e7b0fa3ecf514",
+        "size_in_bytes": 3844
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/defaultValues.py",
+        "path_type": "hardlink",
+        "sha256": "5561a188d877c728c9c694513526dad9aa904e275aaf7b2a9c408b93aa8ea1b9",
+        "sha256_in_prefix": "5561a188d877c728c9c694513526dad9aa904e275aaf7b2a9c408b93aa8ea1b9",
+        "size_in_bytes": 4219
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/genomicSignatures.py",
+        "path_type": "hardlink",
+        "sha256": "de098c33fbb8d181509de11dd92d42eb37b1e8c69217486fbec730d0b619c616",
+        "sha256_in_prefix": "de098c33fbb8d181509de11dd92d42eb37b1e8c69217486fbec730d0b619c616",
+        "size_in_bytes": 6919
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/hmmer.py",
+        "path_type": "hardlink",
+        "sha256": "2df63aaa4aa42095babe86bad0c736f80f14ab05045eef2ea26724ddfaa99380",
+        "sha256_in_prefix": "2df63aaa4aa42095babe86bad0c736f80f14ab05045eef2ea26724ddfaa99380",
+        "size_in_bytes": 11892
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/hmmerAligner.py",
+        "path_type": "hardlink",
+        "sha256": "0fa605734dd22ea4780b825149b6ec92410c5e3edbbf10f244787ac973f57292",
+        "sha256_in_prefix": "0fa605734dd22ea4780b825149b6ec92410c5e3edbbf10f244787ac973f57292",
+        "size_in_bytes": 22544
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/hmmerModelParser.py",
+        "path_type": "hardlink",
+        "sha256": "5f9315366abfef715f94bcb54f33b04dcb4b4e92e83b0f6b7c299a91a41555aa",
+        "sha256_in_prefix": "5f9315366abfef715f94bcb54f33b04dcb4b4e92e83b0f6b7c299a91a41555aa",
+        "size_in_bytes": 6160
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/main.py",
+        "path_type": "hardlink",
+        "sha256": "7981613f54634e7f8cb033775ffac9286105b540a06afe165f1f3173919a74e4",
+        "sha256_in_prefix": "7981613f54634e7f8cb033775ffac9286105b540a06afe165f1f3173919a74e4",
+        "size_in_bytes": 60016
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/markerGeneFinder.py",
+        "path_type": "hardlink",
+        "sha256": "b56dca4559716c1c45fe858fdab04409f214babf7b09db41fd8da8fc2d06f90f",
+        "sha256_in_prefix": "b56dca4559716c1c45fe858fdab04409f214babf7b09db41fd8da8fc2d06f90f",
+        "size_in_bytes": 6905
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/markerSets.py",
+        "path_type": "hardlink",
+        "sha256": "7bcb0a1b3dffe6928b8cf1ded98c845c9d4f2ba15cafaa951d9e22bf9af2f737",
+        "sha256_in_prefix": "7bcb0a1b3dffe6928b8cf1ded98c845c9d4f2ba15cafaa951d9e22bf9af2f737",
+        "size_in_bytes": 19567
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/merger.py",
+        "path_type": "hardlink",
+        "sha256": "2ca114074b5bd967d39f9c141e23a5273b8c0eaa0a9db34f23084f5bdcd2ab40",
+        "sha256_in_prefix": "2ca114074b5bd967d39f9c141e23a5273b8c0eaa0a9db34f23084f5bdcd2ab40",
+        "size_in_bytes": 5779
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/AbstractPlot.py",
+        "path_type": "hardlink",
+        "sha256": "9495229e3d8636fd6840b7f559edaafe523f7eadb654dc5e17c4889c768d71ff",
+        "sha256_in_prefix": "9495229e3d8636fd6840b7f559edaafe523f7eadb654dc5e17c4889c768d71ff",
+        "size_in_bytes": 6863
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/__pycache__/AbstractPlot.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "8c9cdc77f65e1812bc45e5c29fb814f34823decd2c7999c4e0444ccdec987876",
+        "sha256_in_prefix": "8c9cdc77f65e1812bc45e5c29fb814f34823decd2c7999c4e0444ccdec987876",
+        "size_in_bytes": 4672
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "e939bfd7249d4e27059976d533d52804af984995f7cc9ea5a78481018cb163ca",
+        "sha256_in_prefix": "e939bfd7249d4e27059976d533d52804af984995f7cc9ea5a78481018cb163ca",
+        "size_in_bytes": 134
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/__pycache__/binQAPlot.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "e9d0e587c100595e72682991fbbe535a7a0d00fb3901f9a611145df5428c50b5",
+        "sha256_in_prefix": "e9d0e587c100595e72682991fbbe535a7a0d00fb3901f9a611145df5428c50b5",
+        "size_in_bytes": 5585
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/__pycache__/cumulativeLengthPlot.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "2eda3ff38a683617e3b2b0474f58000a507244cea02e01189b101a2341507f76",
+        "sha256_in_prefix": "2eda3ff38a683617e3b2b0474f58000a507244cea02e01189b101a2341507f76",
+        "size_in_bytes": 1897
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/__pycache__/distributionPlots.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "047fd76485f8025034ac183abbe3c31e1be9ed68ae42dbd78eae59cf6bbd0a3d",
+        "sha256_in_prefix": "047fd76485f8025034ac183abbe3c31e1be9ed68ae42dbd78eae59cf6bbd0a3d",
+        "size_in_bytes": 1379
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/__pycache__/gcBiasPlots.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "f3d44010a4cb68ca7e21ea60f384129b56bb92ae059d5015e9ed4d0507cf8b6f",
+        "sha256_in_prefix": "f3d44010a4cb68ca7e21ea60f384129b56bb92ae059d5015e9ed4d0507cf8b6f",
+        "size_in_bytes": 3039
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/__pycache__/gcPlots.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "63bd942ee51a7deb2f462e80072b3667b3208363ccdac7ad405e9663cf168e77",
+        "sha256_in_prefix": "63bd942ee51a7deb2f462e80072b3667b3208363ccdac7ad405e9663cf168e77",
+        "size_in_bytes": 3632
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/__pycache__/lengthHistogram.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "39046993c8acdcdf2f76259cfb50a5e6e725de67baeff014e2f6bff32db227f9",
+        "sha256_in_prefix": "39046993c8acdcdf2f76259cfb50a5e6e725de67baeff014e2f6bff32db227f9",
+        "size_in_bytes": 2087
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/__pycache__/markerGenePosPlot.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "a162dc9ea582f5e7e8a3d24049f74632593a3d0096069dc5932e33e429115f73",
+        "sha256_in_prefix": "a162dc9ea582f5e7e8a3d24049f74632593a3d0096069dc5932e33e429115f73",
+        "size_in_bytes": 4971
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/__pycache__/nxPlot.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "bcb57f3381cce2d3afe03bafc653f2beeb9b9738b7f5b9a6901d3a7e373585a2",
+        "sha256_in_prefix": "bcb57f3381cce2d3afe03bafc653f2beeb9b9738b7f5b9a6901d3a7e373585a2",
+        "size_in_bytes": 2084
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/__pycache__/parallelCoordPlot.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "0ca599f763b2c30c97b5daba07024039bdd2b9c628aafad2bc915e7a99c03bb6",
+        "sha256_in_prefix": "0ca599f763b2c30c97b5daba07024039bdd2b9c628aafad2bc915e7a99c03bb6",
+        "size_in_bytes": 3563
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/__pycache__/pcaPlot.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "f2a09133f5e2f4bb4eb17aaa40ac75246034221d7c831efbad63cf8ffe05ba76",
+        "sha256_in_prefix": "f2a09133f5e2f4bb4eb17aaa40ac75246034221d7c831efbad63cf8ffe05ba76",
+        "size_in_bytes": 2743
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/__pycache__/tetraDistPlots.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "c319abde989a924d4538ce9ec2db20557015fbdc1a86f7b4c4a06ce5a7ed16e3",
+        "sha256_in_prefix": "c319abde989a924d4538ce9ec2db20557015fbdc1a86f7b4c4a06ce5a7ed16e3",
+        "size_in_bytes": 3843
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/binQAPlot.py",
+        "path_type": "hardlink",
+        "sha256": "ebb75c775cef14880c28c8d536c23422be65bd126900e08a44c575bf6464b4f9",
+        "sha256_in_prefix": "ebb75c775cef14880c28c8d536c23422be65bd126900e08a44c575bf6464b4f9",
+        "size_in_bytes": 10993
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/codingDensityPlots.py",
+        "path_type": "hardlink",
+        "sha256": "532b41470c913d60dc51457f993e60e6e78b447ae561fd2cebbf9321777aa1ee",
+        "sha256_in_prefix": "532b41470c913d60dc51457f993e60e6e78b447ae561fd2cebbf9321777aa1ee",
+        "size_in_bytes": 7861
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/cumulativeLengthPlot.py",
+        "path_type": "hardlink",
+        "sha256": "980a3884cbaf8f38a2d3f2b3aa90e0a19a0d9510fb982a7adf559fafa751b8c3",
+        "sha256_in_prefix": "980a3884cbaf8f38a2d3f2b3aa90e0a19a0d9510fb982a7adf559fafa751b8c3",
+        "size_in_bytes": 3663
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/distributionPlots.py",
+        "path_type": "hardlink",
+        "sha256": "4c703842b2b61bca593a716b79dab9080e8c78525d93d8dcee66e7ccbce51f3f",
+        "sha256_in_prefix": "4c703842b2b61bca593a716b79dab9080e8c78525d93d8dcee66e7ccbce51f3f",
+        "size_in_bytes": 2829
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/gcBiasPlots.py",
+        "path_type": "hardlink",
+        "sha256": "70752e02bb8d71bb2ea2d69b21a4a5a28ff9df04c1422a0dc05fb574d23d2932",
+        "sha256_in_prefix": "70752e02bb8d71bb2ea2d69b21a4a5a28ff9df04c1422a0dc05fb574d23d2932",
+        "size_in_bytes": 6156
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/gcPlots.py",
+        "path_type": "hardlink",
+        "sha256": "96bf75841d8cdef001fbb328104bf6d808215b54d50fb215d793f77019d9b2b2",
+        "sha256_in_prefix": "96bf75841d8cdef001fbb328104bf6d808215b54d50fb215d793f77019d9b2b2",
+        "size_in_bytes": 7325
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/lengthHistogram.py",
+        "path_type": "hardlink",
+        "sha256": "b86c502312f0102c686ccee2dbc5a33e2023670f9fd15a59865c281b4aa545f0",
+        "sha256_in_prefix": "b86c502312f0102c686ccee2dbc5a33e2023670f9fd15a59865c281b4aa545f0",
+        "size_in_bytes": 3677
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/markerGenePosPlot.py",
+        "path_type": "hardlink",
+        "sha256": "923843b84942569685cdec92605d17a76b13e4c6c2739b5f529f1e580fab3592",
+        "sha256_in_prefix": "923843b84942569685cdec92605d17a76b13e4c6c2739b5f529f1e580fab3592",
+        "size_in_bytes": 8241
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/nxPlot.py",
+        "path_type": "hardlink",
+        "sha256": "c11861beb689d5a6b40c3c3470b9cc2ffa971ca82a3f22ab972728dd66141d53",
+        "sha256_in_prefix": "c11861beb689d5a6b40c3c3470b9cc2ffa971ca82a3f22ab972728dd66141d53",
+        "size_in_bytes": 3868
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/parallelCoordPlot.py",
+        "path_type": "hardlink",
+        "sha256": "1069f9247ec345e68e9c9094b24eac3cc3dabf501dcb9fdb2480d63c1a1deeaa",
+        "sha256_in_prefix": "1069f9247ec345e68e9c9094b24eac3cc3dabf501dcb9fdb2480d63c1a1deeaa",
+        "size_in_bytes": 5887
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/pcaPlot.py",
+        "path_type": "hardlink",
+        "sha256": "bcc49798cb886075ad91d3a2bf296e965e4ee42ffc110d92b985e0099f87d856",
+        "sha256_in_prefix": "bcc49798cb886075ad91d3a2bf296e965e4ee42ffc110d92b985e0099f87d856",
+        "size_in_bytes": 5163
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/plot/tetraDistPlots.py",
+        "path_type": "hardlink",
+        "sha256": "a0ed16015cae312aa992768e4f136c02624f8cf477a02e6e75b4b7d0baddf960",
+        "sha256_in_prefix": "a0ed16015cae312aa992768e4f136c02624f8cf477a02e6e75b4b7d0baddf960",
+        "size_in_bytes": 7627
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/pplacer.py",
+        "path_type": "hardlink",
+        "sha256": "f2ffcfc1bb1a24989f09e7e6205a34df82d96042629d4aa9e8af77c259fafbec",
+        "sha256_in_prefix": "f2ffcfc1bb1a24989f09e7e6205a34df82d96042629d4aa9e8af77c259fafbec",
+        "size_in_bytes": 6898
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/prettytable.py",
+        "path_type": "hardlink",
+        "sha256": "7db30219256548be448ad71156bff6888773ac8f34018d4ec3b7d92849486231",
+        "sha256_in_prefix": "7db30219256548be448ad71156bff6888773ac8f34018d4ec3b7d92849486231",
+        "size_in_bytes": 54204
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/prodigal.py",
+        "path_type": "hardlink",
+        "sha256": "5cfc8c7474076c0011328a129812133e7da60f60f649c1895ed57e0947a2479c",
+        "sha256_in_prefix": "5cfc8c7474076c0011328a129812133e7da60f60f649c1895ed57e0947a2479c",
+        "size_in_bytes": 8849
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/profile.py",
+        "path_type": "hardlink",
+        "sha256": "3c3a32709712e24324d190a50e8099667a792240087f695d8bf3965b3ee5f6a5",
+        "sha256_in_prefix": "3c3a32709712e24324d190a50e8099667a792240087f695d8bf3965b3ee5f6a5",
+        "size_in_bytes": 5849
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/resultsParser.py",
+        "path_type": "hardlink",
+        "sha256": "5d334240c86800390c356fbe97e1498f0f20da09d332879fb5c3c0f73de220fd",
+        "sha256_in_prefix": "5d334240c86800390c356fbe97e1498f0f20da09d332879fb5c3c0f73de220fd",
+        "size_in_bytes": 41752
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/ssuFinder.py",
+        "path_type": "hardlink",
+        "sha256": "526d7caad538467c7eea428f88d8f6800c0df88738c8e61589b30db748dd83b6",
+        "sha256_in_prefix": "526d7caad538467c7eea428f88d8f6800c0df88738c8e61589b30db748dd83b6",
+        "size_in_bytes": 11125
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/taxonParser.py",
+        "path_type": "hardlink",
+        "sha256": "da70a79935cd72fb626b4d9899622d1f558e03f4bebcfcb70702d7d535fcbca1",
+        "sha256_in_prefix": "da70a79935cd72fb626b4d9899622d1f558e03f4bebcfcb70702d7d535fcbca1",
+        "size_in_bytes": 4963
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "98e96be09d55eab8f5921ae0dae3c68600ff4a98c2095541f75f09535ea55ead",
+        "sha256_in_prefix": "98e96be09d55eab8f5921ae0dae3c68600ff4a98c2095541f75f09535ea55ead",
+        "size_in_bytes": 134
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/__pycache__/test_aminoAcidIdentity.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "0fcfb676e910bfd95a776173a1c1b745dcc9d4fc7251c282fb43a54982b208c0",
+        "sha256_in_prefix": "0fcfb676e910bfd95a776173a1c1b745dcc9d4fc7251c282fb43a54982b208c0",
+        "size_in_bytes": 5233
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/__pycache__/test_binStatistics.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "7369ac6d3200236dd7d773f5bcc7bd70bded5a0e399a16bf08c4f679ab3cf768",
+        "sha256_in_prefix": "7369ac6d3200236dd7d773f5bcc7bd70bded5a0e399a16bf08c4f679ab3cf768",
+        "size_in_bytes": 1715
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/__pycache__/test_genomicSignatures.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "29ed0bfd0313fbcab882104ac109d2865395973ee81585b6595e9e787c6e48ec",
+        "sha256_in_prefix": "29ed0bfd0313fbcab882104ac109d2865395973ee81585b6595e9e787c6e48ec",
+        "size_in_bytes": 2332
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/__pycache__/test_markerSets.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "0064165432998877cfffe992d9a2683df4cbd523f207499b7c962fc1277b08ce",
+        "sha256_in_prefix": "0064165432998877cfffe992d9a2683df4cbd523f207499b7c962fc1277b08ce",
+        "size_in_bytes": 1566
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/__pycache__/test_seqUtils.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "fd354eb9e3afd3eb20c0f447bf62ec0c70766c50876823e78f3945284bbcae25",
+        "sha256_in_prefix": "fd354eb9e3afd3eb20c0f447bf62ec0c70766c50876823e78f3945284bbcae25",
+        "size_in_bytes": 1001
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/__pycache__/test_taxonomyUtils.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "48871fc21e6cb43f974e44bfbf62b00633ca4aeb51ee978fd5f51af1b79387cf",
+        "sha256_in_prefix": "48871fc21e6cb43f974e44bfbf62b00633ca4aeb51ee978fd5f51af1b79387cf",
+        "size_in_bytes": 1097
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/test_aminoAcidIdentity.py",
+        "path_type": "hardlink",
+        "sha256": "f7b4f4cd4d9c31c1574aef8d6e03f495a2262e2ebae76364b9a1ee72a1410486",
+        "sha256_in_prefix": "f7b4f4cd4d9c31c1574aef8d6e03f495a2262e2ebae76364b9a1ee72a1410486",
+        "size_in_bytes": 6008
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/test_binStatistics.py",
+        "path_type": "hardlink",
+        "sha256": "5c45ed08021d43e6aebf96eaf64e8299815f4dcfe5401c3693cf99864c2ce4c7",
+        "sha256_in_prefix": "5c45ed08021d43e6aebf96eaf64e8299815f4dcfe5401c3693cf99864c2ce4c7",
+        "size_in_bytes": 2715
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/test_ecoli.py",
+        "path_type": "hardlink",
+        "sha256": "ac32bc571d48ded31b2aaebe80f9914cc3c71d7922126aada7bfaa1dc7d647ab",
+        "sha256_in_prefix": "ac32bc571d48ded31b2aaebe80f9914cc3c71d7922126aada7bfaa1dc7d647ab",
+        "size_in_bytes": 13856
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/test_genomicSignatures.py",
+        "path_type": "hardlink",
+        "sha256": "6f95e4c3399183c878a1a834dac6a6fb32c6ab683541da726edc3ba911456397",
+        "sha256_in_prefix": "6f95e4c3399183c878a1a834dac6a6fb32c6ab683541da726edc3ba911456397",
+        "size_in_bytes": 3764
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/test_markerSets.py",
+        "path_type": "hardlink",
+        "sha256": "b2249da35481045e1869ad0b00d0701b2ddd759f76d521e534cc81a3d69f296f",
+        "sha256_in_prefix": "b2249da35481045e1869ad0b00d0701b2ddd759f76d521e534cc81a3d69f296f",
+        "size_in_bytes": 2586
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/test_seqUtils.py",
+        "path_type": "hardlink",
+        "sha256": "8bf0493b4645afca5b40ad6268630ccb98e91ccd1247c3f07f32206df4f4ba52",
+        "sha256_in_prefix": "8bf0493b4645afca5b40ad6268630ccb98e91ccd1247c3f07f32206df4f4ba52",
+        "size_in_bytes": 1923
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/test/test_taxonomyUtils.py",
+        "path_type": "hardlink",
+        "sha256": "312c5c1b917168f4caa9b0879c686b0c109d4981d40a134159f1d572ff837699",
+        "sha256_in_prefix": "312c5c1b917168f4caa9b0879c686b0c109d4981d40a134159f1d572ff837699",
+        "size_in_bytes": 1988
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/timeKeeper.py",
+        "path_type": "hardlink",
+        "sha256": "5b9cdf0f2c97cb0e8654342e1fda898cf8437923e5e6948bcbc5ff46e3133c26",
+        "sha256_in_prefix": "5b9cdf0f2c97cb0e8654342e1fda898cf8437923e5e6948bcbc5ff46e3133c26",
+        "size_in_bytes": 2289
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/treeParser.py",
+        "path_type": "hardlink",
+        "sha256": "718b3eec54f3a51bf0850dd92a62e8b2805d5256dd7c22e147c299415e40ebb5",
+        "sha256_in_prefix": "718b3eec54f3a51bf0850dd92a62e8b2805d5256dd7c22e147c299415e40ebb5",
+        "size_in_bytes": 33657
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/unbinned.py",
+        "path_type": "hardlink",
+        "sha256": "7b3bdb5bdaa77a25a9dd07689f8e290f2f6d89887300eb06ec6ec29cc642721f",
+        "sha256_in_prefix": "7b3bdb5bdaa77a25a9dd07689f8e290f2f6d89887300eb06ec6ec29cc642721f",
+        "size_in_bytes": 3797
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/uniqueMarkers.py",
+        "path_type": "hardlink",
+        "sha256": "30d5559e756711642ff31096c5921661d3b246462954714528de578be6316f29",
+        "sha256_in_prefix": "30d5559e756711642ff31096c5921661d3b246462954714528de578be6316f29",
+        "size_in_bytes": 6626
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/util/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/util/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "236bfed0c3dc5eefec9db2360e65d7d2a20fee0f53e65f381834da1e8567fcf0",
+        "sha256_in_prefix": "236bfed0c3dc5eefec9db2360e65d7d2a20fee0f53e65f381834da1e8567fcf0",
+        "size_in_bytes": 134
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/util/__pycache__/pfam.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "2569c223ccfd52cc38a0c2ac7e1e70f398e16176de02c6f4e99675eb0502f798",
+        "sha256_in_prefix": "2569c223ccfd52cc38a0c2ac7e1e70f398e16176de02c6f4e99675eb0502f798",
+        "size_in_bytes": 3674
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/util/__pycache__/seqUtils.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "8aee991b204af9b9635f7b781e8e7e4e432eb94239cbb18717d753757ce78258",
+        "sha256_in_prefix": "8aee991b204af9b9635f7b781e8e7e4e432eb94239cbb18717d753757ce78258",
+        "size_in_bytes": 6472
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/util/__pycache__/taxonomyUtils.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "48369163680257b2f141f2bcad0bd64aad08ae57824479ad3532a9e565a756d9",
+        "sha256_in_prefix": "48369163680257b2f141f2bcad0bd64aad08ae57824479ad3532a9e565a756d9",
+        "size_in_bytes": 2168
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/util/img.py",
+        "path_type": "hardlink",
+        "sha256": "cbcd7233bd02648b8fd3a8b7e46a9fa75e90934511fa58342b2ffd28a4b82ed9",
+        "sha256_in_prefix": "cbcd7233bd02648b8fd3a8b7e46a9fa75e90934511fa58342b2ffd28a4b82ed9",
+        "size_in_bytes": 23454
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/util/pfam.py",
+        "path_type": "hardlink",
+        "sha256": "aa19aa94b183eb280668f5ad8993518a50f78acb1a22e619973e5f2899258dc3",
+        "sha256_in_prefix": "aa19aa94b183eb280668f5ad8993518a50f78acb1a22e619973e5f2899258dc3",
+        "size_in_bytes": 6851
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/util/seqUtils.py",
+        "path_type": "hardlink",
+        "sha256": "3100b772b069f1a8df70cbe6325efe8681de6c3b5febead006d9c8470f769233",
+        "sha256_in_prefix": "3100b772b069f1a8df70cbe6325efe8681de6c3b5febead006d9c8470f769233",
+        "size_in_bytes": 8904
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm/util/taxonomyUtils.py",
+        "path_type": "hardlink",
+        "sha256": "3e91898b198f02563dc6537ded1ec984898e0f5ce066d5b4532aa29efb948903",
+        "sha256_in_prefix": "3e91898b198f02563dc6537ded1ec984898e0f5ce066d5b4532aa29efb948903",
+        "size_in_bytes": 3585
+      },
+      {
+        "_path": "lib/python3.6/site-packages/checkm_genome-1.0.7-py3.6.egg-info",
+        "path_type": "hardlink",
+        "sha256": "10aad3cfb5de62ec867cc391ba301920d3fa79ea73ee41e901d9402c8951af3e",
+        "sha256_in_prefix": "10aad3cfb5de62ec867cc391ba301920d3fa79ea73ee41e901d9402c8951af3e",
+        "size_in_bytes": 729
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "checkm-genome==1.0.7=py36_0",
+  "sha256": "d16be816d7dd0b62c3b1b1d23a78cd54ff7f32efafbf7e679c2976210bbb480b",
+  "size": 181463,
+  "subdir": "linux-64",
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/checkm-genome-1.0.7-py36_0.tar.bz2",
+  "version": "1.0.7"
+}

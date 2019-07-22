@@ -1,0 +1,64 @@
+{
+  "build": "he860b03_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=7.3.0",
+    "libstdcxx-ng >=7.3.0",
+    "python",
+    "zlib >=1.2.11,<1.3.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/racon-1.3.3-he860b03_1",
+  "features": "",
+  "files": [
+    "bin/racon",
+    "bin/racon_wrapper",
+    "bin/rampler"
+  ],
+  "fn": "racon-1.3.3-he860b03_1.tar.bz2",
+  "license": "MIT",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/racon-1.3.3-he860b03_1",
+    "type": 1
+  },
+  "md5": "fc07e43750464280b8253afc93d5c812",
+  "name": "racon",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/racon-1.3.3-he860b03_1.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/racon",
+        "path_type": "hardlink",
+        "sha256": "263b8bc5cf55087dd72745d5f9f6307488e8ba8f2ba375c543b61bbdf5c6addb",
+        "sha256_in_prefix": "263b8bc5cf55087dd72745d5f9f6307488e8ba8f2ba375c543b61bbdf5c6addb",
+        "size_in_bytes": 447224
+      },
+      {
+        "_path": "bin/racon_wrapper",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "3103217b64051e8f38323bfdfa3c5795841fae3b292b6fd3ba0f49551473ef00",
+        "sha256_in_prefix": "742ccc402d505927d482688c737d984cdfee09b8e803aab9a1ab27b38ceb228a",
+        "size_in_bytes": 8895
+      },
+      {
+        "_path": "bin/rampler",
+        "path_type": "hardlink",
+        "sha256": "aebd42918b2ce39caedd05e9ad73ce9c3863ebe56026fcfc3803e768255479c6",
+        "sha256_in_prefix": "aebd42918b2ce39caedd05e9ad73ce9c3863ebe56026fcfc3803e768255479c6",
+        "size_in_bytes": 173136
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "racon==1.3.3=he860b03_1",
+  "sha256": "00c9544a358d7861915104568ff7de2deda61949c240ef03494bc6cd7a84b2e4",
+  "size": 222674,
+  "subdir": "linux-64",
+  "timestamp": 1559230628291,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/racon-1.3.3-he860b03_1.tar.bz2",
+  "version": "1.3.3"
+}

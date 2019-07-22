@@ -1,0 +1,626 @@
+{
+  "build": "h470a237_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=4.9"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/libmems-1.6.0-h470a237_1",
+  "features": "",
+  "files": [
+    "include/libMems-1.6/libMems/AbstractGappedAlignment.h",
+    "include/libMems-1.6/libMems/AbstractMatch.h",
+    "include/libMems-1.6/libMems/Aligner.h",
+    "include/libMems-1.6/libMems/Backbone.h",
+    "include/libMems-1.6/libMems/CompactGappedAlignment.h",
+    "include/libMems-1.6/libMems/DNAFileSML.h",
+    "include/libMems-1.6/libMems/DNAMemorySML.h",
+    "include/libMems-1.6/libMems/DenseAbstractMatch.h",
+    "include/libMems-1.6/libMems/DistanceMatrix.h",
+    "include/libMems-1.6/libMems/FileSML.h",
+    "include/libMems-1.6/libMems/Files.h",
+    "include/libMems-1.6/libMems/GappedAligner.h",
+    "include/libMems-1.6/libMems/GappedAlignment.h",
+    "include/libMems-1.6/libMems/GreedyBreakpointElimination.h",
+    "include/libMems-1.6/libMems/HomologyHMM/algebras.h",
+    "include/libMems-1.6/libMems/HomologyHMM/dptables.h",
+    "include/libMems-1.6/libMems/HomologyHMM/homology.h",
+    "include/libMems-1.6/libMems/HomologyHMM/parameters.h",
+    "include/libMems-1.6/libMems/HybridAbstractMatch.h",
+    "include/libMems-1.6/libMems/Interval.h",
+    "include/libMems-1.6/libMems/IntervalList.h",
+    "include/libMems-1.6/libMems/Islands.h",
+    "include/libMems-1.6/libMems/LCB.h",
+    "include/libMems-1.6/libMems/MaskedMemHash.h",
+    "include/libMems-1.6/libMems/Match.h",
+    "include/libMems-1.6/libMems/MatchFinder.h",
+    "include/libMems-1.6/libMems/MatchHashEntry.h",
+    "include/libMems-1.6/libMems/MatchList.h",
+    "include/libMems-1.6/libMems/MatchProjectionAdapter.h",
+    "include/libMems-1.6/libMems/Matrix.h",
+    "include/libMems-1.6/libMems/MemHash.h",
+    "include/libMems-1.6/libMems/Memory.h",
+    "include/libMems-1.6/libMems/MemorySML.h",
+    "include/libMems-1.6/libMems/MuscleInterface.h",
+    "include/libMems-1.6/libMems/NumericMatrix.h",
+    "include/libMems-1.6/libMems/PairwiseMatchAdapter.h",
+    "include/libMems-1.6/libMems/PairwiseMatchFinder.h",
+    "include/libMems-1.6/libMems/PhyloTree.h",
+    "include/libMems-1.6/libMems/ProgressiveAligner.h",
+    "include/libMems-1.6/libMems/RepeatHash.h",
+    "include/libMems-1.6/libMems/RepeatMatch.h",
+    "include/libMems-1.6/libMems/RepeatMatchList.h",
+    "include/libMems-1.6/libMems/Scoring.h",
+    "include/libMems-1.6/libMems/SeedMasks.h",
+    "include/libMems-1.6/libMems/SeedOccurrenceList.h",
+    "include/libMems-1.6/libMems/SlotAllocator.h",
+    "include/libMems-1.6/libMems/SortedMerList.h",
+    "include/libMems-1.6/libMems/SparseAbstractMatch.h",
+    "include/libMems-1.6/libMems/SubstitutionMatrix.h",
+    "include/libMems-1.6/libMems/SuperInterval.h",
+    "include/libMems-1.6/libMems/TreeUtilities.h",
+    "include/libMems-1.6/libMems/UngappedLocalAlignment.h",
+    "include/libMems-1.6/libMems/configuration.h",
+    "include/libMems-1.6/libMems/dmSML/aPOSIXaio.h",
+    "include/libMems-1.6/libMems/dmSML/alibc.h",
+    "include/libMems-1.6/libMems/dmSML/alinuxaio.h",
+    "include/libMems-1.6/libMems/dmSML/asyncio.h",
+    "include/libMems-1.6/libMems/dmSML/awin32aio.h",
+    "include/libMems-1.6/libMems/dmSML/buffer.h",
+    "include/libMems-1.6/libMems/dmSML/dmsort.h",
+    "include/libMems-1.6/libMems/dmSML/sml.h",
+    "include/libMems-1.6/libMems/dmSML/sorting.h",
+    "include/libMems-1.6/libMems/dmSML/timing.h",
+    "include/libMems-1.6/libMems/dmSML/util.h",
+    "include/libMems-1.6/libMems/gnAlignedSequences.h",
+    "include/libMems-1.6/libMems/gnRAWSequence.h",
+    "include/libMems-1.6/libMems/twister.h",
+    "lib/libMems-1.6.a",
+    "lib/libMems-1.6.la",
+    "lib/libMems-1.6.so",
+    "lib/libMems-1.6.so.1",
+    "lib/libMems-1.6.so.1.0.0",
+    "lib/pkgconfig/libMems-1.6.pc"
+  ],
+  "fn": "libmems-1.6.0-h470a237_1.tar.bz2",
+  "license": "GPL-2.0",
+  "license_family": "GPL",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/libmems-1.6.0-h470a237_1",
+    "type": 1
+  },
+  "md5": "7f0e83f04e58741c0d4696c53862464a",
+  "name": "libmems",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/libmems-1.6.0-h470a237_1.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "include/libMems-1.6/libMems/AbstractGappedAlignment.h",
+        "path_type": "hardlink",
+        "sha256": "8a02850f64697835f36b69d9974f9e4918b17ecafe3a7243d6d002987c7153ae",
+        "sha256_in_prefix": "8a02850f64697835f36b69d9974f9e4918b17ecafe3a7243d6d002987c7153ae",
+        "size_in_bytes": 3614
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/AbstractMatch.h",
+        "path_type": "hardlink",
+        "sha256": "89f4ec5ed38d0bee725c23a5409aae56d02ee035a88a0956c578d3f5f4bedb8d",
+        "sha256_in_prefix": "89f4ec5ed38d0bee725c23a5409aae56d02ee035a88a0956c578d3f5f4bedb8d",
+        "size_in_bytes": 12636
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/Aligner.h",
+        "path_type": "hardlink",
+        "sha256": "381e69f9c05082efe2f3864148ff5a95a780c0952a26c6ef02e54d54141a0894",
+        "sha256_in_prefix": "381e69f9c05082efe2f3864148ff5a95a780c0952a26c6ef02e54d54141a0894",
+        "size_in_bytes": 11664
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/Backbone.h",
+        "path_type": "hardlink",
+        "sha256": "a70d953ae52129f333e443d097609fcaf70ed40aab1d13d2f1c9c3333b1504a5",
+        "sha256_in_prefix": "a70d953ae52129f333e443d097609fcaf70ed40aab1d13d2f1c9c3333b1504a5",
+        "size_in_bytes": 8161
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/CompactGappedAlignment.h",
+        "path_type": "hardlink",
+        "sha256": "3f06762a8aeec78ed2be2d83e48d7271e02fc1581d9ff427af02fa1cf6830236",
+        "sha256_in_prefix": "3f06762a8aeec78ed2be2d83e48d7271e02fc1581d9ff427af02fa1cf6830236",
+        "size_in_bytes": 26662
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/DNAFileSML.h",
+        "path_type": "hardlink",
+        "sha256": "44f297a56ad291ab9a8cc39e3c9ba197db6ce1583fcc356cc40f1d802256c92e",
+        "sha256_in_prefix": "44f297a56ad291ab9a8cc39e3c9ba197db6ce1583fcc356cc40f1d802256c92e",
+        "size_in_bytes": 2075
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/DNAMemorySML.h",
+        "path_type": "hardlink",
+        "sha256": "2b2bca036e0d93c0ce19f9f6eda1aeea42981ea90adf9aa691e244311443c63c",
+        "sha256_in_prefix": "2b2bca036e0d93c0ce19f9f6eda1aeea42981ea90adf9aa691e244311443c63c",
+        "size_in_bytes": 1905
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/DenseAbstractMatch.h",
+        "path_type": "hardlink",
+        "sha256": "d492dc8192375dadd197ad100fd1467aa7243bdd5db11d49fcb0310a7ff16e4d",
+        "sha256_in_prefix": "d492dc8192375dadd197ad100fd1467aa7243bdd5db11d49fcb0310a7ff16e4d",
+        "size_in_bytes": 5031
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/DistanceMatrix.h",
+        "path_type": "hardlink",
+        "sha256": "860ec0704fb8dc80af0f5e35c07172ddd246f0b4b379999b91062a74ebb31acc",
+        "sha256_in_prefix": "860ec0704fb8dc80af0f5e35c07172ddd246f0b4b379999b91062a74ebb31acc",
+        "size_in_bytes": 10891
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/FileSML.h",
+        "path_type": "hardlink",
+        "sha256": "db7b6c3c94fab7113bf17c6aab2d635d49829ceea3a07b3818e66ec91c1a6ae9",
+        "sha256_in_prefix": "db7b6c3c94fab7113bf17c6aab2d635d49829ceea3a07b3818e66ec91c1a6ae9",
+        "size_in_bytes": 4590
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/Files.h",
+        "path_type": "hardlink",
+        "sha256": "632750279f0647c7224398ec50df367a5d4400882e62865faf55c646c4ec0de7",
+        "sha256_in_prefix": "632750279f0647c7224398ec50df367a5d4400882e62865faf55c646c4ec0de7",
+        "size_in_bytes": 5777
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/GappedAligner.h",
+        "path_type": "hardlink",
+        "sha256": "54c229e293d780b6bd27134cb8582917108853d67cc206cfe4b67607634db83f",
+        "sha256_in_prefix": "54c229e293d780b6bd27134cb8582917108853d67cc206cfe4b67607634db83f",
+        "size_in_bytes": 2513
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/GappedAlignment.h",
+        "path_type": "hardlink",
+        "sha256": "2753480d14a918c8bb0c7ca6caaa62694446efcb2815630179ef95b3364879ff",
+        "sha256_in_prefix": "2753480d14a918c8bb0c7ca6caaa62694446efcb2815630179ef95b3364879ff",
+        "size_in_bytes": 8478
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/GreedyBreakpointElimination.h",
+        "path_type": "hardlink",
+        "sha256": "9cef0a8daf95e785dfc18b963cc5d0f10c584dbd07da83292e43ed045e3a0357",
+        "sha256_in_prefix": "9cef0a8daf95e785dfc18b963cc5d0f10c584dbd07da83292e43ed045e3a0357",
+        "size_in_bytes": 29239
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/HomologyHMM/algebras.h",
+        "path_type": "hardlink",
+        "sha256": "c0e4779a7ff7e481108696bfc94a53247ca5e7d13784064b80eeb36bdf900f4d",
+        "sha256_in_prefix": "c0e4779a7ff7e481108696bfc94a53247ca5e7d13784064b80eeb36bdf900f4d",
+        "size_in_bytes": 20861
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/HomologyHMM/dptables.h",
+        "path_type": "hardlink",
+        "sha256": "1d47c0b0466354c513765e9a58081f6bbff7e002b3b6a368942c1bc644937507",
+        "sha256_in_prefix": "1d47c0b0466354c513765e9a58081f6bbff7e002b3b6a368942c1bc644937507",
+        "size_in_bytes": 13161
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/HomologyHMM/homology.h",
+        "path_type": "hardlink",
+        "sha256": "63ad8eea6fe4ea3799ebf11fe9f434225f8476ed66308635de3cac7dc49121a4",
+        "sha256_in_prefix": "63ad8eea6fe4ea3799ebf11fe9f434225f8476ed66308635de3cac7dc49121a4",
+        "size_in_bytes": 7163
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/HomologyHMM/parameters.h",
+        "path_type": "hardlink",
+        "sha256": "c82e86a6c55a28fbada1be8661bcc526faa2604e0d2002a3a4b935f4ac5d00bc",
+        "sha256_in_prefix": "c82e86a6c55a28fbada1be8661bcc526faa2604e0d2002a3a4b935f4ac5d00bc",
+        "size_in_bytes": 7759
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/HybridAbstractMatch.h",
+        "path_type": "hardlink",
+        "sha256": "d59dbbb91fbd5381ecad0984cb011eba3e16b43dad1025af2adce1cbd9e0e66e",
+        "sha256_in_prefix": "d59dbbb91fbd5381ecad0984cb011eba3e16b43dad1025af2adce1cbd9e0e66e",
+        "size_in_bytes": 9786
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/Interval.h",
+        "path_type": "hardlink",
+        "sha256": "178c3e624c88e652fa153519018e12148b0fc42cc4f0707498764e2ec3d8c591",
+        "sha256_in_prefix": "178c3e624c88e652fa153519018e12148b0fc42cc4f0707498764e2ec3d8c591",
+        "size_in_bytes": 30049
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/IntervalList.h",
+        "path_type": "hardlink",
+        "sha256": "ac6f59bedee55a4bd789394ed940b89fa0bb85de4f251f8c8893d28ac31bc82e",
+        "sha256_in_prefix": "ac6f59bedee55a4bd789394ed940b89fa0bb85de4f251f8c8893d28ac31bc82e",
+        "size_in_bytes": 27519
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/Islands.h",
+        "path_type": "hardlink",
+        "sha256": "7dd7dbcbd22b6d13c0ac71b3a79ac53ca5b293401da32d72e163f38e3a4693d4",
+        "sha256_in_prefix": "7dd7dbcbd22b6d13c0ac71b3a79ac53ca5b293401da32d72e163f38e3a4693d4",
+        "size_in_bytes": 13712
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/LCB.h",
+        "path_type": "hardlink",
+        "sha256": "08ee3babcb492c761c990ac51bba65253741be0d79ba37d0b487a45dfea770dc",
+        "sha256_in_prefix": "08ee3babcb492c761c990ac51bba65253741be0d79ba37d0b487a45dfea770dc",
+        "size_in_bytes": 1825
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/MaskedMemHash.h",
+        "path_type": "hardlink",
+        "sha256": "1d033fff3e613433c62e54440519c93ab5e4b62cbcf9bef1c6300dd10b8e0dc8",
+        "sha256_in_prefix": "1d033fff3e613433c62e54440519c93ab5e4b62cbcf9bef1c6300dd10b8e0dc8",
+        "size_in_bytes": 1416
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/Match.h",
+        "path_type": "hardlink",
+        "sha256": "75697522c35885ca32efc57050d2c2a83f84d62a3c98e684202c7b45fb8bf20c",
+        "sha256_in_prefix": "75697522c35885ca32efc57050d2c2a83f84d62a3c98e684202c7b45fb8bf20c",
+        "size_in_bytes": 926
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/MatchFinder.h",
+        "path_type": "hardlink",
+        "sha256": "f31fa91fc00cbe42b02cd771f746b1dc38f99f3bb60c69466addcab3ba7dd3e5",
+        "sha256_in_prefix": "f31fa91fc00cbe42b02cd771f746b1dc38f99f3bb60c69466addcab3ba7dd3e5",
+        "size_in_bytes": 13449
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/MatchHashEntry.h",
+        "path_type": "hardlink",
+        "sha256": "6fbd81250efa47d13c75327b85efdbbf393d0c3df6dcbba2322fffc502342674",
+        "sha256_in_prefix": "6fbd81250efa47d13c75327b85efdbbf393d0c3df6dcbba2322fffc502342674",
+        "size_in_bytes": 4728
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/MatchList.h",
+        "path_type": "hardlink",
+        "sha256": "bcf05cfd47027f6fa3c6d7355c7b59d4ff3e5c79b1bbb1aa5ac77a9498ccad9e",
+        "sha256_in_prefix": "bcf05cfd47027f6fa3c6d7355c7b59d4ff3e5c79b1bbb1aa5ac77a9498ccad9e",
+        "size_in_bytes": 22769
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/MatchProjectionAdapter.h",
+        "path_type": "hardlink",
+        "sha256": "42da8144d2af94911e1cd6e874bee444d697f026017296ee1d8729cbfe91dd03",
+        "sha256_in_prefix": "42da8144d2af94911e1cd6e874bee444d697f026017296ee1d8729cbfe91dd03",
+        "size_in_bytes": 4377
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/Matrix.h",
+        "path_type": "hardlink",
+        "sha256": "b728772413461530dfc2abde6882f5631b2924b718128355a04ed40d9e50970c",
+        "sha256_in_prefix": "b728772413461530dfc2abde6882f5631b2924b718128355a04ed40d9e50970c",
+        "size_in_bytes": 4016
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/MemHash.h",
+        "path_type": "hardlink",
+        "sha256": "72a36130990227647390f507a36e47cfde4ef3ca95252a42a1b955beeddbfcb9",
+        "sha256_in_prefix": "72a36130990227647390f507a36e47cfde4ef3ca95252a42a1b955beeddbfcb9",
+        "size_in_bytes": 7182
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/Memory.h",
+        "path_type": "hardlink",
+        "sha256": "5205abf7807f73ccc649a0a8af9b0d023d92becceb735d734b9ea2ac4c18701e",
+        "sha256_in_prefix": "5205abf7807f73ccc649a0a8af9b0d023d92becceb735d734b9ea2ac4c18701e",
+        "size_in_bytes": 1543
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/MemorySML.h",
+        "path_type": "hardlink",
+        "sha256": "ec9f33412c10c7344ed92645ad01ab430996cd3d9ae2f16e8cde4b561e727243",
+        "sha256_in_prefix": "ec9f33412c10c7344ed92645ad01ab430996cd3d9ae2f16e8cde4b561e727243",
+        "size_in_bytes": 1988
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/MuscleInterface.h",
+        "path_type": "hardlink",
+        "sha256": "5772086cd82c34c8311f10c3825dcc8f81ffcf0e46be5ef84bcd6759ab17e15d",
+        "sha256_in_prefix": "5772086cd82c34c8311f10c3825dcc8f81ffcf0e46be5ef84bcd6759ab17e15d",
+        "size_in_bytes": 5235
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/NumericMatrix.h",
+        "path_type": "hardlink",
+        "sha256": "a554cd8fcbaa4b4f2922cf8b89d8a521e554459928d5feb37b446fa7c8147f86",
+        "sha256_in_prefix": "a554cd8fcbaa4b4f2922cf8b89d8a521e554459928d5feb37b446fa7c8147f86",
+        "size_in_bytes": 4605
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/PairwiseMatchAdapter.h",
+        "path_type": "hardlink",
+        "sha256": "162af2d3c678b9d8d0e251c1f9c064795f91d17c090732730af3edb514e03379",
+        "sha256_in_prefix": "162af2d3c678b9d8d0e251c1f9c064795f91d17c090732730af3edb514e03379",
+        "size_in_bytes": 3674
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/PairwiseMatchFinder.h",
+        "path_type": "hardlink",
+        "sha256": "45e12dd147b4fa5bbb64e0eb65f8561f131595aeca6a0f4e3fd4c51c0b9cd80d",
+        "sha256_in_prefix": "45e12dd147b4fa5bbb64e0eb65f8561f131595aeca6a0f4e3fd4c51c0b9cd80d",
+        "size_in_bytes": 1013
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/PhyloTree.h",
+        "path_type": "hardlink",
+        "sha256": "cedcbff6b312945067de91000e7313f348b560b17b13090d5b6c9c50840cdfa1",
+        "sha256_in_prefix": "cedcbff6b312945067de91000e7313f348b560b17b13090d5b6c9c50840cdfa1",
+        "size_in_bytes": 10333
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/ProgressiveAligner.h",
+        "path_type": "hardlink",
+        "sha256": "3773425ffbd60c5a789f49c3e63431c38ea27dd08bc7e807eb61936286c84455",
+        "sha256_in_prefix": "3773425ffbd60c5a789f49c3e63431c38ea27dd08bc7e807eb61936286c84455",
+        "size_in_bytes": 24671
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/RepeatHash.h",
+        "path_type": "hardlink",
+        "sha256": "4e3556851dc1a06f42ee3b36fde434c4a834255df38d05a889ac4b4df6a0be86",
+        "sha256_in_prefix": "4e3556851dc1a06f42ee3b36fde434c4a834255df38d05a889ac4b4df6a0be86",
+        "size_in_bytes": 1428
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/RepeatMatch.h",
+        "path_type": "hardlink",
+        "sha256": "391b6a85c9d07079039dbe3497cd4cdbbfe2f23a93308e5df1ab0700ac6dd97b",
+        "sha256_in_prefix": "391b6a85c9d07079039dbe3497cd4cdbbfe2f23a93308e5df1ab0700ac6dd97b",
+        "size_in_bytes": 1453
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/RepeatMatchList.h",
+        "path_type": "hardlink",
+        "sha256": "cdd8d7bef7adc54ff58ce7a8d4455a9ef1b1a994a19ebad8faf517964984e7d8",
+        "sha256_in_prefix": "cdd8d7bef7adc54ff58ce7a8d4455a9ef1b1a994a19ebad8faf517964984e7d8",
+        "size_in_bytes": 2195
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/Scoring.h",
+        "path_type": "hardlink",
+        "sha256": "ad2dc47049cc475bd6884b12d194c62146679facfcefcd9f6057a045c18f9d4b",
+        "sha256_in_prefix": "ad2dc47049cc475bd6884b12d194c62146679facfcefcd9f6057a045c18f9d4b",
+        "size_in_bytes": 10167
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/SeedMasks.h",
+        "path_type": "hardlink",
+        "sha256": "32e69751c7bde038c21a6ff02774665650c78f38104075380e68a694286dbd28",
+        "sha256_in_prefix": "32e69751c7bde038c21a6ff02774665650c78f38104075380e68a694286dbd28",
+        "size_in_bytes": 9694
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/SeedOccurrenceList.h",
+        "path_type": "hardlink",
+        "sha256": "6330671ac68904402db770599d2aea2d98a7bcfef2abe9318d3d6f612c6b8014",
+        "sha256_in_prefix": "6330671ac68904402db770599d2aea2d98a7bcfef2abe9318d3d6f612c6b8014",
+        "size_in_bytes": 2483
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/SlotAllocator.h",
+        "path_type": "hardlink",
+        "sha256": "a50c4ef10746000f37fd5f7ab68714afde6823af7b7d15c9cf2e94e3c4f9debb",
+        "sha256_in_prefix": "a50c4ef10746000f37fd5f7ab68714afde6823af7b7d15c9cf2e94e3c4f9debb",
+        "size_in_bytes": 4383
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/SortedMerList.h",
+        "path_type": "hardlink",
+        "sha256": "3e9adf703eb77c4345b28c44b944ddc250d5cf7e5b76bd61ea365f6b832d9126",
+        "sha256_in_prefix": "3e9adf703eb77c4345b28c44b944ddc250d5cf7e5b76bd61ea365f6b832d9126",
+        "size_in_bytes": 12250
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/SparseAbstractMatch.h",
+        "path_type": "hardlink",
+        "sha256": "64023a9fd47274a28eda03e1d8550a723cdc689e4c50391143d1b151886f4273",
+        "sha256_in_prefix": "64023a9fd47274a28eda03e1d8550a723cdc689e4c50391143d1b151886f4273",
+        "size_in_bytes": 7625
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/SubstitutionMatrix.h",
+        "path_type": "hardlink",
+        "sha256": "1220f95c6e8d6f981597a342033d74808f4ddb7f32d03d8aa3f55fbaae6c8cf0",
+        "sha256_in_prefix": "1220f95c6e8d6f981597a342033d74808f4ddb7f32d03d8aa3f55fbaae6c8cf0",
+        "size_in_bytes": 3100
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/SuperInterval.h",
+        "path_type": "hardlink",
+        "sha256": "c804b7eae4a63fca7600051c6e60e85a9a3944788f214def2c3f56414444e9b6",
+        "sha256_in_prefix": "c804b7eae4a63fca7600051c6e60e85a9a3944788f214def2c3f56414444e9b6",
+        "size_in_bytes": 1879
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/TreeUtilities.h",
+        "path_type": "hardlink",
+        "sha256": "b4be541f3ef482290574d3376f1ede7bb3735b8d916da7dee53675d63885af79",
+        "sha256_in_prefix": "b4be541f3ef482290574d3376f1ede7bb3735b8d916da7dee53675d63885af79",
+        "size_in_bytes": 4590
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/UngappedLocalAlignment.h",
+        "path_type": "hardlink",
+        "sha256": "6614ce3296eb444c8417c025eb9d1e74096bee038479e609c3bc58610e1d031c",
+        "sha256_in_prefix": "6614ce3296eb444c8417c025eb9d1e74096bee038479e609c3bc58610e1d031c",
+        "size_in_bytes": 7254
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/configuration.h",
+        "path_type": "hardlink",
+        "sha256": "c642856b659ed0022e64fa918fa58883ec5d5ebf401eacc801336feeba7d3e99",
+        "sha256_in_prefix": "c642856b659ed0022e64fa918fa58883ec5d5ebf401eacc801336feeba7d3e99",
+        "size_in_bytes": 1214
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/dmSML/aPOSIXaio.h",
+        "path_type": "hardlink",
+        "sha256": "4449c4e00b1852d3f80d3b71ae721e767d765abe04971aa7198838b023950771",
+        "sha256_in_prefix": "4449c4e00b1852d3f80d3b71ae721e767d765abe04971aa7198838b023950771",
+        "size_in_bytes": 381
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/dmSML/alibc.h",
+        "path_type": "hardlink",
+        "sha256": "9157d3bc40fbd56334bec71b8bce9b4a5f75b2e57c5a0bdffa68d44cb8d3aeac",
+        "sha256_in_prefix": "9157d3bc40fbd56334bec71b8bce9b4a5f75b2e57c5a0bdffa68d44cb8d3aeac",
+        "size_in_bytes": 328
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/dmSML/alinuxaio.h",
+        "path_type": "hardlink",
+        "sha256": "331bd8c75e62761f4c513b58430df038d0295c800b8580af934aec30d79f0287",
+        "sha256_in_prefix": "331bd8c75e62761f4c513b58430df038d0295c800b8580af934aec30d79f0287",
+        "size_in_bytes": 387
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/dmSML/asyncio.h",
+        "path_type": "hardlink",
+        "sha256": "2609d708894738cd65f6feb98003e5aee29418d97f9d62204c14481160b0d698",
+        "sha256_in_prefix": "2609d708894738cd65f6feb98003e5aee29418d97f9d62204c14481160b0d698",
+        "size_in_bytes": 4402
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/dmSML/awin32aio.h",
+        "path_type": "hardlink",
+        "sha256": "6ff65e27f136b869c3251cc83599c385ba3104e7036198a585fc5cc631ee25ae",
+        "sha256_in_prefix": "6ff65e27f136b869c3251cc83599c385ba3104e7036198a585fc5cc631ee25ae",
+        "size_in_bytes": 377
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/dmSML/buffer.h",
+        "path_type": "hardlink",
+        "sha256": "30d59b88e7ada2e8815f4118432efcfbea96982969bc14412273ec2b77827bdf",
+        "sha256_in_prefix": "30d59b88e7ada2e8815f4118432efcfbea96982969bc14412273ec2b77827bdf",
+        "size_in_bytes": 7161
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/dmSML/dmsort.h",
+        "path_type": "hardlink",
+        "sha256": "6329b2c00520efa29349aa624927526549b936e71cd1dc7d49d15adeb165c48f",
+        "sha256_in_prefix": "6329b2c00520efa29349aa624927526549b936e71cd1dc7d49d15adeb165c48f",
+        "size_in_bytes": 4979
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/dmSML/sml.h",
+        "path_type": "hardlink",
+        "sha256": "5f0464e8a74245f4334bf5b71a9449992345359ce97b946a4f50afca4e7e3ec6",
+        "sha256_in_prefix": "5f0464e8a74245f4334bf5b71a9449992345359ce97b946a4f50afca4e7e3ec6",
+        "size_in_bytes": 2197
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/dmSML/sorting.h",
+        "path_type": "hardlink",
+        "sha256": "20c4a029f0b2e544e2b15d69c31af7afc0a3ec9fb7e640780c58e9517f4688e8",
+        "sha256_in_prefix": "20c4a029f0b2e544e2b15d69c31af7afc0a3ec9fb7e640780c58e9517f4688e8",
+        "size_in_bytes": 2438
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/dmSML/timing.h",
+        "path_type": "hardlink",
+        "sha256": "fa3e7f7e7f16a52a026c64a106cfdc37aef4e5145c150fa64a6622784504a45e",
+        "sha256_in_prefix": "fa3e7f7e7f16a52a026c64a106cfdc37aef4e5145c150fa64a6622784504a45e",
+        "size_in_bytes": 393
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/dmSML/util.h",
+        "path_type": "hardlink",
+        "sha256": "97f216d42248ae711dd2e59d4037a5691d799db98179fb5dbd21fc2d1b9e5785",
+        "sha256_in_prefix": "97f216d42248ae711dd2e59d4037a5691d799db98179fb5dbd21fc2d1b9e5785",
+        "size_in_bytes": 731
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/gnAlignedSequences.h",
+        "path_type": "hardlink",
+        "sha256": "42bc901700db7cee049eea1ba05773711d55b7bbe33f27f4a8b2bd0ee57a3dca",
+        "sha256_in_prefix": "42bc901700db7cee049eea1ba05773711d55b7bbe33f27f4a8b2bd0ee57a3dca",
+        "size_in_bytes": 13038
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/gnRAWSequence.h",
+        "path_type": "hardlink",
+        "sha256": "944db68a046ab67ec8a1a7701fc8c84a6c85efaf617f9c1033b7498de071d031",
+        "sha256_in_prefix": "944db68a046ab67ec8a1a7701fc8c84a6c85efaf617f9c1033b7498de071d031",
+        "size_in_bytes": 7484
+      },
+      {
+        "_path": "include/libMems-1.6/libMems/twister.h",
+        "path_type": "hardlink",
+        "sha256": "ac39d0245e0d3b25aea24509d5e4d4826ff1688d8bc5b863c9b586913b02a10c",
+        "sha256_in_prefix": "ac39d0245e0d3b25aea24509d5e4d4826ff1688d8bc5b863c9b586913b02a10c",
+        "size_in_bytes": 309
+      },
+      {
+        "_path": "lib/libMems-1.6.a",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/libmems_1529852029792/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place",
+        "sha256": "8b5ca827fa9540cd078c43cf69762e1fe5e5a4eb0768fa57636a5a4b4836047f",
+        "sha256_in_prefix": "a9314d09ffa49195f7819f2248b3ec43c0c83326f0c3e6c31c7fc4da366c25ef",
+        "size_in_bytes": 6880626
+      },
+      {
+        "_path": "lib/libMems-1.6.la",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "95723f8bd1f68e804645db226f813f65375f0bf4da4c72ae11f7cec9698336cc",
+        "sha256_in_prefix": "6c6ee4403410045eedd536979d169f02fe3e5fc8e293f2daf8ba602ea03e1b40",
+        "size_in_bytes": 1020
+      },
+      {
+        "_path": "lib/libMems-1.6.so",
+        "path_type": "softlink",
+        "sha256": "9f159b2a097022359f23c2c509e1a02d8214a5193e350cf394420ff6c8b9abfa",
+        "size_in_bytes": 2331065
+      },
+      {
+        "_path": "lib/libMems-1.6.so.1",
+        "path_type": "softlink",
+        "sha256": "9f159b2a097022359f23c2c509e1a02d8214a5193e350cf394420ff6c8b9abfa",
+        "size_in_bytes": 2331065
+      },
+      {
+        "_path": "lib/libMems-1.6.so.1.0.0",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/libmems_1529852029792/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place",
+        "sha256": "9f159b2a097022359f23c2c509e1a02d8214a5193e350cf394420ff6c8b9abfa",
+        "sha256_in_prefix": "128bd4d3f40d6f8c398ddfdfc06e70d5b84e68b05b5ffa3b299f7c93b36da18e",
+        "size_in_bytes": 2331065
+      },
+      {
+        "_path": "lib/pkgconfig/libMems-1.6.pc",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "99481d02157b5925997a173413337bf8c21939c15dd39e3387039639a08a0c47",
+        "sha256_in_prefix": "e43b0dd3090ad10aba24a680b94de2a135b080313287f3afee087b52dff437f8",
+        "size_in_bytes": 437
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "libmems==1.6.0=h470a237_1",
+  "sha256": "f78cefa8b9728623375beaebf76b6f460aaa3e0938501dc7d292362f162962c3",
+  "size": 2376868,
+  "subdir": "linux-64",
+  "timestamp": 1529852423983,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/libmems-1.6.0-h470a237_1.tar.bz2",
+  "version": "1.6.0"
+}

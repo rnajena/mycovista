@@ -1,0 +1,37 @@
+{
+  "build": "py37_4",
+  "build_number": 4,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "libboost 1.67.0 h46d08c1_4",
+    "py-boost 1.67.0 py37h04863e7_4",
+    "python >=3.7,<3.8.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/boost-1.67.0-py37_4",
+  "features": "",
+  "files": [],
+  "fn": "boost-1.67.0-py37_4.conda",
+  "legacy_bz2_md5": "960ffbde8755a8dfb1d6c12030bbc313",
+  "legacy_bz2_size": 11768,
+  "license": "Boost-1.0",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/boost-1.67.0-py37_4",
+    "type": 1
+  },
+  "md5": "caa13e12b63cf5f5a38e81da3b231bc2",
+  "name": "boost",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/boost-1.67.0-py37_4.conda",
+  "paths_data": {
+    "paths": [],
+    "paths_version": 1
+  },
+  "requested_spec": "boost==1.67.0=py37_4",
+  "sha256": "3182d46f1d8309f6d979b7de48e6450621699ad2bb818b5d88a9fc3d6816f4bf",
+  "size": 11393,
+  "subdir": "linux-64",
+  "timestamp": 1530782291004,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/boost-1.67.0-py37_4.conda",
+  "version": "1.67.0"
+}

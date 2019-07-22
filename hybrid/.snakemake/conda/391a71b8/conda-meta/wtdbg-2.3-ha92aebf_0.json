@@ -1,0 +1,67 @@
+{
+  "build": "ha92aebf_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=4.9",
+    "zlib >=1.2.11,<1.3.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/wtdbg-2.3-ha92aebf_0",
+  "features": "",
+  "files": [
+    "bin/wtdbg-cns",
+    "bin/wtdbg2",
+    "bin/wtpoa-cns"
+  ],
+  "fn": "wtdbg-2.3-ha92aebf_0.tar.bz2",
+  "license": "GPL-3.0+",
+  "license_family": "GPL",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/wtdbg-2.3-ha92aebf_0",
+    "type": 1
+  },
+  "md5": "de400c9ffd14f472894fb95cb287f815",
+  "name": "wtdbg",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/wtdbg-2.3-ha92aebf_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/wtdbg-cns",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/wtdbg_1548283801490/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "79a63d72f277f366257e761f2b55ee7ade24433f61e10c6aa85677128bc0cfb6",
+        "sha256_in_prefix": "adf62cca456b7dce0a37b3be75d8630a64ee2612e1a3f0717281c96007725b6b",
+        "size_in_bytes": 843369
+      },
+      {
+        "_path": "bin/wtdbg2",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/wtdbg_1548283801490/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "18e84a569bb436198a13277f7b2e579a6fb919b1d8565f0c6487514adc0e7375",
+        "sha256_in_prefix": "c893a4ba7aae3e9ae41f1480c4bd3d4f1076c02edbf20032f6691b718f80a7b2",
+        "size_in_bytes": 2194301
+      },
+      {
+        "_path": "bin/wtpoa-cns",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/wtdbg_1548283801490/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "f35f9e87adec8fe1eb9081c6057fb06207fc6fdfe7512f62a60d14eedea73b2c",
+        "sha256_in_prefix": "94c6f72e1ba22ae06013e1307d51d8475ff4b4f9630f66b18d35c1af41f35caf",
+        "size_in_bytes": 845180
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "wtdbg==2.3=ha92aebf_0",
+  "sha256": "f25293fa671ae789b5406e80b1938b06111cb9a97d628b43dd67ffb9d153f9ff",
+  "size": 1387536,
+  "subdir": "linux-64",
+  "timestamp": 1548283847473,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/wtdbg-2.3-ha92aebf_0.tar.bz2",
+  "version": "2.3"
+}

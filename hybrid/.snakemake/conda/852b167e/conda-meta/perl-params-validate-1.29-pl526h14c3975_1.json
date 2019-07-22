@@ -1,0 +1,106 @@
+{
+  "build": "pl526h14c3975_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=7.3.0",
+    "perl >=5.26.2,<5.26.3.0a0",
+    "perl-carp",
+    "perl-exporter",
+    "perl-module-implementation",
+    "perl-xsloader"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/perl-params-validate-1.29-pl526h14c3975_1",
+  "features": "",
+  "files": [
+    "lib/site_perl/5.26.2/Params/Validate.pm",
+    "lib/site_perl/5.26.2/Params/Validate/Constants.pm",
+    "lib/site_perl/5.26.2/Params/Validate/PP.pm",
+    "lib/site_perl/5.26.2/Params/Validate/XS.pm",
+    "lib/site_perl/5.26.2/Params/ValidatePP.pm",
+    "lib/site_perl/5.26.2/Params/ValidateXS.pm",
+    "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/Params/Validate/.packlist",
+    "man/man3/Params::Validate.3"
+  ],
+  "fn": "perl-params-validate-1.29-pl526h14c3975_1.tar.bz2",
+  "license": "artistic_2",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/perl-params-validate-1.29-pl526h14c3975_1",
+    "type": 1
+  },
+  "md5": "519c57ffec490207bbbbb983e8849fb1",
+  "name": "perl-params-validate",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/perl-params-validate-1.29-pl526h14c3975_1.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/site_perl/5.26.2/Params/Validate.pm",
+        "path_type": "hardlink",
+        "sha256": "e7704ac8f8365e1a9910970676e5e6f395c18735c7351a11631b0b1e1479ebbc",
+        "sha256_in_prefix": "e7704ac8f8365e1a9910970676e5e6f395c18735c7351a11631b0b1e1479ebbc",
+        "size_in_bytes": 26777
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Params/Validate/Constants.pm",
+        "path_type": "hardlink",
+        "sha256": "2da1c74b9745fb6018c0721d726b64efa246063ca02ec4f423a1b83d58e7cd45",
+        "sha256_in_prefix": "2da1c74b9745fb6018c0721d726b64efa246063ca02ec4f423a1b83d58e7cd45",
+        "size_in_bytes": 572
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Params/Validate/PP.pm",
+        "path_type": "hardlink",
+        "sha256": "72b89d1107d67cc091ad01292a22b10e6aa717d75eca6e156060daf1d2d11dd4",
+        "sha256_in_prefix": "72b89d1107d67cc091ad01292a22b10e6aa717d75eca6e156060daf1d2d11dd4",
+        "size_in_bytes": 20383
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Params/Validate/XS.pm",
+        "path_type": "hardlink",
+        "sha256": "084dfd57536ac8f967f3be2a62a7f9e7e6cf9be04e2102cffbcaaf9c60928287",
+        "sha256_in_prefix": "084dfd57536ac8f967f3be2a62a7f9e7e6cf9be04e2102cffbcaaf9c60928287",
+        "size_in_bytes": 942
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Params/ValidatePP.pm",
+        "path_type": "hardlink",
+        "sha256": "e8efbb35c3499fcb316038f01cd7aac2e9fe9d8a83b9bce9baebf48180070417",
+        "sha256_in_prefix": "e8efbb35c3499fcb316038f01cd7aac2e9fe9d8a83b9bce9baebf48180070417",
+        "size_in_bytes": 156
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/Params/ValidateXS.pm",
+        "path_type": "hardlink",
+        "sha256": "cabebcc8a63c37b80c44b850ac0bc18a0adc72eb520852f73dfbb3ba314ab0be",
+        "sha256_in_prefix": "cabebcc8a63c37b80c44b850ac0bc18a0adc72eb520852f73dfbb3ba314ab0be",
+        "size_in_bytes": 153
+      },
+      {
+        "_path": "lib/site_perl/5.26.2/x86_64-linux-thread-multi/auto/Params/Validate/.packlist",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "29a7b25aa646ed277e7d73677949ffd13bfd8b6385bce48fc91ee50ca383b791",
+        "sha256_in_prefix": "d45ec543cd6cbc589fc56d85809b73abb00fca0b25fb46f9e7798a77b8c17ad4",
+        "size_in_bytes": 858
+      },
+      {
+        "_path": "man/man3/Params::Validate.3",
+        "path_type": "hardlink",
+        "sha256": "e65555fbe464114432fcf1351fae46a03535c7f16a36717dff5c3525a426390d",
+        "sha256_in_prefix": "e65555fbe464114432fcf1351fae46a03535c7f16a36717dff5c3525a426390d",
+        "size_in_bytes": 33158
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "perl-params-validate==1.29=pl526h14c3975_1",
+  "sha256": "9a1267b1dc425d16f29d211ee421b72511c7d8ca533e01a2a16b005b4d1a0464",
+  "size": 25266,
+  "subdir": "linux-64",
+  "timestamp": 1558094165931,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/perl-params-validate-1.29-pl526h14c3975_1.tar.bz2",
+  "version": "1.29"
+}
