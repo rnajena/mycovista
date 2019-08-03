@@ -9,15 +9,28 @@ END = '1 2'.split() # paired_end
 rule all:
 	input:
 		# porechop
-		expand("{path}/hybrid_new/preprocessing/porechop/11DD0261_porechop.fastq", path = config["path"]),
+		# expand("{path}/hybrid_new/preprocessing/porechop/11DD0261_porechop.fastq", path = config["path"]),
 		# deepbinner
-		expand("{path}/hybrid_new/preprocessing/deepbinner/classifications", path = config["path"]),
+		# expand("{path}/hybrid_new/preprocessing/deepbinner/classifications", path = config["path"]),
 		# expand("{path}/hybrid_new/preprocessing/deepbinner/barcode01.fastq.gz", path = config["path"]),
-		expand("{path}/hybrid_new/preprocessing/deepbinner/11DD0261_deepbinner_untrimmed.fastq.gz", path = config["path"]),
-		expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz", path = config["path"], strain = config["strains"]),
-		expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq", path = config["path"], strain = config["strains"]),
+		# expand("{path}/hybrid_new/preprocessing/deepbinner/11DD0261_deepbinner_untrimmed.fastq.gz", path = config["path"]),
+		# expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz", path = config["path"], strain = config["strains"]),
+		# expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq", path = config["path"], strain = config["strains"]),
 		# NanoPlot
-		expand("{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"])
+		# expand("{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"])
+		# 
+		# preprocess short reads
+		expand("{path}/hybrid_new/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
+		# 
+		# assembly
+		expand("{path}/hybrid_new/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# 
+		# polishing - 4x Racon long -> medaka -> 4x Racon short
+		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# 
+		# QUAST
+		expand("{path}/hybrid_new/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"])
+
 
 
 # create folders for the following steps
@@ -343,13 +356,39 @@ rule rename_flye:
 	shell:
 		'mv {input.contigs} {output.flye}'
 
+# wtdbg2
+rule wtdbg2:
+	input:
+		'{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
+	output:
+		ctg = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_wtdbg2/{strain}_{demultiplex}_wtdbg2.ctg.lay.gz'
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
+	params:
+		ctg = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_wtdbg2/{strain}_{demultiplex}_wtdbg2'
+	threads: 24
+	shell:
+		'wtdbg2 -x nanopore -g 1000000 -i {input} -t {threads} -o {params.ctg}'
+
+# convert wtdbg2 ouput (cgt.lay) to fasta
+rule wtdbg2_convert:
+	input:
+		ctg = rules.wtdbg2.output.ctg
+	output:
+		contigs = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_wtdbg2/{strain}_{demultiplex}_wtdbg2.contigs.fasta'
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
+	threads: 24
+	shell:
+		'wtdbg-cns -t {threads} -i {input.ctg} -o {output.contigs}'
+
 # polishing with racon four times		use minimap2 for the mapping inbetween the polishing
 rule minimap2_racon_long:
 	input:
 		assembly = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta',
 		reads = '{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
-		out = '{path}_docker/racon/hybrid_new/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta'
+		out = '{path}_docker/racon/hybrid_new/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta'
 	params:
 		strain = '{strain}',
 		demultiplex = '{demultiplex}',
@@ -361,9 +400,9 @@ rule minimap2_racon_long:
 		import time
 		reads_path = str(params.path) + '/preprocessing/' + str(params.demultiplex) + '/'
 		only_reads = str(params.strain) + '_' + str(params.demultiplex) + '.fastq'
-		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/hybrid_new' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
+		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/hybrid_new/'
 		assembly_path = str(params.path) + '/assembly/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
-		paf_path = str(params.path) + '/postprocessing/racon_long/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
+		paf_path = str(params.path) + '/postprocessing/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
 		assembly_file = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '.contigs.fasta'
 		for i in range(4):
 			if i == 0:
@@ -390,7 +429,7 @@ rule move_racon_output_long:
 	input:
 		racon_out = rules.minimap2_racon_long.output.out
 	output:
-		move = '{path}/hybrid_new/postprocessing/racon_long/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta'
+		move = '{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta'
 	shell:
 		'mv {input.racon_out} {output.move}'
 
@@ -400,11 +439,11 @@ rule medaka:
 		reads = '{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq',
 		racon_out = rules.move_racon_output_long.output.move
 	output:
-		medaka = '{path}/hybrid_new/postprocessing/medaka/{strain}_{demultiplex}_{assembler}/consensus.fasta'
+		medaka = '{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/postprocessing.yml'
 	params:
-		outputdir = '{path}/hybrid_new/postprocessing/medaka/{strain}_{demultiplex}_{assembler}/'
+		outputdir = '{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/'
 	threads: 16
 	shell:
 		'medaka_consensus -i {input.reads} -d {input.racon_out} -o {params.outputdir} -t {threads} -m r941_min_high'
@@ -415,7 +454,7 @@ rule minimap2_racon_short:
 		assembly = rules.medaka.output.medaka,
 		reads = rules.unique_readID.output.unique
 	output:
-		out = '{path}_docker/racon/hybrid_new/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta'
+		out = '{path}_docker/racon/hybrid_new/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta'
 	params:
 		strain = '{strain}',
 		demultiplex = '{demultiplex}',
@@ -427,9 +466,9 @@ rule minimap2_racon_short:
 		import time
 		reads_path = str(params.path) + '/preprocessing/'
 		only_reads = str(params.strain) + '_all_unique.fastq'
-		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/hybrid_new/' +  str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
-		assembly_path = str(params.path) + '/postprocessing/medaka/' +  str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
-		paf_path = str(params.path) + '/postprocessing/racon_short/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
+		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/hybrid_new/'
+		assembly_path = str(params.path) + '/postprocessing/' +  str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
+		paf_path = str(params.path) + '/postprocessing/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
 		assembly_file = 'consensus.fasta'
 		for i in range(4):
 			if i == 0:
@@ -457,18 +496,20 @@ rule move_racon_short:
 	input:
 		racon_out = rules.minimap2_racon_short.output.out
 	output:
-		move = '{path}/hybrid_new/postprocessing/racon_short/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta'
+		move = '{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta'
 	shell:
 		'mv {input.racon_out} {output.move}'
 
 rule quast:
 	input:
-		in1 = '{path}/hybrid_new/postprocessing/racon_short/{strain}_porechop_canu_short4.contigs.fasta',
-		in2 = '{path}/hybrid_new/postprocessing/racon_short/{strain}_deepbinner_canu_short4.contigs.fasta',
-		in3 = '{path}/hybrid_new/postprocessing/racon_short/{strain}_porechop_flye_short4.contigs.fasta',
-		in4 = '{path}/hybrid_new/postprocessing/racon_short/{strain}_deepbinner_flye_short4.contigs.fasta'
+		in1 = '{path}/hybrid_new/postprocessing/{strain}_porechop_canu_short4.contigs.fasta',
+		in2 = '{path}/hybrid_new/postprocessing/{strain}_deepbinner_canu_short4.contigs.fasta',
+		in3 = '{path}/hybrid_new/postprocessing/{strain}_porechop_flye_short4.contigs.fasta',
+		in4 = '{path}/hybrid_new/postprocessing/{strain}_deepbinner_flye_short4.contigs.fasta',
+		in5 = '{path}/hybrid_new/postprocessing/{strain}_porechop_wtdbg2_short4.contigs.fasta',
+		in6 = '{path}/hybrid_new/postprocessing/{strain}_deepbinner_wtdbg2_short4.contigs.fasta'
 	output:
-		report = '{path}/hybrid_new/quality/quast/report.html'
+		report = '{path}/hybrid_new/quality/quast/{strain}/report.html'
 		#...
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
@@ -477,4 +518,4 @@ rule quast:
 		path = '{path}'
 	threads: 16
 	shell:
-		'quast {input.in1} {input.in2} {input.in3} {input.in4} -r {params.path}/mycoplasma_bovis_referenceGenome.fasta -g {params.path}/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
+		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} -r {params.path}/mycoplasma_bovis_referenceGenome.fasta -g {params.path}/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
