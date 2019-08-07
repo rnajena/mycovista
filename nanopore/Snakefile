@@ -28,11 +28,12 @@ rule all:
 		# Racon
 		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"], assembler = config["assembly"]),
 		# medaka
-		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"], assembler = config["assembly"]),
+		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"], assembler = config["assembly"]),
 		# 
 		# quast
-		expand("{path}/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"]),
-		expand("{path}/quality/quast/report.html", path = config["path"])
+		# expand("{path}/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"]),
+		# expand("{path}/quality/quast/report.html", path = config["path"])
+		expand("{path}/quality/quast_without_reference/report.html", path = config["path"], strain = config["strains"])
 
 
 rule create:
@@ -328,12 +329,13 @@ rule quast_all:
 		in17 = '{path}/postprocessing/17DD0020_deepbinner_flye/consensus.fasta',
 		in18 = '{path}/postprocessing/17DD0020_deepbinner_wtdbg2/consensus.fasta'
 	output:
-		report = '{path}/quality/quast/report.html'
+		report = '{path}/quality/quast_without_reference/report.html'
 		#...
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
 	params:
-		outputdir = '{path}/quality/quast/'
+		outputdir = '{path}/quality/quast_without_reference/'
 	threads: 16
 	shell:
-		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10} {input.in11} {input.in12} {input.in13} {input.in14} {input.in15} {input.in16} {input.in17} {input.in18} -r /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/mycoplasma_bovis_referenceGenome.fasta -g /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
+		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10} {input.in11} {input.in12} {input.in13} {input.in14} {input.in15} {input.in16} {input.in17} {input.in18} -o {params.outputdir}'
+		# -r /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/mycoplasma_bovis_referenceGenome.fasta -g /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/GCF_000183385.1_ASM18338v1_genomic.gff
