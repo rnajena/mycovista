@@ -20,18 +20,18 @@ rule all:
 		# expand("{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"])
 		# 
 		# preprocess short reads
-		# expand("{path}/hybrid_new/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
+		expand("{path}/hybrid_new/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
 		# 
 		# assembly
 		expand("{path}/hybrid_new/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# polishing - 4x Racon long -> medaka -> 4x Racon short
-		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# QUAST
-		expand("{path}/hybrid_new/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"])
+		# expand("{path}/hybrid_new/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"])
 
 
 
@@ -183,7 +183,7 @@ rule rename_porechop:
 		strain2 = '{path}/hybrid_new/preprocessing/porechop/13DD0918_porechop.fastq',
 		strain3 = '{path}/hybrid_new/preprocessing/porechop/14DD0148_porechop.fastq',
 		strain4 = '{path}/hybrid_new/preprocessing/porechop/14DD0156_porechop.fastq',
-		strain5 = '{path}/hybrid_new/preprocessing/porechop/14DD0457ML_porechop.fastq',
+		strain5 = '{path}/hybrid_new/preprocessing/porechop/14DD0457_porechop.fastq',
 		strain6 = '{path}/hybrid_new/preprocessing/porechop/15DD0123_porechop.fastq',
 		strain7 = '{path}/hybrid_new/preprocessing/porechop/15DD0140_porechop.fastq',
 		strain8 = '{path}/hybrid_new/preprocessing/porechop/15DD0141_porechop.fastq',
@@ -263,7 +263,7 @@ rule rename_deepbinner:
 		strain2 = '{path}/hybrid_new/preprocessing/deepbinner/13DD0918_deepbinner_untrimmed.fastq.gz',
 		strain3 = '{path}/hybrid_new/preprocessing/deepbinner/14DD0148_deepbinner_untrimmed.fastq.gz',
 		strain4 = '{path}/hybrid_new/preprocessing/deepbinner/14DD0156_deepbinner_untrimmed.fastq.gz',
-		strain5 = '{path}/hybrid_new/preprocessing/deepbinner/14DD0457ML_deepbinner_untrimmed.fastq.gz',
+		strain5 = '{path}/hybrid_new/preprocessing/deepbinner/14DD0457_deepbinner_untrimmed.fastq.gz',
 		strain6 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0123_deepbinner_untrimmed.fastq.gz',
 		strain7 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0140_deepbinner_untrimmed.fastq.gz',
 		strain8 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0141_deepbinner_untrimmed.fastq.gz',
@@ -508,7 +508,7 @@ rule quast:
 		in2 = '{path}/hybrid_new/postprocessing/13DD0918_porechop_flye_short4.contigs.fasta',
 		in3 = '{path}/hybrid_new/postprocessing/14DD0148_porechop_flye_short4.contigs.fasta',
 		in4 = '{path}/hybrid_new/postprocessing/14DD0156_porechop_flye_short4.contigs.fasta',
-		in5 = '{path}/hybrid_new/postprocessing/14DD0457ML_porechop_flye_short4.contigs.fasta',
+		in5 = '{path}/hybrid_new/postprocessing/14DD0457_porechop_flye_short4.contigs.fasta',
 		in6 = '{path}/hybrid_new/postprocessing/15DD0123_porechop_flye_short4.contigs.fasta',
 		in7 = '{path}/hybrid_new/postprocessing/15DD0140_porechop_flye_short4.contigs.fasta',
 		in8 = '{path}/hybrid_new/postprocessing/15DD0141_porechop_flye_short4.contigs.fasta',
