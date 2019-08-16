@@ -3,6 +3,6 @@ strains: {11DD0261}
 # ,13DD0918,14DD0148,14DD0156,14DD0457ML,15DD0123,15DD0140,15DD0141,15DD0160,15DD0161
 preprocessing: {fastp,trimmomatic}
 demultiplexing: {porechop,deepbinner}
-assembly: {canu,flye, wtdbg2}
+assembly: {canu,flye,wtdbg2}
 postprocessing: {racon,medaka}
 quality: {quast}
