@@ -1,12 +1,7 @@
 path: {/mnt/prostlocal2/projects/st_mycoplasma_assembly}
 strains: {11DD0261,13DD0918,14DD0148,14DD0156,14DD0457ML,15DD0123,15DD0140,15DD0141,15DD0160,15DD0161}
 preprocessing: {fastp,trimmomatic}
-<<<<<<< HEAD
 demultiplexing: {porechop}
 assembly: {flye}
-=======
-demultiplexing: {porechop,deepbinner}
-assembly: {canu,flye,wtdbg2}
->>>>>>> bd0d48a05c6e41a8ed9456f9c35c220573fdb94d
 postprocessing: {racon,medaka}
 quality: {quast}

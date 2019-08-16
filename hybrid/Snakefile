@@ -504,7 +504,6 @@ rule move_racon_short:
 
 rule quast:
 	input:
-<<<<<<< HEAD
 		in1 = '{path}/hybrid_new/postprocessing/11DD0261_porechop_flye_short4.contigs.fasta',
 		in2 = '{path}/hybrid_new/postprocessing/13DD0918_porechop_flye_short4.contigs.fasta',
 		in3 = '{path}/hybrid_new/postprocessing/14DD0148_porechop_flye_short4.contigs.fasta',
@@ -515,14 +514,6 @@ rule quast:
 		in8 = '{path}/hybrid_new/postprocessing/15DD0141_porechop_flye_short4.contigs.fasta',
 		in9 = '{path}/hybrid_new/postprocessing/15DD0160_porechop_flye_short4.contigs.fasta',
 		in10 = '{path}/hybrid_new/postprocessing/15DD0161_porechop_flye_short4.contigs.fasta'
-=======
-		in1 = '{path}/hybrid_new/postprocessing/{strain}_porechop_canu/{strain}_porechop_canu_short4.contigs.fasta',
-		in2 = '{path}/hybrid_new/postprocessing/{strain}_deepbinner_canu/{strain}_deepbinner_canu_short4.contigs.fasta',
-		in3 = '{path}/hybrid_new/postprocessing/{strain}_porechop_flye/{strain}_porechop_flye_short4.contigs.fasta',
-		in4 = '{path}/hybrid_new/postprocessing/{strain}_deepbinner_flye/{strain}_deepbinner_flye_short4.contigs.fasta',
-		in5 = '{path}/hybrid_new/postprocessing/{strain}_porechop_wtdbg2/{strain}_porechop_wtdbg2_short4.contigs.fasta',
-		in6 = '{path}/hybrid_new/postprocessing/{strain}_deepbinner_wtdbg2/{strain}_deepbinner_wtdbg2_short4.contigs.fasta'
->>>>>>> bd0d48a05c6e41a8ed9456f9c35c220573fdb94d
 	output:
 		report = '{path}/hybrid_new/quality/quast/report.html'
 		#...
@@ -533,8 +524,4 @@ rule quast:
 		path = '{path}'
 	threads: 16
 	shell:
-<<<<<<< HEAD
 		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10} -r {params.path}/mycoplasma_bovis_referenceGenome.fasta -g {params.path}/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
-=======
-		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} -r /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/mycoplasma_bovis_referenceGenome.fasta -g /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
->>>>>>> bd0d48a05c6e41a8ed9456f9c35c220573fdb94d
