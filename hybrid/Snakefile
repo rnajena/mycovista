@@ -20,7 +20,7 @@ rule all:
 		# expand("{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"])
 		# 
 		# preprocess short reads
-		expand("{path}/hybrid_new/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
+		# expand("{path}/hybrid_new/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
 		# 
 		# assembly
 		expand("{path}/hybrid_new/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
@@ -28,7 +28,7 @@ rule all:
 		# polishing - 4x Racon long -> medaka -> 4x Racon short
 		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# QUAST
 		# expand("{path}/hybrid_new/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"])
