@@ -20,15 +20,15 @@ rule all:
 		# expand("{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"])
 		# 
 		# preprocess short reads
-		expand("{path}/hybrid_new/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
+		# expand("{path}/hybrid_new/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
 		# 
 		# assembly
 		expand("{path}/hybrid_new/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# polishing - 4x Racon long -> medaka -> 4x Racon short
-		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# QUAST
 		expand("{path}/hybrid_new/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"])
@@ -345,7 +345,7 @@ rule flye:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/flye.yml'
 	params:
 		outputdir = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_flye/',
-	threads: 16
+	threads: 32
 	shell:
 		'flye --asm-coverage 50 --nano-raw {input} -o {params.outputdir} -t {threads} -g 1000000'
 
@@ -446,7 +446,7 @@ rule medaka:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/postprocessing.yml'
 	params:
 		outputdir = '{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/'
-	threads: 16
+	threads: 32
 	shell:
 		'medaka_consensus -i {input.reads} -d {input.racon_out} -o {params.outputdir} -t {threads} -m r941_min_high'
 
@@ -467,7 +467,7 @@ rule minimap2_racon_short:
 		import os
 		import time
 		reads_path = str(params.path) + '/preprocessing/'
-		only_reads = str(params.strain) + '_all_unique.fastq'
+		only_reads = str(params.strain) + '_all_short_unique.fastq'
 		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/hybrid_new/'
 		assembly_path = str(params.path) + '/postprocessing/' +  str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
 		paf_path = str(params.path) + '/postprocessing/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
@@ -504,6 +504,7 @@ rule move_racon_short:
 
 rule quast:
 	input:
+<<<<<<< HEAD
 		in1 = '{path}/hybrid_new/postprocessing/11DD0261_porechop_flye_short4.contigs.fasta',
 		in2 = '{path}/hybrid_new/postprocessing/13DD0918_porechop_flye_short4.contigs.fasta',
 		in3 = '{path}/hybrid_new/postprocessing/14DD0148_porechop_flye_short4.contigs.fasta',
@@ -514,14 +515,26 @@ rule quast:
 		in8 = '{path}/hybrid_new/postprocessing/15DD0141_porechop_flye_short4.contigs.fasta',
 		in9 = '{path}/hybrid_new/postprocessing/15DD0160_porechop_flye_short4.contigs.fasta',
 		in10 = '{path}/hybrid_new/postprocessing/15DD0161_porechop_flye_short4.contigs.fasta'
+=======
+		in1 = '{path}/hybrid_new/postprocessing/{strain}_porechop_canu/{strain}_porechop_canu_short4.contigs.fasta',
+		in2 = '{path}/hybrid_new/postprocessing/{strain}_deepbinner_canu/{strain}_deepbinner_canu_short4.contigs.fasta',
+		in3 = '{path}/hybrid_new/postprocessing/{strain}_porechop_flye/{strain}_porechop_flye_short4.contigs.fasta',
+		in4 = '{path}/hybrid_new/postprocessing/{strain}_deepbinner_flye/{strain}_deepbinner_flye_short4.contigs.fasta',
+		in5 = '{path}/hybrid_new/postprocessing/{strain}_porechop_wtdbg2/{strain}_porechop_wtdbg2_short4.contigs.fasta',
+		in6 = '{path}/hybrid_new/postprocessing/{strain}_deepbinner_wtdbg2/{strain}_deepbinner_wtdbg2_short4.contigs.fasta'
+>>>>>>> bd0d48a05c6e41a8ed9456f9c35c220573fdb94d
 	output:
 		report = '{path}/hybrid_new/quality/quast/report.html'
 		#...
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
 	params:
-		outputdir = '{path}/hybrid_new/quality/quast/',
+		outputdir = '{path}/hybrid_new/quality/quast/{strain}',
 		path = '{path}'
 	threads: 16
 	shell:
+<<<<<<< HEAD
 		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10} -r {params.path}/mycoplasma_bovis_referenceGenome.fasta -g {params.path}/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
+=======
+		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} -r /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/mycoplasma_bovis_referenceGenome.fasta -g /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
+>>>>>>> bd0d48a05c6e41a8ed9456f9c35c220573fdb94d
