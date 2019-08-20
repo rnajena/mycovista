@@ -164,16 +164,16 @@ rule porechop_10strains: # myco2
 
 rule rename_porechop_10strains: # myco2
 	input:
-		BC01 = rules.porechop.output.BC01,
-		BC02 = rules.porechop.output.BC02,
-		BC03 = rules.porechop.output.BC03,
-		BC04 = rules.porechop.output.BC04,
-		BC05 = rules.porechop.output.BC05,
-		BC06 = rules.porechop.output.BC06,
-		BC07 = rules.porechop.output.BC07,
-		BC08 = rules.porechop.output.BC08,
-		BC09 = rules.porechop.output.BC09,
-		BC10 = rules.porechop.output.BC10
+		BC01 = rules.porechop_10strains.output.BC01,
+		BC02 = rules.porechop_10strains.output.BC02,
+		BC03 = rules.porechop_10strains.output.BC03,
+		BC04 = rules.porechop_10strains.output.BC04,
+		BC05 = rules.porechop_10strains.output.BC05,
+		BC06 = rules.porechop_10strains.output.BC06,
+		BC07 = rules.porechop_10strains.output.BC07,
+		BC08 = rules.porechop_10strains.output.BC08,
+		BC09 = rules.porechop_10strains.output.BC09,
+		BC10 = rules.porechop_10strains.output.BC10
 	output:
 		strain1 = '{path}/hybrid_new/preprocessing/porechop_10strains/11DD0261_porechop.fastq',
 		strain2 = '{path}/hybrid_new/preprocessing/porechop_10strains/13DD0918_porechop.fastq',
@@ -223,18 +223,18 @@ rule porechop_12strains: # myco3
 
 rule rename_porechop_12strains:
 	input:
-		BC01 = rules.porechop.output.BC01,
-		BC02 = rules.porechop.output.BC02,
-		BC03 = rules.porechop.output.BC03,
-		BC04 = rules.porechop.output.BC04,
-		BC05 = rules.porechop.output.BC05,
-		BC06 = rules.porechop.output.BC06,
-		BC07 = rules.porechop.output.BC07,
-		BC08 = rules.porechop.output.BC08,
-		BC09 = rules.porechop.output.BC09,
-		BC10 = rules.porechop.output.BC10,
-		BC11 = rules.porechop.output.BC11,
-		BC12 = rules.porechop.output.BC12
+		BC01 = rules.porechop_12strains.output.BC01,
+		BC02 = rules.porechop_12strains.output.BC02,
+		BC03 = rules.porechop_12strains.output.BC03,
+		BC04 = rules.porechop_12strains.output.BC04,
+		BC05 = rules.porechop_12strains.output.BC05,
+		BC06 = rules.porechop_12strains.output.BC06,
+		BC07 = rules.porechop_12strains.output.BC07,
+		BC08 = rules.porechop_12strains.output.BC08,
+		BC09 = rules.porechop_12strains.output.BC09,
+		BC10 = rules.porechop_12strains.output.BC10,
+		BC11 = rules.porechop_12strains.output.BC11,
+		BC12 = rules.porechop_12strains.output.BC12
 	output:
 		strain1 = '{path}/hybrid_new/preprocessing/porechop_12strains/14DD0147_porechop.fastq',
 		strain2 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0164_porechop.fastq',
