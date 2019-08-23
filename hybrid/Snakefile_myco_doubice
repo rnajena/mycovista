@@ -9,22 +9,24 @@ END = '1 2'.split() # paired_end
 rule all:
 	input:
 		# SPAdes and Unicycler
-		# expand("{path}/hybrid/spades_and_unicycler/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"], assembler = config["assembly"]),
+		# expand("{path}/hybrid/first_approach/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly1"]),
 		# 
 		# QUAST
-		# expand("{path}/hybrid/spades_and_unicycler/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"]),
-		# expand("{path}/hybrid/spades_and_unicycler/quality/quast/report.html", path = config["path"]),
+		# expand("{path}/hybrid/first_approach/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"]),
+		# expand("{path}/hybrid/first_approach/quality/quast/report.html", path = config["path"]),
 		# 
 		# get unique read ID for the short reads
-		# expand("{path}/hybrid/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
+		# expand("{path}/hybrid/second_approach/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
 		# 
 		# 4x Racon with short reads
-		# expand("{path}/hybrid/postprocessing/racon_short/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["preprocessing"], assembler = config["assembly2"]),
+		# expand("{path}/hybrid/second_approach/postprocessing/racon_short/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly2"]),
 		# 
 		# QUAST
-		# expand("{path}/hybrid/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"]),
-		# expand("{path}/hybrid/quality/quast/report.html", path = config["path"])
-		expand("{path}/hybrid/quality/quast_without_reference/report.html", path = config["path"])
+		# expand("{path}/hybrid/second_approach/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"]),
+		# expand("{path}/hybrid/second_approach/quality/quast/report.html", path = config["path"])
+		# 
+		# Prokka
+		expand("{path}/hybrid/second_approach/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly2"])
 
 # create folders for the following steps
 rule create:
@@ -272,5 +274,18 @@ rule quast_all:
 		outputdir = '{path}/hybrid/quality/quast_without_reference/'
 	threads: 16
 	shell:
-		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10} {input.in11} {input.in12} {input.in13} {input.in14} {input.in15} {input.in16} {input.in17} {input.in18} -o {params.outputdir}'
-		# -r /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/mycoplasma_bovis_referenceGenome.fasta -g /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/GCF_000183385.1_ASM18338v1_genomic.gff
+		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10} {input.in11} {input.in12} {input.in13} {input.in14} {input.in15} {input.in16} {input.in17} {input.in18} -r /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/mycoplasma_bovis_referenceGenome.fasta -g /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
+
+rule prokka:
+    input:
+        assembly = rules.move_racon_short.output.move
+    output:
+        gff = '{path}/hybrid/second_approach/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff'
+    conda:
+        '/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/prokka.yml'
+    params:
+        outputdir = '{path}/hybrid/second_approach/prokka/{strain}_{demultiplex}_{assembler}/',
+        prefix = '{strain}_{demultiplex}_{assembler}_short4'
+	threads: 16
+    shell:
+        'prokka --outdir {params.outputdir} --prefix {params.prefix} {input.assembly}'
