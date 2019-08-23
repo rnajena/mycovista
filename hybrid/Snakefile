@@ -219,7 +219,7 @@ rule porechop_12strains: # myco3
 		outputdir = '{path}/hybrid_new/preprocessing/porechop_12strains/'
 	threads: 32 #default: 8
 	shell:
-		'porechop -t {threads} --check_reads 500000 -i {input} -b {params.outputdir}'
+		'porechop -t {threads} --format fastq --check_reads 500000 -i {input} -b {params.outputdir}'
 
 rule rename_porechop_12strains:
 	input:
@@ -578,7 +578,7 @@ rule quast:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
 	params:
 		outputdir = '{path}/hybrid_new/quality/quast/',
-		path = '{path}'
+		path = '{path}/mycoplasma_bovis_genomes'
 	threads: 16
 	shell:
 		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10} -r {params.path}/mycoplasma_bovis_referenceGenome.fasta -g {params.path}/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
