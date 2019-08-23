@@ -42,7 +42,7 @@ rule spades_hybrid:
 		reverseUnpaired = '{path}/illumina/preprocessing/{strain}/{strain}_2U.fastq.gz',
 		nanopore = '{path}/nanopore/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
-		contigs = '{path}/hybrid/spades_and_unicycler/assembly/{strain}_{demultiplex}_spades/contigs.fasta'	#contains resulting contigs
+		contigs = '{path}/hybrid/first_approach/assembly/{strain}_{demultiplex}_spades/contigs.fasta'	#contains resulting contigs
 		# 'hybrid/assembly/{strain}_spades/contigs.paths',					#contains paths in the assembly graph corresponding to contigs.fasta (see details below)
 		# 'hybrid/assembly/{strain}_spades/scaffolds.fasta',				#contains resulting scaffolds (recommended for use as resulting sequences)
 		# 'hybrid/assembly/{strain}_spades/scaffolds.paths',				#contains paths in the assembly graph corresponding to scaffolds.fasta
@@ -51,7 +51,7 @@ rule spades_hybrid:
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
 	params:
-		outputdir = '{path}/hybrid/spades_and_unicycler/assembly/{strain}_{demultiplex}_spades/'
+		outputdir = '{path}/hybrid/first_approach/assembly/{strain}_{demultiplex}_spades/'
 	threads: 24 #default: 16
 	shell:
 		'spades.py -t {threads} --careful -1 {input.forward} -2 {input.reverse} --pe1-s {input.forwardUnpaired} --pe1-s {input.reverseUnpaired} --nanopore {input.nanopore} -o {params.outputdir}'
@@ -68,7 +68,7 @@ rule rename_spades:
 	input:
 		contigs = rules.spades_hybrid.output.contigs
 	output:
-		spades = '{path}/hybrid/spades_and_unicycler/assembly/{strain}_{demultiplex}_spades/{strain}_{demultiplex}_spades.contigs.fasta'
+		spades = '{path}/hybrid/first_approach/assembly/{strain}_{demultiplex}_spades/{strain}_{demultiplex}_spades.contigs.fasta'
 	shell:
 		'mv {input.contigs} {output.spades}'
 
@@ -79,11 +79,11 @@ rule unicycler:
 		reverse = '{path}/illumina/preprocessing/{strain}/{strain}_2P.fastq.gz',
 		nanopore = '{path}/nanopore/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
-		contigs = '{path}/hybrid/spades_and_unicycler/assembly/{strain}_{demultiplex}_unicycler/assembly.fasta'
+		contigs = '{path}/hybrid/first_approach/assembly/{strain}_{demultiplex}_unicycler/assembly.fasta'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
 	params:
-		outputdir = '{path}/hybrid/spades_and_unicycler/assembly/{strain}_{demultiplex}_unicycler/'
+		outputdir = '{path}/hybrid/first_approach/assembly/{strain}_{demultiplex}_unicycler/'
 	threads: 24
 	shell:
 		'unicycler -t {threads} -1 {input.forward} -2 {input.reverse} -l {input.nanopore} -o {params.outputdir}'
@@ -93,19 +93,19 @@ rule rename_unicycler:
 	input:
 		contigs = rules.unicycler.output.contigs
 	output:
-		unicycler = '{path}/hybrid/spades_and_unicycler/assembly/{strain}_{demultiplex}_unicycler/{strain}_{demultiplex}_unicycler.contigs.fasta'
+		unicycler = '{path}/hybrid/first_approach/assembly/{strain}_{demultiplex}_unicycler/{strain}_{demultiplex}_unicycler.contigs.fasta'
 	shell:
 		'mv {input.contigs} {output.unicycler}'
 
 # quality check separated by strain - quast
 rule quast_strain_spades_and_unicycler:
 	input:
-		in1 = '{path}/hybrid/spades_and_unicycler/assembly/{strain}_porechop_spades/{strain}_porechop_spades.contigs.fasta',
-		in2 = '{path}/hybrid/spades_and_unicycler/assembly/{strain}_porechop_unicycler/{strain}_porechop_unicycler.contigs.fasta',
-		in3 = '{path}/hybrid/spades_and_unicycler/assembly/{strain}_deepbinner_spades/{strain}_deepbinner_spades.contigs.fasta',
-		in4 = '{path}/hybrid/spades_and_unicycler/assembly/{strain}_deepbinner_unicycler/{strain}_deepbinner_unicycler.contigs.fasta'
+		in1 = '{path}/hybrid/first_approach/assembly/{strain}_porechop_spades/{strain}_porechop_spades.contigs.fasta',
+		in2 = '{path}/hybrid/first_approach/assembly/{strain}_porechop_unicycler/{strain}_porechop_unicycler.contigs.fasta',
+		in3 = '{path}/hybrid/first_approach/assembly/{strain}_deepbinner_spades/{strain}_deepbinner_spades.contigs.fasta',
+		in4 = '{path}/hybrid/first_approach/assembly/{strain}_deepbinner_unicycler/{strain}_deepbinner_unicycler.contigs.fasta'
 	output:
-		report = '{path}/hybrid/spades_and_unicycler/quality/quast/{strain}/report.html'
+		report = '{path}/hybrid/first_approach/quality/quast/{strain}/report.html'
 		#...
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
@@ -118,25 +118,25 @@ rule quast_strain_spades_and_unicycler:
 # quality check - quast
 rule quast_all_spades_and_unicycler:
 	input:
-		in1 = '{path}/hybrid/spades_and_unicycler/assembly/15DD0163_porechop_spades/15DD0163_porechop_spades.contigs.fasta',
-		in2 = '{path}/hybrid/spades_and_unicycler/assembly/15DD0163_porechop_unicycler/15DD0163_porechop_unicycler.contigs.fasta',
-		in3 = '{path}/hybrid/spades_and_unicycler/assembly/15DD0163_deepbinner_spades/15DD0163_deepbinner_spades.contigs.fasta',
-		in4 = '{path}/hybrid/spades_and_unicycler/assembly/15DD0163_deepbinner_unicycler/15DD0163_deepbinner_unicycler.contigs.fasta',
-		in5 = '{path}/hybrid/spades_and_unicycler/assembly/17DD0007_porechop_spades/17DD0007_porechop_spades.contigs.fasta',
-		in6 = '{path}/hybrid/spades_and_unicycler/assembly/17DD0007_porechop_unicycler/17DD0007_porechop_unicycler.contigs.fasta',
-		in7 = '{path}/hybrid/spades_and_unicycler/assembly/17DD0007_deepbinner_spades/17DD0007_deepbinner_spades.contigs.fasta',
-		in8 = '{path}/hybrid/spades_and_unicycler/assembly/17DD0007_deepbinner_unicycler/17DD0007_deepbinner_unicycler.contigs.fasta',
-		in9 = '{path}/hybrid/spades_and_unicycler/assembly/17DD0020_porechop_spades/17DD0020_porechop_spades.contigs.fasta',
-		in10 = '{path}/hybrid/spades_and_unicycler/assembly/17DD0020_porechop_unicycler/17DD0020_porechop_unicycler.contigs.fasta',
-		in11 = '{path}/hybrid/spades_and_unicycler/assembly/17DD0020_deepbinner_spades/17DD0020_deepbinner_spades.contigs.fasta',
-		in12 = '{path}/hybrid/spades_and_unicycler/assembly/17DD0020_deepbinner_unicycler/17DD0020_deepbinner_unicycler.contigs.fasta'
+		in1 = '{path}/hybrid/first_approach/assembly/15DD0163_porechop_spades/15DD0163_porechop_spades.contigs.fasta',
+		in2 = '{path}/hybrid/first_approach/assembly/15DD0163_porechop_unicycler/15DD0163_porechop_unicycler.contigs.fasta',
+		in3 = '{path}/hybrid/first_approach/assembly/15DD0163_deepbinner_spades/15DD0163_deepbinner_spades.contigs.fasta',
+		in4 = '{path}/hybrid/first_approach/assembly/15DD0163_deepbinner_unicycler/15DD0163_deepbinner_unicycler.contigs.fasta',
+		in5 = '{path}/hybrid/first_approach/assembly/17DD0007_porechop_spades/17DD0007_porechop_spades.contigs.fasta',
+		in6 = '{path}/hybrid/first_approach/assembly/17DD0007_porechop_unicycler/17DD0007_porechop_unicycler.contigs.fasta',
+		in7 = '{path}/hybrid/first_approach/assembly/17DD0007_deepbinner_spades/17DD0007_deepbinner_spades.contigs.fasta',
+		in8 = '{path}/hybrid/first_approach/assembly/17DD0007_deepbinner_unicycler/17DD0007_deepbinner_unicycler.contigs.fasta',
+		in9 = '{path}/hybrid/first_approach/assembly/17DD0020_porechop_spades/17DD0020_porechop_spades.contigs.fasta',
+		in10 = '{path}/hybrid/first_approach/assembly/17DD0020_porechop_unicycler/17DD0020_porechop_unicycler.contigs.fasta',
+		in11 = '{path}/hybrid/first_approach/assembly/17DD0020_deepbinner_spades/17DD0020_deepbinner_spades.contigs.fasta',
+		in12 = '{path}/hybrid/first_approach/assembly/17DD0020_deepbinner_unicycler/17DD0020_deepbinner_unicycler.contigs.fasta'
 	output:
-		report = '{path}/hybrid/spades_and_unicycler/quality/quast/report.html'
+		report = '{path}/hybrid/first_approach/quality/quast/report.html'
 		#...
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
 	params:
-		outputdir = '{path}/hybrid/spades_and_unicycler/quality/quast/'
+		outputdir = '{path}/hybrid/first_approach/quality/quast/'
 	threads: 16
 	shell:
 		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10} {input.in11} {input.in12} -r /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/mycoplasma_bovis_referenceGenome.fasta -g /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
@@ -152,7 +152,7 @@ rule concat_short:
 		reverseP = '{path}/illumina/preprocessing/{strain}/{strain}_2P.fastq.gz',
 		reverseU = '{path}/illumina/preprocessing/{strain}/{strain}_2U.fastq.gz'
 	output:
-		all = '{path}/hybrid/preprocessing/{strain}_all_short.fastq.gz'
+		all = '{path}/hybrid/second_approach/preprocessing/{strain}_all_short.fastq.gz'
 	shell:
 		'cat {input.forwardP} {input.forwardU} {input.reverseP} {input.reverseU} > {output.all}'
 
@@ -160,7 +160,7 @@ rule gunzip_short:
 	input:
 		all = rules.concat_short.output.all
 	output:
-		gunzip = '{path}/hybrid/preprocessing/{strain}_all_short.fastq'
+		gunzip = '{path}/hybrid/second_approach/preprocessing/{strain}_all_short.fastq'
 	shell:
 		'gunzip {input.all}'
 
@@ -169,7 +169,7 @@ rule unique_readID:
 	input:
 		all = rules.gunzip_short.output.gunzip
 	output:
-		unique = '{path}/hybrid/preprocessing/{strain}_all_short_unique.fastq'
+		unique = '{path}/hybrid/second_approach/preprocessing/{strain}_all_short_unique.fastq'
 	shell:
 		"sed 's/ 2:N:0/:2:N:0/g' {input.all} | sed 's/ 1:N:0/:1:N:0/g' > {output.unique}"
 
@@ -221,25 +221,25 @@ rule move_racon_short:
 	input:
 		racon_out = rules.minimap2_racon_short.output.out
 	output:
-		move = '{path}/hybrid/postprocessing/racon_short/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta'
+		move = '{path}/hybrid/second_approach/postprocessing/racon_short/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta'
 	shell:
 		'mv {input.racon_out} {output.move}'
 
 rule quast_strain:
 	input:
-		in1 = '{path}/hybrid/postprocessing/racon_short/{strain}_porechop_canu/{strain}_porechop_canu_short4.contigs.fasta',
-		in2 = '{path}/hybrid/postprocessing/racon_short/{strain}_deepbinner_canu/{strain}_deepbinner_canu_short4.contigs.fasta',
-		in3 = '{path}/hybrid/postprocessing/racon_short/{strain}_porechop_flye/{strain}_porechop_flye_short4.contigs.fasta',
-		in4 = '{path}/hybrid/postprocessing/racon_short/{strain}_deepbinner_flye/{strain}_deepbinner_flye_short4.contigs.fasta',
-		in5 = '{path}/hybrid/postprocessing/racon_short/{strain}_porechop_wtdbg2/{strain}_porechop_wtdbg2_short4.contigs.fasta',
-		in6 = '{path}/hybrid/postprocessing/racon_short/{strain}_deepbinner_wtdbg2/{strain}_deepbinner_wtdbg2_short4.contigs.fasta'
+		in1 = '{path}/hybrid/second_approach/postprocessing/racon_short/{strain}_porechop_canu/{strain}_porechop_canu_short4.contigs.fasta',
+		in2 = '{path}/hybrid/second_approach/postprocessing/racon_short/{strain}_deepbinner_canu/{strain}_deepbinner_canu_short4.contigs.fasta',
+		in3 = '{path}/hybrid/second_approach/postprocessing/racon_short/{strain}_porechop_flye/{strain}_porechop_flye_short4.contigs.fasta',
+		in4 = '{path}/hybrid/second_approach/postprocessing/racon_short/{strain}_deepbinner_flye/{strain}_deepbinner_flye_short4.contigs.fasta',
+		in5 = '{path}/hybrid/second_approach/postprocessing/racon_short/{strain}_porechop_wtdbg2/{strain}_porechop_wtdbg2_short4.contigs.fasta',
+		in6 = '{path}/hybrid/second_approach/postprocessing/racon_short/{strain}_deepbinner_wtdbg2/{strain}_deepbinner_wtdbg2_short4.contigs.fasta'
 	output:
-		report = '{path}/hybrid/quality/quast/{strain}/report.html'
+		report = '{path}/hybrid/second_approach/quality/quast/{strain}/report.html'
 		#...
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
 	params:
-		outputdir = '{path}/hybrid/quality/quast/{strain}'
+		outputdir = '{path}/hybrid/second_approach/quality/quast/{strain}'
 	threads: 16
 	shell:
 		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} -r /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/mycoplasma_bovis_referenceGenome.fasta -g /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
@@ -247,31 +247,31 @@ rule quast_strain:
 # quality check with quast
 rule quast_all:
 	input:
-		in1 = '{path}/hybrid/postprocessing/racon_short/15DD0163_porechop_canu/15DD0163_porechop_canu_short4.contigs.fasta',
-		in2 = '{path}/hybrid/postprocessing/racon_short/15DD0163_porechop_flye/15DD0163_porechop_flye_short4.contigs.fasta',
-		in3 = '{path}/hybrid/postprocessing/racon_short/15DD0163_porechop_wtdbg2/15DD0163_porechop_wtdbg2_short4.contigs.fasta',
-		in4 = '{path}/hybrid/postprocessing/racon_short/15DD0163_deepbinner_canu/15DD0163_deepbinner_canu_short4.contigs.fasta',
-		in5 = '{path}/hybrid/postprocessing/racon_short/15DD0163_deepbinner_flye/15DD0163_deepbinner_flye_short4.contigs.fasta',
-		in6 = '{path}/hybrid/postprocessing/racon_short/15DD0163_deepbinner_wtdbg2/15DD0163_deepbinner_wtdbg2_short4.contigs.fasta',
-		in7 = '{path}/hybrid/postprocessing/racon_short/17DD0007_porechop_canu/17DD0007_porechop_canu_short4.contigs.fasta',
-		in8 = '{path}/hybrid/postprocessing/racon_short/17DD0007_porechop_flye/17DD0007_porechop_flye_short4.contigs.fasta',
-		in9 = '{path}/hybrid/postprocessing/racon_short/17DD0007_porechop_wtdbg2/17DD0007_porechop_wtdbg2_short4.contigs.fasta',
-		in10 = '{path}/hybrid/postprocessing/racon_short/17DD0007_deepbinner_canu/17DD0007_deepbinner_canu_short4.contigs.fasta',
-		in11 = '{path}/hybrid/postprocessing/racon_short/17DD0007_deepbinner_flye/17DD0007_deepbinner_flye_short4.contigs.fasta',
-		in12 = '{path}/hybrid/postprocessing/racon_short/17DD0007_deepbinner_wtdbg2/17DD0007_deepbinner_wtdbg2_short4.contigs.fasta',
-		in13 = '{path}/hybrid/postprocessing/racon_short/17DD0020_porechop_canu/17DD0020_porechop_canu_short4.contigs.fasta',
-		in14 = '{path}/hybrid/postprocessing/racon_short/17DD0020_porechop_flye/17DD0020_porechop_flye_short4.contigs.fasta',
-		in15 = '{path}/hybrid/postprocessing/racon_short/17DD0020_porechop_wtdbg2/17DD0020_porechop_wtdbg2_short4.contigs.fasta',
-		in16 = '{path}/hybrid/postprocessing/racon_short/17DD0020_deepbinner_canu/17DD0020_deepbinner_canu_short4.contigs.fasta',
-		in17 = '{path}/hybrid/postprocessing/racon_short/17DD0020_deepbinner_flye/17DD0020_deepbinner_flye_short4.contigs.fasta',
-		in18 = '{path}/hybrid/postprocessing/racon_short/17DD0020_deepbinner_wtdbg2/17DD0020_deepbinner_wtdbg2_short4.contigs.fasta'
+		in1 = '{path}/hybrid/second_approach/postprocessing/racon_short/15DD0163_porechop_canu/15DD0163_porechop_canu_short4.contigs.fasta',
+		in2 = '{path}/hybrid/second_approach/postprocessing/racon_short/15DD0163_porechop_flye/15DD0163_porechop_flye_short4.contigs.fasta',
+		in3 = '{path}/hybrid/second_approach/postprocessing/racon_short/15DD0163_porechop_wtdbg2/15DD0163_porechop_wtdbg2_short4.contigs.fasta',
+		in4 = '{path}/hybrid/second_approach/postprocessing/racon_short/15DD0163_deepbinner_canu/15DD0163_deepbinner_canu_short4.contigs.fasta',
+		in5 = '{path}/hybrid/second_approach/postprocessing/racon_short/15DD0163_deepbinner_flye/15DD0163_deepbinner_flye_short4.contigs.fasta',
+		in6 = '{path}/hybrid/second_approach/postprocessing/racon_short/15DD0163_deepbinner_wtdbg2/15DD0163_deepbinner_wtdbg2_short4.contigs.fasta',
+		in7 = '{path}/hybrid/second_approach/postprocessing/racon_short/17DD0007_porechop_canu/17DD0007_porechop_canu_short4.contigs.fasta',
+		in8 = '{path}/hybrid/second_approach/postprocessing/racon_short/17DD0007_porechop_flye/17DD0007_porechop_flye_short4.contigs.fasta',
+		in9 = '{path}/hybrid/second_approach/postprocessing/racon_short/17DD0007_porechop_wtdbg2/17DD0007_porechop_wtdbg2_short4.contigs.fasta',
+		in10 = '{path}/hybrid/second_approach/postprocessing/racon_short/17DD0007_deepbinner_canu/17DD0007_deepbinner_canu_short4.contigs.fasta',
+		in11 = '{path}/hybrid/second_approach/postprocessing/racon_short/17DD0007_deepbinner_flye/17DD0007_deepbinner_flye_short4.contigs.fasta',
+		in12 = '{path}/hybrid/second_approach/postprocessing/racon_short/17DD0007_deepbinner_wtdbg2/17DD0007_deepbinner_wtdbg2_short4.contigs.fasta',
+		in13 = '{path}/hybrid/second_approach/postprocessing/racon_short/17DD0020_porechop_canu/17DD0020_porechop_canu_short4.contigs.fasta',
+		in14 = '{path}/hybrid/second_approach/postprocessing/racon_short/17DD0020_porechop_flye/17DD0020_porechop_flye_short4.contigs.fasta',
+		in15 = '{path}/hybrid/second_approach/postprocessing/racon_short/17DD0020_porechop_wtdbg2/17DD0020_porechop_wtdbg2_short4.contigs.fasta',
+		in16 = '{path}/hybrid/second_approach/postprocessing/racon_short/17DD0020_deepbinner_canu/17DD0020_deepbinner_canu_short4.contigs.fasta',
+		in17 = '{path}/hybrid/second_approach/postprocessing/racon_short/17DD0020_deepbinner_flye/17DD0020_deepbinner_flye_short4.contigs.fasta',
+		in18 = '{path}/hybrid/second_approach/postprocessing/racon_short/17DD0020_deepbinner_wtdbg2/17DD0020_deepbinner_wtdbg2_short4.contigs.fasta'
 	output:
-		report = '{path}/hybrid/quality/quast_without_reference/report.html'
+		report = '{path}/hybrid/second_approach/quality/quast_without_reference/report.html'
 		#...
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
 	params:
-		outputdir = '{path}/hybrid/quality/quast_without_reference/'
+		outputdir = '{path}/hybrid/second_approach/quality/quast_without_reference/'
 	threads: 16
 	shell:
 		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10} {input.in11} {input.in12} {input.in13} {input.in14} {input.in15} {input.in16} {input.in17} {input.in18} -r /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/mycoplasma_bovis_referenceGenome.fasta -g /mnt/prostlocal2/projects/st_mycoplasma_assembly/mycoplasma_bovis_genomes/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
