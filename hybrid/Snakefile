@@ -34,7 +34,6 @@ rule all:
 		expand("{path}/hybrid_new/quality/quast/report.html", path = config["path"], strain = config["strains"])
 
 
-
 # create folders for the following steps
 rule create:
 	shell:
@@ -582,3 +581,16 @@ rule quast:
 	threads: 16
 	shell:
 		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10} -r {params.path}/mycoplasma_bovis_referenceGenome.fasta -g {params.path}/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
+
+rule prokka:
+    input:
+        assembly = rules.move_racon_short.output.move
+    output:
+        gff = '{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff'
+    conda:
+        '/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/prokka.yml'
+    params:
+        outputdir = '{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/',
+        prefix = '{strain}_{demultiplex}_{assembler}_short4'
+    shell:
+        'prokka --outdir {params.outputdir} --prefix {params.prefix} {input.assembly}'
