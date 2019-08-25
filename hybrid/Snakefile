@@ -9,7 +9,7 @@ END = '1 2'.split() # paired_end
 rule all:
 	input:
 		# porechop
-		expand("{path}/hybrid_new/preprocessing/porechop_12strains/14DD0147_porechop.fastq", path = config["path"]),
+		# expand("{path}/hybrid_new/preprocessing/porechop_12strains/14DD0147_porechop.fastq", path = config["path"]),
 		# deepbinner
 		# expand("{path}/hybrid_new/preprocessing/deepbinner/classifications", path = config["path"]),
 		# expand("{path}/hybrid_new/preprocessing/deepbinner/barcode01.fastq.gz", path = config["path"]),
@@ -31,7 +31,7 @@ rule all:
 		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# QUAST
-		expand("{path}/hybrid_new/quality/quast/report.html", path = config["path"], strain = config["strains"])
+		# expand("{path}/hybrid_new/quality/quast/report.html", path = config["path"], strain = config["strains"])
 		# 
 		# Prokka
 		expand("{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
@@ -221,7 +221,7 @@ rule porechop_12strains: # myco3
 		outputdir = '{path}/hybrid_new/preprocessing/porechop_12strains/'
 	threads: 32 #default: 8
 	shell:
-		'porechop -t {threads} --check_reads 500000 -i {input} -b {params.outputdir}'
+		'porechop -t {threads} --format fastq --check_reads 500000 -i {input} -b {params.outputdir}'
 
 rule rename_porechop_12strains:
 	input:

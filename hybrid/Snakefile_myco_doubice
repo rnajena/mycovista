@@ -286,6 +286,6 @@ rule prokka:
     params:
         outputdir = '{path}/hybrid/second_approach/prokka/{strain}_{demultiplex}_{assembler}/',
         prefix = '{strain}_{demultiplex}_{assembler}_short4'
-	threads: 16
+    threads: 16
     shell:
         'prokka --cpus {threads} --outdir {params.outputdir} --force --prefix {params.prefix} {input.assembly}'
