@@ -288,4 +288,4 @@ rule prokka:
         prefix = '{strain}_{demultiplex}_{assembler}_short4'
 	threads: 16
     shell:
-        'prokka --outdir {params.outputdir} --prefix {params.prefix} {input.assembly}'
+        'prokka --cpus {threads} --outdir {params.outputdir} --force --prefix {params.prefix} {input.assembly}'

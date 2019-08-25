@@ -32,6 +32,9 @@ rule all:
 		# 
 		# QUAST
 		expand("{path}/hybrid_new/quality/quast/report.html", path = config["path"], strain = config["strains"])
+		# 
+		# Prokka
+		expand("{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
 
 
 # create folders for the following steps
@@ -592,5 +595,6 @@ rule prokka:
     params:
         outputdir = '{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/',
         prefix = '{strain}_{demultiplex}_{assembler}_short4'
+	threads: 16
     shell:
-        'prokka --outdir {params.outputdir} --prefix {params.prefix} {input.assembly}'
+        'prokka --cpus {threads} --outdir {params.outputdir} --force --prefix {params.prefix} {input.assembly}'
