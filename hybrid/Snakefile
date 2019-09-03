@@ -9,7 +9,7 @@ END = '1 2'.split() # paired_end
 rule all:
 	input:
 		# porechop
-		# expand("{path}/hybrid_new/preprocessing/porechop_12strains/14DD0147_porechop.fastq", path = config["path"]),
+		expand("{path}/hybrid_new/preprocessing/porechop_12strains/14DD0147_porechop.fastq", path = config["path"]),
 		# deepbinner
 		# expand("{path}/hybrid_new/preprocessing/deepbinner/classifications", path = config["path"]),
 		# expand("{path}/hybrid_new/preprocessing/deepbinner/barcode01.fastq.gz", path = config["path"]),
@@ -17,9 +17,11 @@ rule all:
 		# expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz", path = config["path"], strain = config["strains"]),
 		# expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq", path = config["path"], strain = config["strains"]),
 		# NanoPlot
-		# expand("{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"])
+		expand("{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"])
 		# 
 		# preprocess short reads
+		# expand("{path}/hybrid_new/quality/fastqc/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = config["strains"], paired_end = END),
+		# expand("{path}/hybrid_new/quality/fastqc/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], strain = config["strains"], paired_unpaired = PU)
 		# expand("{path}/hybrid_new/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
 		# 
 		# assembly
@@ -34,7 +36,7 @@ rule all:
 		# expand("{path}/hybrid_new/quality/quast/report.html", path = config["path"], strain = config["strains"])
 		# 
 		# Prokka
-		expand("{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
+		# expand("{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
 
 
 # create folders for the following steps
@@ -201,7 +203,8 @@ rule rename_porechop_10strains: # myco2
 
 rule porechop_12strains: # myco3
 	input:
-		'/data/fass2/reads/ont/celia/20190619_1340_20190619_mycoplasma3/called/2019-06-24/myco3_2019-06-25_10-03-40_24752.fastq'
+		'/data/fass2/reads/ont/celia/20190619_1340_20190619_mycoplasma3/called/2019-09-02/myco3_2019-08-27_11-05-00_16169.fastq'
+		# '/data/fass2/reads/ont/celia/20190619_1340_20190619_mycoplasma3/called/2019-06-24/myco3_2019-06-25_10-03-40_24752.fastq'
 	output:
 		BC01 = '{path}/hybrid_new/preprocessing/porechop_12strains/BC01.fastq',
 		BC02 = '{path}/hybrid_new/preprocessing/porechop_12strains/BC02.fastq',
@@ -595,6 +598,6 @@ rule prokka:
     params:
         outputdir = '{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/',
         prefix = '{strain}_{demultiplex}_{assembler}_short4'
-	threads: 16
+    threads: 16
     shell:
         'prokka --cpus {threads} --outdir {params.outputdir} --force --prefix {params.prefix} {input.assembly}'
