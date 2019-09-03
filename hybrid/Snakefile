@@ -25,18 +25,18 @@ rule all:
 		# expand("{path}/hybrid_new/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
 		# 
 		# assembly
-		# expand("{path}/hybrid_new/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/hybrid_new/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# polishing - 4x Racon long -> medaka -> 4x Racon short
-		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# QUAST
-		# expand("{path}/hybrid_new/quality/quast/report.html", path = config["path"], strain = config["strains"])
+		expand("{path}/hybrid_new/quality/quast/report.html", path = config["path"], strain = config["strains"])
 		# 
 		# Prokka
-		# expand("{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
+		expand("{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
 
 
 # create folders for the following steps
@@ -369,7 +369,7 @@ rule rename_porechop_12strains:
 
 rule nanoplot:
 	input:
-		'{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
+		'{path}/hybrid_new/preprocessing/{demultiplex}_12strains/{strain}_{demultiplex}.fastq'
 	output:
 		'{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html'
 	conda:
@@ -566,27 +566,39 @@ rule move_racon_short:
 
 rule quast:
 	input:
-		in1 = '{path}/hybrid_new/postprocessing/11DD0261_porechop_flye/11DD0261_porechop_flye_short4.contigs.fasta',
-		in2 = '{path}/hybrid_new/postprocessing/13DD0918_porechop_flye/13DD0918_porechop_flye_short4.contigs.fasta',
-		in3 = '{path}/hybrid_new/postprocessing/14DD0148_porechop_flye/14DD0148_porechop_flye_short4.contigs.fasta',
-		in4 = '{path}/hybrid_new/postprocessing/14DD0156_porechop_flye/14DD0156_porechop_flye_short4.contigs.fasta',
-		in5 = '{path}/hybrid_new/postprocessing/14DD0457_porechop_flye/14DD0457_porechop_flye_short4.contigs.fasta',
-		in6 = '{path}/hybrid_new/postprocessing/15DD0123_porechop_flye/15DD0123_porechop_flye_short4.contigs.fasta',
-		in7 = '{path}/hybrid_new/postprocessing/15DD0140_porechop_flye/15DD0140_porechop_flye_short4.contigs.fasta',
-		in8 = '{path}/hybrid_new/postprocessing/15DD0141_porechop_flye/15DD0141_porechop_flye_short4.contigs.fasta',
-		in9 = '{path}/hybrid_new/postprocessing/15DD0160_porechop_flye/15DD0160_porechop_flye_short4.contigs.fasta',
-		in10 = '{path}/hybrid_new/postprocessing/15DD0161_porechop_flye/15DD0161_porechop_flye_short4.contigs.fasta'
+		in1 = '{path}/hybrid_new/postprocessing/14DD0147_porechop_flye/14DD0147_porechop_flye_short4.contigs.fasta',
+		in2 = '{path}/hybrid_new/postprocessing/15DD0207_porechop_flye/15DD0207_porechop_flye_short4.contigs.fasta',
+		in3 = '{path}/hybrid_new/postprocessing/15DD0165_porechop_flye/15DD0165_porechop_flye_short4.contigs.fasta',
+		in4 = '{path}/hybrid_new/postprocessing/15DD0234_porechop_flye/15DD0234_porechop_flye_short4.contigs.fasta',
+		in5 = '{path}/hybrid_new/postprocessing/15DD0163_porechop_flye/15DD0163_porechop_flye_short4.contigs.fasta',
+		in6 = '{path}/hybrid_new/postprocessing/15DD0233_porechop_flye/15DD0233_porechop_flye_short4.contigs.fasta',
+		in7 = '{path}/hybrid_new/postprocessing/15DD0164_porechop_flye/15DD0164_porechop_flye_short4.contigs.fasta',
+		in8 = '{path}/hybrid_new/postprocessing/15DD0218_porechop_flye/15DD0218_porechop_flye_short4.contigs.fasta',
+		in9 = '{path}/hybrid_new/postprocessing/15DD0210_porechop_flye/15DD0210_porechop_flye_short4.contigs.fasta',
+		in10 = '{path}/hybrid_new/postprocessing/15DD0238_porechop_flye/15DD0238_porechop_flye_short4.contigs.fasta',
+		in11 = '{path}/hybrid_new/postprocessing/15DD0261_porechop_flye/15DD0261_porechop_flye_short4.contigs.fasta',
+		in12 = '{path}/hybrid_new/postprocessing/15DD0228_porechop_flye/15DD0228_porechop_flye_short4.contigs.fasta'
+		# in1 = '{path}/hybrid_new/postprocessing/11DD0261_porechop_flye/11DD0261_porechop_flye_short4.contigs.fasta',
+		# in2 = '{path}/hybrid_new/postprocessing/13DD0918_porechop_flye/13DD0918_porechop_flye_short4.contigs.fasta',
+		# in3 = '{path}/hybrid_new/postprocessing/14DD0148_porechop_flye/14DD0148_porechop_flye_short4.contigs.fasta',
+		# in4 = '{path}/hybrid_new/postprocessing/14DD0156_porechop_flye/14DD0156_porechop_flye_short4.contigs.fasta',
+		# in5 = '{path}/hybrid_new/postprocessing/14DD0457_porechop_flye/14DD0457_porechop_flye_short4.contigs.fasta',
+		# in6 = '{path}/hybrid_new/postprocessing/15DD0123_porechop_flye/15DD0123_porechop_flye_short4.contigs.fasta',
+		# in7 = '{path}/hybrid_new/postprocessing/15DD0140_porechop_flye/15DD0140_porechop_flye_short4.contigs.fasta',
+		# in8 = '{path}/hybrid_new/postprocessing/15DD0141_porechop_flye/15DD0141_porechop_flye_short4.contigs.fasta',
+		# in9 = '{path}/hybrid_new/postprocessing/15DD0160_porechop_flye/15DD0160_porechop_flye_short4.contigs.fasta',
+		# in10 = '{path}/hybrid_new/postprocessing/15DD0161_porechop_flye/15DD0161_porechop_flye_short4.contigs.fasta'
 	output:
-		report = '{path}/hybrid_new/quality/quast/report.html'
+		report = '{path}/hybrid_new/quality/quast_12/report.html'
 		#...
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
 	params:
-		outputdir = '{path}/hybrid_new/quality/quast/',
+		outputdir = '{path}/hybrid_new/quality/quast_12/',
 		path = '{path}/mycoplasma_bovis_genomes'
 	threads: 16
 	shell:
-		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10} -r {params.path}/mycoplasma_bovis_referenceGenome.fasta -g {params.path}/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
+		'quast {input.in1} {input.in2} {input.in3} {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10} {input.in11} {input.in12} -r {params.path}/mycoplasma_bovis_referenceGenome.fasta -g {params.path}/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
 
 rule prokka:
     input:
