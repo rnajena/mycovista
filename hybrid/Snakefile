@@ -398,7 +398,7 @@ rule move_racon_long:
 rule medaka:
 	input:
 		reads = '{path}/hybrid_new/preprocessing/{demultiplex}_12strains/{strain}_{demultiplex}.fastq',
-		racon_out = rules.move_racon_output_long.output.move
+		racon_out = rules.move_racon_long.output.move
 	output:
 		medaka = '{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta'
 	conda:
