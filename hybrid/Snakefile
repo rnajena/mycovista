@@ -17,7 +17,7 @@ rule all:
 		# expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz", path = config["path"], strain = config["strains"]),
 		# expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq", path = config["path"], strain = config["strains"]),
 		# NanoPlot
-		expand("{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"])
+		# expand("{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"]),
 		# 
 		# preprocess short reads
 		# expand("{path}/hybrid_new/quality/fastqc/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = config["strains"], paired_end = END),
@@ -28,15 +28,15 @@ rule all:
 		expand("{path}/hybrid_new/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# polishing - 4x Racon long -> medaka -> 4x Racon short
-		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# QUAST
-		expand("{path}/hybrid_new/quality/quast/report.html", path = config["path"], strain = config["strains"])
+		# expand("{path}/hybrid_new/quality/quast_12/report.html", path = config["path"], strain = config["strains"]),
 		# 
 		# Prokka
-		expand("{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
+		# expand("{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
 
 
 # create folders for the following steps
@@ -246,7 +246,7 @@ rule rename_porechop_12strains:
 		strain3 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0207_porechop.fastq',
 		strain4 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0165_porechop.fastq',
 		strain5 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0218_porechop.fastq',
-		strain6 = '{path}/hybrid_new/preprocessing/porechop_12strains/16DD0234_porechop.fastq',
+		strain6 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0234_porechop.fastq',
 		strain7 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0210_porechop.fastq',
 		strain8 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0238_porechop.fastq',
 		strain9 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0261_porechop.fastq',
@@ -400,7 +400,7 @@ rule nanoplot:
 # Flye
 rule flye:
 	input:
-		'{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
+		'{path}/hybrid_new/preprocessing/{demultiplex}_12strains/{strain}_{demultiplex}.fastq'
 	output:
 		contigs = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_flye/assembly.fasta'
 	conda:
@@ -409,7 +409,7 @@ rule flye:
 		outputdir = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_flye/',
 	threads: 32
 	shell:
-		'flye --asm-coverage 50 --nano-raw {input} -o {params.outputdir} -t {threads} -g 1000000'
+		'flye --nano-raw {input} -o {params.outputdir} -t {threads} -g 1000000'
 
 # rename flye output
 rule rename_flye:
@@ -450,7 +450,7 @@ rule rename_flye:
 rule minimap2_racon_long:
 	input:
 		assembly = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta',
-		reads = '{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
+		reads = '{path}/hybrid_new/preprocessing/{demultiplex}_12strains/{strain}_{demultiplex}.fastq'
 	output:
 		out = '{path}_docker/racon/hybrid_new/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta'
 	params:
@@ -462,7 +462,7 @@ rule minimap2_racon_long:
 	run:
 		import os
 		import time
-		reads_path = str(params.path) + '/preprocessing/' + str(params.demultiplex) + '/'
+		reads_path = str(params.path) + '/preprocessing/' + str(params.demultiplex) + '_12strains/'
 		only_reads = str(params.strain) + '_' + str(params.demultiplex) + '.fastq'
 		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/hybrid_new/'
 		assembly_path = str(params.path) + '/assembly/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
@@ -500,7 +500,7 @@ rule move_racon_output_long:
 # polishing with medaka
 rule medaka:
 	input:
-		reads = '{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq',
+		reads = '{path}/hybrid_new/preprocessing/{demultiplex}_12strains/{strain}_{demultiplex}.fastq',
 		racon_out = rules.move_racon_output_long.output.move
 	output:
 		medaka = '{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta'
