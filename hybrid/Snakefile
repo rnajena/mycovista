@@ -266,18 +266,18 @@ rule rename_porechop_12strains:
 # rename qcat output
 rule rename_qcat_12strains:
 	input:
-		BC01 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC01.fastq',
-		BC02 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC02.fastq',
-		BC03 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC03.fastq',
-		BC04 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC04.fastq',
-		BC05 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC05.fastq',
-		BC06 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC06.fastq',
-		BC07 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC07.fastq',
-		BC08 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC08.fastq',
-		BC09 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC09.fastq',
-		BC10 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC10.fastq',
-		BC11 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC11.fastq',
-		BC12 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC12.fastq'
+		BC01 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode01.fastq',
+		BC02 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode02.fastq',
+		BC03 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode03.fastq',
+		BC04 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode04.fastq',
+		BC05 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode05.fastq',
+		BC06 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode06.fastq',
+		BC07 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode07.fastq',
+		BC08 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode08.fastq',
+		BC09 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode09.fastq',
+		BC10 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode10.fastq',
+		BC11 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode11.fastq',
+		BC12 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode12.fastq'
 	output:
 		strain1 = '{path}/hybrid_new/preprocessing/qcat_12strains/14DD0147_qcat.fastq',
 		strain2 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0164_qcat.fastq',
