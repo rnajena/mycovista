@@ -1,0 +1,150 @@
+rule all:
+    input:
+        # deepbinner
+		# expand("{path}/hybrid_new/preprocessing/deepbinner/classifications", path = config["path"]),
+		# expand("{path}/hybrid_new/preprocessing/deepbinner/barcode01.fastq.gz", path = config["path"]),
+		# expand("{path}/hybrid_new/preprocessing/deepbinner/11DD0261_deepbinner_untrimmed.fastq.gz", path = config["path"]),
+		# expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz", path = config["path"], strain = config["strains"]),
+		# expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq", path = config["path"], strain = config["strains"]),
+		
+
+# classify adapter with Nanopore signals
+rule deepbinner_classify:
+	input:
+		signals = '/data/fass2/reads/ont/celia/20190416_1339_20190416_myco2/fast5/'
+	output:
+		classify = '{path}/hybrid_new/preprocessing/deepbinner/classifications'
+	# conda:
+	# 	'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
+	# params:
+	# 	outputdir = '{path}/hybrid_new/preprocessing/deepbinner/'
+	threads: 32
+	shell:
+		'deepbinner classify --native {input.signals} > {output.classify}'
+
+rule deepbinner_bin:
+	input:
+		classify = rules.deepbinner_classify.output.classify,
+		reads = '/data/fass2/reads/ont/celia/20190416_1339_20190416_myco2/called/2019-06-20/myco2_2019-06-20_13-00-46_20477.fastq'
+	output:
+		BC01 = '{path}/hybrid_new/preprocessing/deepbinner/barcode01.fastq.gz',
+		BC02 = '{path}/hybrid_new/preprocessing/deepbinner/barcode02.fastq.gz',
+		BC03 = '{path}/hybrid_new/preprocessing/deepbinner/barcode03.fastq.gz',
+		BC04 = '{path}/hybrid_new/preprocessing/deepbinner/barcode04.fastq.gz',
+		BC05 = '{path}/hybrid_new/preprocessing/deepbinner/barcode05.fastq.gz',
+		BC06 = '{path}/hybrid_new/preprocessing/deepbinner/barcode06.fastq.gz',
+		BC07 = '{path}/hybrid_new/preprocessing/deepbinner/barcode07.fastq.gz',
+		BC08 = '{path}/hybrid_new/preprocessing/deepbinner/barcode08.fastq.gz',
+		BC09 = '{path}/hybrid_new/preprocessing/deepbinner/barcode09.fastq.gz',
+		BC10 = '{path}/hybrid_new/preprocessing/deepbinner/barcode10.fastq.gz'
+		# BC11 = '{path}/hybrid_new/preprocessing/deepbinner/barcode11.fastq.gz'
+		# BC12 = '{path}/hybrid_new/preprocessing/deepbinner/barcode12.fastq.gz'
+	# conda:
+	# 	'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
+	params:
+		outputdir = '{path}/hybrid_new/preprocessing/deepbinner/'
+	threads: 32
+	shell:
+		'deepbinner bin --classes {input.classify} --reads {input.reads} --out_dir {params.outputdir}'
+
+rule rename_deepbinner:
+	input:
+		BC01 = rules.deepbinner_bin.output.BC01,
+		BC02 = rules.deepbinner_bin.output.BC02,
+		BC03 = rules.deepbinner_bin.output.BC03,
+		BC04 = rules.deepbinner_bin.output.BC04,
+		BC05 = rules.deepbinner_bin.output.BC05,
+		BC06 = rules.deepbinner_bin.output.BC06,
+		BC07 = rules.deepbinner_bin.output.BC07,
+		BC08 = rules.deepbinner_bin.output.BC08,
+		BC09 = rules.deepbinner_bin.output.BC09,
+		BC10 = rules.deepbinner_bin.output.BC10
+		# BC11 = rules.deepbinner_bin.output.BC11,
+		# BC12 = rules.deepbinner_bin.output.BC12
+	output:
+		strain1 = '{path}/hybrid_new/preprocessing/deepbinner/11DD0261_deepbinner_untrimmed.fastq.gz',
+		strain2 = '{path}/hybrid_new/preprocessing/deepbinner/13DD0918_deepbinner_untrimmed.fastq.gz',
+		strain3 = '{path}/hybrid_new/preprocessing/deepbinner/14DD0148_deepbinner_untrimmed.fastq.gz',
+		strain4 = '{path}/hybrid_new/preprocessing/deepbinner/14DD0156_deepbinner_untrimmed.fastq.gz',
+		strain5 = '{path}/hybrid_new/preprocessing/deepbinner/14DD0457_deepbinner_untrimmed.fastq.gz',
+		strain6 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0123_deepbinner_untrimmed.fastq.gz',
+		strain7 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0140_deepbinner_untrimmed.fastq.gz',
+		strain8 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0141_deepbinner_untrimmed.fastq.gz',
+		strain9 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0160_deepbinner_untrimmed.fastq.gz',
+		strain10 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0161_deepbinner_untrimmed.fastq.gz'
+		# strain11 = '{path}/hybrid_new/preprocessing/deepbinner/...',
+		# strain12 = '{path}/hybrid_new/preprocessing/deepbinner/...'
+	shell:
+		'mv {input.BC01} {output.strain1} &&'
+		'mv {input.BC02} {output.strain2} &&'
+		'mv {input.BC03} {output.strain3} &&'
+		'mv {input.BC04} {output.strain4} &&'
+		'mv {input.BC05} {output.strain5} &&'
+		'mv {input.BC06} {output.strain6} &&'
+		'mv {input.BC07} {output.strain7} &&'
+		'mv {input.BC08} {output.strain8} &&'
+		'mv {input.BC09} {output.strain9} &&'
+		'mv {input.BC10} {output.strain10}'
+		# 'mv {input.BC11} {output.strain11} &&'
+		# 'mv {input.BC12} {output.strain12}'
+
+# adapter trimming after deepbinner with porechop
+rule porechop_after_deepbinner:
+	input:
+		deepbinner = '{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner_untrimmed.fastq.gz'
+	output:
+		trim = '{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz'
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
+	threads: 32
+	shell:
+		'porechop -t {threads} -i {input.deepbinner} -o {output.trim}'
+
+rule gunzip_deepbinner:
+	input:
+		zipped = rules.porechop_after_deepbinner.output.trim
+	output:
+		unzipped = '{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq'
+	shell:
+		'gunzip {input.zipped}'
+
+# Canu
+rule canu:
+	input:
+		'{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
+	output:
+		contigs = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_canu/{strain}_{demultiplex}_canu.contigs.fasta'
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
+	params:
+		outputdir = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_canu/',
+		prefix = '{strain}_{demultiplex}_canu'
+	threads: 32
+	shell:
+		'canu -p {params.prefix} -d {params.outputdir} genomeSize=1000000 minThreads=4 maxThreads={threads} maxMemory=31 -nanopore-raw {input}' # useGrid=false
+
+# wtdbg2
+rule wtdbg2:
+	input:
+		'{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
+	output:
+		ctg = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_wtdbg2/{strain}_{demultiplex}_wtdbg2.ctg.lay.gz'
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
+	params:
+		ctg = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_wtdbg2/{strain}_{demultiplex}_wtdbg2'
+	threads: 24
+	shell:
+		'wtdbg2 -x nanopore -g 1000000 -i {input} -t {threads} -o {params.ctg}'
+
+# convert wtdbg2 ouput (cgt.lay) to fasta
+rule wtdbg2_convert:
+	input:
+		ctg = rules.wtdbg2.output.ctg
+	output:
+		contigs = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_wtdbg2/{strain}_{demultiplex}_wtdbg2.contigs.fasta'
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
+	threads: 24
+	shell:
+		'wtdbg-cns -t {threads} -i {input.ctg} -o {output.contigs}'

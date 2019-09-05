@@ -9,15 +9,11 @@ END = '1 2'.split() # paired_end
 rule all:
 	input:
 		# porechop
-		expand("{path}/hybrid_new/preprocessing/porechop_12strains/14DD0147_porechop.fastq", path = config["path"]),
-		# deepbinner
-		# expand("{path}/hybrid_new/preprocessing/deepbinner/classifications", path = config["path"]),
-		# expand("{path}/hybrid_new/preprocessing/deepbinner/barcode01.fastq.gz", path = config["path"]),
-		# expand("{path}/hybrid_new/preprocessing/deepbinner/11DD0261_deepbinner_untrimmed.fastq.gz", path = config["path"]),
-		# expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz", path = config["path"], strain = config["strains"]),
-		# expand("{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq", path = config["path"], strain = config["strains"]),
+		# expand("{path}/hybrid_new/preprocessing/porechop_12strains/14DD0147_porechop.fastq", path = config["path"]),
+		# qcat test
+		expand("{path}/hybrid_new/preprocessing/qcat_12strains/14DD0147_qcat.fastq", path = config["path"]),
 		# NanoPlot
-		# expand("{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"]),
+		expand("{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"]),
 		# 
 		# preprocess short reads
 		# expand("{path}/hybrid_new/quality/fastqc/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = config["strains"], paired_end = END),
@@ -33,7 +29,7 @@ rule all:
 		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# QUAST
-		# expand("{path}/hybrid_new/quality/quast_12/report.html", path = config["path"], strain = config["strains"]),
+		# expand("{path}/hybrid_new/quality/quast_12_qcat/report.html", path = config["path"], strain = config["strains"])
 		# 
 		# Prokka
 		# expand("{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
@@ -246,7 +242,7 @@ rule rename_porechop_12strains:
 		strain3 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0207_porechop.fastq',
 		strain4 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0165_porechop.fastq',
 		strain5 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0218_porechop.fastq',
-		strain6 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0234_porechop.fastq',
+		strain6 = '{path}/hybrid_new/preprocessing/porechop_12strains/16DD0234_porechop.fastq',
 		strain7 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0210_porechop.fastq',
 		strain8 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0238_porechop.fastq',
 		strain9 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0261_porechop.fastq',
@@ -267,105 +263,47 @@ rule rename_porechop_12strains:
 		'mv {input.BC11} {output.strain11} &&'
 		'mv {input.BC12} {output.strain12}'
 
-# # classify adapter with Nanopore signals
-# rule deepbinner_classify:
-# 	input:
-# 		signals = '/data/fass2/reads/ont/celia/20190416_1339_20190416_myco2/fast5/'
-# 	output:
-# 		classify = '{path}/hybrid_new/preprocessing/deepbinner/classifications'
-# 	# conda:
-# 	# 	'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
-# 	# params:
-# 	# 	outputdir = '{path}/hybrid_new/preprocessing/deepbinner/'
-# 	threads: 32
-# 	shell:
-# 		'deepbinner classify --native {input.signals} > {output.classify}'
-
-# rule deepbinner_bin:
-# 	input:
-# 		classify = rules.deepbinner_classify.output.classify,
-# 		reads = '/data/fass2/reads/ont/celia/20190416_1339_20190416_myco2/called/2019-06-20/myco2_2019-06-20_13-00-46_20477.fastq'
-# 	output:
-# 		BC01 = '{path}/hybrid_new/preprocessing/deepbinner/barcode01.fastq.gz',
-# 		BC02 = '{path}/hybrid_new/preprocessing/deepbinner/barcode02.fastq.gz',
-# 		BC03 = '{path}/hybrid_new/preprocessing/deepbinner/barcode03.fastq.gz',
-# 		BC04 = '{path}/hybrid_new/preprocessing/deepbinner/barcode04.fastq.gz',
-# 		BC05 = '{path}/hybrid_new/preprocessing/deepbinner/barcode05.fastq.gz',
-# 		BC06 = '{path}/hybrid_new/preprocessing/deepbinner/barcode06.fastq.gz',
-# 		BC07 = '{path}/hybrid_new/preprocessing/deepbinner/barcode07.fastq.gz',
-# 		BC08 = '{path}/hybrid_new/preprocessing/deepbinner/barcode08.fastq.gz',
-# 		BC09 = '{path}/hybrid_new/preprocessing/deepbinner/barcode09.fastq.gz',
-# 		BC10 = '{path}/hybrid_new/preprocessing/deepbinner/barcode10.fastq.gz'
-# 		# BC11 = '{path}/hybrid_new/preprocessing/deepbinner/barcode11.fastq.gz'
-# 		# BC12 = '{path}/hybrid_new/preprocessing/deepbinner/barcode12.fastq.gz'
-# 	# conda:
-# 	# 	'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
-# 	params:
-# 		outputdir = '{path}/hybrid_new/preprocessing/deepbinner/'
-# 	threads: 32
-# 	shell:
-# 		'deepbinner bin --classes {input.classify} --reads {input.reads} --out_dir {params.outputdir}'
-
-# rule rename_deepbinner:
-# 	input:
-# 		BC01 = rules.deepbinner_bin.output.BC01,
-# 		BC02 = rules.deepbinner_bin.output.BC02,
-# 		BC03 = rules.deepbinner_bin.output.BC03,
-# 		BC04 = rules.deepbinner_bin.output.BC04,
-# 		BC05 = rules.deepbinner_bin.output.BC05,
-# 		BC06 = rules.deepbinner_bin.output.BC06,
-# 		BC07 = rules.deepbinner_bin.output.BC07,
-# 		BC08 = rules.deepbinner_bin.output.BC08,
-# 		BC09 = rules.deepbinner_bin.output.BC09,
-# 		BC10 = rules.deepbinner_bin.output.BC10
-# 		# BC11 = rules.deepbinner_bin.output.BC11,
-# 		# BC12 = rules.deepbinner_bin.output.BC12
-# 	output:
-# 		strain1 = '{path}/hybrid_new/preprocessing/deepbinner/11DD0261_deepbinner_untrimmed.fastq.gz',
-# 		strain2 = '{path}/hybrid_new/preprocessing/deepbinner/13DD0918_deepbinner_untrimmed.fastq.gz',
-# 		strain3 = '{path}/hybrid_new/preprocessing/deepbinner/14DD0148_deepbinner_untrimmed.fastq.gz',
-# 		strain4 = '{path}/hybrid_new/preprocessing/deepbinner/14DD0156_deepbinner_untrimmed.fastq.gz',
-# 		strain5 = '{path}/hybrid_new/preprocessing/deepbinner/14DD0457_deepbinner_untrimmed.fastq.gz',
-# 		strain6 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0123_deepbinner_untrimmed.fastq.gz',
-# 		strain7 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0140_deepbinner_untrimmed.fastq.gz',
-# 		strain8 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0141_deepbinner_untrimmed.fastq.gz',
-# 		strain9 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0160_deepbinner_untrimmed.fastq.gz',
-# 		strain10 = '{path}/hybrid_new/preprocessing/deepbinner/15DD0161_deepbinner_untrimmed.fastq.gz'
-# 		# strain11 = '{path}/hybrid_new/preprocessing/deepbinner/...',
-# 		# strain12 = '{path}/hybrid_new/preprocessing/deepbinner/...'
-# 	shell:
-# 		'mv {input.BC01} {output.strain1} &&'
-# 		'mv {input.BC02} {output.strain2} &&'
-# 		'mv {input.BC03} {output.strain3} &&'
-# 		'mv {input.BC04} {output.strain4} &&'
-# 		'mv {input.BC05} {output.strain5} &&'
-# 		'mv {input.BC06} {output.strain6} &&'
-# 		'mv {input.BC07} {output.strain7} &&'
-# 		'mv {input.BC08} {output.strain8} &&'
-# 		'mv {input.BC09} {output.strain9} &&'
-# 		'mv {input.BC10} {output.strain10}'
-# 		# 'mv {input.BC11} {output.strain11} &&'
-# 		# 'mv {input.BC12} {output.strain12}'
-
-# # adapter trimming after deepbinner with porechop
-# rule porechop_after_deepbinner:
-# 	input:
-# 		deepbinner = '{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner_untrimmed.fastq.gz'
-# 	output:
-# 		trim = '{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq.gz'
-# 	conda:
-# 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
-# 	threads: 32
-# 	shell:
-# 		'porechop -t {threads} -i {input.deepbinner} -o {output.trim}'
-
-# rule gunzip_deepbinner:
-# 	input:
-# 		zipped = rules.porechop_after_deepbinner.output.trim
-# 	output:
-# 		unzipped = '{path}/hybrid_new/preprocessing/deepbinner/{strain}_deepbinner.fastq'
-# 	shell:
-# 		'gunzip {input.zipped}'
+# rename qcat output
+rule rename_qcat_12strains:
+	input:
+		BC01 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC01.fastq',
+		BC02 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC02.fastq',
+		BC03 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC03.fastq',
+		BC04 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC04.fastq',
+		BC05 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC05.fastq',
+		BC06 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC06.fastq',
+		BC07 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC07.fastq',
+		BC08 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC08.fastq',
+		BC09 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC09.fastq',
+		BC10 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC10.fastq',
+		BC11 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC11.fastq',
+		BC12 = '{path}/hybrid_new/preprocessing/qcat_12strains/BC12.fastq'
+	output:
+		strain1 = '{path}/hybrid_new/preprocessing/qcat_12strains/14DD0147_qcat.fastq',
+		strain2 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0164_qcat.fastq',
+		strain3 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0207_qcat.fastq',
+		strain4 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0165_qcat.fastq',
+		strain5 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0218_qcat.fastq',
+		strain6 = '{path}/hybrid_new/preprocessing/qcat_12strains/16DD0234_qcat.fastq',
+		strain7 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0210_qcat.fastq',
+		strain8 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0238_qcat.fastq',
+		strain9 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0261_qcat.fastq',
+		strain10 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0163_qcat.fastq',
+		strain11 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0228_qcat.fastq',
+		strain12 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0233_qcat.fastq'
+	shell:
+		'mv {input.BC01} {output.strain1} &&'
+		'mv {input.BC02} {output.strain2} &&'
+		'mv {input.BC03} {output.strain3} &&'
+		'mv {input.BC04} {output.strain4} &&'
+		'mv {input.BC05} {output.strain5} &&'
+		'mv {input.BC06} {output.strain6} &&'
+		'mv {input.BC07} {output.strain7} &&'
+		'mv {input.BC08} {output.strain8} &&'
+		'mv {input.BC09} {output.strain9} &&'
+		'mv {input.BC10} {output.strain10} &&'
+		'mv {input.BC11} {output.strain11} &&'
+		'mv {input.BC12} {output.strain12}'
 
 rule nanoplot:
 	input:
@@ -382,25 +320,10 @@ rule nanoplot:
 		'NanoPlot -t {threads} --minlength 1000 --fastq {input} -o {params.outputdir} -p {params.prefix} --title {params.prefix}_minlength1000'
 
 # long read assembler
-# Canu
-# rule canu:
-# 	input:
-# 		'{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
-# 	output:
-# 		contigs = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_canu/{strain}_{demultiplex}_canu.contigs.fasta'
-# 	conda:
-# 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
-# 	params:
-# 		outputdir = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_canu/',
-# 		prefix = '{strain}_{demultiplex}_canu'
-# 	threads: 32
-# 	shell:
-# 		'canu -p {params.prefix} -d {params.outputdir} genomeSize=1000000 minThreads=4 maxThreads={threads} maxMemory=31 -nanopore-raw {input}' # useGrid=false
-
 # Flye
 rule flye:
 	input:
-		'{path}/hybrid_new/preprocessing/{demultiplex}_12strains/{strain}_{demultiplex}.fastq'
+		'{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
 		contigs = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_flye/assembly.fasta'
 	conda:
@@ -409,7 +332,7 @@ rule flye:
 		outputdir = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_flye/',
 	threads: 32
 	shell:
-		'flye --nano-raw {input} -o {params.outputdir} -t {threads} -g 1000000'
+		'flye --asm-coverage 50 --nano-raw {input} -o {params.outputdir} -t {threads} -g 1000000'
 
 # rename flye output
 rule rename_flye:
@@ -420,37 +343,11 @@ rule rename_flye:
 	shell:
 		'mv {input.contigs} {output.flye}'
 
-# wtdbg2
-# rule wtdbg2:
-# 	input:
-# 		'{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
-# 	output:
-# 		ctg = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_wtdbg2/{strain}_{demultiplex}_wtdbg2.ctg.lay.gz'
-# 	conda:
-# 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
-# 	params:
-# 		ctg = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_wtdbg2/{strain}_{demultiplex}_wtdbg2'
-# 	threads: 24
-# 	shell:
-# 		'wtdbg2 -x nanopore -g 1000000 -i {input} -t {threads} -o {params.ctg}'
-
-# # convert wtdbg2 ouput (cgt.lay) to fasta
-# rule wtdbg2_convert:
-# 	input:
-# 		ctg = rules.wtdbg2.output.ctg
-# 	output:
-# 		contigs = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_wtdbg2/{strain}_{demultiplex}_wtdbg2.contigs.fasta'
-# 	conda:
-# 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly.yml'
-# 	threads: 24
-# 	shell:
-# 		'wtdbg-cns -t {threads} -i {input.ctg} -o {output.contigs}'
-
 # polishing with racon four times		use minimap2 for the mapping inbetween the polishing
 rule minimap2_racon_long:
 	input:
 		assembly = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta',
-		reads = '{path}/hybrid_new/preprocessing/{demultiplex}_12strains/{strain}_{demultiplex}.fastq'
+		reads = '{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
 		out = '{path}_docker/racon/hybrid_new/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta'
 	params:
@@ -489,7 +386,7 @@ rule minimap2_racon_long:
 			print(racon + '\n')			
 			os.system(racon)
 		
-rule move_racon_output_long:
+rule move_racon_long:
 	input:
 		racon_out = rules.minimap2_racon_long.output.out
 	output:
@@ -589,12 +486,12 @@ rule quast:
 		# in9 = '{path}/hybrid_new/postprocessing/15DD0160_porechop_flye/15DD0160_porechop_flye_short4.contigs.fasta',
 		# in10 = '{path}/hybrid_new/postprocessing/15DD0161_porechop_flye/15DD0161_porechop_flye_short4.contigs.fasta'
 	output:
-		report = '{path}/hybrid_new/quality/quast_12/report.html'
+		report = '{path}/hybrid_new/quality/quast_12_qcat/report.html'
 		#...
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
 	params:
-		outputdir = '{path}/hybrid_new/quality/quast_12/',
+		outputdir = '{path}/hybrid_new/quality/quast_12_qcat/',
 		path = '{path}/mycoplasma_bovis_genomes'
 	threads: 16
 	shell:
