@@ -6,33 +6,35 @@ configfile: "config.yaml"
 PU = '1P 1U 2P 2U'.split() # paired_unpaired
 END = '1 2'.split() # paired_end
 
+main_folder = 'hybrid_12'
+
 rule all:
 	input:
 		# porechop
-		# expand("{path}/hybrid_new/preprocessing/porechop_12strains/14DD0147_porechop.fastq", path = config["path"]),
+		# expand("{path}/{main_folder}/preprocessing/porechop/14DD0147_porechop.fastq", path = config["path"], main_folder = main_folder),
 		# qcat test
-		expand("{path}/hybrid_new/preprocessing/qcat_12strains/14DD0147_qcat.fastq", path = config["path"]),
+		# expand("{path}/{main_folder}/preprocessing/qcat/14DD0147_qcat.fastq", path = config["path"], main_folder = main_folder),
 		# NanoPlot
-		expand("{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"]),
+		# expand("{path}/{main_folder}/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"]),
 		# 
 		# preprocess short reads
-		# expand("{path}/hybrid_new/quality/fastqc/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = config["strains"], paired_end = END),
-		# expand("{path}/hybrid_new/quality/fastqc/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], strain = config["strains"], paired_unpaired = PU)
-		# expand("{path}/hybrid_new/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
+		# expand("{path}/{main_folder}/quality/fastqc/{strain}_{paired_end}_fastqc.html", path = config["path"], main_folder = main_folder, strain = config["strains"], paired_end = END),
+		# expand("{path}/{main_folder}/quality/fastqc/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], main_folder = main_folder, strain = config["strains"], paired_unpaired = PU),
+		# expand("{path}/{main_folder}/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], main_folder = main_folder, strain = config["strains"]),
 		# 
 		# assembly
-		expand("{path}/hybrid_new/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/{main_folder}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# polishing - 4x Racon long -> medaka -> 4x Racon short
-		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# expand("{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# QUAST
-		# expand("{path}/hybrid_new/quality/quast_12_qcat/report.html", path = config["path"], strain = config["strains"])
+		expand("{path}/{main_folder}/quality/quast/report.html", path = config["path"], main_folder = main_folder, strain = config["strains"])
 		# 
 		# Prokka
-		# expand("{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
+		# expand("{path}/{main_folder}/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
 
 
 # create folders for the following steps
@@ -43,14 +45,14 @@ rule create:
 # quality check of all short raw reads
 rule fastqc:
 	input:
-		'{path}/hybrid_new/raw_data/{strain}_{paired_end}.fastq.gz'
+		'{path}/{main_folder}/raw_data/{strain}_{paired_end}.fastq.gz'
 	output:
-		html = '{path}/hybrid_new/quality/fastqc/{strain}_{paired_end}_fastqc.html',
-		zip = '{path}/hybrid_new/quality/fastqc/{strain}_{paired_end}_fastqc.zip'
+		html = '{path}/{main_folder}/quality/fastqc/{strain}_{paired_end}_fastqc.html',
+		zip = '{path}/{main_folder}/quality/fastqc/{strain}_{paired_end}_fastqc.zip'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/read_quality.yml'
 	params:
-		outputdir = '{path}/hybrid_new/quality/fastqc/'
+		outputdir = '{path}/{main_folder}/quality/fastqc/'
 	threads: 8
 	shell:
 		'fastqc -t {threads} {input} -o {params.outputdir}'
@@ -58,15 +60,15 @@ rule fastqc:
 # first preprocessing of the short reads - fastp
 rule fastp:
 	input:
-		forward = '{path}/hybrid_new/raw_data/{strain}_1.fastq.gz',
-		reverse = '{path}/hybrid_new/raw_data/{strain}_2.fastq.gz'
+		forward = '{path}/{main_folder}/raw_data/{strain}_1.fastq.gz',
+		reverse = '{path}/{main_folder}/raw_data/{strain}_2.fastq.gz'
 	output:
-		forward = '{path}/hybrid_new/preprocessing/fastp/{strain}_1_fastp.fastq.gz',
-		reverse = '{path}/hybrid_new/preprocessing/fastp/{strain}_2_fastp.fastq.gz'
+		forward = '{path}/{main_folder}/preprocessing/fastp/{strain}_1_fastp.fastq.gz',
+		reverse = '{path}/{main_folder}/preprocessing/fastp/{strain}_2_fastp.fastq.gz'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
 	params:
-		outputdir = '{path}/hybrid_new/preprocessing/fastp/',
+		outputdir = '{path}/{main_folder}/preprocessing/fastp/',
 		html = '{strain}_fastp.html',
 		json = '{strain}_fastp.json'
 	threads: 8
@@ -79,10 +81,10 @@ rule trimmomatic:
 		forward = rules.fastp.output.forward,
 		reverse = rules.fastp.output.reverse
 	output:
-		forwardPaired = '{path}/hybrid_new/preprocessing/trimmomatic/{strain}_1P.fastq.gz',
-		forwardUnpaired = '{path}/hybrid_new/preprocessing/trimmomatic/{strain}_1U.fastq.gz',
-		reversePaired = '{path}/hybrid_new/preprocessing/trimmomatic/{strain}_2P.fastq.gz',
-		reverseUnpaired = '{path}/hybrid_new/preprocessing/trimmomatic/{strain}_2U.fastq.gz'
+		forwardPaired = '{path}/{main_folder}/preprocessing/trimmomatic/{strain}_1P.fastq.gz',
+		forwardUnpaired = '{path}/{main_folder}/preprocessing/trimmomatic/{strain}_1U.fastq.gz',
+		reversePaired = '{path}/{main_folder}/preprocessing/trimmomatic/{strain}_2P.fastq.gz',
+		reverseUnpaired = '{path}/{main_folder}/preprocessing/trimmomatic/{strain}_2U.fastq.gz'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
 	threads: 8
@@ -101,7 +103,7 @@ rule concat_short:
 		reversePaired = rules.trimmomatic.output.reversePaired,
 		reverseUnpaired = rules.trimmomatic.output.reverseUnpaired
 	output:
-		all = '{path}/hybrid_new/preprocessing/{strain}_all_short.fastq.gz'
+		all = '{path}/{main_folder}/preprocessing/{strain}_all_short.fastq.gz'
 	shell:
 		'cat {input.forwardPaired} {input.forwardUnpaired} {input.reversePaired} {input.reverseUnpaired} > {output.all}'
 
@@ -109,7 +111,7 @@ rule gunzip_short:
 	input:
 		all = rules.concat_short.output.all
 	output:
-		gunzip = '{path}/hybrid_new/preprocessing/{strain}_all_short.fastq'
+		gunzip = '{path}/{main_folder}/preprocessing/{strain}_all_short.fastq'
 	shell:
 		'gunzip {input.all}'
 
@@ -118,21 +120,21 @@ rule unique_readID:
 	input:
 		all = rules.gunzip_short.output.gunzip
 	output:
-		unique = '{path}/hybrid_new/preprocessing/{strain}_all_short_unique.fastq'
+		unique = '{path}/{main_folder}/preprocessing/{strain}_all_short_unique.fastq'
 	shell:
 		"sed 's/ 2:N:0/:2:N:0/g' {input.all} | sed 's/ 1:N:0/:1:N:0/g' > {output.unique}"
 
 # quality check of all preprocessed short reads
 rule fastqc_preprocessing:
 	input:
-		'{path}/hybrid_new/preprocessing/trimmomatic/{strain}_{paired_unpaired}.fastq.gz'
+		'{path}/{main_folder}/preprocessing/trimmomatic/{strain}_{paired_unpaired}.fastq.gz'
 	output:
-		html='{path}/hybrid_new/quality/fastqc/{strain}_{paired_unpaired}_fastqc.html',
-		zip='{path}/hybrid_new/quality/fastqc/{strain}_{paired_unpaired}_fastqc.zip'
+		html='{path}/{main_folder}/quality/fastqc/{strain}_{paired_unpaired}_fastqc.html',
+		zip='{path}/{main_folder}/quality/fastqc/{strain}_{paired_unpaired}_fastqc.zip'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/read_quality.yml'
 	params:
-		outputdir = '{path}/hybrid_new/quality/fastqc/'
+		outputdir = '{path}/{main_folder}/quality/fastqc/'
 	threads: 8
 	shell:
 		'fastqc {input} -t {threads} -o {params.outputdir}'
@@ -144,20 +146,20 @@ rule porechop_10strains: # myco2
 	input:
 		'/data/fass2/reads/ont/celia/20190416_1339_20190416_myco2/called/2019-06-20/myco2_2019-06-20_13-00-46_20477.fastq'
 	output:
-		BC01 = '{path}/hybrid_new/preprocessing/porechop_10strains/BC01.fastq',
-		BC02 = '{path}/hybrid_new/preprocessing/porechop_10strains/BC02.fastq',
-		BC03 = '{path}/hybrid_new/preprocessing/porechop_10strains/BC03.fastq',
-		BC04 = '{path}/hybrid_new/preprocessing/porechop_10strains/BC04.fastq',
-		BC05 = '{path}/hybrid_new/preprocessing/porechop_10strains/BC05.fastq',
-		BC06 = '{path}/hybrid_new/preprocessing/porechop_10strains/BC06.fastq',
-		BC07 = '{path}/hybrid_new/preprocessing/porechop_10strains/BC07.fastq',
-		BC08 = '{path}/hybrid_new/preprocessing/porechop_10strains/BC08.fastq',
-		BC09 = '{path}/hybrid_new/preprocessing/porechop_10strains/BC09.fastq',
-		BC10 = '{path}/hybrid_new/preprocessing/porechop_10strains/BC10.fastq'
+		BC01 = '{path}/{main_folder}/preprocessing/porechop_10strains/BC01.fastq',
+		BC02 = '{path}/{main_folder}/preprocessing/porechop_10strains/BC02.fastq',
+		BC03 = '{path}/{main_folder}/preprocessing/porechop_10strains/BC03.fastq',
+		BC04 = '{path}/{main_folder}/preprocessing/porechop_10strains/BC04.fastq',
+		BC05 = '{path}/{main_folder}/preprocessing/porechop_10strains/BC05.fastq',
+		BC06 = '{path}/{main_folder}/preprocessing/porechop_10strains/BC06.fastq',
+		BC07 = '{path}/{main_folder}/preprocessing/porechop_10strains/BC07.fastq',
+		BC08 = '{path}/{main_folder}/preprocessing/porechop_10strains/BC08.fastq',
+		BC09 = '{path}/{main_folder}/preprocessing/porechop_10strains/BC09.fastq',
+		BC10 = '{path}/{main_folder}/preprocessing/porechop_10strains/BC10.fastq'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
 	params:
-		outputdir = '{path}/hybrid_new/preprocessing/porechop_10strains/'
+		outputdir = '{path}/{main_folder}/preprocessing/porechop_10strains/'
 	threads: 32 #default: 8
 	shell:
 		'porechop -t {threads} --check_reads 500000 -i {input} -b {params.outputdir}'
@@ -175,16 +177,16 @@ rule rename_porechop_10strains: # myco2
 		BC09 = rules.porechop_10strains.output.BC09,
 		BC10 = rules.porechop_10strains.output.BC10
 	output:
-		strain1 = '{path}/hybrid_new/preprocessing/porechop_10strains/11DD0261_porechop.fastq',
-		strain2 = '{path}/hybrid_new/preprocessing/porechop_10strains/13DD0918_porechop.fastq',
-		strain3 = '{path}/hybrid_new/preprocessing/porechop_10strains/14DD0148_porechop.fastq',
-		strain4 = '{path}/hybrid_new/preprocessing/porechop_10strains/14DD0156_porechop.fastq',
-		strain5 = '{path}/hybrid_new/preprocessing/porechop_10strains/14DD0457_porechop.fastq',
-		strain6 = '{path}/hybrid_new/preprocessing/porechop_10strains/15DD0123_porechop.fastq',
-		strain7 = '{path}/hybrid_new/preprocessing/porechop_10strains/15DD0140_porechop.fastq',
-		strain8 = '{path}/hybrid_new/preprocessing/porechop_10strains/15DD0141_porechop.fastq',
-		strain9 = '{path}/hybrid_new/preprocessing/porechop_10strains/15DD0160_porechop.fastq',
-		strain10 = '{path}/hybrid_new/preprocessing/porechop_10strains/15DD0161_porechop.fastq'
+		strain1 = '{path}/{main_folder}/preprocessing/porechop_10strains/11DD0261_porechop.fastq',
+		strain2 = '{path}/{main_folder}/preprocessing/porechop_10strains/13DD0918_porechop.fastq',
+		strain3 = '{path}/{main_folder}/preprocessing/porechop_10strains/14DD0148_porechop.fastq',
+		strain4 = '{path}/{main_folder}/preprocessing/porechop_10strains/14DD0156_porechop.fastq',
+		strain5 = '{path}/{main_folder}/preprocessing/porechop_10strains/14DD0457_porechop.fastq',
+		strain6 = '{path}/{main_folder}/preprocessing/porechop_10strains/15DD0123_porechop.fastq',
+		strain7 = '{path}/{main_folder}/preprocessing/porechop_10strains/15DD0140_porechop.fastq',
+		strain8 = '{path}/{main_folder}/preprocessing/porechop_10strains/15DD0141_porechop.fastq',
+		strain9 = '{path}/{main_folder}/preprocessing/porechop_10strains/15DD0160_porechop.fastq',
+		strain10 = '{path}/{main_folder}/preprocessing/porechop_10strains/15DD0161_porechop.fastq'
 	shell:
 		'mv {input.BC01} {output.strain1} &&'
 		'mv {input.BC02} {output.strain2} &&'
@@ -202,22 +204,22 @@ rule porechop_12strains: # myco3
 		'/data/fass2/reads/ont/celia/20190619_1340_20190619_mycoplasma3/called/2019-09-02/myco3_2019-08-27_11-05-00_16169.fastq'
 		# '/data/fass2/reads/ont/celia/20190619_1340_20190619_mycoplasma3/called/2019-06-24/myco3_2019-06-25_10-03-40_24752.fastq'
 	output:
-		BC01 = '{path}/hybrid_new/preprocessing/porechop_12strains/BC01.fastq',
-		BC02 = '{path}/hybrid_new/preprocessing/porechop_12strains/BC02.fastq',
-		BC03 = '{path}/hybrid_new/preprocessing/porechop_12strains/BC03.fastq',
-		BC04 = '{path}/hybrid_new/preprocessing/porechop_12strains/BC04.fastq',
-		BC05 = '{path}/hybrid_new/preprocessing/porechop_12strains/BC05.fastq',
-		BC06 = '{path}/hybrid_new/preprocessing/porechop_12strains/BC06.fastq',
-		BC07 = '{path}/hybrid_new/preprocessing/porechop_12strains/BC07.fastq',
-		BC08 = '{path}/hybrid_new/preprocessing/porechop_12strains/BC08.fastq',
-		BC09 = '{path}/hybrid_new/preprocessing/porechop_12strains/BC09.fastq',
-		BC10 = '{path}/hybrid_new/preprocessing/porechop_12strains/BC10.fastq',
-		BC11 = '{path}/hybrid_new/preprocessing/porechop_12strains/BC11.fastq',
-		BC12 = '{path}/hybrid_new/preprocessing/porechop_12strains/BC12.fastq'
+		BC01 = '{path}/{main_folder}/preprocessing/porechop/BC01.fastq',
+		BC02 = '{path}/{main_folder}/preprocessing/porechop/BC02.fastq',
+		BC03 = '{path}/{main_folder}/preprocessing/porechop/BC03.fastq',
+		BC04 = '{path}/{main_folder}/preprocessing/porechop/BC04.fastq',
+		BC05 = '{path}/{main_folder}/preprocessing/porechop/BC05.fastq',
+		BC06 = '{path}/{main_folder}/preprocessing/porechop/BC06.fastq',
+		BC07 = '{path}/{main_folder}/preprocessing/porechop/BC07.fastq',
+		BC08 = '{path}/{main_folder}/preprocessing/porechop/BC08.fastq',
+		BC09 = '{path}/{main_folder}/preprocessing/porechop/BC09.fastq',
+		BC10 = '{path}/{main_folder}/preprocessing/porechop/BC10.fastq',
+		BC11 = '{path}/{main_folder}/preprocessing/porechop/BC11.fastq',
+		BC12 = '{path}/{main_folder}/preprocessing/porechop/BC12.fastq'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
 	params:
-		outputdir = '{path}/hybrid_new/preprocessing/porechop_12strains/'
+		outputdir = '{path}/{main_folder}/preprocessing/porechop/'
 	threads: 32 #default: 8
 	shell:
 		'porechop -t {threads} --format fastq --check_reads 500000 -i {input} -b {params.outputdir}'
@@ -237,18 +239,18 @@ rule rename_porechop_12strains:
 		BC11 = rules.porechop_12strains.output.BC11,
 		BC12 = rules.porechop_12strains.output.BC12
 	output:
-		strain1 = '{path}/hybrid_new/preprocessing/porechop_12strains/14DD0147_porechop.fastq',
-		strain2 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0164_porechop.fastq',
-		strain3 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0207_porechop.fastq',
-		strain4 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0165_porechop.fastq',
-		strain5 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0218_porechop.fastq',
-		strain6 = '{path}/hybrid_new/preprocessing/porechop_12strains/16DD0234_porechop.fastq',
-		strain7 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0210_porechop.fastq',
-		strain8 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0238_porechop.fastq',
-		strain9 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0261_porechop.fastq',
-		strain10 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0163_porechop.fastq',
-		strain11 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0228_porechop.fastq',
-		strain12 = '{path}/hybrid_new/preprocessing/porechop_12strains/15DD0233_porechop.fastq'
+		strain1 = '{path}/{main_folder}/preprocessing/porechop/14DD0147_porechop.fastq',
+		strain2 = '{path}/{main_folder}/preprocessing/porechop/15DD0164_porechop.fastq',
+		strain3 = '{path}/{main_folder}/preprocessing/porechop/15DD0207_porechop.fastq',
+		strain4 = '{path}/{main_folder}/preprocessing/porechop/15DD0165_porechop.fastq',
+		strain5 = '{path}/{main_folder}/preprocessing/porechop/15DD0218_porechop.fastq',
+		strain6 = '{path}/{main_folder}/preprocessing/porechop/15DD0234_porechop.fastq',
+		strain7 = '{path}/{main_folder}/preprocessing/porechop/15DD0210_porechop.fastq',
+		strain8 = '{path}/{main_folder}/preprocessing/porechop/15DD0238_porechop.fastq',
+		strain9 = '{path}/{main_folder}/preprocessing/porechop/15DD0261_porechop.fastq',
+		strain10 = '{path}/{main_folder}/preprocessing/porechop/15DD0163_porechop.fastq',
+		strain11 = '{path}/{main_folder}/preprocessing/porechop/15DD0228_porechop.fastq',
+		strain12 = '{path}/{main_folder}/preprocessing/porechop/15DD0233_porechop.fastq'
 	shell:
 		'mv {input.BC01} {output.strain1} &&'
 		'mv {input.BC02} {output.strain2} &&'
@@ -263,34 +265,59 @@ rule rename_porechop_12strains:
 		'mv {input.BC11} {output.strain11} &&'
 		'mv {input.BC12} {output.strain12}'
 
+rule qcat_12strains:
+	input:
+		'/data/fass2/reads/ont/celia/20190619_1340_20190619_mycoplasma3/called/2019-09-02/myco3_2019-08-27_11-05-00_16169.fastq'
+		# '/data/fass2/reads/ont/celia/20190619_1340_20190619_mycoplasma3/called/2019-06-24/myco3_2019-06-25_10-03-40_24752.fastq'
+	output:
+		BC01 = '{path}/{main_folder}/preprocessing/qcat/barcode01.fastq',
+		BC02 = '{path}/{main_folder}/preprocessing/qcat/barcode02.fastq',
+		BC03 = '{path}/{main_folder}/preprocessing/qcat/barcode03.fastq',
+		BC04 = '{path}/{main_folder}/preprocessing/qcat/barcode04.fastq',
+		BC05 = '{path}/{main_folder}/preprocessing/qcat/barcode05.fastq',
+		BC06 = '{path}/{main_folder}/preprocessing/qcat/barcode06.fastq',
+		BC07 = '{path}/{main_folder}/preprocessing/qcat/barcode07.fastq',
+		BC08 = '{path}/{main_folder}/preprocessing/qcat/barcode08.fastq',
+		BC09 = '{path}/{main_folder}/preprocessing/qcat/barcode09.fastq',
+		BC10 = '{path}/{main_folder}/preprocessing/qcat/barcode10.fastq',
+		BC11 = '{path}/{main_folder}/preprocessing/qcat/barcode11.fastq',
+		BC12 = '{path}/{main_folder}/preprocessing/qcat/barcode12.fastq'
+	conda:
+		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/preprocessing.yml'
+	params:
+		outputdir = '{path}/{main_folder}/preprocessing/qcat/'
+	threads: 32 #default: 8
+	shell:
+		'qcat -t {threads} -k NBD103/NBD104 --trim -f {input} -b {params.outputdir}'
+
 # rename qcat output
 rule rename_qcat_12strains:
 	input:
-		BC01 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode01.fastq',
-		BC02 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode02.fastq',
-		BC03 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode03.fastq',
-		BC04 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode04.fastq',
-		BC05 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode05.fastq',
-		BC06 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode06.fastq',
-		BC07 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode07.fastq',
-		BC08 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode08.fastq',
-		BC09 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode09.fastq',
-		BC10 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode10.fastq',
-		BC11 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode11.fastq',
-		BC12 = '{path}/hybrid_new/preprocessing/qcat_12strains/barcode12.fastq'
+		BC01 = rules.qcat_12strains.output.BC01,
+		BC02 = rules.qcat_12strains.output.BC02,
+		BC03 = rules.qcat_12strains.output.BC03,
+		BC04 = rules.qcat_12strains.output.BC04,
+		BC05 = rules.qcat_12strains.output.BC05,
+		BC06 = rules.qcat_12strains.output.BC06,
+		BC07 = rules.qcat_12strains.output.BC07,
+		BC08 = rules.qcat_12strains.output.BC08,
+		BC09 = rules.qcat_12strains.output.BC09,
+		BC10 = rules.qcat_12strains.output.BC10,
+		BC11 = rules.qcat_12strains.output.BC11,
+		BC12 = rules.qcat_12strains.output.BC12
 	output:
-		strain1 = '{path}/hybrid_new/preprocessing/qcat_12strains/14DD0147_qcat.fastq',
-		strain2 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0164_qcat.fastq',
-		strain3 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0207_qcat.fastq',
-		strain4 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0165_qcat.fastq',
-		strain5 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0218_qcat.fastq',
-		strain6 = '{path}/hybrid_new/preprocessing/qcat_12strains/16DD0234_qcat.fastq',
-		strain7 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0210_qcat.fastq',
-		strain8 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0238_qcat.fastq',
-		strain9 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0261_qcat.fastq',
-		strain10 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0163_qcat.fastq',
-		strain11 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0228_qcat.fastq',
-		strain12 = '{path}/hybrid_new/preprocessing/qcat_12strains/15DD0233_qcat.fastq'
+		strain1 = '{path}/{main_folder}/preprocessing/qcat/14DD0147_qcat.fastq',
+		strain2 = '{path}/{main_folder}/preprocessing/qcat/15DD0164_qcat.fastq',
+		strain3 = '{path}/{main_folder}/preprocessing/qcat/15DD0207_qcat.fastq',
+		strain4 = '{path}/{main_folder}/preprocessing/qcat/15DD0165_qcat.fastq',
+		strain5 = '{path}/{main_folder}/preprocessing/qcat/15DD0218_qcat.fastq',
+		strain6 = '{path}/{main_folder}/preprocessing/qcat/15DD0234_qcat.fastq',
+		strain7 = '{path}/{main_folder}/preprocessing/qcat/15DD0210_qcat.fastq',
+		strain8 = '{path}/{main_folder}/preprocessing/qcat/15DD0238_qcat.fastq',
+		strain9 = '{path}/{main_folder}/preprocessing/qcat/15DD0261_qcat.fastq',
+		strain10 = '{path}/{main_folder}/preprocessing/qcat/15DD0163_qcat.fastq',
+		strain11 = '{path}/{main_folder}/preprocessing/qcat/15DD0228_qcat.fastq',
+		strain12 = '{path}/{main_folder}/preprocessing/qcat/15DD0233_qcat.fastq'
 	shell:
 		'mv {input.BC01} {output.strain1} &&'
 		'mv {input.BC02} {output.strain2} &&'
@@ -307,13 +334,13 @@ rule rename_qcat_12strains:
 
 rule nanoplot:
 	input:
-		'{path}/hybrid_new/preprocessing/{demultiplex}_12strains/{strain}_{demultiplex}.fastq'
+		'{path}/{main_folder}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
-		'{path}/hybrid_new/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html'
+		'{path}/{main_folder}/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/read_quality.yml'
 	params:
-		outputdir = '{path}/hybrid_new/quality/nanoplot/{strain}/',
+		outputdir = '{path}/{main_folder}/quality/nanoplot/{strain}/',
 		prefix = '{strain}_{demultiplex}'
 	threads: 8
 	shell:
@@ -323,13 +350,13 @@ rule nanoplot:
 # Flye
 rule flye:
 	input:
-		'{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
+		'{path}/{main_folder}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
-		contigs = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_flye/assembly.fasta'
+		contigs = '{path}/{main_folder}/assembly/{strain}_{demultiplex}_flye/assembly.fasta'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/flye.yml'
 	params:
-		outputdir = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_flye/',
+		outputdir = '{path}/{main_folder}/assembly/{strain}_{demultiplex}_flye/',
 	threads: 32
 	shell:
 		'flye --asm-coverage 50 --nano-raw {input} -o {params.outputdir} -t {threads} -g 1000000'
@@ -339,29 +366,30 @@ rule rename_flye:
 	input:
 		contigs = rules.flye.output.contigs
 	output:
-		flye = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_flye/{strain}_{demultiplex}_flye.contigs.fasta'
+		flye = '{path}/{main_folder}/assembly/{strain}_{demultiplex}_flye/{strain}_{demultiplex}_flye.contigs.fasta'
 	shell:
 		'mv {input.contigs} {output.flye}'
 
 # polishing with racon four times		use minimap2 for the mapping inbetween the polishing
 rule minimap2_racon_long:
 	input:
-		assembly = '{path}/hybrid_new/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta',
-		reads = '{path}/hybrid_new/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
+		assembly = '{path}/{main_folder}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta',
+		reads = '{path}/{main_folder}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
-		out = '{path}_docker/racon/hybrid_new/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta'
+		out = '{path}_docker/racon/{main_folder}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta'
 	params:
 		strain = '{strain}',
 		demultiplex = '{demultiplex}',
 		assembler = '{assembler}',
-		path = '{path}/hybrid_new'
+		path = '{path}/{main_folder}',
+		main_folder = '{main_folder}'
 	threads: 32
 	run:
 		import os
 		import time
-		reads_path = str(params.path) + '/preprocessing/' + str(params.demultiplex) + '_12strains/'
+		reads_path = str(params.path) + '/preprocessing/' + str(params.demultiplex) + '/'
 		only_reads = str(params.strain) + '_' + str(params.demultiplex) + '.fastq'
-		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/hybrid_new/'
+		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/' + str(params.main_folder) + '/'
 		assembly_path = str(params.path) + '/assembly/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
 		paf_path = str(params.path) + '/postprocessing/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
 		assembly_file = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '.contigs.fasta'
@@ -390,21 +418,21 @@ rule move_racon_long:
 	input:
 		racon_out = rules.minimap2_racon_long.output.out
 	output:
-		move = '{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta'
+		move = '{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta'
 	shell:
 		'mv {input.racon_out} {output.move}'
 
 # polishing with medaka
 rule medaka:
 	input:
-		reads = '{path}/hybrid_new/preprocessing/{demultiplex}_12strains/{strain}_{demultiplex}.fastq',
+		reads = '{path}/{main_folder}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq',
 		racon_out = rules.move_racon_long.output.move
 	output:
-		medaka = '{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta'
+		medaka = '{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta'
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/postprocessing.yml'
 	params:
-		outputdir = '{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/'
+		outputdir = '{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/'
 	threads: 32
 	shell:
 		'medaka_consensus -i {input.reads} -d {input.racon_out} -o {params.outputdir} -t {threads} -m r941_min_high'
@@ -415,19 +443,20 @@ rule minimap2_racon_short:
 		assembly = rules.medaka.output.medaka,
 		reads = rules.unique_readID.output.unique
 	output:
-		out = '{path}_docker/racon/hybrid_new/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta'
+		out = '{path}_docker/racon/{main_folder}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta'
 	params:
 		strain = '{strain}',
 		demultiplex = '{demultiplex}',
 		assembler = '{assembler}',
-		path = '{path}/hybrid_new'
+		path = '{path}/{main_folder}',
+		main_folder = '{main_folder}'
 	threads: 32
 	run:
 		import os
 		import time
 		reads_path = str(params.path) + '/preprocessing/'
 		only_reads = str(params.strain) + '_all_short_unique.fastq'
-		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/hybrid_new/'
+		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/' + str(params.main_folder) + '/'
 		assembly_path = str(params.path) + '/postprocessing/' +  str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
 		paf_path = str(params.path) + '/postprocessing/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
 		assembly_file = 'consensus.fasta'
@@ -457,41 +486,41 @@ rule move_racon_short:
 	input:
 		racon_out = rules.minimap2_racon_short.output.out
 	output:
-		move = '{path}/hybrid_new/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta'
+		move = '{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta'
 	shell:
 		'mv {input.racon_out} {output.move}'
 
 rule quast:
 	input:
-		in1 = '{path}/hybrid_new/postprocessing/14DD0147_porechop_flye/14DD0147_porechop_flye_short4.contigs.fasta',
-		in2 = '{path}/hybrid_new/postprocessing/15DD0207_porechop_flye/15DD0207_porechop_flye_short4.contigs.fasta',
-		in3 = '{path}/hybrid_new/postprocessing/15DD0165_porechop_flye/15DD0165_porechop_flye_short4.contigs.fasta',
-		in4 = '{path}/hybrid_new/postprocessing/15DD0234_porechop_flye/15DD0234_porechop_flye_short4.contigs.fasta',
-		in5 = '{path}/hybrid_new/postprocessing/15DD0163_porechop_flye/15DD0163_porechop_flye_short4.contigs.fasta',
-		in6 = '{path}/hybrid_new/postprocessing/15DD0233_porechop_flye/15DD0233_porechop_flye_short4.contigs.fasta',
-		in7 = '{path}/hybrid_new/postprocessing/15DD0164_porechop_flye/15DD0164_porechop_flye_short4.contigs.fasta',
-		in8 = '{path}/hybrid_new/postprocessing/15DD0218_porechop_flye/15DD0218_porechop_flye_short4.contigs.fasta',
-		in9 = '{path}/hybrid_new/postprocessing/15DD0210_porechop_flye/15DD0210_porechop_flye_short4.contigs.fasta',
-		in10 = '{path}/hybrid_new/postprocessing/15DD0238_porechop_flye/15DD0238_porechop_flye_short4.contigs.fasta',
-		in11 = '{path}/hybrid_new/postprocessing/15DD0261_porechop_flye/15DD0261_porechop_flye_short4.contigs.fasta',
-		in12 = '{path}/hybrid_new/postprocessing/15DD0228_porechop_flye/15DD0228_porechop_flye_short4.contigs.fasta'
-		# in1 = '{path}/hybrid_new/postprocessing/11DD0261_porechop_flye/11DD0261_porechop_flye_short4.contigs.fasta',
-		# in2 = '{path}/hybrid_new/postprocessing/13DD0918_porechop_flye/13DD0918_porechop_flye_short4.contigs.fasta',
-		# in3 = '{path}/hybrid_new/postprocessing/14DD0148_porechop_flye/14DD0148_porechop_flye_short4.contigs.fasta',
-		# in4 = '{path}/hybrid_new/postprocessing/14DD0156_porechop_flye/14DD0156_porechop_flye_short4.contigs.fasta',
-		# in5 = '{path}/hybrid_new/postprocessing/14DD0457_porechop_flye/14DD0457_porechop_flye_short4.contigs.fasta',
-		# in6 = '{path}/hybrid_new/postprocessing/15DD0123_porechop_flye/15DD0123_porechop_flye_short4.contigs.fasta',
-		# in7 = '{path}/hybrid_new/postprocessing/15DD0140_porechop_flye/15DD0140_porechop_flye_short4.contigs.fasta',
-		# in8 = '{path}/hybrid_new/postprocessing/15DD0141_porechop_flye/15DD0141_porechop_flye_short4.contigs.fasta',
-		# in9 = '{path}/hybrid_new/postprocessing/15DD0160_porechop_flye/15DD0160_porechop_flye_short4.contigs.fasta',
-		# in10 = '{path}/hybrid_new/postprocessing/15DD0161_porechop_flye/15DD0161_porechop_flye_short4.contigs.fasta'
+		in1 = '{path}/{main_folder}/postprocessing/14DD0147_qcat_flye/14DD0147_qcat_flye_short4.contigs.fasta',
+		in2 = '{path}/{main_folder}/postprocessing/15DD0207_qcat_flye/15DD0207_qcat_flye_short4.contigs.fasta',
+		in3 = '{path}/{main_folder}/postprocessing/15DD0165_qcat_flye/15DD0165_qcat_flye_short4.contigs.fasta',
+		in4 = '{path}/{main_folder}/postprocessing/15DD0234_qcat_flye/15DD0234_qcat_flye_short4.contigs.fasta',
+		in5 = '{path}/{main_folder}/postprocessing/15DD0163_qcat_flye/15DD0163_qcat_flye_short4.contigs.fasta',
+		in6 = '{path}/{main_folder}/postprocessing/15DD0233_qcat_flye/15DD0233_qcat_flye_short4.contigs.fasta',
+		in7 = '{path}/{main_folder}/postprocessing/15DD0164_qcat_flye/15DD0164_qcat_flye_short4.contigs.fasta',
+		in8 = '{path}/{main_folder}/postprocessing/15DD0218_qcat_flye/15DD0218_qcat_flye_short4.contigs.fasta',
+		in9 = '{path}/{main_folder}/postprocessing/15DD0210_qcat_flye/15DD0210_qcat_flye_short4.contigs.fasta',
+		in10 = '{path}/{main_folder}/postprocessing/15DD0238_qcat_flye/15DD0238_qcat_flye_short4.contigs.fasta',
+		in11 = '{path}/{main_folder}/postprocessing/15DD0261_qcat_flye/15DD0261_qcat_flye_short4.contigs.fasta',
+		in12 = '{path}/{main_folder}/postprocessing/15DD0228_qcat_flye/15DD0228_qcat_flye_short4.contigs.fasta'
+		# in1 = '{path}/{main_folder}/postprocessing/11DD0261_porechop_flye/11DD0261_porechop_flye_short4.contigs.fasta',
+		# in2 = '{path}/{main_folder}/postprocessing/13DD0918_porechop_flye/13DD0918_porechop_flye_short4.contigs.fasta',
+		# in3 = '{path}/{main_folder}/postprocessing/14DD0148_porechop_flye/14DD0148_porechop_flye_short4.contigs.fasta',
+		# in4 = '{path}/{main_folder}/postprocessing/14DD0156_porechop_flye/14DD0156_porechop_flye_short4.contigs.fasta',
+		# in5 = '{path}/{main_folder}/postprocessing/14DD0457_porechop_flye/14DD0457_porechop_flye_short4.contigs.fasta',
+		# in6 = '{path}/{main_folder}/postprocessing/15DD0123_porechop_flye/15DD0123_porechop_flye_short4.contigs.fasta',
+		# in7 = '{path}/{main_folder}/postprocessing/15DD0140_porechop_flye/15DD0140_porechop_flye_short4.contigs.fasta',
+		# in8 = '{path}/{main_folder}/postprocessing/15DD0141_porechop_flye/15DD0141_porechop_flye_short4.contigs.fasta',
+		# in9 = '{path}/{main_folder}/postprocessing/15DD0160_porechop_flye/15DD0160_porechop_flye_short4.contigs.fasta',
+		# in10 = '{path}/{main_folder}/postprocessing/15DD0161_porechop_flye/15DD0161_porechop_flye_short4.contigs.fasta'
 	output:
-		report = '{path}/hybrid_new/quality/quast_12_qcat/report.html'
+		report = '{path}/{main_folder}/quality/quast/report.html'
 		#...
 	conda:
 		'/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/assembly_quality.yml'
 	params:
-		outputdir = '{path}/hybrid_new/quality/quast_12_qcat/',
+		outputdir = '{path}/{main_folder}/quality/quast/',
 		path = '{path}/mycoplasma_bovis_genomes'
 	threads: 16
 	shell:
@@ -501,11 +530,11 @@ rule prokka:
     input:
         assembly = rules.move_racon_short.output.move
     output:
-        gff = '{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff'
+        gff = '{path}/{main_folder}/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff'
     conda:
         '/mnt/prostlocal2/projects/st_mycoplasma_assembly/git/prokka.yml'
     params:
-        outputdir = '{path}/hybrid_new/prokka/{strain}_{demultiplex}_{assembler}/',
+        outputdir = '{path}/{main_folder}/prokka/{strain}_{demultiplex}_{assembler}/',
         prefix = '{strain}_{demultiplex}_{assembler}_short4'
     threads: 16
     shell:
