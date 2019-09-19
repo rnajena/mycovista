@@ -7,7 +7,7 @@ for i in liste:
     if i == '' or i[0] == '#':
         liste.remove(i)
 if liste[0][:5] == 'path:':
-    path = liste[0][7:len(liste[0]) - 1] + '/hybrid'
+    path = liste[0][7:len(liste[0]) - 1] + '/hybrid_3_qcat'
     os.mkdir(path)
     liste.pop(0)
 else:
@@ -46,5 +46,6 @@ for demultiplexer in demultiplexing:
             os.mkdir(path + '/postprocessing' + '/' + bacteria + '_' + demultiplexer + '_' + assembler)
 for check in quality:
     os.mkdir(path + '/quality' + '/' + check)
-    for bacteria in strains:
-        os.mkdir(path + '/quality' + '/' + check + '/' + bacteria)
+    if check != 'quast':
+        for bacteria in strains:
+            os.mkdir(path + '/quality' + '/' + check + '/' + bacteria)

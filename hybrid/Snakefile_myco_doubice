@@ -19,14 +19,14 @@ rule all:
 		# expand("{path}/hybrid/second_approach/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], strain = config["strains"]),
 		# 
 		# 4x Racon with short reads
-		# expand("{path}/hybrid/second_approach/postprocessing/racon_short/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly2"]),
+		# expand("{path}/hybrid/second_approach/postprocessing/racon_short/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# QUAST
 		# expand("{path}/hybrid/second_approach/quality/quast/{strain}/report.html", path = config["path"], strain = config["strains"]),
 		# expand("{path}/hybrid/second_approach/quality/quast/report.html", path = config["path"])
 		# 
 		# Prokka
-		expand("{path}/hybrid/second_approach/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly2"])
+		# expand("{path}/hybrid/second_approach/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
 
 # create folders for the following steps
 rule create:
