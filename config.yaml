@@ -1,0 +1,11 @@
+# insert path to the folder to create a 'hybrid' folder and save all data
+path: {/path/to/create/folders/and/save/data}
+# insert path to the folder of the conda environment files
+env_folder: {/path/to/conda/environment/files}
+# insert the name of the strains
+strains: {15DD0163,17DD0007,17DD0020}
+preprocessing_short: {fastp,trimmomatic}
+demultiplexing: {qcat}
+assembly: {flye}
+postprocessing: {racon,medaka}
+quality: {fastqc,nanoplot,quast}
