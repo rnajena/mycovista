@@ -28,5 +28,5 @@ How to use our pipeline:
   * line 437: you have to insert all resulting assembly files as input to the quast rule to incorporate all of them in the QUAST statistics. Be aware that the number of input files is correct in the quast command in line 465.
 3. run 'snakemake create' to create all folders needed in the pipeline steps
 4. copy or link the files of the paired-end short reads to the folder /hybrid/raw_data/. The files should be named like this: STRAIN1_1.fastq.qz, STRAIN1_2.fastq.gz, ...
-5. start the pipeline with 'snakemake -pr --cores <threads> --use-conda' (you can do a dry run of snakemake first to see, if all rules are going to be used with -prn instead of -pr)
+5. start the pipeline with 'snakemake -pr --cores &lt;threads&gt; --use-conda' (you can do a dry run of snakemake first to see, if all rules are going to be used with -prn instead of -pr)
 
