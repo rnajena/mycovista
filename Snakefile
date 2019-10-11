@@ -52,7 +52,7 @@ rule fastqc:
 		html = '{path}/{main_folder}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html',
 		zip = '{path}/{main_folder}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.zip'
 	conda:
-		'{git_folder}/read_quality.yml'
+		'read_quality.yml'
 	params:
 		outputdir = '{path}/{main_folder}/quality/fastqc/{strain}/'
 	threads: 8
@@ -68,7 +68,7 @@ rule fastp:
 		forward = '{path}/{main_folder}/preprocessing/fastp/{strain}_1_fastp.fastq.gz',
 		reverse = '{path}/{main_folder}/preprocessing/fastp/{strain}_2_fastp.fastq.gz'
 	conda:
-		'{git_folder}/preprocessing.yml'
+		'preprocessing.yml'
 	params:
 		outputdir = '{path}/{main_folder}/preprocessing/fastp/',
 		html = '{strain}_fastp.html',
@@ -88,7 +88,7 @@ rule trimmomatic:
 		reversePaired = '{path}/{main_folder}/preprocessing/trimmomatic/{strain}_2P.fastq.gz',
 		reverseUnpaired = '{path}/{main_folder}/preprocessing/trimmomatic/{strain}_2U.fastq.gz'
 	conda:
-		'{git_folder}/preprocessing.yml'
+		'preprocessing.yml'
 	threads: 8
 	shell:
 		'trimmomatic PE -phred33 -threads {threads} {input.forward} {input.reverse} {output.forwardPaired} {output.forwardUnpaired} {output.reversePaired} {output.reverseUnpaired} SLIDINGWINDOW:4:28 MINLEN:20'
@@ -134,7 +134,7 @@ rule fastqc_preprocessing:
 		html='{path}/{main_folder}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html',
 		zip='{path}/{main_folder}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.zip'
 	conda:
-		'{git_folder}/read_quality.yml'
+		'read_quality.yml'
 	params:
 		outputdir = '{path}/{main_folder}/quality/fastqc/{strain}/'
 	threads: 8
@@ -160,7 +160,7 @@ rule fastqc_preprocessing:
 # 		BC11 = '{path}/{main_folder}/preprocessing/porechop/BC11.fastq',
 # 		BC12 = '{path}/{main_folder}/preprocessing/porechop/BC12.fastq'
 # 	conda:
-# 		'{git_folder}/preprocessing.yml'
+# 		'preprocessing.yml'
 # 	params:
 # 		outputdir = '{path}/{main_folder}/preprocessing/porechop/'
 # 	threads: 32 #default: 8
@@ -227,7 +227,7 @@ rule qcat:
 		BC11 = '{path}/{main_folder}/preprocessing/qcat/barcode11.fastq',
 		BC12 = '{path}/{main_folder}/preprocessing/qcat/barcode12.fastq'
 	conda:
-		'{git_folder}/qcat.yml'
+		'qcat.yml'
 	params:
 		outputdir = '{path}/{main_folder}/preprocessing/qcat/'
 	threads: 32 #default: 8
@@ -278,7 +278,7 @@ rule nanoplot:
 	output:
 		'{path}/{main_folder}/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html'
 	conda:
-		'{git_folder}/read_quality.yml'
+		'read_quality.yml'
 	params:
 		outputdir = '{path}/{main_folder}/quality/nanoplot/{strain}/',
 		prefix = '{strain}_{demultiplex}'
@@ -294,7 +294,7 @@ rule flye:
 	output:
 		contigs = '{path}/{main_folder}/assembly/{strain}_{demultiplex}_flye/assembly.fasta'
 	conda:
-		'{git_folder}/flye.yml'
+		'flye.yml'
 	params:
 		outputdir = '{path}/{main_folder}/assembly/{strain}_{demultiplex}_flye/',
 	threads: 32
@@ -373,7 +373,7 @@ rule medaka:
 	output:
 		medaka = '{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta'
 	conda:
-		'{git_folder}/postprocessing.yml'
+		'postprocessing.yml'
 	params:
 		outputdir = '{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/'
 	threads: 32
@@ -456,7 +456,7 @@ rule quast:
 		report = '{path}/{main_folder}/quality/quast/report.html'
 		#...
 	conda:
-		'{git_folder}/assembly_quality.yml'
+		'assembly_quality.yml'
 	params:
 		outputdir = '{path}/{main_folder}/quality/quast/',
 		path = '{path}/mycoplasma_bovis_genomes'
@@ -471,7 +471,7 @@ rule prokka:
     output:
         gff = '{path}/{main_folder}/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff'
     conda:
-        '{git_folder}/prokka.yml'
+        'prokka.yml'
     params:
         outputdir = '{path}/{main_folder}/prokka/{strain}_{demultiplex}_{assembler}/',
         prefix = '{strain}_{demultiplex}_{assembler}_short4'
