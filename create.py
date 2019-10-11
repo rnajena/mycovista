@@ -4,7 +4,7 @@ import os
 configfile = open('config.yaml', 'r').read()
 liste = configfile.split('\n')
 for i in liste:
-    if i == '' or i[0] == '#' or i[:9] == 'env_folder':
+    if i == '' or i[0] == '#':
         liste.remove(i)
 if liste[0][:5] == 'path:':
     path = liste[0][7:len(liste[0]) - 1] + '/hybrid'
