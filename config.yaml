@@ -1,7 +1,7 @@
 # insert path to the folder to create a 'hybrid' folder and save all data
-path: {/path/to/create/folders/and/save/data}
+path: {/mnt/prostlocal2/projects/st_mycoplasma_assembly/hybrid_3_qcat}
 # insert the name of the strains
-strains: {15DD0163,17DD0007,17DD0020}
+strains: {barcode10: 15DD0163, barcode11: 17DD0007, barcode12: 17DD0020}
 preprocessing_short: {fastp,trimmomatic}
 demultiplexing: {qcat}
 assembly: {flye}
