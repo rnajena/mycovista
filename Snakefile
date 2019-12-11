@@ -13,30 +13,29 @@ rule all:
 		# porechop
 		# expand("{path}/{main_folder}/preprocessing/porechop/14DD0147_porechop.fastq", path = config["path"], main_folder = main_folder),
 		# qcat
-        # insert name of first strain replacing the word STRAIN
-		expand("{path}/{main_folder}/preprocessing/qcat/STRAIN_qcat.fastq", path = config["path"], main_folder = main_folder),
+		expand("{path}/{main_folder}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], main_folder = main_folder, strain = config["strains"].values()),
         # 
 		# NanoPlot
-		expand("{path}/{main_folder}/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"]),
-		# 
-		# preprocess short reads
-		expand("{path}/{main_folder}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html", path = config["path"], main_folder = main_folder, strain = config["strains"], paired_end = END),
-		expand("{path}/{main_folder}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], main_folder = main_folder, strain = config["strains"], paired_unpaired = PU),
-		expand("{path}/{main_folder}/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], main_folder = main_folder, strain = config["strains"]),
-		# 
-		# assembly
-		expand("{path}/{main_folder}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# 
-		# polishing - 4x Racon long -> medaka -> 4x Racon short
-		expand("{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		expand("{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		expand("{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# 
-		# QUAST
-		expand("{path}/{main_folder}/quality/quast/report.html", path = config["path"], main_folder = main_folder, strain = config["strains"]),
-		# 
-		# Prokka
-		expand("{path}/{main_folder}/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
+		# expand("{path}/{main_folder}/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"]),
+		# # 
+		# # preprocess short reads
+		# expand("{path}/{main_folder}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html", path = config["path"], main_folder = main_folder, strain = config["strains"], paired_end = END),
+		# expand("{path}/{main_folder}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], main_folder = main_folder, strain = config["strains"], paired_unpaired = PU),
+		# expand("{path}/{main_folder}/preprocessing/{strain}_all_short_unique.fastq", path = config["path"], main_folder = main_folder, strain = config["strains"]),
+		# # 
+		# # assembly
+		# expand("{path}/{main_folder}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.contigs.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# # 
+		# # polishing - 4x Racon long -> medaka -> 4x Racon short
+		# expand("{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.contigs.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.contigs.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# # 
+		# # QUAST
+		# expand("{path}/{main_folder}/quality/quast/report.html", path = config["path"], main_folder = main_folder, strain = config["strains"]),
+		# # 
+		# # Prokka
+		# expand("{path}/{main_folder}/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
 
 
 # create folders for the following steps
@@ -208,11 +207,13 @@ rule fastqc_preprocessing:
 # 		'mv {input.BC11} {output.strain11} &&'
 # 		'mv {input.BC12} {output.strain12}'
 
+long_path = config["long_path"].keys()
+# long_path = long_path[2:len(long_path)-8]
+
 # demultiplexing the long reads with qcat
 rule qcat:
 	input:
-        # insert path to fastq file of the long reads
-		''
+        '/data/fass2/reads/ont/celia/mycoplasma_doubice_2018/called/2019-06-20/myco_doubice_2019-06-20_2019-06-20_12-29-43_16193.fastq'
 	output:
 		BC01 = '{path}/{main_folder}/preprocessing/qcat/barcode01.fastq',
 		BC02 = '{path}/{main_folder}/preprocessing/qcat/barcode02.fastq',
@@ -247,7 +248,9 @@ rule rename_qcat:
 		BC07 = rules.qcat.output.BC07,
 		BC08 = rules.qcat.output.BC08,
 		BC09 = rules.qcat.output.BC09,
-		BC10 = rules.qcat.output.BC10
+		BC10 = rules.qcat.output.BC10,
+		BC11 = rules.qcat.output.BC11,
+		BC12 = rules.qcat.output.BC12
 	output:
 		strain1 = '{path}/{main_folder}/preprocessing/qcat/STRAIN1_qcat.fastq',
 		strain2 = '{path}/{main_folder}/preprocessing/qcat/STRAIN2_qcat.fastq',
@@ -258,7 +261,9 @@ rule rename_qcat:
 		strain7 = '{path}/{main_folder}/preprocessing/qcat/STRAIN7_qcat.fastq',
 		strain8 = '{path}/{main_folder}/preprocessing/qcat/STRAIN8_qcat.fastq',
 		strain9 = '{path}/{main_folder}/preprocessing/qcat/STRAIN9_qcat.fastq',
-		strain10 = '{path}/{main_folder}/preprocessing/qcat/STRAIN10_qcat.fastq'
+		strain10 = '{path}/{main_folder}/preprocessing/qcat/STRAIN10_qcat.fastq',
+		strain11 = '{path}/{main_folder}/preprocessing/qcat/STRAIN11_qcat.fastq',
+		strain12 = '{path}/{main_folder}/preprocessing/qcat/STRAIN12_qcat.fastq'
 	shell:
 		'mv {input.BC01} {output.strain1} &&'
 		'mv {input.BC02} {output.strain2} &&'
@@ -269,7 +274,9 @@ rule rename_qcat:
 		'mv {input.BC07} {output.strain7} &&'
 		'mv {input.BC08} {output.strain8} &&'
 		'mv {input.BC09} {output.strain9} &&'
-		'mv {input.BC10} {output.strain10}'
+		'mv {input.BC10} {output.strain10} &&'
+		'mv {input.BC11} {output.strain11} &&'
+		'mv {input.BC12} {output.strain12}'
 
 # using nanoplot for quality statistics of the long reads
 rule nanoplot:
@@ -477,5 +484,5 @@ rule prokka:
         prefix = '{strain}_{demultiplex}_{assembler}_short4'
     threads: 16
     shell:
-        'prokka --cpus {threads} --outdir {params.outputdir} --force --prefix {params.prefix} {input.assembly}'
+        'prokka --cpus {threads} --gcode 4 --outdir {params.outputdir} --force --prefix {params.prefix} {input.assembly}'
 
