@@ -1,8 +1,9 @@
 import os
 import time
-reads_path = str(params.path) + '/preprocessing/illumina/'
-only_reads = str(params.strain) + '_unique.fastq'
-out_path = str(params.path) + '/postprocessing/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
+
+reads_path = snakemake.params[3] + '/preprocessing/illumina/'
+only_reads = snakemake.params[0] + '_unique.fastq'
+out_path = snakemake.params[3] + '/postprocessing/' + snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '/'
 assembly_file = 'consensus.fasta'
 for i in range(4):
 	if i == 0:
@@ -11,8 +12,8 @@ for i in range(4):
 	else:
 		minimap2_input_assembly = out_path + out_assembly
 		racon_in_assembly = out_assembly
-	out_assembly = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '_short' + str(i + 1) + '.fasta'
-	paf = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '_short' + str(i + 1) + '.paf'
+	out_assembly = snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '_short' + str(i + 1) + '.fasta'
+	paf = snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '_short' + str(i + 1) + '.paf'
 	minimap2 = 'minimap2 -x sr -t 16 ' + minimap2_input_assembly + ' ' + reads_path + only_reads + ' > ' + out_path + paf
 	print(minimap2 + '\n')
 	os.system(minimap2)

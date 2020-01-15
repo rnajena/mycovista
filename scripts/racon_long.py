@@ -1,10 +1,11 @@
 import os
 import time
-reads_path = str(params.path) + '/preprocessing/' + str(params.demultiplex) + '/'
-only_reads = str(params.strain) + '_' + str(params.demultiplex) + '_filtered.fastq.gz'
-assembly_path = str(params.path) + '/assembly/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
-out_path = str(params.path) + '/postprocessing/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
-assembly_file = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '.fasta'
+
+reads_path = snakemake.params[3] + '/preprocessing/' + snakemake.params[1] + '/'
+only_reads = snakemake.params[0] + '_' + snakemake.params[1] + '_filtered.fastq.gz'
+assembly_path = snakemake.params[3] + '/assembly/' + snakemake.params[0]) + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '/'
+out_path = snakemake.params[0] + '/postprocessing/' + snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '/'
+assembly_file = snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '.fasta'
 for i in range(4):
 	if i == 0:
 		minimap2_input_assembly = assembly_path + assembly_file
@@ -12,8 +13,8 @@ for i in range(4):
 	else:
 		minimap2_input_assembly = out_path + out_assembly
 		racon_in_assembly = out_assembly
-	out_assembly = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '_long' + str(i + 1) + '.fasta'
-	paf = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '_long' + str(i + 1) + '.paf'
+	out_assembly = snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '_long' + str(i + 1) + '.fasta'
+	paf = snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '_long' + str(i + 1) + '.paf'
 	minimap2 = 'minimap2 -x map-ont -t 16 ' + minimap2_input_assembly + ' ' + reads_path + only_reads + ' > ' + out_path + paf
 	print(minimap2 + '\n')
 	os.system(minimap2)
