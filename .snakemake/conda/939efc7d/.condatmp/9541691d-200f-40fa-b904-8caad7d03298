@@ -1,5 +1,0 @@
-[mkl]
-mkl_libs = mkl_rt
-lapack_libs = mkl_rt
-library_dirs = /data/prostlocal2/projects/st_mycoplasma_assembly/git/.snakemake/conda/939efc7d/lib
-include_dirs = /data/prostlocal2/projects/st_mycoplasma_assembly/git/.snakemake/conda/939efc7d/include

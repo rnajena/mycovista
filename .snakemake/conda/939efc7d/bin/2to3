@@ -1,5 +1,0 @@
-#!/data/prostlocal2/projects/st_mycoplasma_assembly/git/.snakemake/conda/939efc7d/bin/python2.7
-import sys
-from lib2to3.main import main
-
-sys.exit(main("lib2to3.fixes"))
