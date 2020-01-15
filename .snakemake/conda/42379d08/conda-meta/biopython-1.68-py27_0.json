@@ -1,0 +1,4803 @@
+{
+  "build": "py27_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "mmtf-python",
+    "numpy",
+    "python 2.7*",
+    "reportlab"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/biopython-1.68-py27_0",
+  "features": "",
+  "files": [
+    "lib/python2.7/site-packages/Bio/Affy/CelFile.py",
+    "lib/python2.7/site-packages/Bio/Affy/CelFile.pyc",
+    "lib/python2.7/site-packages/Bio/Affy/__init__.py",
+    "lib/python2.7/site-packages/Bio/Affy/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Align/AlignInfo.py",
+    "lib/python2.7/site-packages/Bio/Align/AlignInfo.pyc",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_ClustalOmega.py",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_ClustalOmega.pyc",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_Clustalw.py",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_Clustalw.pyc",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_Dialign.py",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_Dialign.pyc",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_MSAProbs.py",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_MSAProbs.pyc",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_Mafft.py",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_Mafft.pyc",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_Muscle.py",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_Muscle.pyc",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_Prank.py",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_Prank.pyc",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_Probcons.py",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_Probcons.pyc",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_TCoffee.py",
+    "lib/python2.7/site-packages/Bio/Align/Applications/_TCoffee.pyc",
+    "lib/python2.7/site-packages/Bio/Align/Applications/__init__.py",
+    "lib/python2.7/site-packages/Bio/Align/Applications/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Align/Generic.py",
+    "lib/python2.7/site-packages/Bio/Align/Generic.pyc",
+    "lib/python2.7/site-packages/Bio/Align/__init__.py",
+    "lib/python2.7/site-packages/Bio/Align/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/AlignIO/ClustalIO.py",
+    "lib/python2.7/site-packages/Bio/AlignIO/ClustalIO.pyc",
+    "lib/python2.7/site-packages/Bio/AlignIO/EmbossIO.py",
+    "lib/python2.7/site-packages/Bio/AlignIO/EmbossIO.pyc",
+    "lib/python2.7/site-packages/Bio/AlignIO/FastaIO.py",
+    "lib/python2.7/site-packages/Bio/AlignIO/FastaIO.pyc",
+    "lib/python2.7/site-packages/Bio/AlignIO/Interfaces.py",
+    "lib/python2.7/site-packages/Bio/AlignIO/Interfaces.pyc",
+    "lib/python2.7/site-packages/Bio/AlignIO/NexusIO.py",
+    "lib/python2.7/site-packages/Bio/AlignIO/NexusIO.pyc",
+    "lib/python2.7/site-packages/Bio/AlignIO/PhylipIO.py",
+    "lib/python2.7/site-packages/Bio/AlignIO/PhylipIO.pyc",
+    "lib/python2.7/site-packages/Bio/AlignIO/StockholmIO.py",
+    "lib/python2.7/site-packages/Bio/AlignIO/StockholmIO.pyc",
+    "lib/python2.7/site-packages/Bio/AlignIO/__init__.py",
+    "lib/python2.7/site-packages/Bio/AlignIO/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Alphabet/IUPAC.py",
+    "lib/python2.7/site-packages/Bio/Alphabet/IUPAC.pyc",
+    "lib/python2.7/site-packages/Bio/Alphabet/Reduced.py",
+    "lib/python2.7/site-packages/Bio/Alphabet/Reduced.pyc",
+    "lib/python2.7/site-packages/Bio/Alphabet/__init__.py",
+    "lib/python2.7/site-packages/Bio/Alphabet/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Application/__init__.py",
+    "lib/python2.7/site-packages/Bio/Application/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Blast/Applications.py",
+    "lib/python2.7/site-packages/Bio/Blast/Applications.pyc",
+    "lib/python2.7/site-packages/Bio/Blast/NCBIStandalone.py",
+    "lib/python2.7/site-packages/Bio/Blast/NCBIStandalone.pyc",
+    "lib/python2.7/site-packages/Bio/Blast/NCBIWWW.py",
+    "lib/python2.7/site-packages/Bio/Blast/NCBIWWW.pyc",
+    "lib/python2.7/site-packages/Bio/Blast/NCBIXML.py",
+    "lib/python2.7/site-packages/Bio/Blast/NCBIXML.pyc",
+    "lib/python2.7/site-packages/Bio/Blast/ParseBlastTable.py",
+    "lib/python2.7/site-packages/Bio/Blast/ParseBlastTable.pyc",
+    "lib/python2.7/site-packages/Bio/Blast/Record.py",
+    "lib/python2.7/site-packages/Bio/Blast/Record.pyc",
+    "lib/python2.7/site-packages/Bio/Blast/__init__.py",
+    "lib/python2.7/site-packages/Bio/Blast/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/CAPS/__init__.py",
+    "lib/python2.7/site-packages/Bio/CAPS/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Cluster/__init__.py",
+    "lib/python2.7/site-packages/Bio/Cluster/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Cluster/cluster.so",
+    "lib/python2.7/site-packages/Bio/Compass/__init__.py",
+    "lib/python2.7/site-packages/Bio/Compass/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Crystal/__init__.py",
+    "lib/python2.7/site-packages/Bio/Crystal/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Data/CodonTable.py",
+    "lib/python2.7/site-packages/Bio/Data/CodonTable.pyc",
+    "lib/python2.7/site-packages/Bio/Data/IUPACData.py",
+    "lib/python2.7/site-packages/Bio/Data/IUPACData.pyc",
+    "lib/python2.7/site-packages/Bio/Data/SCOPData.py",
+    "lib/python2.7/site-packages/Bio/Data/SCOPData.pyc",
+    "lib/python2.7/site-packages/Bio/Data/__init__.py",
+    "lib/python2.7/site-packages/Bio/Data/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/DocSQL.py",
+    "lib/python2.7/site-packages/Bio/DocSQL.pyc",
+    "lib/python2.7/site-packages/Bio/Emboss/Applications.py",
+    "lib/python2.7/site-packages/Bio/Emboss/Applications.pyc",
+    "lib/python2.7/site-packages/Bio/Emboss/Primer3.py",
+    "lib/python2.7/site-packages/Bio/Emboss/Primer3.pyc",
+    "lib/python2.7/site-packages/Bio/Emboss/PrimerSearch.py",
+    "lib/python2.7/site-packages/Bio/Emboss/PrimerSearch.pyc",
+    "lib/python2.7/site-packages/Bio/Emboss/__init__.py",
+    "lib/python2.7/site-packages/Bio/Emboss/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_0.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_0.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_1.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_1.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_2.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_2.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_3.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_3.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_4.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_4.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/EMBL_General.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/EMBL_General.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/GenBank_General.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/GenBank_General.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/HomoloGene.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/HomoloGene.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/INSD_INSDSeq.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/INSD_INSDSeq.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB_Chemical_graph.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB_Chemical_graph.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB_Features.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB_Features.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB_Structural_model.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB_Structural_model.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Access.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Access.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Biblio.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Biblio.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BioSource.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BioSource.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BioTree.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BioTree.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Blast4.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Blast4.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BlastDL.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BlastDL.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BlastOutput.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BlastOutput.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Cdd.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Cdd.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Cn3d.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Cn3d.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Entity.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Entrez2.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Entrez2.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Entrezgene.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Entrezgene.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_FeatDef.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_FeatDef.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_GBSeq.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_GBSeq.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Gene.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Gene.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_General.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_General.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ID1Access.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ID1Access.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ID2Access.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ID2Access.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_MedArchive.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_MedArchive.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Medlars.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Medlars.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Medline.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Medline.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Mim.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Mim.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Mime.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Mime.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ObjPrt.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ObjPrt.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Organism.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Organism.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_PCAssay.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_PCAssay.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_PCSubstance.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_PCSubstance.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Project.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Project.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Protein.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Protein.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Pub.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Pub.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_PubMed.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_PubMed.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_RNA.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_RNA.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Remap.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Remap.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Rsite.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Rsite.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ScoreMat.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ScoreMat.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_SeqCode.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_SeqCode.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_SeqTable.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_SeqTable.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seq_split.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seq_split.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqalign.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqalign.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqfeat.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqfeat.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqloc.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqloc.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqres.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqres.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqset.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqset.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Sequence.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Sequence.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Submit.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Submit.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Systems.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_TSeq.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_TSeq.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_TxInit.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_TxInit.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Variation.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Variation.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_all.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NSE.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/NSE.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/OMSSA.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/OMSSA.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/PDB_General.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/PDB_General.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/PIR_General.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/PIR_General.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/PRF_General.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/PRF_General.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/SP_General.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/SP_General.mod.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/XHTMLtablesetup.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/archivearticle.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/archivecustom-classes.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/archivecustom-mixes.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/archivecustom-models.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/archivecustom-modules.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/articlemeta.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/backmatter.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/bookdoc_100301.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/bookdoc_110101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/bookdoc_120101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/bookdoc_130101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/bookdoc_140101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/bookdoc_150101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/chars.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/common.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/default-classes.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/default-mixes.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/display.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/eInfo_020511.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/eLink_090910.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/eLink_101123.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/ePost_020511.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/eSearch_020511.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/eSpell.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/eSummary_041029.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/egquery.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/einfo.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/elink_020122.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/esearch.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/esummary-v1.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/format.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/htmltable.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isoamsa.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isoamsb.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isoamsc.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isoamsn.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isoamso.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isoamsr.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isobox.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isocyr1.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isocyr2.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isodia.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isogrk1.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isogrk2.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isogrk3.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isogrk4.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isolat1.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isolat2.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isomfrk.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isomopf.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isomscr.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isonum.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isopub.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/isotech.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/journalmeta.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/link.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/list.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/math.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/mathml2-qname-1.mod",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/mathml2.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/mathmlsetup.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/mmlalias.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/mmlextra.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/modules.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlm-articleset-2.0.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmcommon_011101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmcommon_080101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmcommon_090101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedline_011101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedline_080101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedline_090101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitation_011101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitation_080101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitation_090101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_100101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_100301.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_110101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_120101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_130101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_130501.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_140101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_150101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmserials_080101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmserials_100101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmsharedcatcit_080101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmsharedcatcit_090101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/notat.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/para.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/phrase.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/pmc-1.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_020114.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_080101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_090101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_100101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_100301.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_110101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_120101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_130101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_130501.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_140101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_150101.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/references.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/section.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/taxon.dtd",
+    "lib/python2.7/site-packages/Bio/Entrez/DTDs/xmlspecchars.ent",
+    "lib/python2.7/site-packages/Bio/Entrez/Parser.py",
+    "lib/python2.7/site-packages/Bio/Entrez/Parser.pyc",
+    "lib/python2.7/site-packages/Bio/Entrez/__init__.py",
+    "lib/python2.7/site-packages/Bio/Entrez/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/ExPASy/Enzyme.py",
+    "lib/python2.7/site-packages/Bio/ExPASy/Enzyme.pyc",
+    "lib/python2.7/site-packages/Bio/ExPASy/Prodoc.py",
+    "lib/python2.7/site-packages/Bio/ExPASy/Prodoc.pyc",
+    "lib/python2.7/site-packages/Bio/ExPASy/Prosite.py",
+    "lib/python2.7/site-packages/Bio/ExPASy/Prosite.pyc",
+    "lib/python2.7/site-packages/Bio/ExPASy/ScanProsite.py",
+    "lib/python2.7/site-packages/Bio/ExPASy/ScanProsite.pyc",
+    "lib/python2.7/site-packages/Bio/ExPASy/__init__.py",
+    "lib/python2.7/site-packages/Bio/ExPASy/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/FSSP/FSSPTools.py",
+    "lib/python2.7/site-packages/Bio/FSSP/FSSPTools.pyc",
+    "lib/python2.7/site-packages/Bio/FSSP/__init__.py",
+    "lib/python2.7/site-packages/Bio/FSSP/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/FSSP/fssp_rec.py",
+    "lib/python2.7/site-packages/Bio/FSSP/fssp_rec.pyc",
+    "lib/python2.7/site-packages/Bio/File.py",
+    "lib/python2.7/site-packages/Bio/File.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Crossover/General.py",
+    "lib/python2.7/site-packages/Bio/GA/Crossover/General.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Crossover/GeneralPoint.py",
+    "lib/python2.7/site-packages/Bio/GA/Crossover/GeneralPoint.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Crossover/Point.py",
+    "lib/python2.7/site-packages/Bio/GA/Crossover/Point.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Crossover/TwoPoint.py",
+    "lib/python2.7/site-packages/Bio/GA/Crossover/TwoPoint.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Crossover/Uniform.py",
+    "lib/python2.7/site-packages/Bio/GA/Crossover/Uniform.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Crossover/__init__.py",
+    "lib/python2.7/site-packages/Bio/GA/Crossover/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Evolver.py",
+    "lib/python2.7/site-packages/Bio/GA/Evolver.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Mutation/General.py",
+    "lib/python2.7/site-packages/Bio/GA/Mutation/General.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Mutation/Simple.py",
+    "lib/python2.7/site-packages/Bio/GA/Mutation/Simple.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Mutation/__init__.py",
+    "lib/python2.7/site-packages/Bio/GA/Mutation/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Organism.py",
+    "lib/python2.7/site-packages/Bio/GA/Organism.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Repair/Stabilizing.py",
+    "lib/python2.7/site-packages/Bio/GA/Repair/Stabilizing.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Repair/__init__.py",
+    "lib/python2.7/site-packages/Bio/GA/Repair/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Selection/Abstract.py",
+    "lib/python2.7/site-packages/Bio/GA/Selection/Abstract.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Selection/Diversity.py",
+    "lib/python2.7/site-packages/Bio/GA/Selection/Diversity.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Selection/RouletteWheel.py",
+    "lib/python2.7/site-packages/Bio/GA/Selection/RouletteWheel.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Selection/Tournament.py",
+    "lib/python2.7/site-packages/Bio/GA/Selection/Tournament.pyc",
+    "lib/python2.7/site-packages/Bio/GA/Selection/__init__.py",
+    "lib/python2.7/site-packages/Bio/GA/Selection/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/GA/__init__.py",
+    "lib/python2.7/site-packages/Bio/GA/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/GenBank/Record.py",
+    "lib/python2.7/site-packages/Bio/GenBank/Record.pyc",
+    "lib/python2.7/site-packages/Bio/GenBank/Scanner.py",
+    "lib/python2.7/site-packages/Bio/GenBank/Scanner.pyc",
+    "lib/python2.7/site-packages/Bio/GenBank/__init__.py",
+    "lib/python2.7/site-packages/Bio/GenBank/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/GenBank/utils.py",
+    "lib/python2.7/site-packages/Bio/GenBank/utils.pyc",
+    "lib/python2.7/site-packages/Bio/Geo/Record.py",
+    "lib/python2.7/site-packages/Bio/Geo/Record.pyc",
+    "lib/python2.7/site-packages/Bio/Geo/__init__.py",
+    "lib/python2.7/site-packages/Bio/Geo/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/BasicChromosome.py",
+    "lib/python2.7/site-packages/Bio/Graphics/BasicChromosome.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/ColorSpiral.py",
+    "lib/python2.7/site-packages/Bio/Graphics/ColorSpiral.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/Comparative.py",
+    "lib/python2.7/site-packages/Bio/Graphics/Comparative.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/DisplayRepresentation.py",
+    "lib/python2.7/site-packages/Bio/Graphics/DisplayRepresentation.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/Distribution.py",
+    "lib/python2.7/site-packages/Bio/Graphics/Distribution.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_AbstractDrawer.py",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_AbstractDrawer.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_CircularDrawer.py",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_CircularDrawer.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Colors.py",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Colors.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_CrossLink.py",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_CrossLink.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Diagram.py",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Diagram.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Feature.py",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Feature.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_FeatureSet.py",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_FeatureSet.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Graph.py",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Graph.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_GraphSet.py",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_GraphSet.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_LinearDrawer.py",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_LinearDrawer.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Track.py",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Track.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/__init__.py",
+    "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/KGML_vis.py",
+    "lib/python2.7/site-packages/Bio/Graphics/KGML_vis.pyc",
+    "lib/python2.7/site-packages/Bio/Graphics/__init__.py",
+    "lib/python2.7/site-packages/Bio/Graphics/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/HMM/DynamicProgramming.py",
+    "lib/python2.7/site-packages/Bio/HMM/DynamicProgramming.pyc",
+    "lib/python2.7/site-packages/Bio/HMM/MarkovModel.py",
+    "lib/python2.7/site-packages/Bio/HMM/MarkovModel.pyc",
+    "lib/python2.7/site-packages/Bio/HMM/Trainer.py",
+    "lib/python2.7/site-packages/Bio/HMM/Trainer.pyc",
+    "lib/python2.7/site-packages/Bio/HMM/Utilities.py",
+    "lib/python2.7/site-packages/Bio/HMM/Utilities.pyc",
+    "lib/python2.7/site-packages/Bio/HMM/__init__.py",
+    "lib/python2.7/site-packages/Bio/HMM/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Index.py",
+    "lib/python2.7/site-packages/Bio/Index.pyc",
+    "lib/python2.7/site-packages/Bio/KDTree/KDTree.py",
+    "lib/python2.7/site-packages/Bio/KDTree/KDTree.pyc",
+    "lib/python2.7/site-packages/Bio/KDTree/_CKDTree.so",
+    "lib/python2.7/site-packages/Bio/KDTree/__init__.py",
+    "lib/python2.7/site-packages/Bio/KDTree/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/KEGG/Compound/__init__.py",
+    "lib/python2.7/site-packages/Bio/KEGG/Compound/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/KEGG/Enzyme/__init__.py",
+    "lib/python2.7/site-packages/Bio/KEGG/Enzyme/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/KEGG/KGML/KGML_parser.py",
+    "lib/python2.7/site-packages/Bio/KEGG/KGML/KGML_parser.pyc",
+    "lib/python2.7/site-packages/Bio/KEGG/KGML/KGML_pathway.py",
+    "lib/python2.7/site-packages/Bio/KEGG/KGML/KGML_pathway.pyc",
+    "lib/python2.7/site-packages/Bio/KEGG/KGML/__init__.py",
+    "lib/python2.7/site-packages/Bio/KEGG/KGML/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/KEGG/Map/__init__.py",
+    "lib/python2.7/site-packages/Bio/KEGG/Map/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/KEGG/REST.py",
+    "lib/python2.7/site-packages/Bio/KEGG/REST.pyc",
+    "lib/python2.7/site-packages/Bio/KEGG/__init__.py",
+    "lib/python2.7/site-packages/Bio/KEGG/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/LogisticRegression.py",
+    "lib/python2.7/site-packages/Bio/LogisticRegression.pyc",
+    "lib/python2.7/site-packages/Bio/MarkovModel.py",
+    "lib/python2.7/site-packages/Bio/MarkovModel.pyc",
+    "lib/python2.7/site-packages/Bio/MaxEntropy.py",
+    "lib/python2.7/site-packages/Bio/MaxEntropy.pyc",
+    "lib/python2.7/site-packages/Bio/Medline/__init__.py",
+    "lib/python2.7/site-packages/Bio/Medline/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/NMR/NOEtools.py",
+    "lib/python2.7/site-packages/Bio/NMR/NOEtools.pyc",
+    "lib/python2.7/site-packages/Bio/NMR/__init__.py",
+    "lib/python2.7/site-packages/Bio/NMR/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/NMR/xpktools.py",
+    "lib/python2.7/site-packages/Bio/NMR/xpktools.pyc",
+    "lib/python2.7/site-packages/Bio/NaiveBayes.py",
+    "lib/python2.7/site-packages/Bio/NaiveBayes.pyc",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/BackPropagation/Layer.py",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/BackPropagation/Layer.pyc",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/BackPropagation/Network.py",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/BackPropagation/Network.pyc",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/BackPropagation/__init__.py",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/BackPropagation/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Motif.py",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Motif.pyc",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Pattern.py",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Pattern.pyc",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Schema.py",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Schema.pyc",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Signature.py",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Signature.pyc",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/__init__.py",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/StopTraining.py",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/StopTraining.pyc",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/Training.py",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/Training.pyc",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/__init__.py",
+    "lib/python2.7/site-packages/Bio/NeuralNetwork/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Nexus/Nexus.py",
+    "lib/python2.7/site-packages/Bio/Nexus/Nexus.pyc",
+    "lib/python2.7/site-packages/Bio/Nexus/Nodes.py",
+    "lib/python2.7/site-packages/Bio/Nexus/Nodes.pyc",
+    "lib/python2.7/site-packages/Bio/Nexus/StandardData.py",
+    "lib/python2.7/site-packages/Bio/Nexus/StandardData.pyc",
+    "lib/python2.7/site-packages/Bio/Nexus/Trees.py",
+    "lib/python2.7/site-packages/Bio/Nexus/Trees.pyc",
+    "lib/python2.7/site-packages/Bio/Nexus/__init__.py",
+    "lib/python2.7/site-packages/Bio/Nexus/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Nexus/cnexus.so",
+    "lib/python2.7/site-packages/Bio/PDB/AbstractPropertyMap.py",
+    "lib/python2.7/site-packages/Bio/PDB/AbstractPropertyMap.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/Atom.py",
+    "lib/python2.7/site-packages/Bio/PDB/Atom.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/Chain.py",
+    "lib/python2.7/site-packages/Bio/PDB/Chain.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/DSSP.py",
+    "lib/python2.7/site-packages/Bio/PDB/DSSP.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/Dice.py",
+    "lib/python2.7/site-packages/Bio/PDB/Dice.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/Entity.py",
+    "lib/python2.7/site-packages/Bio/PDB/Entity.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/FragmentMapper.py",
+    "lib/python2.7/site-packages/Bio/PDB/FragmentMapper.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/HSExposure.py",
+    "lib/python2.7/site-packages/Bio/PDB/HSExposure.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/MMCIF2Dict.py",
+    "lib/python2.7/site-packages/Bio/PDB/MMCIF2Dict.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/MMCIFParser.py",
+    "lib/python2.7/site-packages/Bio/PDB/MMCIFParser.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/Model.py",
+    "lib/python2.7/site-packages/Bio/PDB/Model.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/NACCESS.py",
+    "lib/python2.7/site-packages/Bio/PDB/NACCESS.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/NeighborSearch.py",
+    "lib/python2.7/site-packages/Bio/PDB/NeighborSearch.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/PDBExceptions.py",
+    "lib/python2.7/site-packages/Bio/PDB/PDBExceptions.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/PDBIO.py",
+    "lib/python2.7/site-packages/Bio/PDB/PDBIO.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/PDBList.py",
+    "lib/python2.7/site-packages/Bio/PDB/PDBList.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/PDBParser.py",
+    "lib/python2.7/site-packages/Bio/PDB/PDBParser.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/PSEA.py",
+    "lib/python2.7/site-packages/Bio/PDB/PSEA.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/Polypeptide.py",
+    "lib/python2.7/site-packages/Bio/PDB/Polypeptide.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/QCPSuperimposer/__init__.py",
+    "lib/python2.7/site-packages/Bio/PDB/QCPSuperimposer/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/QCPSuperimposer/qcprotmodule.so",
+    "lib/python2.7/site-packages/Bio/PDB/Residue.py",
+    "lib/python2.7/site-packages/Bio/PDB/Residue.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/ResidueDepth.py",
+    "lib/python2.7/site-packages/Bio/PDB/ResidueDepth.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/Selection.py",
+    "lib/python2.7/site-packages/Bio/PDB/Selection.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/Structure.py",
+    "lib/python2.7/site-packages/Bio/PDB/Structure.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/StructureAlignment.py",
+    "lib/python2.7/site-packages/Bio/PDB/StructureAlignment.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/StructureBuilder.py",
+    "lib/python2.7/site-packages/Bio/PDB/StructureBuilder.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/Superimposer.py",
+    "lib/python2.7/site-packages/Bio/PDB/Superimposer.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/Vector.py",
+    "lib/python2.7/site-packages/Bio/PDB/Vector.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/__init__.py",
+    "lib/python2.7/site-packages/Bio/PDB/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/mmtf/DefaultParser.py",
+    "lib/python2.7/site-packages/Bio/PDB/mmtf/DefaultParser.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/mmtf/__init__.py",
+    "lib/python2.7/site-packages/Bio/PDB/mmtf/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/PDB/parse_pdb_header.py",
+    "lib/python2.7/site-packages/Bio/PDB/parse_pdb_header.pyc",
+    "lib/python2.7/site-packages/Bio/ParserSupport.py",
+    "lib/python2.7/site-packages/Bio/ParserSupport.pyc",
+    "lib/python2.7/site-packages/Bio/Pathway/Rep/Graph.py",
+    "lib/python2.7/site-packages/Bio/Pathway/Rep/Graph.pyc",
+    "lib/python2.7/site-packages/Bio/Pathway/Rep/MultiGraph.py",
+    "lib/python2.7/site-packages/Bio/Pathway/Rep/MultiGraph.pyc",
+    "lib/python2.7/site-packages/Bio/Pathway/Rep/__init__.py",
+    "lib/python2.7/site-packages/Bio/Pathway/Rep/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Pathway/__init__.py",
+    "lib/python2.7/site-packages/Bio/Pathway/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/Applications/_Fasttree.py",
+    "lib/python2.7/site-packages/Bio/Phylo/Applications/_Fasttree.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/Applications/_Phyml.py",
+    "lib/python2.7/site-packages/Bio/Phylo/Applications/_Phyml.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/Applications/_Raxml.py",
+    "lib/python2.7/site-packages/Bio/Phylo/Applications/_Raxml.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/Applications/__init__.py",
+    "lib/python2.7/site-packages/Bio/Phylo/Applications/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/BaseTree.py",
+    "lib/python2.7/site-packages/Bio/Phylo/BaseTree.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/CDAO.py",
+    "lib/python2.7/site-packages/Bio/Phylo/CDAO.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/CDAOIO.py",
+    "lib/python2.7/site-packages/Bio/Phylo/CDAOIO.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/Consensus.py",
+    "lib/python2.7/site-packages/Bio/Phylo/Consensus.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/NeXML.py",
+    "lib/python2.7/site-packages/Bio/Phylo/NeXML.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/NeXMLIO.py",
+    "lib/python2.7/site-packages/Bio/Phylo/NeXMLIO.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/Newick.py",
+    "lib/python2.7/site-packages/Bio/Phylo/Newick.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/NewickIO.py",
+    "lib/python2.7/site-packages/Bio/Phylo/NewickIO.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/NexusIO.py",
+    "lib/python2.7/site-packages/Bio/Phylo/NexusIO.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/__init__.py",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/_paml.py",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/_paml.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/_parse_baseml.py",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/_parse_baseml.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/_parse_codeml.py",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/_parse_codeml.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/_parse_yn00.py",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/_parse_yn00.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/baseml.py",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/baseml.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/chi2.py",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/chi2.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/codeml.py",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/codeml.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/yn00.py",
+    "lib/python2.7/site-packages/Bio/Phylo/PAML/yn00.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/PhyloXML.py",
+    "lib/python2.7/site-packages/Bio/Phylo/PhyloXML.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/PhyloXMLIO.py",
+    "lib/python2.7/site-packages/Bio/Phylo/PhyloXMLIO.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/TreeConstruction.py",
+    "lib/python2.7/site-packages/Bio/Phylo/TreeConstruction.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/__init__.py",
+    "lib/python2.7/site-packages/Bio/Phylo/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/_cdao_owl.py",
+    "lib/python2.7/site-packages/Bio/Phylo/_cdao_owl.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/_io.py",
+    "lib/python2.7/site-packages/Bio/Phylo/_io.pyc",
+    "lib/python2.7/site-packages/Bio/Phylo/_utils.py",
+    "lib/python2.7/site-packages/Bio/Phylo/_utils.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/Async/Local.py",
+    "lib/python2.7/site-packages/Bio/PopGen/Async/Local.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/Async/__init__.py",
+    "lib/python2.7/site-packages/Bio/PopGen/Async/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/FDist/Async.py",
+    "lib/python2.7/site-packages/Bio/PopGen/FDist/Async.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/FDist/Controller.py",
+    "lib/python2.7/site-packages/Bio/PopGen/FDist/Controller.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/FDist/Utils.py",
+    "lib/python2.7/site-packages/Bio/PopGen/FDist/Utils.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/FDist/__init__.py",
+    "lib/python2.7/site-packages/Bio/PopGen/FDist/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/GenePop/Controller.py",
+    "lib/python2.7/site-packages/Bio/PopGen/GenePop/Controller.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/GenePop/EasyController.py",
+    "lib/python2.7/site-packages/Bio/PopGen/GenePop/EasyController.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/GenePop/FileParser.py",
+    "lib/python2.7/site-packages/Bio/PopGen/GenePop/FileParser.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/GenePop/LargeFileParser.py",
+    "lib/python2.7/site-packages/Bio/PopGen/GenePop/LargeFileParser.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/GenePop/Utils.py",
+    "lib/python2.7/site-packages/Bio/PopGen/GenePop/Utils.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/GenePop/__init__.py",
+    "lib/python2.7/site-packages/Bio/PopGen/GenePop/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Async.py",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Async.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Cache.py",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Cache.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Controller.py",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Controller.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Template.py",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Template.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/__init__.py",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/bottle.par",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/decline_lambda.par",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/decline_split.par",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/island.par",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/simple.par",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/split_island.par",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/split_ssm_1d.par",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/split_ssm_2d.par",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/ssm_1d.par",
+    "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/ssm_2d.par",
+    "lib/python2.7/site-packages/Bio/PopGen/__init__.py",
+    "lib/python2.7/site-packages/Bio/PopGen/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Restriction/PrintFormat.py",
+    "lib/python2.7/site-packages/Bio/Restriction/PrintFormat.pyc",
+    "lib/python2.7/site-packages/Bio/Restriction/RanaConfig.py",
+    "lib/python2.7/site-packages/Bio/Restriction/RanaConfig.pyc",
+    "lib/python2.7/site-packages/Bio/Restriction/Restriction.py",
+    "lib/python2.7/site-packages/Bio/Restriction/Restriction.pyc",
+    "lib/python2.7/site-packages/Bio/Restriction/Restriction_Dictionary.py",
+    "lib/python2.7/site-packages/Bio/Restriction/Restriction_Dictionary.pyc",
+    "lib/python2.7/site-packages/Bio/Restriction/__init__.py",
+    "lib/python2.7/site-packages/Bio/Restriction/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/SCOP/Cla.py",
+    "lib/python2.7/site-packages/Bio/SCOP/Cla.pyc",
+    "lib/python2.7/site-packages/Bio/SCOP/Des.py",
+    "lib/python2.7/site-packages/Bio/SCOP/Des.pyc",
+    "lib/python2.7/site-packages/Bio/SCOP/Dom.py",
+    "lib/python2.7/site-packages/Bio/SCOP/Dom.pyc",
+    "lib/python2.7/site-packages/Bio/SCOP/Hie.py",
+    "lib/python2.7/site-packages/Bio/SCOP/Hie.pyc",
+    "lib/python2.7/site-packages/Bio/SCOP/Raf.py",
+    "lib/python2.7/site-packages/Bio/SCOP/Raf.pyc",
+    "lib/python2.7/site-packages/Bio/SCOP/Residues.py",
+    "lib/python2.7/site-packages/Bio/SCOP/Residues.pyc",
+    "lib/python2.7/site-packages/Bio/SCOP/__init__.py",
+    "lib/python2.7/site-packages/Bio/SCOP/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/SVDSuperimposer/__init__.py",
+    "lib/python2.7/site-packages/Bio/SVDSuperimposer/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/__init__.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/blast_tab.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/blast_tab.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/blast_text.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/blast_text.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/blast_xml.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/blast_xml.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/BlatIO.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/BlatIO.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/__init__.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/_base.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/_base.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/exonerate_cigar.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/exonerate_cigar.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/exonerate_text.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/exonerate_text.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/exonerate_vulgar.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/exonerate_vulgar.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/FastaIO.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/FastaIO.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/__init__.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/_base.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/_base.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer2_text.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer2_text.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer3_domtab.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer3_domtab.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer3_tab.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer3_tab.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer3_text.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer3_text.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/__init__.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/_index.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/_index.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/_model/__init__.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/_model/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/_model/_base.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/_model/_base.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/_model/hit.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/_model/hit.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/_model/hsp.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/_model/hsp.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/_model/query.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/_model/query.pyc",
+    "lib/python2.7/site-packages/Bio/SearchIO/_utils.py",
+    "lib/python2.7/site-packages/Bio/SearchIO/_utils.pyc",
+    "lib/python2.7/site-packages/Bio/Seq.py",
+    "lib/python2.7/site-packages/Bio/Seq.pyc",
+    "lib/python2.7/site-packages/Bio/SeqFeature.py",
+    "lib/python2.7/site-packages/Bio/SeqFeature.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/AbiIO.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/AbiIO.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/AceIO.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/AceIO.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/FastaIO.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/FastaIO.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/IgIO.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/IgIO.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/InsdcIO.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/InsdcIO.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/Interfaces.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/Interfaces.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/PdbIO.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/PdbIO.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/PhdIO.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/PhdIO.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/PirIO.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/PirIO.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/QualityIO.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/QualityIO.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/SeqXmlIO.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/SeqXmlIO.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/SffIO.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/SffIO.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/SwissIO.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/SwissIO.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/TabIO.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/TabIO.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/UniprotIO.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/UniprotIO.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/__init__.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/_convert.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/_convert.pyc",
+    "lib/python2.7/site-packages/Bio/SeqIO/_index.py",
+    "lib/python2.7/site-packages/Bio/SeqIO/_index.pyc",
+    "lib/python2.7/site-packages/Bio/SeqRecord.py",
+    "lib/python2.7/site-packages/Bio/SeqRecord.pyc",
+    "lib/python2.7/site-packages/Bio/SeqUtils/CheckSum.py",
+    "lib/python2.7/site-packages/Bio/SeqUtils/CheckSum.pyc",
+    "lib/python2.7/site-packages/Bio/SeqUtils/CodonUsage.py",
+    "lib/python2.7/site-packages/Bio/SeqUtils/CodonUsage.pyc",
+    "lib/python2.7/site-packages/Bio/SeqUtils/CodonUsageIndices.py",
+    "lib/python2.7/site-packages/Bio/SeqUtils/CodonUsageIndices.pyc",
+    "lib/python2.7/site-packages/Bio/SeqUtils/IsoelectricPoint.py",
+    "lib/python2.7/site-packages/Bio/SeqUtils/IsoelectricPoint.pyc",
+    "lib/python2.7/site-packages/Bio/SeqUtils/MeltingTemp.py",
+    "lib/python2.7/site-packages/Bio/SeqUtils/MeltingTemp.pyc",
+    "lib/python2.7/site-packages/Bio/SeqUtils/ProtParam.py",
+    "lib/python2.7/site-packages/Bio/SeqUtils/ProtParam.pyc",
+    "lib/python2.7/site-packages/Bio/SeqUtils/ProtParamData.py",
+    "lib/python2.7/site-packages/Bio/SeqUtils/ProtParamData.pyc",
+    "lib/python2.7/site-packages/Bio/SeqUtils/__init__.py",
+    "lib/python2.7/site-packages/Bio/SeqUtils/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/SeqUtils/lcc.py",
+    "lib/python2.7/site-packages/Bio/SeqUtils/lcc.pyc",
+    "lib/python2.7/site-packages/Bio/Sequencing/Ace.py",
+    "lib/python2.7/site-packages/Bio/Sequencing/Ace.pyc",
+    "lib/python2.7/site-packages/Bio/Sequencing/Applications/_Novoalign.py",
+    "lib/python2.7/site-packages/Bio/Sequencing/Applications/_Novoalign.pyc",
+    "lib/python2.7/site-packages/Bio/Sequencing/Applications/__init__.py",
+    "lib/python2.7/site-packages/Bio/Sequencing/Applications/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Sequencing/Applications/_bwa.py",
+    "lib/python2.7/site-packages/Bio/Sequencing/Applications/_bwa.pyc",
+    "lib/python2.7/site-packages/Bio/Sequencing/Applications/_samtools.py",
+    "lib/python2.7/site-packages/Bio/Sequencing/Applications/_samtools.pyc",
+    "lib/python2.7/site-packages/Bio/Sequencing/Phd.py",
+    "lib/python2.7/site-packages/Bio/Sequencing/Phd.pyc",
+    "lib/python2.7/site-packages/Bio/Sequencing/__init__.py",
+    "lib/python2.7/site-packages/Bio/Sequencing/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Statistics/__init__.py",
+    "lib/python2.7/site-packages/Bio/Statistics/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Statistics/lowess.py",
+    "lib/python2.7/site-packages/Bio/Statistics/lowess.pyc",
+    "lib/python2.7/site-packages/Bio/SubsMat/FreqTable.py",
+    "lib/python2.7/site-packages/Bio/SubsMat/FreqTable.pyc",
+    "lib/python2.7/site-packages/Bio/SubsMat/MatrixInfo.py",
+    "lib/python2.7/site-packages/Bio/SubsMat/MatrixInfo.pyc",
+    "lib/python2.7/site-packages/Bio/SubsMat/__init__.py",
+    "lib/python2.7/site-packages/Bio/SubsMat/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/SwissProt/KeyWList.py",
+    "lib/python2.7/site-packages/Bio/SwissProt/KeyWList.pyc",
+    "lib/python2.7/site-packages/Bio/SwissProt/__init__.py",
+    "lib/python2.7/site-packages/Bio/SwissProt/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/TogoWS/__init__.py",
+    "lib/python2.7/site-packages/Bio/TogoWS/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/UniGene/__init__.py",
+    "lib/python2.7/site-packages/Bio/UniGene/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/UniProt/GOA.py",
+    "lib/python2.7/site-packages/Bio/UniProt/GOA.pyc",
+    "lib/python2.7/site-packages/Bio/UniProt/__init__.py",
+    "lib/python2.7/site-packages/Bio/UniProt/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Wise/__init__.py",
+    "lib/python2.7/site-packages/Bio/Wise/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/Wise/dnal.py",
+    "lib/python2.7/site-packages/Bio/Wise/dnal.pyc",
+    "lib/python2.7/site-packages/Bio/Wise/psw.py",
+    "lib/python2.7/site-packages/Bio/Wise/psw.pyc",
+    "lib/python2.7/site-packages/Bio/__init__.py",
+    "lib/python2.7/site-packages/Bio/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/_py3k/__init__.py",
+    "lib/python2.7/site-packages/Bio/_py3k/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/_py3k/_ordereddict.py",
+    "lib/python2.7/site-packages/Bio/_py3k/_ordereddict.pyc",
+    "lib/python2.7/site-packages/Bio/_utils.py",
+    "lib/python2.7/site-packages/Bio/_utils.pyc",
+    "lib/python2.7/site-packages/Bio/bgzf.py",
+    "lib/python2.7/site-packages/Bio/bgzf.pyc",
+    "lib/python2.7/site-packages/Bio/codonalign/__init__.py",
+    "lib/python2.7/site-packages/Bio/codonalign/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/codonalign/chisq.py",
+    "lib/python2.7/site-packages/Bio/codonalign/chisq.pyc",
+    "lib/python2.7/site-packages/Bio/codonalign/codonalignment.py",
+    "lib/python2.7/site-packages/Bio/codonalign/codonalignment.pyc",
+    "lib/python2.7/site-packages/Bio/codonalign/codonalphabet.py",
+    "lib/python2.7/site-packages/Bio/codonalign/codonalphabet.pyc",
+    "lib/python2.7/site-packages/Bio/codonalign/codonseq.py",
+    "lib/python2.7/site-packages/Bio/codonalign/codonseq.pyc",
+    "lib/python2.7/site-packages/Bio/cpairwise2.so",
+    "lib/python2.7/site-packages/Bio/kNN.py",
+    "lib/python2.7/site-packages/Bio/kNN.pyc",
+    "lib/python2.7/site-packages/Bio/motifs/__init__.py",
+    "lib/python2.7/site-packages/Bio/motifs/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/motifs/_pwm.so",
+    "lib/python2.7/site-packages/Bio/motifs/alignace.py",
+    "lib/python2.7/site-packages/Bio/motifs/alignace.pyc",
+    "lib/python2.7/site-packages/Bio/motifs/applications/__init__.py",
+    "lib/python2.7/site-packages/Bio/motifs/applications/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/motifs/applications/_xxmotif.py",
+    "lib/python2.7/site-packages/Bio/motifs/applications/_xxmotif.pyc",
+    "lib/python2.7/site-packages/Bio/motifs/jaspar/__init__.py",
+    "lib/python2.7/site-packages/Bio/motifs/jaspar/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/motifs/jaspar/db.py",
+    "lib/python2.7/site-packages/Bio/motifs/jaspar/db.pyc",
+    "lib/python2.7/site-packages/Bio/motifs/mast.py",
+    "lib/python2.7/site-packages/Bio/motifs/mast.pyc",
+    "lib/python2.7/site-packages/Bio/motifs/matrix.py",
+    "lib/python2.7/site-packages/Bio/motifs/matrix.pyc",
+    "lib/python2.7/site-packages/Bio/motifs/meme.py",
+    "lib/python2.7/site-packages/Bio/motifs/meme.pyc",
+    "lib/python2.7/site-packages/Bio/motifs/thresholds.py",
+    "lib/python2.7/site-packages/Bio/motifs/thresholds.pyc",
+    "lib/python2.7/site-packages/Bio/motifs/transfac.py",
+    "lib/python2.7/site-packages/Bio/motifs/transfac.pyc",
+    "lib/python2.7/site-packages/Bio/pairwise2.py",
+    "lib/python2.7/site-packages/Bio/pairwise2.pyc",
+    "lib/python2.7/site-packages/Bio/phenotype/__init__.py",
+    "lib/python2.7/site-packages/Bio/phenotype/__init__.pyc",
+    "lib/python2.7/site-packages/Bio/phenotype/phen_micro.py",
+    "lib/python2.7/site-packages/Bio/phenotype/phen_micro.pyc",
+    "lib/python2.7/site-packages/Bio/phenotype/pm_fitting.py",
+    "lib/python2.7/site-packages/Bio/phenotype/pm_fitting.pyc",
+    "lib/python2.7/site-packages/Bio/trie.so",
+    "lib/python2.7/site-packages/Bio/triefind.py",
+    "lib/python2.7/site-packages/Bio/triefind.pyc",
+    "lib/python2.7/site-packages/BioSQL/BioSeq.py",
+    "lib/python2.7/site-packages/BioSQL/BioSeq.pyc",
+    "lib/python2.7/site-packages/BioSQL/BioSeqDatabase.py",
+    "lib/python2.7/site-packages/BioSQL/BioSeqDatabase.pyc",
+    "lib/python2.7/site-packages/BioSQL/DBUtils.py",
+    "lib/python2.7/site-packages/BioSQL/DBUtils.pyc",
+    "lib/python2.7/site-packages/BioSQL/Loader.py",
+    "lib/python2.7/site-packages/BioSQL/Loader.pyc",
+    "lib/python2.7/site-packages/BioSQL/__init__.py",
+    "lib/python2.7/site-packages/BioSQL/__init__.pyc",
+    "lib/python2.7/site-packages/biopython-1.68-py2.7.egg-info"
+  ],
+  "fn": "biopython-1.68-py27_0.tar.bz2",
+  "license": "MIT",
+  "license_family": "MIT",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/biopython-1.68-py27_0",
+    "type": 1
+  },
+  "md5": "e77cfce571c3e535dd55ec7536d35e4f",
+  "name": "biopython",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/biopython-1.68-py27_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Affy/CelFile.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Affy/CelFile.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Affy/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Affy/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/AlignInfo.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/AlignInfo.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_ClustalOmega.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_ClustalOmega.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_Clustalw.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_Clustalw.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_Dialign.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_Dialign.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_MSAProbs.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_MSAProbs.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_Mafft.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_Mafft.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_Muscle.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_Muscle.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_Prank.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_Prank.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_Probcons.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_Probcons.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_TCoffee.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/_TCoffee.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Applications/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Generic.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/Generic.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Align/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/ClustalIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/ClustalIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/EmbossIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/EmbossIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/FastaIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/FastaIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/Interfaces.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/Interfaces.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/NexusIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/NexusIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/PhylipIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/PhylipIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/StockholmIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/StockholmIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/AlignIO/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Alphabet/IUPAC.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Alphabet/IUPAC.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Alphabet/Reduced.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Alphabet/Reduced.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Alphabet/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Alphabet/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Application/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Application/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Blast/Applications.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Blast/Applications.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Blast/NCBIStandalone.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Blast/NCBIStandalone.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Blast/NCBIWWW.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Blast/NCBIWWW.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Blast/NCBIXML.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Blast/NCBIXML.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Blast/ParseBlastTable.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Blast/ParseBlastTable.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Blast/Record.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Blast/Record.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Blast/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Blast/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/CAPS/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/CAPS/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Cluster/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Cluster/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Cluster/cluster.so",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Compass/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Compass/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Crystal/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Crystal/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Data/CodonTable.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Data/CodonTable.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Data/IUPACData.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Data/IUPACData.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Data/SCOPData.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Data/SCOPData.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Data/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Data/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/DocSQL.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/DocSQL.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Emboss/Applications.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Emboss/Applications.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Emboss/Primer3.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Emboss/Primer3.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Emboss/PrimerSearch.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Emboss/PrimerSearch.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Emboss/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Emboss/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_0.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_0.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_1.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_1.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_2.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_2.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_3.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_3.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_4.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/Docsum_3_4.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/EMBL_General.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/EMBL_General.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/GenBank_General.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/GenBank_General.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/HomoloGene.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/HomoloGene.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/INSD_INSDSeq.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/INSD_INSDSeq.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB_Chemical_graph.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB_Chemical_graph.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB_Features.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB_Features.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB_Structural_model.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/MMDB_Structural_model.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Access.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Access.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Biblio.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Biblio.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BioSource.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BioSource.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BioTree.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BioTree.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Blast4.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Blast4.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BlastDL.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BlastDL.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BlastOutput.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_BlastOutput.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Cdd.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Cdd.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Cn3d.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Cn3d.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Entity.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Entrez2.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Entrez2.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Entrezgene.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Entrezgene.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_FeatDef.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_FeatDef.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_GBSeq.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_GBSeq.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Gene.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Gene.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_General.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_General.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ID1Access.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ID1Access.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ID2Access.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ID2Access.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_MedArchive.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_MedArchive.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Medlars.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Medlars.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Medline.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Medline.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Mim.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Mim.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Mime.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Mime.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ObjPrt.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ObjPrt.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Organism.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Organism.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_PCAssay.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_PCAssay.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_PCSubstance.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_PCSubstance.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Project.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Project.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Protein.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Protein.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Pub.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Pub.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_PubMed.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_PubMed.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_RNA.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_RNA.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Remap.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Remap.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Rsite.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Rsite.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ScoreMat.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_ScoreMat.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_SeqCode.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_SeqCode.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_SeqTable.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_SeqTable.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seq_split.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seq_split.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqalign.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqalign.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqfeat.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqfeat.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqloc.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqloc.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqres.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqres.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqset.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Seqset.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Sequence.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Sequence.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Submit.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Submit.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Systems.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_TSeq.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_TSeq.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_TxInit.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_TxInit.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Variation.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_Variation.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NCBI_all.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NSE.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/NSE.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/OMSSA.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/OMSSA.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/PDB_General.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/PDB_General.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/PIR_General.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/PIR_General.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/PRF_General.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/PRF_General.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/SP_General.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/SP_General.mod.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/XHTMLtablesetup.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/archivearticle.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/archivecustom-classes.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/archivecustom-mixes.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/archivecustom-models.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/archivecustom-modules.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/articlemeta.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/backmatter.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/bookdoc_100301.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/bookdoc_110101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/bookdoc_120101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/bookdoc_130101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/bookdoc_140101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/bookdoc_150101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/chars.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/common.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/default-classes.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/default-mixes.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/display.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/eInfo_020511.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/eLink_090910.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/eLink_101123.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/ePost_020511.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/eSearch_020511.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/eSpell.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/eSummary_041029.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/egquery.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/einfo.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/elink_020122.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/esearch.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/esummary-v1.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/format.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/htmltable.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isoamsa.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isoamsb.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isoamsc.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isoamsn.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isoamso.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isoamsr.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isobox.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isocyr1.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isocyr2.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isodia.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isogrk1.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isogrk2.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isogrk3.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isogrk4.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isolat1.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isolat2.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isomfrk.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isomopf.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isomscr.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isonum.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isopub.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/isotech.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/journalmeta.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/link.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/list.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/math.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/mathml2-qname-1.mod",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/mathml2.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/mathmlsetup.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/mmlalias.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/mmlextra.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/modules.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlm-articleset-2.0.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmcommon_011101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmcommon_080101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmcommon_090101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedline_011101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedline_080101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedline_090101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitation_011101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitation_080101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitation_090101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_100101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_100301.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_110101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_120101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_130101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_130501.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_140101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmmedlinecitationset_150101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmserials_080101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmserials_100101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmsharedcatcit_080101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/nlmsharedcatcit_090101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/notat.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/para.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/phrase.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/pmc-1.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_020114.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_080101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_090101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_100101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_100301.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_110101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_120101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_130101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_130501.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_140101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/pubmed_150101.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/references.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/section.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/taxon.dtd",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/DTDs/xmlspecchars.ent",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/Parser.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/Parser.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Entrez/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/ExPASy/Enzyme.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/ExPASy/Enzyme.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/ExPASy/Prodoc.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/ExPASy/Prodoc.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/ExPASy/Prosite.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/ExPASy/Prosite.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/ExPASy/ScanProsite.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/ExPASy/ScanProsite.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/ExPASy/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/ExPASy/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/FSSP/FSSPTools.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/FSSP/FSSPTools.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/FSSP/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/FSSP/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/FSSP/fssp_rec.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/FSSP/fssp_rec.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/File.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/File.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Crossover/General.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Crossover/General.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Crossover/GeneralPoint.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Crossover/GeneralPoint.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Crossover/Point.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Crossover/Point.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Crossover/TwoPoint.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Crossover/TwoPoint.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Crossover/Uniform.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Crossover/Uniform.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Crossover/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Crossover/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Evolver.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Evolver.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Mutation/General.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Mutation/General.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Mutation/Simple.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Mutation/Simple.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Mutation/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Mutation/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Organism.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Organism.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Repair/Stabilizing.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Repair/Stabilizing.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Repair/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Repair/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Selection/Abstract.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Selection/Abstract.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Selection/Diversity.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Selection/Diversity.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Selection/RouletteWheel.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Selection/RouletteWheel.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Selection/Tournament.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Selection/Tournament.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Selection/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/Selection/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GA/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GenBank/Record.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GenBank/Record.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GenBank/Scanner.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GenBank/Scanner.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GenBank/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GenBank/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GenBank/utils.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/GenBank/utils.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Geo/Record.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Geo/Record.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Geo/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Geo/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/BasicChromosome.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/BasicChromosome.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/ColorSpiral.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/ColorSpiral.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/Comparative.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/Comparative.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/DisplayRepresentation.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/DisplayRepresentation.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/Distribution.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/Distribution.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_AbstractDrawer.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_AbstractDrawer.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_CircularDrawer.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_CircularDrawer.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Colors.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Colors.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_CrossLink.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_CrossLink.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Diagram.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Diagram.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Feature.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Feature.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_FeatureSet.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_FeatureSet.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Graph.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Graph.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_GraphSet.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_GraphSet.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_LinearDrawer.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_LinearDrawer.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Track.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/_Track.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/GenomeDiagram/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/KGML_vis.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/KGML_vis.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Graphics/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/HMM/DynamicProgramming.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/HMM/DynamicProgramming.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/HMM/MarkovModel.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/HMM/MarkovModel.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/HMM/Trainer.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/HMM/Trainer.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/HMM/Utilities.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/HMM/Utilities.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/HMM/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/HMM/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Index.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Index.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KDTree/KDTree.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KDTree/KDTree.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KDTree/_CKDTree.so",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KDTree/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KDTree/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/Compound/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/Compound/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/Enzyme/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/Enzyme/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/KGML/KGML_parser.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/KGML/KGML_parser.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/KGML/KGML_pathway.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/KGML/KGML_pathway.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/KGML/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/KGML/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/Map/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/Map/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/REST.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/REST.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/KEGG/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/LogisticRegression.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/LogisticRegression.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/MarkovModel.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/MarkovModel.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/MaxEntropy.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/MaxEntropy.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Medline/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Medline/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NMR/NOEtools.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NMR/NOEtools.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NMR/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NMR/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NMR/xpktools.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NMR/xpktools.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NaiveBayes.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NaiveBayes.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/BackPropagation/Layer.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/BackPropagation/Layer.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/BackPropagation/Network.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/BackPropagation/Network.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/BackPropagation/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/BackPropagation/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Motif.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Motif.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Pattern.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Pattern.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Schema.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Schema.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Signature.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/Signature.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/Gene/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/StopTraining.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/StopTraining.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/Training.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/Training.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/NeuralNetwork/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Nexus/Nexus.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Nexus/Nexus.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Nexus/Nodes.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Nexus/Nodes.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Nexus/StandardData.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Nexus/StandardData.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Nexus/Trees.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Nexus/Trees.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Nexus/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Nexus/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Nexus/cnexus.so",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/AbstractPropertyMap.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/AbstractPropertyMap.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Atom.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Atom.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Chain.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Chain.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/DSSP.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/DSSP.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Dice.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Dice.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Entity.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Entity.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/FragmentMapper.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/FragmentMapper.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/HSExposure.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/HSExposure.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/MMCIF2Dict.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/MMCIF2Dict.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/MMCIFParser.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/MMCIFParser.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Model.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Model.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/NACCESS.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/NACCESS.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/NeighborSearch.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/NeighborSearch.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/PDBExceptions.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/PDBExceptions.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/PDBIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/PDBIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/PDBList.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/PDBList.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/PDBParser.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/PDBParser.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/PSEA.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/PSEA.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Polypeptide.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Polypeptide.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/QCPSuperimposer/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/QCPSuperimposer/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/QCPSuperimposer/qcprotmodule.so",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Residue.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Residue.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/ResidueDepth.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/ResidueDepth.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Selection.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Selection.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Structure.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Structure.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/StructureAlignment.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/StructureAlignment.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/StructureBuilder.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/StructureBuilder.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Superimposer.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Superimposer.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Vector.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/Vector.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/mmtf/DefaultParser.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/mmtf/DefaultParser.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/mmtf/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/mmtf/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/parse_pdb_header.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PDB/parse_pdb_header.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/ParserSupport.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/ParserSupport.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Pathway/Rep/Graph.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Pathway/Rep/Graph.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Pathway/Rep/MultiGraph.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Pathway/Rep/MultiGraph.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Pathway/Rep/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Pathway/Rep/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Pathway/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Pathway/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/Applications/_Fasttree.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/Applications/_Fasttree.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/Applications/_Phyml.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/Applications/_Phyml.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/Applications/_Raxml.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/Applications/_Raxml.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/Applications/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/Applications/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/BaseTree.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/BaseTree.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/CDAO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/CDAO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/CDAOIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/CDAOIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/Consensus.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/Consensus.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/NeXML.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/NeXML.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/NeXMLIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/NeXMLIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/Newick.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/Newick.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/NewickIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/NewickIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/NexusIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/NexusIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/_paml.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/_paml.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/_parse_baseml.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/_parse_baseml.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/_parse_codeml.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/_parse_codeml.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/_parse_yn00.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/_parse_yn00.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/baseml.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/baseml.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/chi2.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/chi2.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/codeml.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/codeml.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/yn00.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PAML/yn00.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PhyloXML.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PhyloXML.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PhyloXMLIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/PhyloXMLIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/TreeConstruction.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/TreeConstruction.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/_cdao_owl.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/_cdao_owl.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/_io.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/_io.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/_utils.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Phylo/_utils.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/Async/Local.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/Async/Local.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/Async/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/Async/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/FDist/Async.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/FDist/Async.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/FDist/Controller.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/FDist/Controller.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/FDist/Utils.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/FDist/Utils.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/FDist/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/FDist/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/GenePop/Controller.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/GenePop/Controller.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/GenePop/EasyController.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/GenePop/EasyController.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/GenePop/FileParser.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/GenePop/FileParser.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/GenePop/LargeFileParser.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/GenePop/LargeFileParser.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/GenePop/Utils.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/GenePop/Utils.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/GenePop/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/GenePop/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Async.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Async.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Cache.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Cache.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Controller.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Controller.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Template.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/Template.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/bottle.par",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/decline_lambda.par",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/decline_split.par",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/island.par",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/simple.par",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/split_island.par",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/split_ssm_1d.par",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/split_ssm_2d.par",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/ssm_1d.par",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/SimCoal/data/ssm_2d.par",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/PopGen/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Restriction/PrintFormat.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Restriction/PrintFormat.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Restriction/RanaConfig.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Restriction/RanaConfig.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Restriction/Restriction.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Restriction/Restriction.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Restriction/Restriction_Dictionary.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Restriction/Restriction_Dictionary.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Restriction/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Restriction/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SCOP/Cla.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SCOP/Cla.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SCOP/Des.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SCOP/Des.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SCOP/Dom.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SCOP/Dom.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SCOP/Hie.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SCOP/Hie.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SCOP/Raf.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SCOP/Raf.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SCOP/Residues.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SCOP/Residues.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SCOP/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SCOP/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SVDSuperimposer/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SVDSuperimposer/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/blast_tab.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/blast_tab.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/blast_text.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/blast_text.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/blast_xml.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/BlastIO/blast_xml.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/BlatIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/BlatIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/_base.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/_base.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/exonerate_cigar.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/exonerate_cigar.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/exonerate_text.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/exonerate_text.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/exonerate_vulgar.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/ExonerateIO/exonerate_vulgar.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/FastaIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/FastaIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/_base.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/_base.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer2_text.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer2_text.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer3_domtab.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer3_domtab.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer3_tab.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer3_tab.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer3_text.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/HmmerIO/hmmer3_text.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/_index.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/_index.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/_model/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/_model/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/_model/_base.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/_model/_base.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/_model/hit.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/_model/hit.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/_model/hsp.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/_model/hsp.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/_model/query.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/_model/query.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/_utils.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SearchIO/_utils.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Seq.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Seq.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqFeature.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqFeature.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/AbiIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/AbiIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/AceIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/AceIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/FastaIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/FastaIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/IgIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/IgIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/InsdcIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/InsdcIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/Interfaces.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/Interfaces.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/PdbIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/PdbIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/PhdIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/PhdIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/PirIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/PirIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/QualityIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/QualityIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/SeqXmlIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/SeqXmlIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/SffIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/SffIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/SwissIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/SwissIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/TabIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/TabIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/UniprotIO.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/UniprotIO.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/_convert.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/_convert.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/_index.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqIO/_index.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqRecord.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqRecord.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/CheckSum.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/CheckSum.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/CodonUsage.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/CodonUsage.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/CodonUsageIndices.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/CodonUsageIndices.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/IsoelectricPoint.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/IsoelectricPoint.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/MeltingTemp.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/MeltingTemp.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/ProtParam.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/ProtParam.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/ProtParamData.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/ProtParamData.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/lcc.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SeqUtils/lcc.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Sequencing/Ace.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Sequencing/Ace.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Sequencing/Applications/_Novoalign.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Sequencing/Applications/_Novoalign.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Sequencing/Applications/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Sequencing/Applications/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Sequencing/Applications/_bwa.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Sequencing/Applications/_bwa.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Sequencing/Applications/_samtools.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Sequencing/Applications/_samtools.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Sequencing/Phd.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Sequencing/Phd.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Sequencing/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Sequencing/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Statistics/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Statistics/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Statistics/lowess.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Statistics/lowess.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SubsMat/FreqTable.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SubsMat/FreqTable.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SubsMat/MatrixInfo.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SubsMat/MatrixInfo.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SubsMat/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SubsMat/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SwissProt/KeyWList.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SwissProt/KeyWList.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SwissProt/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/SwissProt/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/TogoWS/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/TogoWS/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/UniGene/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/UniGene/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/UniProt/GOA.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/UniProt/GOA.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/UniProt/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/UniProt/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Wise/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Wise/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Wise/dnal.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Wise/dnal.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Wise/psw.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/Wise/psw.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/_py3k/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/_py3k/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/_py3k/_ordereddict.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/_py3k/_ordereddict.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/_utils.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/_utils.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/bgzf.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/bgzf.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/codonalign/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/codonalign/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/codonalign/chisq.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/codonalign/chisq.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/codonalign/codonalignment.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/codonalign/codonalignment.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/codonalign/codonalphabet.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/codonalign/codonalphabet.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/codonalign/codonseq.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/codonalign/codonseq.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/cpairwise2.so",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/kNN.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/kNN.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/_pwm.so",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/alignace.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/alignace.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/applications/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/applications/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/applications/_xxmotif.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/applications/_xxmotif.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/jaspar/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/jaspar/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/jaspar/db.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/jaspar/db.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/mast.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/mast.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/matrix.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/matrix.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/meme.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/meme.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/thresholds.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/thresholds.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/transfac.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/motifs/transfac.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/pairwise2.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/pairwise2.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/phenotype/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/phenotype/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/phenotype/phen_micro.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/phenotype/phen_micro.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/phenotype/pm_fitting.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/phenotype/pm_fitting.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/trie.so",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/triefind.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/Bio/triefind.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/BioSQL/BioSeq.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/BioSQL/BioSeq.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/BioSQL/BioSeqDatabase.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/BioSQL/BioSeqDatabase.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/BioSQL/DBUtils.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/BioSQL/DBUtils.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/BioSQL/Loader.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/BioSQL/Loader.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/BioSQL/__init__.py",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/BioSQL/__init__.pyc",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/biopython-1.68-py2.7.egg-info",
+        "path_type": "hardlink"
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "biopython==1.68=py27_0",
+  "sha256": "e50ba6006929ac317798d77e3afbbd41ebff7a8ee3af7d5e44992898534be6ff",
+  "size": 2597064,
+  "subdir": "linux-64",
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/biopython-1.68-py27_0.tar.bz2",
+  "version": "1.68"
+}

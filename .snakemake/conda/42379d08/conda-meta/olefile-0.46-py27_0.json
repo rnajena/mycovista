@@ -1,0 +1,110 @@
+{
+  "build": "py27_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "python >=2.7,<2.8.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/olefile-0.46-py27_0",
+  "features": "",
+  "files": [
+    "lib/python2.7/site-packages/olefile-0.46-py2.7.egg-info/PKG-INFO",
+    "lib/python2.7/site-packages/olefile-0.46-py2.7.egg-info/SOURCES.txt",
+    "lib/python2.7/site-packages/olefile-0.46-py2.7.egg-info/dependency_links.txt",
+    "lib/python2.7/site-packages/olefile-0.46-py2.7.egg-info/installed-files.txt",
+    "lib/python2.7/site-packages/olefile-0.46-py2.7.egg-info/top_level.txt",
+    "lib/python2.7/site-packages/olefile/__init__.py",
+    "lib/python2.7/site-packages/olefile/__init__.pyc",
+    "lib/python2.7/site-packages/olefile/olefile.py",
+    "lib/python2.7/site-packages/olefile/olefile.pyc"
+  ],
+  "fn": "olefile-0.46-py27_0.conda",
+  "legacy_bz2_md5": "fbbe8978b9f9d336ddf9828df51044b5",
+  "legacy_bz2_size": 48981,
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/olefile-0.46-py27_0",
+    "type": 1
+  },
+  "md5": "017ba724a7ea40b5a94aa56c774bf7eb",
+  "name": "olefile",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/olefile-0.46-py27_0.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/python2.7/site-packages/olefile-0.46-py2.7.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "c302966652892ce14812368e12ced035bc764c7be72438c9a97529101b9c035f",
+        "sha256_in_prefix": "c302966652892ce14812368e12ced035bc764c7be72438c9a97529101b9c035f",
+        "size_in_bytes": 11271
+      },
+      {
+        "_path": "lib/python2.7/site-packages/olefile-0.46-py2.7.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "af9795f3018cfa75311649b424f5201c5b295825bf753de162cf78e499312472",
+        "sha256_in_prefix": "af9795f3018cfa75311649b424f5201c5b295825bf753de162cf78e499312472",
+        "size_in_bytes": 584
+      },
+      {
+        "_path": "lib/python2.7/site-packages/olefile-0.46-py2.7.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "lib/python2.7/site-packages/olefile-0.46-py2.7.egg-info/installed-files.txt",
+        "path_type": "hardlink",
+        "sha256": "74b92dc7dbe647550985b7894e270013c62c9f42f07c57d022bea2044b126958",
+        "sha256_in_prefix": "74b92dc7dbe647550985b7894e270013c62c9f42f07c57d022bea2044b126958",
+        "size_in_bytes": 148
+      },
+      {
+        "_path": "lib/python2.7/site-packages/olefile-0.46-py2.7.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "bad496e3f9cfa7eaf2b510fb56f312fbc812a7d05498a6110cd7757b1f50da4b",
+        "sha256_in_prefix": "bad496e3f9cfa7eaf2b510fb56f312fbc812a7d05498a6110cd7757b1f50da4b",
+        "size_in_bytes": 8
+      },
+      {
+        "_path": "lib/python2.7/site-packages/olefile/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "5e81aec95ac09c993ad53fcfd93b3a6f67f1d1ff0bfee49214cabcfe51f0c17a",
+        "sha256_in_prefix": "5e81aec95ac09c993ad53fcfd93b3a6f67f1d1ff0bfee49214cabcfe51f0c17a",
+        "size_in_bytes": 995
+      },
+      {
+        "_path": "lib/python2.7/site-packages/olefile/__init__.pyc",
+        "path_type": "hardlink",
+        "sha256": "d162df56bd84cb57a90abc83f07ee2d2f851195e40fe09bd4975b767c32d9178",
+        "sha256_in_prefix": "d162df56bd84cb57a90abc83f07ee2d2f851195e40fe09bd4975b767c32d9178",
+        "size_in_bytes": 1148
+      },
+      {
+        "_path": "lib/python2.7/site-packages/olefile/olefile.py",
+        "path_type": "hardlink",
+        "sha256": "e8e1a9ee52dca783b7e8e6fff9d344e18926fafefd4ce48e41f03b2d4725c47e",
+        "sha256_in_prefix": "e8e1a9ee52dca783b7e8e6fff9d344e18926fafefd4ce48e41f03b2d4725c47e",
+        "size_in_bytes": 105311
+      },
+      {
+        "_path": "lib/python2.7/site-packages/olefile/olefile.pyc",
+        "path_type": "hardlink",
+        "sha256": "9f9106b2528d7e2922b55423de81aee33aa06774bd3eb50d3081451eebe9b929",
+        "sha256_in_prefix": "9f9106b2528d7e2922b55423de81aee33aa06774bd3eb50d3081451eebe9b929",
+        "size_in_bytes": 63985
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "olefile==0.46=py27_0",
+  "sha256": "b38fc45a450c5b25679b31bf4b8ac71139fad9c536df975fee681a2ccad14c37",
+  "size": 49873,
+  "subdir": "linux-64",
+  "timestamp": 1536697159606,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/olefile-0.46-py27_0.conda",
+  "version": "0.46"
+}

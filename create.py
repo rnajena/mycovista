@@ -25,9 +25,8 @@ for i in range(len(liste)):
         strains = details
     if parameter == 'preprocessing_short':
         os.mkdir(path + '/preprocessing')
+        os.mkdir(path + '/preprocessing/illumina/')
         preprocessing_short = details
-    if parameter == 'preprocessing_long':
-        preprocessing_long = details
     if parameter == 'demultiplexing':
         demultiplexing = details
     if parameter == 'assembly':
@@ -45,11 +44,9 @@ for elem in strains[:]:
     else:
         strains[strains.index(elem)] = elem.split(': ')[1]
 for preprocesser in preprocessing_short:
-    os.mkdir(path + '/preprocessing' + '/' + preprocesser)
-for preprocesser in preprocessing_long:
-    os.mkdir(path + '/preprocessing' + '/' + preprocesser)
+    os.mkdir(path + '/preprocessing/illumina/' + preprocesser)
 for demultiplexer in demultiplexing:
-    os.mkdir(path + '/preprocessing' + '/' + demultiplexer)
+    os.mkdir(path + '/preprocessing/' + demultiplexer)
     for bacteria in strains:
         for assembler in assembly:
             os.mkdir(path + '/assembly' + '/' + bacteria + '_' + demultiplexer + '_' + assembler)

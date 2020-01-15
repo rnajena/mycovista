@@ -1,0 +1,102 @@
+{
+  "build": "py36_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "python >=3.6,<3.7.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/six-1.13.0-py36_0",
+  "features": "",
+  "files": [
+    "lib/python3.6/site-packages/__pycache__/six.cpython-36.pyc",
+    "lib/python3.6/site-packages/six-1.13.0.dist-info/INSTALLER",
+    "lib/python3.6/site-packages/six-1.13.0.dist-info/LICENSE",
+    "lib/python3.6/site-packages/six-1.13.0.dist-info/METADATA",
+    "lib/python3.6/site-packages/six-1.13.0.dist-info/RECORD",
+    "lib/python3.6/site-packages/six-1.13.0.dist-info/WHEEL",
+    "lib/python3.6/site-packages/six-1.13.0.dist-info/top_level.txt",
+    "lib/python3.6/site-packages/six.py"
+  ],
+  "fn": "six-1.13.0-py36_0.conda",
+  "legacy_bz2_md5": "014ec5cf49869fff2cc71512c0819e5a",
+  "legacy_bz2_size": 27148,
+  "license": "MIT",
+  "license_family": "MIT",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/six-1.13.0-py36_0",
+    "type": 1
+  },
+  "md5": "2f314ae4421748bc956d961d3507abb3",
+  "name": "six",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/six-1.13.0-py36_0.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/python3.6/site-packages/__pycache__/six.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "2478dd696383b4eb566618aa79600799e32bd7d441bbe16ec74b222c539078fd",
+        "sha256_in_prefix": "2478dd696383b4eb566618aa79600799e32bd7d441bbe16ec74b222c539078fd",
+        "size_in_bytes": 26721
+      },
+      {
+        "_path": "lib/python3.6/site-packages/six-1.13.0.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5
+      },
+      {
+        "_path": "lib/python3.6/site-packages/six-1.13.0.dist-info/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "b7529b8c07171a78a8c36c3283905528e4812945d977d125eb926e8ccbf245b6",
+        "sha256_in_prefix": "b7529b8c07171a78a8c36c3283905528e4812945d977d125eb926e8ccbf245b6",
+        "size_in_bytes": 1066
+      },
+      {
+        "_path": "lib/python3.6/site-packages/six-1.13.0.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "8714b8ad23d17cef1ec1b70b4b7d1a9e8162e8b160510de693fc649d9f11578c",
+        "sha256_in_prefix": "8714b8ad23d17cef1ec1b70b4b7d1a9e8162e8b160510de693fc649d9f11578c",
+        "size_in_bytes": 1940
+      },
+      {
+        "_path": "lib/python3.6/site-packages/six-1.13.0.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "abf88f53feaa8cea2eec9ac8e95649e34dd2d016d66ce03d04e29eb8648f1d85",
+        "sha256_in_prefix": "abf88f53feaa8cea2eec9ac8e95649e34dd2d016d66ce03d04e29eb8648f1d85",
+        "size_in_bytes": 560
+      },
+      {
+        "_path": "lib/python3.6/site-packages/six-1.13.0.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "f3335865bc10497a01f487d73a33df78dc2f02c00b0237df824dbb16abc259ba",
+        "sha256_in_prefix": "f3335865bc10497a01f487d73a33df78dc2f02c00b0237df824dbb16abc259ba",
+        "size_in_bytes": 110
+      },
+      {
+        "_path": "lib/python3.6/site-packages/six-1.13.0.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "fe2547fe2604b445e70fc9d819062960552f9145bdb043b51986e478a4806a2b",
+        "sha256_in_prefix": "fe2547fe2604b445e70fc9d819062960552f9145bdb043b51986e478a4806a2b",
+        "size_in_bytes": 4
+      },
+      {
+        "_path": "lib/python3.6/site-packages/six.py",
+        "path_type": "hardlink",
+        "sha256": "6ec1334854d94f1e3dc10b6d2ce4664994eba6319cf146d7b7e1c16bf2d95fb4",
+        "sha256_in_prefix": "6ec1334854d94f1e3dc10b6d2ce4664994eba6319cf146d7b7e1c16bf2d95fb4",
+        "size_in_bytes": 33045
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "six==1.13.0=py36_0",
+  "sha256": "024ee099ccfa9bcfc32f4441d34cf21f76a4b5e53ff819666e3391fd7f3bafbd",
+  "size": 26925,
+  "subdir": "linux-64",
+  "timestamp": 1573251221722,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/six-1.13.0-py36_0.conda",
+  "version": "1.13.0"
+}

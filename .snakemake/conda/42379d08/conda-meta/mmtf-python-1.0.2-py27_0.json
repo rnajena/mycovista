@@ -1,0 +1,54 @@
+{
+  "build": "py27_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "msgpack-python",
+    "python 2.7*"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/mmtf-python-1.0.2-py27_0",
+  "features": "",
+  "files": [
+    "bin/sample",
+    "lib/python2.7/site-packages/mmtf_python-1.0.2-py2.7.egg",
+    "lib/python2.7/site-packages/mmtf_python.pth"
+  ],
+  "fn": "mmtf-python-1.0.2-py27_0.tar.bz2",
+  "license": "MIT License",
+  "license_family": "MIT",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/mmtf-python-1.0.2-py27_0",
+    "type": 1
+  },
+  "md5": "fbdb3ee1ffebcb66ac895fefd9132772",
+  "name": "mmtf-python",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/mmtf-python-1.0.2-py27_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/sample",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256_in_prefix": "9633081906143164664c5e940b8bd1ae0c8bc19a37daed23dc1cf4968dee74a6"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/mmtf_python-1.0.2-py2.7.egg",
+        "path_type": "hardlink"
+      },
+      {
+        "_path": "lib/python2.7/site-packages/mmtf_python.pth",
+        "path_type": "hardlink"
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "mmtf-python==1.0.2=py27_0",
+  "sha256": "724b11d83bbb395b0792a6e911de9cc513aac0b6952ae1a3790b2456823b6a0b",
+  "size": 34654,
+  "subdir": "linux-64",
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/mmtf-python-1.0.2-py27_0.tar.bz2",
+  "version": "1.0.2"
+}

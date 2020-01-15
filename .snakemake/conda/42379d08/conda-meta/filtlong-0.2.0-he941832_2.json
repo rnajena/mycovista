@@ -1,0 +1,44 @@
+{
+  "build": "he941832_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "libstdcxx-ng >=4.9",
+    "zlib >=1.2.11,<1.3.0a0"
+  ],
+  "extracted_package_dir": "/home/nu76fet/miniconda3/pkgs/filtlong-0.2.0-he941832_2",
+  "features": "",
+  "files": [
+    "bin/filtlong"
+  ],
+  "fn": "filtlong-0.2.0-he941832_2.tar.bz2",
+  "license": "GPL-3.0",
+  "link": {
+    "source": "/home/nu76fet/miniconda3/pkgs/filtlong-0.2.0-he941832_2",
+    "type": 1
+  },
+  "md5": "7932f8794715c85affff9c03ec21eb8d",
+  "name": "filtlong",
+  "package_tarball_full_path": "/home/nu76fet/miniconda3/pkgs/filtlong-0.2.0-he941832_2.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/filtlong",
+        "path_type": "hardlink",
+        "sha256": "025610af45f7821875f81d85efc208ac20b0057e5556684076950662c509a3d2",
+        "sha256_in_prefix": "025610af45f7821875f81d85efc208ac20b0057e5556684076950662c509a3d2",
+        "size_in_bytes": 188540
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "filtlong==0.2.0=he941832_2",
+  "sha256": "7ecc2eec28f3b8abe5bfa50f417626fb5071974078142f6090f15e8f3a398110",
+  "size": 77545,
+  "subdir": "linux-64",
+  "timestamp": 1532964174668,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/filtlong-0.2.0-he941832_2.tar.bz2",
+  "version": "0.2.0"
+}

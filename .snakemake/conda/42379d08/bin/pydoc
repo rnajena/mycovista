@@ -1,0 +1,5 @@
+#!/data/prostlocal2/projects/st_mycoplasma_assembly/git/.snakemake/conda/42379d08/bin/python2.7
+
+import pydoc
+if __name__ == '__main__':
+    pydoc.cli()

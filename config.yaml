@@ -5,7 +5,7 @@ strains: {barcode01: barcode01, barcode02: barcode02, barcode03: barcode03, barc
 # strains: [14-2711]
 preprocessing_short: [fastp, trimmomatic]
 preprocessing_long: [filtlong]
-demultiplexing: [guppy]
+demultiplexing: [qcat]
 assembly: [flye]
 postprocessing: [racon, medaka]
 quality: [fastqc, nanoplot, quast]
