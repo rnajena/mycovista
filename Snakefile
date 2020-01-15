@@ -3,39 +3,46 @@
 # files and directories
 configfile: "config.yaml"
 
-main_folder = 'hybrid'
-
 PU = '1P 1U 2P 2U'.split() # paired_unpaired
 END = '1 2'.split() # paired_end
 
+strains = list(config["strains"].values())
+for elem in strains:
+	elem = str(elem)
+
+barcodes = list(config["strains"].keys())
+for elem in barcodes:
+	elem = str(elem)
+
 rule all:
 	input:
-		# porechop
-		# expand("{path}/{main_folder}/preprocessing/porechop/14DD0147_porechop.fastq", path = config["path"], main_folder = main_folder),
 		# qcat
-		# expand("{path}/{main_folder}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], main_folder = main_folder, strain = config["strains"].values()),
+		# expand("{path}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], strain = strains[0]),
         # 
-		# NanoPlot
-		# expand("{path}/{main_folder}/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"]),
-		# # 
-		# # preprocess short reads
-		# expand("{path}/{main_folder}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html", path = config["path"], main_folder = main_folder, strain = config["strains"], paired_end = END),
-		# expand("{path}/{main_folder}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], main_folder = main_folder, strain = config["strains"], paired_unpaired = PU),
-		# expand("{path}/{main_folder}/preprocessing/{strain}_unique.fastq", path = config["path"], main_folder = main_folder, strain = config["strains"]),
-		# # 
-		# # assembly
-		# expand("{path}/{main_folder}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# filtlong
+		# expand("{path}/preprocessing/filtlong/{strain}_{demultiplex}_filtered.fastq.gz", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
+		#
+		#  NanoPlot
+		# expand("{path}/quality/nanoplot/{strain}/{strain}NanoPlot-report.html", path = config["path"],  strain = strains),
+		# 
+		# preprocess short reads
+		# expand("{path}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = strains, paired_end = END),
+		# expand("{path}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], strain = strains, paired_unpaired = PU),
+		# expand("{path}/preprocessing/{strain}_unique.fastq", path = config["path"], strain = strains),
+		# 
+		# assembly
+		# expand("{path}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{assembler}.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# # 
 		# # polishing - 4x Racon long -> medaka -> 4x Racon short
-		# expand("{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# expand("{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# expand("{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.fasta", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{assembler}_short4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# # 
 		# # QUAST
-		# expand("{path}/{main_folder}/quality/quast/report.html", path = config["path"], main_folder = main_folder, strain = config["strains"]),
+		# expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
 		# # 
 		# # Prokka
-		# expand("{path}/{main_folder}/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], main_folder = main_folder, strain = config["strains"], demultiplex = config["demultiplexing"], assembler = config["assembly"])
+		# expand("{path}/prokka/{strain}_{assembler}/{strain}_{assembler}_short4.gff", path = config["path"], strain = strains, assembler = config["assembly"])
 
 
 # create folders for the following steps
@@ -46,33 +53,33 @@ rule create:
 # quality check of all short raw reads
 rule fastqc:
 	input:
-		'{path}/{main_folder}/raw_data/{strain}_{paired_end}.fastq.gz'
+		'{path}/raw_data/{strain}_{paired_end}.fastq.gz'
 	output:
-		html = '{path}/{main_folder}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html',
-		zip = '{path}/{main_folder}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.zip'
+		html = '{path}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html',
+		zip = '{path}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.zip'
 	conda:
-		'read_quality.yml'
+		'read_quality.yaml'
 	params:
-		outputdir = '{path}/{main_folder}/quality/fastqc/{strain}/'
-	threads: 8
+		outputdir = '{path}/quality/fastqc/{strain}/'
+	threads: 16
 	shell:
 		'fastqc -t {threads} {input} -o {params.outputdir}'
 
 # first preprocessing of the short reads - fastp
 rule fastp:
 	input:
-		forward = '{path}/{main_folder}/raw_data/{strain}_1.fastq.gz',
-		reverse = '{path}/{main_folder}/raw_data/{strain}_2.fastq.gz'
+		forward = '{path}/raw_data/{strain}_1.fastq.gz',
+		reverse = '{path}/raw_data/{strain}_2.fastq.gz'
 	output:
-		forward = '{path}/{main_folder}/preprocessing/fastp/{strain}_1_fastp.fastq.gz',
-		reverse = '{path}/{main_folder}/preprocessing/fastp/{strain}_2_fastp.fastq.gz'
+		forward = '{path}/preprocessing/fastp/{strain}_1_fastp.fastq.gz',
+		reverse = '{path}/preprocessing/fastp/{strain}_2_fastp.fastq.gz'
 	conda:
-		'preprocessing.yml'
+		'preprocessing.yaml'
 	params:
-		outputdir = '{path}/{main_folder}/preprocessing/fastp/',
+		outputdir = '{path}/preprocessing/fastp/',
 		html = '{strain}_fastp.html',
 		json = '{strain}_fastp.json'
-	threads: 8
+	threads: 16
 	shell:
 		'fastp -w {threads} -i {input.forward} -I {input.reverse} -o {output.forward} -O {output.reverse} --json {params.outputdir}{params.json} --html {params.outputdir}{params.html}'
 
@@ -82,15 +89,15 @@ rule trimmomatic:
 		forward = rules.fastp.output.forward,
 		reverse = rules.fastp.output.reverse
 	output:
-		forwardPaired = '{path}/{main_folder}/preprocessing/trimmomatic/{strain}_1P.fastq.gz',
-		forwardUnpaired = '{path}/{main_folder}/preprocessing/trimmomatic/{strain}_1U.fastq.gz',
-		reversePaired = '{path}/{main_folder}/preprocessing/trimmomatic/{strain}_2P.fastq.gz',
-		reverseUnpaired = '{path}/{main_folder}/preprocessing/trimmomatic/{strain}_2U.fastq.gz'
+		forwardP = '{path}/preprocessing/trimmomatic/{strain}_1P.fastq.gz',
+		forwardU = '{path}/preprocessing/trimmomatic/{strain}_1U.fastq.gz',
+		reverseP = '{path}/preprocessing/trimmomatic/{strain}_2P.fastq.gz',
+		reverseU = '{path}/preprocessing/trimmomatic/{strain}_2U.fastq.gz'
 	conda:
-		'preprocessing.yml'
-	threads: 8
+		'preprocessing.yaml'
+	threads: 16
 	shell:
-		'trimmomatic PE -phred33 -threads {threads} {input.forward} {input.reverse} {output.forwardPaired} {output.forwardUnpaired} {output.reversePaired} {output.reverseUnpaired} SLIDINGWINDOW:4:28 MINLEN:20'
+		'trimmomatic PE -phred33 -threads {threads} {input.forward} {input.reverse} {output.forwardP} {output.forwardU} {output.reverseP} {output.reverseU} SLIDINGWINDOW:4:28 MINLEN:20'
 			# PE					for paired end reads
 			# -phred33				Illumina 1.9 uses phred +33
 			# SLIDINGWINDOW:4:28	quality score = 28, because the trimming can be done more restrictive due to the high coverage    window size = 4 to prevent to stop the trimming at a local score maximum within one read
@@ -99,20 +106,20 @@ rule trimmomatic:
 # concatenate all short reads separated by strain for postprocessing of the long reads assemblies later
 rule concat_short:
 	input:
-		forwardPaired = rules.trimmomatic.output.forwardPaired,
-		forwardUnpaired = rules.trimmomatic.output.forwardUnpaired,
-		reversePaired = rules.trimmomatic.output.reversePaired,
-		reverseUnpaired = rules.trimmomatic.output.reverseUnpaired
+		forwardP = rules.trimmomatic.output.forwardP,
+		forwardU = rules.trimmomatic.output.forwardU,
+		reverseP = rules.trimmomatic.output.reverseP,
+		reverseU = rules.trimmomatic.output.reverseU
 	output:
-		all = '{path}/{main_folder}/preprocessing/{strain}_all_short.fastq.gz'
+		all = '{path}/preprocessing/{strain}_all_short.fastq.gz'
 	shell:
-		'cat {input.forwardPaired} {input.forwardUnpaired} {input.reversePaired} {input.reverseUnpaired} > {output.all}'
+		'cat {input.forwardP} {input.forwardU} {input.reverseP} {input.reverseU} > {output.all}'
 
 rule gunzip_short:
 	input:
 		all = rules.concat_short.output.all
 	output:
-		gunzip = '{path}/{main_folder}/preprocessing/{strain}_all_short.fastq'
+		gunzip = '{path}/preprocessing/{strain}_all_short.fastq'
 	shell:
 		'gunzip {input.all}'
 
@@ -121,51 +128,49 @@ rule unique_readID:
 	input:
 		all = rules.gunzip_short.output.gunzip
 	output:
-		unique = '{path}/{main_folder}/preprocessing/{strain}_unique.fastq'
+		unique = '{path}/preprocessing/{strain}_unique.fastq'
 	shell:
 		"sed 's/ 2:N:0/:2:N:0/g' {input.all} | sed 's/ 1:N:0/:1:N:0/g' > {output.unique}"
 
 # quality check of all preprocessed short reads
 rule fastqc_preprocessing:
 	input:
-		'{path}/{main_folder}/preprocessing/trimmomatic/{strain}_{paired_unpaired}.fastq.gz'
+		'{path}/preprocessing/trimmomatic/{strain}_{paired_unpaired}.fastq.gz'
 	output:
-		html='{path}/{main_folder}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html',
-		zip='{path}/{main_folder}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.zip'
+		html='{path}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html',
+		zip='{path}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.zip'
 	conda:
-		'read_quality.yml'
+		'read_quality.yaml'
 	params:
-		outputdir = '{path}/{main_folder}/quality/fastqc/{strain}/'
-	threads: 8
+		outputdir = '{path}/quality/fastqc/{strain}/'
+	threads: 16
 	shell:
 		'fastqc {input} -t {threads} -o {params.outputdir}'
 
 
-long_path = config["long_path"].keys()
-# long_path = long_path[2:len(long_path)-8]
-
 # demultiplexing the long reads with qcat
 rule qcat:
 	input:
-        '/data/fass2/reads/ont/celia/mycoplasma_doubice_2018/called/2019-06-20/myco_doubice_2019-06-20_2019-06-20_12-29-43_16193.fastq'
+        '{path}/raw_data/...fastq'
 	output:
-		BC01 = '{path}/{main_folder}/preprocessing/qcat/barcode01.fastq',
-		BC02 = '{path}/{main_folder}/preprocessing/qcat/barcode02.fastq',
-		BC03 = '{path}/{main_folder}/preprocessing/qcat/barcode03.fastq',
-		BC04 = '{path}/{main_folder}/preprocessing/qcat/barcode04.fastq',
-		BC05 = '{path}/{main_folder}/preprocessing/qcat/barcode05.fastq',
-		BC06 = '{path}/{main_folder}/preprocessing/qcat/barcode06.fastq',
-		BC07 = '{path}/{main_folder}/preprocessing/qcat/barcode07.fastq',
-		BC08 = '{path}/{main_folder}/preprocessing/qcat/barcode08.fastq',
-		BC09 = '{path}/{main_folder}/preprocessing/qcat/barcode09.fastq',
-		BC10 = '{path}/{main_folder}/preprocessing/qcat/barcode10.fastq',
-		BC11 = '{path}/{main_folder}/preprocessing/qcat/barcode11.fastq',
-		BC12 = '{path}/{main_folder}/preprocessing/qcat/barcode12.fastq'
+		BC01 = '{path}/preprocessing/qcat/barcode01.fastq',
+		BC02 = '{path}/preprocessing/qcat/barcode02.fastq',
+		BC03 = '{path}/preprocessing/qcat/barcode03.fastq',
+		BC04 = '{path}/preprocessing/qcat/barcode04.fastq',
+		BC05 = '{path}/preprocessing/qcat/barcode05.fastq',
+		BC06 = '{path}/preprocessing/qcat/barcode06.fastq',
+		BC07 = '{path}/preprocessing/qcat/barcode07.fastq',
+		BC08 = '{path}/preprocessing/qcat/barcode08.fastq',
+		BC09 = '{path}/preprocessing/qcat/barcode09.fastq',
+		BC10 = '{path}/preprocessing/qcat/barcode10.fastq',
+		BC11 = '{path}/preprocessing/qcat/barcode11.fastq',
+		BC12 = '{path}/preprocessing/qcat/barcode12.fastq',
+		BC13 = '{path}/preprocessing/qcat/barcode13.fastq'
 	conda:
-		'qcat.yml'
+		'preprocessing.yaml'
 	params:
-		outputdir = '{path}/{main_folder}/preprocessing/qcat/'
-	threads: 32 #default: 8
+		outputdir = '{path}/preprocessing/qcat/'
+	threads: 32 # default: 8
 	shell:
 		'qcat -t {threads} -k NBD103/NBD104 --trim -f {input} -b {params.outputdir}'
 
@@ -183,20 +188,22 @@ rule rename_qcat:
 		BC09 = rules.qcat.output.BC09,
 		BC10 = rules.qcat.output.BC10,
 		BC11 = rules.qcat.output.BC11,
-		BC12 = rules.qcat.output.BC12
+		BC12 = rules.qcat.output.BC12,
+		BC13 = rules.qcat.output.BC13
 	output:
-		strain1 = '{path}/{main_folder}/preprocessing/qcat/STRAIN1_qcat.fastq',
-		strain2 = '{path}/{main_folder}/preprocessing/qcat/STRAIN2_qcat.fastq',
-		strain3 = '{path}/{main_folder}/preprocessing/qcat/STRAIN3_qcat.fastq',
-		strain4 = '{path}/{main_folder}/preprocessing/qcat/STRAIN4_qcat.fastq',
-		strain5 = '{path}/{main_folder}/preprocessing/qcat/STRAIN5_qcat.fastq',
-		strain6 = '{path}/{main_folder}/preprocessing/qcat/STRAIN6_qcat.fastq',
-		strain7 = '{path}/{main_folder}/preprocessing/qcat/STRAIN7_qcat.fastq',
-		strain8 = '{path}/{main_folder}/preprocessing/qcat/STRAIN8_qcat.fastq',
-		strain9 = '{path}/{main_folder}/preprocessing/qcat/STRAIN9_qcat.fastq',
-		strain10 = '{path}/{main_folder}/preprocessing/qcat/STRAIN10_qcat.fastq',
-		strain11 = '{path}/{main_folder}/preprocessing/qcat/STRAIN11_qcat.fastq',
-		strain12 = '{path}/{main_folder}/preprocessing/qcat/STRAIN12_qcat.fastq'
+		strain1 = '{path}/preprocessing/qcat/{strains[0]}_qcat.fastq',
+		strain2 = '{path}/preprocessing/qcat/{strains[1]}_qcat.fastq',
+		strain3 = '{path}/preprocessing/qcat/{strains[2]}_qcat.fastq',
+		strain4 = '{path}/preprocessing/qcat/{strains[3]}_qcat.fastq',
+		strain5 = '{path}/preprocessing/qcat/{strains[4]}_qcat.fastq',
+		strain6 = '{path}/preprocessing/qcat/{strains[5]}_qcat.fastq',
+		strain7 = '{path}/preprocessing/qcat/{strains[6]}_qcat.fastq',
+		strain8 = '{path}/preprocessing/qcat/{strains[7]}_qcat.fastq',
+		strain9 = '{path}/preprocessing/qcat/{strains[8]}_qcat.fastq',
+		strain10 = '{path}/preprocessing/qcat/{strains[9]}_qcat.fastq',
+		strain11 = '{path}/preprocessing/qcat/{strains[10]}_qcat.fastq',
+		strain12 = '{path}/preprocessing/qcat/{strains[11]}_qcat.fastq',
+		strain13 = '{path}/preprocessing/qcat/{strains[12]}_qcat.fastq'
 	shell:
 		'mv {input.BC01} {output.strain1} &&'
 		'mv {input.BC02} {output.strain2} &&'
@@ -209,37 +216,35 @@ rule rename_qcat:
 		'mv {input.BC09} {output.strain9} &&'
 		'mv {input.BC10} {output.strain10} &&'
 		'mv {input.BC11} {output.strain11} &&'
-		'mv {input.BC12} {output.strain12}'
+		'mv {input.BC12} {output.strain12} &&'
+		'mv {input.BC13} {output.strain13}'
 
 
 # filter demultiplexed long reads with Filtlong
 rule filtlong:
 	input:
-		reads = '{path}/{main_folder}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
+		reads = '{path}/preprocessing/{demultiplex}/{strain}.fastq.gz' # dann wieder aendern .gz weg
 	output:
-		'{path}/{main_folder}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq'
+		filtered = '{path}/preprocessing/filtlong/{strain}_{demultiplex}_filtered.fastq.gz' # dann wieder aendern .gz weg
 	conda:
-		'.....yml'
-	params:
-		outputdir = '{path}/{main_folder}/preprocessing/{demultiplex}/',
-		prefix = '{strain}_{demultiplex}_filtered'
-	threads: 8
+		'preprocessing.yaml'
+	threads: 16
 	shell:
-		''
+		'filtlong --min_length 1000 {input.reads} | gzip > {output.filtered}'
 
 
 # using nanoplot for quality statistics of the long reads
 rule nanoplot:
 	input:
-		rules.filtlong.output.reads
+		rules.filtlong.output.filtered
 	output:
-		'{path}/{main_folder}/quality/nanoplot/{strain}/{strain}_{demultiplex}NanoPlot-report.html'
+		'{path}/quality/nanoplot/{strain}/{strain}_NanoPlot-report.html'
 	conda:
-		'read_quality.yml'
+		'read_quality.yaml'
 	params:
-		outputdir = '{path}/{main_folder}/quality/nanoplot/{strain}/',
-		prefix = '{strain}_{demultiplex}'
-	threads: 8
+		outputdir = '{path}/quality/nanoplot/{strain}/',
+		prefix = '{strain}'
+	threads: 16
 	shell:
 		'NanoPlot -t {threads} --minlength 1000 --fastq {input} -o {params.outputdir} -p {params.prefix} --title {params.prefix}_minlength1000'
 
@@ -247,49 +252,49 @@ rule nanoplot:
 # Flye
 rule flye:
 	input:
-		'{path}/{main_folder}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
+		'{path}/preprocessing/{demultiplex}/{strain}.fastq.gz'
 	output:
-		contigs = '{path}/{main_folder}/assembly/{strain}_{demultiplex}_flye/assembly.fasta'
+		contigs = '{path}/assembly/{strain}_{demultiplex}_flye/assembly.fasta'
 	conda:
-		'flye.yml'
+		'assembly.yaml'
 	params:
-		outputdir = '{path}/{main_folder}/assembly/{strain}_{demultiplex}_flye/',
-	threads: 32
+		outputdir = '{path}/assembly/{strain}_{demultiplex}_flye/',
+	threads: 16
 	shell:
-		'flye --asm-coverage 50 --nano-raw {input} -o {params.outputdir} -t {threads} -g 1000000'
+		'flye --asm-coverage 50 --iterations 2 --plasmids --nano-raw {input} -o {params.outputdir} -t {threads} -g 1000000'
         # --asm-coverage 50         coverage: 50X
         # -g 1000000                genome size 1 million
+		# --iterations 2			two runs of polishing
+		# --plasmids				for circular genomes and plasmids
 
 # rename flye output
 rule rename_flye:
 	input:
 		contigs = rules.flye.output.contigs
 	output:
-		flye = '{path}/{main_folder}/assembly/{strain}_{demultiplex}_flye/{strain}_{demultiplex}_flye.fasta'
+		flye = '{path}/assembly/{strain}_{demultiplex}_flye/{strain}_flye.fasta'
 	shell:
 		'mv {input.contigs} {output.flye}'
 
 # polishing the assembly with Racon four times using the long reads		use minimap2 for the mapping inbetween the polishing
 rule minimap2_racon_long:
 	input:
-		assembly = '{path}/{main_folder}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.fasta',
-		reads = '{path}/{main_folder}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
+		assembly = rules.rename_flye.output.flye,
+		reads = rules.filtlong.output.filtered
 	output:
-		out = '{path}_docker/racon/{main_folder}/{strain}_{demultiplex}_{assembler}_long4.fasta'
+		out = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/{strain}_{demultiplex}_{assembler}_long4.fasta'
 	params:
 		strain = '{strain}',
 		demultiplex = '{demultiplex}',
 		assembler = '{assembler}',
-		path = '{path}/{main_folder}',
-		main_folder = '{main_folder}'
+		path = '{path}/'
 	threads: 32
 	run:
 		import os
 		import time
 		reads_path = str(params.path) + '/preprocessing/' + str(params.demultiplex) + '/'
-		only_reads = str(params.strain) + '_' + str(params.demultiplex) + '.fastq'
-        # change the docker path please
-		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/' + str(params.main_folder) + '/'
+		only_reads = str(params.strain) + '.fastq'
+		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/'
 		assembly_path = str(params.path) + '/assembly/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
 		paf_path = str(params.path) + '/postprocessing/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
 		assembly_file = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '.fasta'
@@ -300,8 +305,8 @@ rule minimap2_racon_long:
 			else:
 				minimap2_input_assembly = racon_path + out_assembly
 				racon_in_assembly = out_assembly
-			out_assembly = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '_long' + str(i + 1) + '.fasta'
-			paf = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '_long' + str(i + 1) + '.paf'
+			out_assembly = str(params.strain) + '_' + str(params.assembler) + '_long' + str(i + 1) + '.fasta'
+			paf = str(params.strain) + '_' + str(params.assembler) + '_long' + str(i + 1) + '.paf'
 			minimap2 = 'minimap2 -x map-ont -t 16 ' + minimap2_input_assembly + ' ' + reads_path + only_reads + ' > ' + paf_path + paf
 			print(minimap2 + '\n')
 			os.system(minimap2)
@@ -318,21 +323,21 @@ rule move_racon_long:
 	input:
 		racon_out = rules.minimap2_racon_long.output.out
 	output:
-		move = '{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta'
+		move = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{assembler}_long4.fasta'
 	shell:
 		'mv {input.racon_out} {output.move}'
 
 # polishing the assembly with medaka
 rule medaka:
 	input:
-		reads = '{path}/{main_folder}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq',
+		reads = rules.filtlong.output.filtered,
 		racon_out = rules.move_racon_long.output.move
 	output:
-		medaka = '{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta'
+		medaka = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta'
 	conda:
-		'postprocessing.yml'
+		'postprocessing.yaml'
 	params:
-		outputdir = '{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/'
+		outputdir = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/'
 	threads: 32
 	shell:
 		'medaka_consensus -i {input.reads} -d {input.racon_out} -o {params.outputdir} -t {threads} -m r941_min_high'
@@ -340,16 +345,14 @@ rule medaka:
 # polishing the assembly with Racon four times using the short reads		use minimap2 for the mapping inbetween the polishing
 rule minimap2_racon_short:
 	input:
-		assembly = rules.medaka.output.medaka,
-		reads = rules.unique_readID.output.unique
+		reads = rules.unique_readID.output.unique,
+		assembly = rules.medaka.output.medaka
 	output:
-		out = '{path}_docker/racon/{main_folder}/{strain}_{demultiplex}_{assembler}_short4.fasta'
+		out = '{path}_docker/racon/{strain}_{assembler}_short4.fasta'
 	params:
 		strain = '{strain}',
-		demultiplex = '{demultiplex}',
 		assembler = '{assembler}',
-		path = '{path}/{main_folder}',
-		main_folder = '{main_folder}'
+		path = '{path}'
 	threads: 32
 	run:
 		import os
@@ -357,9 +360,9 @@ rule minimap2_racon_short:
 		reads_path = str(params.path) + '/preprocessing/'
 		only_reads = str(params.strain) + '_unique.fastq'
         # change the docker path please
-		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/' + str(params.main_folder) + '/'
-		assembly_path = str(params.path) + '/postprocessing/' +  str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
-		paf_path = str(params.path) + '/postprocessing/' + str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '/'
+		racon_path = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/'
+		assembly_path = str(params.path) + '/postprocessing/' +  str(params.strain) + '_' + str(params.assembler) + '/'
+		paf_path = str(params.path) + '/postprocessing/' + str(params.strain) + '_' + str(params.assembler) + '/'
 		assembly_file = 'consensus.fasta'
 		for i in range(4):
 			if i == 0:
@@ -368,8 +371,8 @@ rule minimap2_racon_short:
 			else:
 				minimap2_input_assembly = racon_path + out_assembly
 				racon_in_assembly = out_assembly
-			out_assembly = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '_short' + str(i + 1) + '.fasta'
-			paf = str(params.strain) + '_' + str(params.demultiplex) + '_' + str(params.assembler) + '_short' + str(i + 1) + '.paf'
+			out_assembly = str(params.strain) + '_' + str(params.assembler) + '_short' + str(i + 1) + '.fasta'
+			paf = str(params.strain) + '_' + str(params.assembler) + '_short' + str(i + 1) + '.paf'
 			minimap2 = 'minimap2 -x sr -t 16 ' + minimap2_input_assembly + ' ' + reads_path + only_reads + ' > ' + paf_path + paf
 			print(minimap2 + '\n')
 			os.system(minimap2)
@@ -387,34 +390,35 @@ rule move_racon_short:
 	input:
 		racon_out = rules.minimap2_racon_short.output.out
 	output:
-		move = '{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.fasta'
+		move = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{assembler}_short4.fasta'
 	shell:
 		'mv {input.racon_out} {output.move}'
 
+# cirularize genomes
 rule circlator:
 	input:
-        assembly = rules.move_racon_short.output.move
-    output:
-        circ = '{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_circ.fasta'
-    conda:
-        '....yml'
-    # params:
-    #     outputdir = '{path}/{main_folder}/postprocessing/{strain}_{demultiplex}_{assembler}/',
-    #     prefix = '{strain}_{demultiplex}_{assembler}_circ'
-    threads: 16
-    shell:
-        ''
+		reads = rules.filtlong.output.filtered,
+		assembly = rules.move_racon_short.output.move
+	output:
+		circ = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{assembler}_circ.fasta'
+	# conda:
+    #     'postprocessing.yaml'
+	params:
+		outputdir = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/'
+	threads: 16
+	shell:
+		'circlator all --threads {threads} --merge_min_id 85 --merge_breaklen 1000 {input.assembly} {input.reads} {params.outputdir}'
 
 rule prokka:
     input:
         assembly = rules.circlator.output.circ
     output:
-        gff = '{path}/{main_folder}/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff'
+        gff = '{path}/prokka/{strain}_{assembler}/{strain}_{assembler}.gff'
     conda:
-        'prokka.yml'
+        'annotation.yaml'
     params:
-        outputdir = '{path}/{main_folder}/prokka/{strain}_{demultiplex}_{assembler}/',
-        prefix = '{strain}_{demultiplex}_{assembler}'
+        outputdir = '{path}/prokka/{strain}_{assembler}/',
+        prefix = '{strain}_{assembler}'
     threads: 16
     shell:
         'prokka --cpus {threads} --gcode 4 --outdir {params.outputdir} --force --prefix {params.prefix} {input.assembly}'
@@ -422,30 +426,31 @@ rule prokka:
 rule quast:
 	input:
         # insert path to final assembly file to incorporate all in quast statistics
-		in1 = '{path}/{main_folder}/postprocessing/STRAIN1_qcat_flye/STRAIN1_qcat_flye_short4.contigs.fasta',
-		in2 = '{path}/{main_folder}/postprocessing/STRAIN2_qcat_flye/STRAIN2_qcat_flye_short4.contigs.fasta',
-		in3 = '{path}/{main_folder}/postprocessing/STRAIN3_qcat_flye/STRAIN3_qcat_flye_short4.contigs.fasta'
-		# in1 = '{path}/{main_folder}/postprocessing/14DD0147_qcat_flye/14DD0147_qcat_flye_short4.contigs.fasta',
-		# in2 = '{path}/{main_folder}/postprocessing/15DD0207_qcat_flye/15DD0207_qcat_flye_short4.contigs.fasta',
-		# in3 = '{path}/{main_folder}/postprocessing/15DD0165_qcat_flye/15DD0165_qcat_flye_short4.contigs.fasta',
-		# in4 = '{path}/{main_folder}/postprocessing/15DD0234_qcat_flye/15DD0234_qcat_flye_short4.contigs.fasta',
-		# in5 = '{path}/{main_folder}/postprocessing/15DD0163_qcat_flye/15DD0163_qcat_flye_short4.contigs.fasta',
-		# in6 = '{path}/{main_folder}/postprocessing/15DD0233_qcat_flye/15DD0233_qcat_flye_short4.contigs.fasta',
-		# in7 = '{path}/{main_folder}/postprocessing/15DD0164_qcat_flye/15DD0164_qcat_flye_short4.contigs.fasta',
-		# in8 = '{path}/{main_folder}/postprocessing/15DD0218_qcat_flye/15DD0218_qcat_flye_short4.contigs.fasta',
-		# in9 = '{path}/{main_folder}/postprocessing/15DD0210_qcat_flye/15DD0210_qcat_flye_short4.contigs.fasta',
-		# in10 = '{path}/{main_folder}/postprocessing/15DD0238_qcat_flye/15DD0238_qcat_flye_short4.contigs.fasta',
-		# in11 = '{path}/{main_folder}/postprocessing/15DD0261_qcat_flye/15DD0261_qcat_flye_short4.contigs.fasta',
-		# in12 = '{path}/{main_folder}/postprocessing/15DD0228_qcat_flye/15DD0228_qcat_flye_short4.contigs.fasta'
+		in1 = '{path}/postprocessing/{strain}_{assembler}/{strain}_{assembler}_circ.fasta'
+		# in2 = '{path}/postprocessing/STRAIN2_qcat_flye/STRAIN2_qcat_flye_short4.contigs.fasta',
+		# in3 = '{path}/postprocessing/STRAIN3_qcat_flye/STRAIN3_qcat_flye_short4.contigs.fasta'
+		# in1 = '{path}/postprocessing/14DD0147_qcat_flye/14DD0147_qcat_flye_short4.contigs.fasta',
+		# in2 = '{path}/postprocessing/15DD0207_qcat_flye/15DD0207_qcat_flye_short4.contigs.fasta',
+		# in3 = '{path}/postprocessing/15DD0165_qcat_flye/15DD0165_qcat_flye_short4.contigs.fasta',
+		# in4 = '{path}/postprocessing/15DD0234_qcat_flye/15DD0234_qcat_flye_short4.contigs.fasta',
+		# in5 = '{path}/postprocessing/15DD0163_qcat_flye/15DD0163_qcat_flye_short4.contigs.fasta',
+		# in6 = '{path}/postprocessing/15DD0233_qcat_flye/15DD0233_qcat_flye_short4.contigs.fasta',
+		# in7 = '{path}/postprocessing/15DD0164_qcat_flye/15DD0164_qcat_flye_short4.contigs.fasta',
+		# in8 = '{path}/postprocessing/15DD0218_qcat_flye/15DD0218_qcat_flye_short4.contigs.fasta',
+		# in9 = '{path}/postprocessing/15DD0210_qcat_flye/15DD0210_qcat_flye_short4.contigs.fasta',
+		# in10 = '{path}/postprocessing/15DD0238_qcat_flye/15DD0238_qcat_flye_short4.contigs.fasta',
+		# in11 = '{path}/postprocessing/15DD0261_qcat_flye/15DD0261_qcat_flye_short4.contigs.fasta',
+		# in12 = '{path}/postprocessing/15DD0228_qcat_flye/15DD0228_qcat_flye_short4.contigs.fasta'
 	output:
-		report = '{path}/{main_folder}/quality/quast/report.html'
+		report = '{path}/quality/quast/report.html'
 		#...
 	conda:
-		'assembly_quality.yml'
+		'assembly_quality.yaml'
 	params:
-		outputdir = '{path}/{main_folder}/quality/quast/',
+		outputdir = '{path}/quality/quast/',
 		path = '{path}/mycoplasma_bovis_genomes'
 	threads: 16
 	shell:
-		'quast {input.in1} {input.in2} {input.in3} -r {params.path}/mycoplasma_bovis_referenceGenome.fasta -g {params.path}/GCF_000183385.1_ASM18338v1_genomic.gff -o {params.outputdir}'
+		'quast {input.in1} -o {params.outputdir}'
 		# {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10}
+		# -r {params.path}/mycoplasma_bovis_referenceGenome.fasta -g {params.path}/GCF_000183385.1_ASM18338v1_genomic.gff
