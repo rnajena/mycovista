@@ -1,0 +1,1 @@
+filtlong --min_length 1000 /mnt/prostlocal2/projects/st_chlamydia_flamingo_assembly/preprocessing/guppy/14-2711.fastq.gz | gzip > /mnt/prostlocal2/projects/st_chlamydia_flamingo_assembly/preprocessing/filtlong/14-2711_guppy_filtered.fastq.gz

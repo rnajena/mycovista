@@ -282,7 +282,7 @@ rule minimap2_racon_long:
 		assembly = rules.rename_flye.output.flye,
 		reads = rules.filtlong.output.filtered
 	output:
-		out = '/mnt/prostlocal2/projects/st_mycoplasma_assembly_docker/racon/{strain}_{demultiplex}_{assembler}_long4.fasta'
+		out = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta'
 	params:
 		strain = '{strain}',
 		demultiplex = '{demultiplex}',

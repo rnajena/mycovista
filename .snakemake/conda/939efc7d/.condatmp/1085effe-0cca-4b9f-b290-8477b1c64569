@@ -1,0 +1,14 @@
+prefix=/data/prostlocal2/projects/st_mycoplasma_assembly/git/.snakemake/conda/939efc7d
+exec_prefix=/data/prostlocal2/projects/st_mycoplasma_assembly/git/.snakemake/conda/939efc7d
+libdir=/data/prostlocal2/projects/st_mycoplasma_assembly/git/.snakemake/conda/939efc7d/lib
+includedir=/data/prostlocal2/projects/st_mycoplasma_assembly/git/.snakemake/conda/939efc7d/include
+
+Name: FreeType 2
+URL: https://freetype.org
+Description: A free, high-quality, and portable font engine.
+Version: 22.1.16
+Requires:
+Requires.private: 
+Libs: -L${libdir} -lfreetype
+Libs.private: -lz -L/data/prostlocal2/projects/st_mycoplasma_assembly/git/.snakemake/conda/939efc7d/lib -lpng16 -lm -lz -lm
+Cflags: -I${includedir}/freetype2

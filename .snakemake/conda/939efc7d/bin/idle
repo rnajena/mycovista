@@ -1,0 +1,5 @@
+#!/data/prostlocal2/projects/st_mycoplasma_assembly/git/.snakemake/conda/939efc7d/bin/python2.7
+
+from idlelib.PyShell import main
+if __name__ == '__main__':
+    main()

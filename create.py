@@ -7,24 +7,27 @@ for i in liste:
     if i == '' or i[0] == '#':
         liste.remove(i)
 if liste[0][:5] == 'path:':
-    path = liste[0][7:len(liste[0]) - 1] + '/hybrid'
-    os.mkdir(path)
+    path = liste[0][7:len(liste[0]) - 1]
+    if os.path.exists(path) == False:
+        os.mkdir(path)
     liste.pop(0)
 else:
     path = os.getcwd()
 os.mkdir(path + '/raw_data')
 for i in range(len(liste)):
-    parameter = liste[i].split(':')
+    parameter = liste[i].split(': ', 1)
     details = parameter[1]
     parameter = parameter[0]
-    details = details.split(',')
-    details[0] = details[0][2:len(details[0])]
+    details = details.split(', ')
+    details[0] = details[0][1:len(details[0])]
     details[len(details) - 1] = details[len(details) - 1][0:len(details[len(details) - 1]) - 1]
     if parameter == 'strains':
         strains = details
     if parameter == 'preprocessing_short':
         os.mkdir(path + '/preprocessing')
         preprocessing_short = details
+    if parameter == 'preprocessing_long':
+        preprocessing_long = details
     if parameter == 'demultiplexing':
         demultiplexing = details
     if parameter == 'assembly':
@@ -36,7 +39,14 @@ for i in range(len(liste)):
     if parameter == 'quality':
         os.mkdir(path + '/' + parameter)
         quality = details
+for elem in strains[:]:
+    if elem[11:18] == 'barcode':
+        strains.remove(elem)
+    else:
+        strains[strains.index(elem)] = elem.split(': ')[1]
 for preprocesser in preprocessing_short:
+    os.mkdir(path + '/preprocessing' + '/' + preprocesser)
+for preprocesser in preprocessing_long:
     os.mkdir(path + '/preprocessing' + '/' + preprocesser)
 for demultiplexer in demultiplexing:
     os.mkdir(path + '/preprocessing' + '/' + demultiplexer)
