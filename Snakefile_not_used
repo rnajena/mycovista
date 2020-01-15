@@ -1,0 +1,82 @@
+long read preprocessing - classifiy adapter and trim them with porechop
+rule porechop:
+	input:
+		''
+	output:
+		BC01 = '{path}/{main_folder}/preprocessing/porechop/BC01.fastq',
+		BC02 = '{path}/{main_folder}/preprocessing/porechop/BC02.fastq',
+		BC03 = '{path}/{main_folder}/preprocessing/porechop/BC03.fastq',
+		BC04 = '{path}/{main_folder}/preprocessing/porechop/BC04.fastq',
+		BC05 = '{path}/{main_folder}/preprocessing/porechop/BC05.fastq',
+		BC06 = '{path}/{main_folder}/preprocessing/porechop/BC06.fastq',
+		BC07 = '{path}/{main_folder}/preprocessing/porechop/BC07.fastq',
+		BC08 = '{path}/{main_folder}/preprocessing/porechop/BC08.fastq',
+		BC09 = '{path}/{main_folder}/preprocessing/porechop/BC09.fastq',
+		BC10 = '{path}/{main_folder}/preprocessing/porechop/BC10.fastq',
+		BC11 = '{path}/{main_folder}/preprocessing/porechop/BC11.fastq',
+		BC12 = '{path}/{main_folder}/preprocessing/porechop/BC12.fastq'
+	conda:
+		'preprocessing.yml'
+	params:
+		outputdir = '{path}/{main_folder}/preprocessing/porechop/'
+	threads: 32 #default: 8
+	shell:
+		'porechop -t {threads} --check_reads 500000 -i {input} -b {params.outputdir}'
+
+rule rename_porechop:
+	input:
+		BC01 = rules.porechop.output.BC01,
+		BC02 = rules.porechop.output.BC02,
+		BC03 = rules.porechop.output.BC03,
+		BC04 = rules.porechop.output.BC04,
+		BC05 = rules.porechop.output.BC05,
+		BC06 = rules.porechop.output.BC06,
+		BC07 = rules.porechop.output.BC07,
+		BC08 = rules.porechop.output.BC08,
+		BC09 = rules.porechop.output.BC09,
+		BC10 = rules.porechop.output.BC10,
+		BC11 = rules.porechop.output.BC11,
+		BC12 = rules.porechop.output.BC12
+	output:
+		strain1 = '{path}/{main_folder}/preprocessing/porechop/14DD0147_porechop.fastq',
+		strain2 = '{path}/{main_folder}/preprocessing/porechop/15DD0164_porechop.fastq',
+		strain3 = '{path}/{main_folder}/preprocessing/porechop/15DD0207_porechop.fastq',
+		strain4 = '{path}/{main_folder}/preprocessing/porechop/15DD0165_porechop.fastq',
+		strain5 = '{path}/{main_folder}/preprocessing/porechop/15DD0218_porechop.fastq',
+		strain6 = '{path}/{main_folder}/preprocessing/porechop/15DD0234_porechop.fastq',
+		strain7 = '{path}/{main_folder}/preprocessing/porechop/15DD0210_porechop.fastq',
+		strain8 = '{path}/{main_folder}/preprocessing/porechop/15DD0238_porechop.fastq',
+		strain9 = '{path}/{main_folder}/preprocessing/porechop/15DD0261_porechop.fastq',
+		strain10 = '{path}/{main_folder}/preprocessing/porechop/15DD0163_porechop.fastq',
+		strain11 = '{path}/{main_folder}/preprocessing/porechop/15DD0228_porechop.fastq',
+		strain12 = '{path}/{main_folder}/preprocessing/porechop/15DD0233_porechop.fastq'
+	shell:
+		'mv {input.BC01} {output.strain1} &&'
+		'mv {input.BC02} {output.strain2} &&'
+		'mv {input.BC03} {output.strain3} &&'
+		'mv {input.BC04} {output.strain4} &&'
+		'mv {input.BC05} {output.strain5} &&'
+		'mv {input.BC06} {output.strain6} &&'
+		'mv {input.BC07} {output.strain7} &&'
+		'mv {input.BC08} {output.strain8} &&'
+		'mv {input.BC09} {output.strain9} &&'
+		'mv {input.BC10} {output.strain10} &&'
+		'mv {input.BC11} {output.strain11} &&'
+		'mv {input.BC12} {output.strain12}'
+
+
+SPAdes w/ trusted contig option
+rule spades_trusted_contigs:
+	input:
+		contigs = rules.move_racon_short.output.move,
+		forwardP = rules.trimmomatic.output.forwardP,
+		reverseP = rules.trimmomatic.output.reverseP,
+		forwardU = rules.trimmomatic.output.forwardU,
+		reverseU = rules.trimmomatic.output.reverseU
+	output:
+		out = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{contigs.fasta'
+	params:
+		outputdir = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}'
+	threads: 16
+	shell:
+		'spades.py -o spades -t {threads} --trusted-contigs {input.contigs} -1 {input.forwardP} -2 {input.reverseP} --pe1-s {input.forwardU} --pe1-s {input.reverseU} -o {params.outputdir}'
