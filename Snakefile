@@ -166,7 +166,7 @@ rule qcat:
 		BC10 = '{path}/preprocessing/qcat/barcode10.fastq',
 		BC11 = '{path}/preprocessing/qcat/barcode11.fastq',
 		BC12 = '{path}/preprocessing/qcat/barcode12.fastq',
-		BC13 = '{path}/preprocessing/qcat/barcode13.fastq'
+		# BC13 = '{path}/preprocessing/qcat/barcode13.fastq'
 	conda:
 		'envs/qcat.yaml'
 	params:
@@ -190,7 +190,7 @@ rule rename_qcat:
 		BC10 = rules.qcat.output.BC10,
 		BC11 = rules.qcat.output.BC11,
 		BC12 = rules.qcat.output.BC12,
-		BC13 = rules.qcat.output.BC13
+		# BC13 = rules.qcat.output.BC13
 	output:
 		strain1 = '{path}/preprocessing/qcat/{strains[0]}_qcat.fastq',
 		strain2 = '{path}/preprocessing/qcat/{strains[1]}_qcat.fastq',
@@ -204,7 +204,7 @@ rule rename_qcat:
 		strain10 = '{path}/preprocessing/qcat/{strains[9]}_qcat.fastq',
 		strain11 = '{path}/preprocessing/qcat/{strains[10]}_qcat.fastq',
 		strain12 = '{path}/preprocessing/qcat/{strains[11]}_qcat.fastq',
-		strain13 = '{path}/preprocessing/qcat/{strains[12]}_qcat.fastq'
+		# strain13 = '{path}/preprocessing/qcat/{strains[12]}_qcat.fastq'
 	shell:
 		'mv {input.BC01} {output.strain1} &&'
 		'mv {input.BC02} {output.strain2} &&'
@@ -217,8 +217,8 @@ rule rename_qcat:
 		'mv {input.BC09} {output.strain9} &&'
 		'mv {input.BC10} {output.strain10} &&'
 		'mv {input.BC11} {output.strain11} &&'
-		'mv {input.BC12} {output.strain12} &&'
-		'mv {input.BC13} {output.strain13}'
+		'mv {input.BC12} {output.strain12}'
+		# 'mv {input.BC13} {output.strain13}'
 
 
 # filter demultiplexed long reads with Filtlong
