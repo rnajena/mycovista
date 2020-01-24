@@ -16,16 +16,16 @@ for elem in strains[:]:
         barcodes.remove(elem)
 
 rule all:
-    input:
+	input:
 		# qcat
-        expand("{path}/preprocessing/qcat/barcode01.fastq", path = config["path"]),
-        expand("{path}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], strain = strains),
-        # 
+		expand("{path}/preprocessing/qcat/barcode01.fastq", path = config["path"]),
+		expand("{path}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], strain = strains),
+		# 
 		# filtlong
-		# expand("{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
-		#
-		#  NanoPlot
-		# expand("{path}/quality/nanoplot/{strain}/{strain}NanoPlot-report.html", path = config["path"],  strain = strains),
+		expand("{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
+		# 
+		# nanoplot
+		expand("{path}/quality/nanoplot/{strain}/{strain}NanoPlot-report.html", path = config["path"],  strain = strains),
 		# 
 		# preprocess short reads
 		# expand("{path}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = strains, paired_end = END),
@@ -33,18 +33,19 @@ rule all:
 		# expand("{path}/preprocessing/{strain}_unique.fastq", path = config["path"], strain = strains),
 		# 
 		# assembly
-		# expand("{path}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# # 
-		# # polishing - 4x Racon long -> medaka -> 4x Racon short
+		expand("{path}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# 
+		# polishing - 4x Racon long -> medaka -> 4x Racon short
 		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# # 
-		# # QUAST
+		# 
+		# quast
 		# expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
-		# # 
-		# # Prokka
+		# 
+		# prokka
 		# expand("{path}/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = strains, assembler = config["assembly"])
+
 
 
 # create folders for the following steps
