@@ -65,7 +65,7 @@ rule rename_porechop:
 		'mv {input.BC12} {output.strain12}'
 
 
-SPAdes w/ trusted contig option
+# SPAdes w/ trusted contig option
 rule spades_trusted_contigs:
 	input:
 		contigs = rules.move_racon_short.output.move,
@@ -80,3 +80,18 @@ rule spades_trusted_contigs:
 	threads: 16
 	shell:
 		'spades.py -o spades -t {threads} --trusted-contigs {input.contigs} -1 {input.forwardP} -2 {input.reverseP} --pe1-s {input.forwardU} --pe1-s {input.reverseU} -o {params.outputdir}'
+
+# cirularize genomes
+rule circlator:
+	input:
+		reads = rules.filtlong.output.filtered,
+		assembly = rules.minimap2_racon_short.output.out
+	output:
+		circ = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_circ.fasta'
+	conda:
+		'envs/postprocessing.yaml'
+	params:
+		outputdir = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/'
+	threads: 16
+	shell:
+		'circlator all --threads {threads} --merge_min_id 85 --merge_breaklen 1000 {input.assembly} {input.reads} {params.outputdir}'
