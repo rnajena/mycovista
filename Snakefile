@@ -6,19 +6,20 @@ configfile: "config.yaml"
 PU = '1P 1U 2P 2U'.split() # paired_unpaired
 END = '1 2'.split() # paired_end
 
-strains = list(config["strains"].values())
+barcode_strain = dict(config["strains"])
+
+strains = list(barcode_strain.keys())
+barcodes = list(barcode_strain.values())
 for elem in strains[:]:
     if elem[0:7] == 'barcode':
         strains.remove(elem)
-
-barcodes = list(config["strains"].keys())
-for elem in barcodes:
-	elem = str(elem)
+        barcodes.remove(elem)
 
 rule all:
-	input:
+    input:
 		# qcat
-		expand("{path}/preprocessing/qcat/barcode01.fastq", path = config["path"]),
+        expand("{path}/preprocessing/qcat/barcode01.fastq", path = config["path"]),
+        expand("{path}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], strain = strains),
         # 
 		# filtlong
 		# expand("{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
@@ -154,19 +155,8 @@ rule qcat:
 	input:
 		'{path}/raw_data/nanopore.fastq'
 	output:
-		BC01 = '{path}/preprocessing/qcat/barcode01.fastq',
-		BC02 = '{path}/preprocessing/qcat/barcode02.fastq',
-		BC03 = '{path}/preprocessing/qcat/barcode03.fastq',
-		BC04 = '{path}/preprocessing/qcat/barcode04.fastq',
-		BC05 = '{path}/preprocessing/qcat/barcode05.fastq',
-		BC06 = '{path}/preprocessing/qcat/barcode06.fastq',
-		BC07 = '{path}/preprocessing/qcat/barcode07.fastq',
-		BC08 = '{path}/preprocessing/qcat/barcode08.fastq',
-		BC09 = '{path}/preprocessing/qcat/barcode09.fastq',
-		BC10 = '{path}/preprocessing/qcat/barcode10.fastq',
-		BC11 = '{path}/preprocessing/qcat/barcode11.fastq',
-		BC12 = '{path}/preprocessing/qcat/barcode12.fastq',
-		# BC13 = '{path}/preprocessing/qcat/barcode13.fastq'
+		BC01 = '{path}/preprocessing/qcat/barcode01.fastq'
+		# ...
 	conda:
 		'envs/qcat.yaml'
 	params:
@@ -176,49 +166,22 @@ rule qcat:
 		'qcat -t {threads} -k NBD103/NBD104 --trim -f {input} -b {params.outputdir}'
 
 # rename qcat output
+def get_input(strain):
+    return '/preprocessing/qcat/' + barcodes[strains.index(strain)] + '.fastq'
+
 rule rename_qcat:
-	input:
-		BC01 = rules.qcat.output.BC01,
-		BC02 = rules.qcat.output.BC02,
-		BC03 = rules.qcat.output.BC03,
-		BC04 = rules.qcat.output.BC04,
-		BC05 = rules.qcat.output.BC05,
-		BC06 = rules.qcat.output.BC06,
-		BC07 = rules.qcat.output.BC07,
-		BC08 = rules.qcat.output.BC08,
-		BC09 = rules.qcat.output.BC09,
-		BC10 = rules.qcat.output.BC10,
-		BC11 = rules.qcat.output.BC11,
-		BC12 = rules.qcat.output.BC12,
-		# BC13 = rules.qcat.output.BC13
-	output:
-		strain1 = '{path}/preprocessing/qcat/{strains[0]}_qcat.fastq',
-		strain2 = '{path}/preprocessing/qcat/{strains[1]}_qcat.fastq',
-		strain3 = '{path}/preprocessing/qcat/{strains[2]}_qcat.fastq',
-		strain4 = '{path}/preprocessing/qcat/{strains[3]}_qcat.fastq',
-		strain5 = '{path}/preprocessing/qcat/{strains[4]}_qcat.fastq',
-		strain6 = '{path}/preprocessing/qcat/{strains[5]}_qcat.fastq',
-		strain7 = '{path}/preprocessing/qcat/{strains[6]}_qcat.fastq',
-		strain8 = '{path}/preprocessing/qcat/{strains[7]}_qcat.fastq',
-		strain9 = '{path}/preprocessing/qcat/{strains[8]}_qcat.fastq',
-		strain10 = '{path}/preprocessing/qcat/{strains[9]}_qcat.fastq',
-		strain11 = '{path}/preprocessing/qcat/{strains[10]}_qcat.fastq',
-		strain12 = '{path}/preprocessing/qcat/{strains[11]}_qcat.fastq',
-		# strain13 = '{path}/preprocessing/qcat/{strains[12]}_qcat.fastq'
-	shell:
-		'mv {input.BC01} {output.strain1} &&'
-		'mv {input.BC02} {output.strain2} &&'
-		'mv {input.BC03} {output.strain3} &&'
-		'mv {input.BC04} {output.strain4} &&'
-		'mv {input.BC05} {output.strain5} &&'
-		'mv {input.BC06} {output.strain6} &&'
-		'mv {input.BC07} {output.strain7} &&'
-		'mv {input.BC08} {output.strain8} &&'
-		'mv {input.BC09} {output.strain9} &&'
-		'mv {input.BC10} {output.strain10} &&'
-		'mv {input.BC11} {output.strain11} &&'
-		'mv {input.BC12} {output.strain12}'
-		# 'mv {input.BC13} {output.strain13}'
+    input:
+        '{path}/preprocessing/qcat/'
+    output:
+        '{path}/preprocessing/qcat/{strain}_qcat.fastq'
+    params:
+        strain = '{strain}',
+        path = '{path}'
+    run:
+        import os
+        command = 'mv ' + str(params.path) + get_input(str(params.strain)) + ' ' + str(output)
+        print(command + '\n')
+        os.system(command)
 
 
 # filter demultiplexed long reads with Filtlong
@@ -328,25 +291,9 @@ rule minimap2_racon_short:
 	script:
 		'scripts/racon_short.py'
 		
-
-# cirularize genomes
-rule circlator:
-	input:
-		reads = rules.filtlong.output.filtered,
-		assembly = rules.minimap2_racon_short.output.out
-	output:
-		circ = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_circ.fasta'
-	conda:
-		'envs/postprocessing.yaml'
-	params:
-		outputdir = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/'
-	threads: 16
-	shell:
-		'circlator all --threads {threads} --merge_min_id 85 --merge_breaklen 1000 {input.assembly} {input.reads} {params.outputdir}'
-
 rule prokka:
     input:
-        assembly = rules.circlator.output.circ
+        assembly = rules.minimap2_racon_short.output.out
     output:
         gff = '{path}/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff'
     conda:

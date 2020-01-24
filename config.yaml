@@ -1,7 +1,7 @@
 # insert path to the folder for saving all generated data
 path: [/mnt/prostlocal2/projects/st_mycoplasma_assembly/myco_2_hybrid]
-# insert the name of the strains to the corresponding barcodes e.g.:  barcode01: strain01, barcode02: strain02, ...
-strains: {barcode01: 11DD0261, barcode02: barcode02, barcode03: barcode03, barcode04: barcode04, barcode05: barcode05, barcode06: barcode06, barcode07: barcode07, barcode08: barcode08, barcode09: barcode09, barcode10: barcode10, barcode11: barcode11, barcode12: barcode12}
+# insert the name of the strains to the corresponding barcodes e.g.:  strain01: barcode01, strain02: barcode02, ...
+strains: {11DD0261: barcode01, 13DD0918: barcode02, 14DD0148: barcode03, 14DD0156: barcode04, 14DD0457_ML: barcode05, 15DD0123: barcode06, 15DD0140: barcode07, 15DD0141: barcode08, 15DD0160: barcode09, 15DD0161: barcode10, barcode11: barcode11, barcode12: barcode12}
 # strains: [14-2711]
 preprocessing_short: [fastp, trimmomatic]
 preprocessing_long: [filtlong]
