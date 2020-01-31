@@ -18,14 +18,14 @@ for elem in strains[:]:
 rule all:
 	input:
 		# qcat
-		expand("{path}/preprocessing/qcat/barcode01.fastq", path = config["path"]),
-		expand("{path}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], strain = strains),
+		# expand("{path}/preprocessing/qcat/barcode01.fastq", path = config["path"]),
+		# expand("{path}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], strain = strains),
 		# 
 		# filtlong
-		expand("{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
+		# expand("{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
 		# 
 		# nanoplot
-		expand("{path}/quality/nanoplot/{strain}/{strain}NanoPlot-report.html", path = config["path"],  strain = strains),
+		expand("{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}_NanoPlot-report.html", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
 		# 
 		# preprocess short reads
 		# expand("{path}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = strains, paired_end = END),
@@ -33,7 +33,7 @@ rule all:
 		# expand("{path}/preprocessing/{strain}_unique.fastq", path = config["path"], strain = strains),
 		# 
 		# assembly
-		expand("{path}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# polishing - 4x Racon long -> medaka -> 4x Racon short
 		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
@@ -203,12 +203,12 @@ rule nanoplot:
 	input:
 		rules.filtlong.output.filtered
 	output:
-		'{path}/quality/nanoplot/{strain}/{strain}_NanoPlot-report.html'
+		'{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}_NanoPlot-report.html'
 	conda:
 		'envs/read_quality.yaml'
 	params:
 		outputdir = '{path}/quality/nanoplot/{strain}/',
-		prefix = '{strain}'
+		prefix = '{strain}_{demultiplex}_'
 	threads: 16
 	shell:
 		'NanoPlot -t {threads} --minlength 1000 --fastq {input} -o {params.outputdir} -p {params.prefix} --title {params.prefix}_minlength1000'

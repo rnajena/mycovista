@@ -39,10 +39,10 @@ for i in range(len(liste)):
         os.mkdir(path + '/' + parameter)
         quality = details
 for elem in strains[:]:
-    if elem[11:18] == 'barcode':
+    if elem[0:7] == 'barcode':
         strains.remove(elem)
     else:
-        strains[strains.index(elem)] = elem.split(': ')[1]
+        strains[strains.index(elem)] = elem.split(': ')[0]
 for preprocesser in preprocessing_short:
     os.mkdir(path + '/preprocessing/illumina/' + preprocesser)
 for demultiplexer in demultiplexing:
