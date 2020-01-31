@@ -3,7 +3,7 @@ import time
 
 reads_path = snakemake.params[3] + '/preprocessing/' + snakemake.params[1] + '/'
 only_reads = snakemake.params[0] + '_' + snakemake.params[1] + '_filtered.fastq.gz'
-assembly_path = snakemake.params[3] + '/assembly/' + snakemake.params[0]) + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '/'
+assembly_path = snakemake.params[3] + '/assembly/' + snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '/'
 out_path = snakemake.params[0] + '/postprocessing/' + snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '/'
 assembly_file = snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '.fasta'
 for i in range(4):
@@ -21,8 +21,8 @@ for i in range(4):
 	while os.path.isfile(out_path + paf) == False:
 		time.sleep(5)
 	if i == 0:
-		racon = 'docker run --rm --user $(id -u):$(id -g) -it -v ' + reads_path + ':/input1 -v ' + out_path + ':/input2 -v ' + assembly_path + ':/input3 -v ' + out_path + ':/output quay.io/biocontainers/racon:1.3.2--he941832_0 sh -c "racon -t 32 /input1/' + only_reads + ' /input2/' + paf + ' /input3/' + racon_in_assembly + ' > /output/' + out_assembly + '"'
+		racon = 'docker run --rm --user $(id -u):$(id -g) -it -v ' + reads_path + ':/input1 -v ' + out_path + ':/input2 -v ' + assembly_path + ':/input3 -v ' + out_path + ':/output quay.io/biocontainers/racon:1.3.2--he941832_0 sh -c "racon -t 16 /input1/' + only_reads + ' /input2/' + paf + ' /input3/' + racon_in_assembly + ' > /output/' + out_assembly + '"'
 	else:
-		racon = 'docker run --rm --user $(id -u):$(id -g) -it -v ' + reads_path + ':/input1 -v ' + out_path + ':/input2 -v ' + out_path + ':/output quay.io/biocontainers/racon:1.3.2--he941832_0 sh -c "racon -t 32 /input1/' + only_reads + ' /input2/' + paf + ' /input2/' + racon_in_assembly + ' > /output/' + out_assembly + '"'
+		racon = 'docker run --rm --user $(id -u):$(id -g) -it -v ' + reads_path + ':/input1 -v ' + out_path + ':/input2 -v ' + out_path + ':/output quay.io/biocontainers/racon:1.3.2--he941832_0 sh -c "racon -t 16 /input1/' + only_reads + ' /input2/' + paf + ' /input2/' + racon_in_assembly + ' > /output/' + out_assembly + '"'
 	print(racon + '\n')			
 	os.system(racon)

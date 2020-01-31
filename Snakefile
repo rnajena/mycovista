@@ -18,27 +18,27 @@ for elem in strains[:]:
 rule all:
 	input:
 		# qcat
-		# expand("{path}/preprocessing/qcat/barcode01.fastq", path = config["path"]),
+		# expand("{path}/preprocessing/qcat/none.fastq", path = config["path"]),
 		# expand("{path}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], strain = strains),
 		# 
 		# filtlong
 		# expand("{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
 		# 
 		# nanoplot
-		expand("{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}_NanoPlot-report.html", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
+		# expand("{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}_NanoPlot-report.html", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
 		# 
 		# preprocess short reads
 		# expand("{path}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = strains, paired_end = END),
 		# expand("{path}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], strain = strains, paired_unpaired = PU),
-		# expand("{path}/preprocessing/{strain}_unique.fastq", path = config["path"], strain = strains),
+		# expand("{path}/preprocessing/illumina/{strain}_unique.fastq", path = config["path"], strain = strains),
 		# 
 		# assembly
 		# expand("{path}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# polishing - 4x Racon long -> medaka -> 4x Racon short
-		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# quast
 		# expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
@@ -156,7 +156,7 @@ rule qcat:
 	input:
 		'{path}/raw_data/nanopore.fastq'
 	output:
-		BC01 = '{path}/preprocessing/qcat/barcode01.fastq'
+		'{path}/preprocessing/qcat/none.fastq'
 		# ...
 	conda:
 		'envs/qcat.yaml'
@@ -172,7 +172,7 @@ def get_input(strain):
 
 rule rename_qcat:
     input:
-        '{path}/preprocessing/qcat/'
+        '{path}/preprocessing/qcat/none.fastq'
     output:
         '{path}/preprocessing/qcat/{strain}_qcat.fastq'
     params:
@@ -211,7 +211,7 @@ rule nanoplot:
 		prefix = '{strain}_{demultiplex}_'
 	threads: 16
 	shell:
-		'NanoPlot -t {threads} --minlength 1000 --fastq {input} -o {params.outputdir} -p {params.prefix} --title {params.prefix}_minlength1000'
+		'NanoPlot -t {threads} --minlength 1000 --fastq {input} -o {params.outputdir} -p {params.prefix} --title {params.prefix}minlength1000'
 
 # long read assembler
 # Flye
@@ -249,7 +249,7 @@ rule minimap2_racon_long:
 	output:
 		out = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta'
 	conda:
-		'envs/racon.yaml'
+		'envs/postprocessing.yaml'
 	params:
 		strain = '{strain}',
 		demultiplex = '{demultiplex}',
@@ -282,7 +282,7 @@ rule minimap2_racon_short:
 	output:
 		out = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.fasta'
 	conda:
-		'envs/racon.yaml'
+		'envs/postprocessing.yaml'
 	params:
 		strain = '{strain}',
 		demultiplex = '{demultiplex}',
