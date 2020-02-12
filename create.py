@@ -4,7 +4,7 @@ import os
 configfile = open('config.yaml', 'r').read()
 liste = configfile.split('\n')
 for i in liste:
-    if i == '' or i[0] == '#':
+    if i == '' or i[0] == '#' or i[0:3] == 'ref':
         liste.remove(i)
 if liste[0][:5] == 'path:':
     path = liste[0][7:len(liste[0]) - 1]
@@ -14,6 +14,7 @@ if liste[0][:5] == 'path:':
 else:
     path = os.getcwd()
 os.mkdir(path + '/raw_data')
+os.mkdir(path + '/annotation')
 for i in range(len(liste)):
     parameter = liste[i].split(': ', 1)
     details = parameter[1]
@@ -39,7 +40,7 @@ for i in range(len(liste)):
         os.mkdir(path + '/' + parameter)
         quality = details
 for elem in strains[:]:
-    if elem[0:7] == 'barcode':
+    if elem[0:6] == 'strain':
         strains.remove(elem)
     else:
         strains[strains.index(elem)] = elem.split(': ')[0]
@@ -51,6 +52,7 @@ for demultiplexer in demultiplexing:
         for assembler in assembly:
             os.mkdir(path + '/assembly' + '/' + bacteria + '_' + demultiplexer + '_' + assembler)
             os.mkdir(path + '/postprocessing' + '/' + bacteria + '_' + demultiplexer + '_' + assembler)
+            os.mkdir(path + '/annotation' + '/' + bacteria + '_' + demultiplexer + '_' + assembler)
 for check in quality:
     os.mkdir(path + '/quality' + '/' + check)
     if check != 'quast':

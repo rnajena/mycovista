@@ -15,25 +15,28 @@ for elem in strains[:]:
         strains.remove(elem)
         barcodes.remove(elem)
 
+refgenome = config["refgenome"][0]
+refannotation = config["refannotation"][0]
+
 rule all:
 	input:
 		# qcat
-		# expand("{path}/preprocessing/qcat/none.fastq", path = config["path"]),
-		# expand("{path}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], strain = strains),
+		expand("{path}/preprocessing/qcat/none.fastq", path = config["path"]),
+		expand("{path}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], strain = strains),
 		# 
 		# filtlong
-		# expand("{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
+		expand("{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
 		# 
 		# nanoplot
-		# expand("{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}_NanoPlot-report.html", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
+		expand("{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}_NanoPlot-report.html", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
 		# 
 		# preprocess short reads
-		# expand("{path}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = strains, paired_end = END),
-		# expand("{path}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], strain = strains, paired_unpaired = PU),
-		# expand("{path}/preprocessing/illumina/{strain}_unique.fastq", path = config["path"], strain = strains),
+		expand("{path}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = strains, paired_end = END),
+		expand("{path}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], strain = strains, paired_unpaired = PU),
+		expand("{path}/preprocessing/illumina/{strain}_unique.fastq", path = config["path"], strain = strains),
 		# 
 		# assembly
-		# expand("{path}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# polishing - 4x Racon long -> medaka -> 4x Racon short
 		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
@@ -41,10 +44,10 @@ rule all:
 		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# quast
-		# expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
+		expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
 		# 
 		# prokka
-		# expand("{path}/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.gff", path = config["path"], strain = strains, assembler = config["assembly"])
+		expand("{path}/annotation/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"])
 
 
 
@@ -164,7 +167,7 @@ rule qcat:
 		outputdir = '{path}/preprocessing/qcat/'
 	threads: 32 # default: 8
 	shell:
-		'qcat -t {threads} -k NBD103/NBD104 --trim -f {input} -b {params.outputdir}'
+		'qcat -t {threads} -k NBD104/NBD114 --trim -f {input} -b {params.outputdir}'
 
 # rename qcat output
 def get_input(strain):
@@ -217,7 +220,7 @@ rule nanoplot:
 # Flye
 rule flye:
 	input:
-		'{path}/preprocessing/{demultiplex}/{strain}.fastq.gz'
+		rules.filtlong.output.filtered
 	output:
 		contigs = '{path}/assembly/{strain}_{demultiplex}_flye/assembly.fasta'
 	conda:
@@ -272,7 +275,7 @@ rule medaka:
 		outputdir = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/'
 	threads: 32
 	shell:
-		'medaka_consensus -i {input.reads} -d {input.racon_out} -o {params.outputdir} -t {threads} -m r941_min_high'
+		'medaka_consensus -i {input.reads} -d {input.racon_out} -o {params.outputdir} -t {threads} -m r941_min_high_g344'
 
 # polishing the assembly with Racon four times using the short reads		use minimap2 for the mapping inbetween the polishing
 rule minimap2_racon_short:
@@ -296,34 +299,25 @@ rule prokka:
     input:
         assembly = rules.minimap2_racon_short.output.out
     output:
-        gff = '{path}/prokka/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff'
+        gff = '{path}/annotation/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff'
     conda:
         'envs/annotation.yaml'
     params:
-        outputdir = '{path}/prokka/{strain}_{demultiplex}_{assembler}/',
+        outputdir = '{path}/annotation/{strain}_{demultiplex}_{assembler}/',
         prefix = '{strain}_{demultiplex}_{assembler}'
     threads: 16
     shell:
-        'prokka --cpus {threads} --gcode 4 --outdir {params.outputdir} --force --prefix {params.prefix} {input.assembly}'
+        'prokka --cpus {threads} --gcode 4 --force --outdir {params.outputdir} --prefix {params.prefix} {input.assembly}'
+
+def get_quast_in():
+	out = ''
+	for i in strains:
+		out += config["path"][0] + '/postprocessing/' + i + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '/' + i + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '_short4.fasta '
+	return out[0:len(out)-1]
 
 rule quast:
 	input:
-        # insert path to final assembly file to incorporate all in quast statistics
-		in1 = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_circ.fasta'
-		# in2 = '{path}/postprocessing/STRAIN2_qcat_flye/STRAIN2_qcat_flye_short4.contigs.fasta',
-		# in3 = '{path}/postprocessing/STRAIN3_qcat_flye/STRAIN3_qcat_flye_short4.contigs.fasta'
-		# in1 = '{path}/postprocessing/14DD0147_qcat_flye/14DD0147_qcat_flye_short4.contigs.fasta',
-		# in2 = '{path}/postprocessing/15DD0207_qcat_flye/15DD0207_qcat_flye_short4.contigs.fasta',
-		# in3 = '{path}/postprocessing/15DD0165_qcat_flye/15DD0165_qcat_flye_short4.contigs.fasta',
-		# in4 = '{path}/postprocessing/15DD0234_qcat_flye/15DD0234_qcat_flye_short4.contigs.fasta',
-		# in5 = '{path}/postprocessing/15DD0163_qcat_flye/15DD0163_qcat_flye_short4.contigs.fasta',
-		# in6 = '{path}/postprocessing/15DD0233_qcat_flye/15DD0233_qcat_flye_short4.contigs.fasta',
-		# in7 = '{path}/postprocessing/15DD0164_qcat_flye/15DD0164_qcat_flye_short4.contigs.fasta',
-		# in8 = '{path}/postprocessing/15DD0218_qcat_flye/15DD0218_qcat_flye_short4.contigs.fasta',
-		# in9 = '{path}/postprocessing/15DD0210_qcat_flye/15DD0210_qcat_flye_short4.contigs.fasta',
-		# in10 = '{path}/postprocessing/15DD0238_qcat_flye/15DD0238_qcat_flye_short4.contigs.fasta',
-		# in11 = '{path}/postprocessing/15DD0261_qcat_flye/15DD0261_qcat_flye_short4.contigs.fasta',
-		# in12 = '{path}/postprocessing/15DD0228_qcat_flye/15DD0228_qcat_flye_short4.contigs.fasta'
+		'{path}/postprocessing/' + strains[0] + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '/' + strains[0] + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '_short4.fasta'
 	output:
 		report = '{path}/quality/quast/report.html'
 		#...
@@ -331,9 +325,7 @@ rule quast:
 		'envs/assembly_quality.yaml'
 	params:
 		outputdir = '{path}/quality/quast/',
-		path = '{path}/mycoplasma_bovis_genomes'
+		i = get_quast_in()
 	threads: 16
 	shell:
-		'quast {input.in1} -o {params.outputdir}'
-		# {input.in4} {input.in5} {input.in6} {input.in7} {input.in8} {input.in9} {input.in10}
-		# -r {params.path}/mycoplasma_bovis_referenceGenome.fasta -g {params.path}/GCF_000183385.1_ASM18338v1_genomic.gff
+		'quast {params.i} -o {params.outputdir} -t {threads} -r ' + refgenome + ' -g ' + refannotation

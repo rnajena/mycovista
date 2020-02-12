@@ -1,11 +1,20 @@
 # insert path to the folder for saving all generated data
-path: [/mnt/prostlocal2/projects/st_mycoplasma_assembly_2020-01-15/myco2_hybrid]
-# insert the name of the strains to the corresponding barcodes e.g.:  strain01: barcode01, strain02: barcode02, ...
-strains: {11DD0261: barcode01, 13DD0918: barcode02, 14DD0148: barcode03, 14DD0156: barcode04, 14DD0457_ML: barcode05, 15DD0123: barcode06, 15DD0140: barcode07, 15DD0141: barcode08, 15DD0160: barcode09, 15DD0161: barcode10, barcode11: barcode11, barcode12: barcode12}
-# strains: [14-2711]
+path: [/path/to/target/folder/]
+# insert path to reference genome file (.fasta)           reference genome files are used during QUAST
+refgenome: [/path/to/refgenome.fasta]
+# insert path to reference annotation file (.gff)
+refannotation: [/path/to/refannotation.gff]
+# insert the name of the strains to the corresponding barcodes.
+# e.g.  strain01: barcode01, strain02: barcode02, ...
+strains: {strain01: barcode01, strain02: barcode02, strain03: barcode03, strain04: barcode04, strain05: barcode05, strain06: barcode06, strain07: barcode07, strain08: barcode08, strain09: barcode09, strain10: barcode10, strain11: barcode11, strain12: barcode12, strain13: barcode13}
+# strains: {11DD0261: barcode01, 13DD0918: barcode02, 14DD0148: barcode03, 14DD0156: barcode04, 14DD0457_ML: barcode05, 15DD0123: barcode06, 15DD0140: barcode07, 15DD0141: barcode08, 15DD0160: barcode09, 15DD0161: barcode10, barcode11: barcode11, barcode12: barcode12}
+# strains: {14DD0147: barcode01, 15DD0164: barcode02, 15DD0207: barcode03, 15DD0165: barcode04, 15DD0218: barcode05, 15DD0234: barcode06, 15DD0210: barcode07, 15DD0238: barcode08, 15DD0261: barcode09, 15DD0163: barcode10, 15DD0228: barcode11, 15DD0233: barcode12}
+# strains: {15DD0240: barcode01, 15DD0249: barcode02, 15DD0250: barcode03, 15DD0263_OV: barcode04, 15DL0124: barcode05, 16DD0100: barcode06, 16DD0001: barcode07, 16DD0054_B: barcode08, 16DD0186: barcode09, 16DL0615: barcode10, DL422_88: barcode11, DL81_99: barcode12}
+# , 14DD0467: barcode13}
 preprocessing_short: [fastp, trimmomatic]
 preprocessing_long: [filtlong]
 demultiplexing: [qcat]
 assembly: [flye]
 postprocessing: [racon, medaka]
 quality: [fastqc, nanoplot, quast]
+annotation: [prokka]

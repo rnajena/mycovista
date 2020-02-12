@@ -4,7 +4,7 @@ import time
 reads_path = snakemake.params[3] + '/preprocessing/' + snakemake.params[1] + '/'
 only_reads = snakemake.params[0] + '_' + snakemake.params[1] + '_filtered.fastq.gz'
 assembly_path = snakemake.params[3] + '/assembly/' + snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '/'
-out_path = snakemake.params[0] + '/postprocessing/' + snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '/'
+out_path = snakemake.params[3] + '/postprocessing/' + snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '/'
 assembly_file = snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '.fasta'
 for i in range(4):
 	if i == 0:

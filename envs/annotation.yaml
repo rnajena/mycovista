@@ -1,8 +1,9 @@
 name: annotation
 channels:
-  - defaults
-  - conda-forge
+  - default
   - bioconda
+  - conda-forge
+  - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
   - aragorn=1.2.38=h470a237_2
