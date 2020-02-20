@@ -11,9 +11,10 @@ barcode_strain = dict(config["strains"])
 strains = list(barcode_strain.keys())
 barcodes = list(barcode_strain.values())
 for elem in strains[:]:
-    if elem[0:7] == 'barcode':
-        strains.remove(elem)
-        barcodes.remove(elem)
+	if elem[0:6] == 'strain':
+		help = strains.index(elem)
+		strains.remove(elem)
+		barcodes.pop(help)
 
 refgenome = config["refgenome"][0]
 refannotation = config["refannotation"][0]
@@ -25,7 +26,7 @@ rule all:
 		expand("{path}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], strain = strains),
 		# 
 		# filtlong
-		expand("{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
+		# expand("{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
 		# 
 		# nanoplot
 		expand("{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}_NanoPlot-report.html", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
@@ -204,7 +205,8 @@ rule filtlong:
 # using nanoplot for quality statistics of the long reads
 rule nanoplot:
 	input:
-		rules.filtlong.output.filtered
+		# rules.filtlong.output.filtered
+		'{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
 		'{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}_NanoPlot-report.html'
 	conda:
@@ -220,7 +222,8 @@ rule nanoplot:
 # Flye
 rule flye:
 	input:
-		rules.filtlong.output.filtered
+		# rules.filtlong.output.filtered
+		'{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
 		contigs = '{path}/assembly/{strain}_{demultiplex}_flye/assembly.fasta'
 	conda:
@@ -248,7 +251,7 @@ rule rename_flye:
 rule minimap2_racon_long:
 	input:
 		assembly = rules.rename_flye.output.flye,
-		reads = rules.filtlong.output.filtered
+		reads = '{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq' # rules.filtlong.output.filtered
 	output:
 		out = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta'
 	conda:
@@ -265,7 +268,7 @@ rule minimap2_racon_long:
 # polishing the assembly with medaka
 rule medaka:
 	input:
-		reads = rules.filtlong.output.filtered,
+		reads = '{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq', # rules.filtlong.output.filtered,
 		racon_out = rules.minimap2_racon_long.output.out
 	output:
 		medaka = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta'
