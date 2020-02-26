@@ -26,7 +26,7 @@ rule all:
 		expand("{path}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], strain = strains),
 		# 
 		# filtlong
-		# expand("{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
+		expand("{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
 		# 
 		# nanoplot
 		expand("{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}_NanoPlot-report.html", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
@@ -40,15 +40,15 @@ rule all:
 		expand("{path}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# polishing - 4x Racon long -> medaka -> 4x Racon short
-		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# quast
-		expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
+		# expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
 		# 
 		# prokka
-		expand("{path}/annotation/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"])
+		# expand("{path}/annotation/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"])
 
 
 
@@ -199,14 +199,13 @@ rule filtlong:
 		'envs/preprocessing.yaml'
 	threads: 16
 	shell:
-		'filtlong --min_length 1000 {input.reads} | gzip > {output.filtered}'
+		'filtlong --min_length 10 {input.reads} | gzip > {output.filtered}'
 
 
 # using nanoplot for quality statistics of the long reads
 rule nanoplot:
 	input:
-		# rules.filtlong.output.filtered
-		'{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
+		rules.filtlong.output.filtered
 	output:
 		'{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}_NanoPlot-report.html'
 	conda:
@@ -222,8 +221,7 @@ rule nanoplot:
 # Flye
 rule flye:
 	input:
-		# rules.filtlong.output.filtered
-		'{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
+		rules.filtlong.output.filtered
 	output:
 		contigs = '{path}/assembly/{strain}_{demultiplex}_flye/assembly.fasta'
 	conda:
@@ -251,7 +249,7 @@ rule rename_flye:
 rule minimap2_racon_long:
 	input:
 		assembly = rules.rename_flye.output.flye,
-		reads = '{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq' # rules.filtlong.output.filtered
+		reads = rules.filtlong.output.filtered
 	output:
 		out = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta'
 	conda:
@@ -268,7 +266,7 @@ rule minimap2_racon_long:
 # polishing the assembly with medaka
 rule medaka:
 	input:
-		reads = '{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq', # rules.filtlong.output.filtered,
+		reads = rules.filtlong.output.filtered,
 		racon_out = rules.minimap2_racon_long.output.out
 	output:
 		medaka = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta'

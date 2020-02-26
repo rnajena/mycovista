@@ -1,8 +1,9 @@
 name: read_quality
 channels:
-  - defaults
-  - conda-forge
+  - default
   - bioconda
+  - conda-forge
+  - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
   - biopython=1.74=py37h7b6447c_0
