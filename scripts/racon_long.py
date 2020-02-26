@@ -2,10 +2,10 @@ import os
 import time
 
 reads_path = snakemake.params[3] + '/preprocessing/' + snakemake.params[1] + '/'
-only_reads = snakemake.params[0] + '_' + snakemake.params[1] + '_filtered.fastq.gz'
+only_reads = snakemake.input[1].split('/')[len(snakemake.input[1].split('/'))-1]
 assembly_path = snakemake.params[3] + '/assembly/' + snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '/'
 out_path = snakemake.params[3] + '/postprocessing/' + snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '/'
-assembly_file = snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '.fasta'
+assembly_file = snakemake.input[0].split('/')[len(snakemake.input[0].split('/'))-1]
 for i in range(4):
 	if i == 0:
 		minimap2_input_assembly = assembly_path + assembly_file

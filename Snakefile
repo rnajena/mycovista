@@ -281,8 +281,8 @@ rule medaka:
 # polishing the assembly with Racon four times using the short reads		use minimap2 for the mapping inbetween the polishing
 rule minimap2_racon_short:
 	input:
-		reads = rules.unique_readID.output.unique,
-		assembly = rules.medaka.output.medaka
+		assembly = rules.medaka.output.medaka,
+		reads = rules.unique_readID.output.unique
 	output:
 		out = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.fasta'
 	conda:

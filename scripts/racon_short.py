@@ -2,7 +2,7 @@ import os
 import time
 
 reads_path = snakemake.params[3] + '/preprocessing/illumina/'
-only_reads = snakemake.params[0] + '_unique.fastq'
+only_reads = snakemake.input[1].split('/')[len(snakemake.input[1].split('/'))-1]
 out_path = snakemake.params[3] + '/postprocessing/' + snakemake.params[0] + '_' + snakemake.params[1] + '_' + snakemake.params[2] + '/'
 assembly_file = 'consensus.fasta'
 for i in range(4):
