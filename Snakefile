@@ -32,24 +32,26 @@ rule all:
 		expand("{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}_NanoPlot-report.html", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
 		# 
 		# preprocess short reads
-		expand("{path}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = strains, paired_end = END),
-		expand("{path}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], strain = strains, paired_unpaired = PU),
-		expand("{path}/preprocessing/illumina/{strain}_unique.fastq", path = config["path"], strain = strains),
+		# expand("{path}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = strains, paired_end = END),
+		# expand("{path}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], strain = strains, paired_unpaired = PU),
+		# expand("{path}/preprocessing/illumina/{strain}_unique.fastq", path = config["path"], strain = strains),
 		# 
 		# assembly
 		expand("{path}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# polishing - 4x Racon long -> medaka -> 4x Racon short
-		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_short4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_final.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# quast
-		# expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
+		expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
 		# 
 		# prokka
-		# expand("{path}/annotation/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"])
-
+		expand("{path}/annotation/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		#
+		# ideel
+		expand('{path}/ideel/hists/{strain}_{demultiplex}_{assembler}_final.pdf',  path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"])
 
 
 # create folders for the following steps
@@ -199,7 +201,7 @@ rule filtlong:
 		'envs/preprocessing.yaml'
 	threads: 16
 	shell:
-		'filtlong --min_length 10 {input.reads} | gzip > {output.filtered}'
+		'filtlong --min_length 1000 {input.reads} | gzip > {output.filtered}'
 
 
 # using nanoplot for quality statistics of the long reads
@@ -295,10 +297,18 @@ rule minimap2_racon_short:
 	threads: 32
 	script:
 		'scripts/racon_short.py'
+
+rule final:
+	input:
+		rules.minimap2_racon_short.output.out
+	output:
+		'{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_final.fasta'
+	shell:
+		'mv {input} {output}'
 		
 rule prokka:
     input:
-        assembly = rules.minimap2_racon_short.output.out
+        assembly = rules.final.output
     output:
         gff = '{path}/annotation/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff'
     conda:
@@ -313,12 +323,12 @@ rule prokka:
 def get_quast_in():
 	out = ''
 	for i in strains:
-		out += config["path"][0] + '/postprocessing/' + i + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '/' + i + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '_short4.fasta '
+		out += config["path"][0] + '/postprocessing/' + i + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '/' + i + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '_final.fasta '
 	return out[0:len(out)-1]
 
 rule quast:
 	input:
-		'{path}/postprocessing/' + strains[0] + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '/' + strains[0] + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '_short4.fasta'
+		'{path}/postprocessing/' + strains[0] + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '/' + strains[0] + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '_final.fasta'
 	output:
 		report = '{path}/quality/quast/report.html'
 		#...
@@ -330,3 +340,40 @@ rule quast:
 	threads: 16
 	shell:
 		'quast {params.i} -o {params.outputdir} -t {threads} -r ' + refgenome + ' -g ' + refannotation
+
+
+# ideel
+rule prodigal:
+    input:
+        '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_final.fasta'
+    output:
+        temp('{path}/ideel/proteins/{strain}_{demultiplex}_{assembler}_final.faa')
+    conda:
+        'envs/ideel.yaml'
+    shell:
+        'prodigal -g 4 -a {output} -q -i {input}'
+
+rule diamond:
+    input:
+        '{path}/ideel/proteins/{strain}_{demultiplex}_{assembler}_final.faa'
+    output:
+        temp('{path}/ideel/lengths/{strain}_{demultiplex}_{assembler}_final.data')
+    conda:
+        'envs/ideel.yaml'
+    threads: 8
+    params:
+        db = 'ideel/uniprot_sprot.dmnd',
+        of = '6 qlen slen'
+    shell:
+        'diamond blastp --threads {threads} --max-target-seqs 1 --db {params.db} --query {input} --outfmt {params.of} --out {output}'
+
+rule hist:
+    input:
+        '{path}/ideel/lengths/{strain}_{demultiplex}_{assembler}_final.data'
+    output:
+        '{path}/ideel/hists/{strain}_{demultiplex}_{assembler}_final.pdf'
+    conda:
+        'envs/ideel.yaml'
+    script:
+        'ideel/scripts/hist.R'
+    # http://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#external-scripts
