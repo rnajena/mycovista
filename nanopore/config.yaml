@@ -1,6 +1,0 @@
-path: {/mnt/prostlocal2/projects/st_mycoplasma_assembly/nanopore}
-strains: {15DD0163,17DD0007,17DD0020}
-preprocessing: {porechop,deepbinner}
-assembly: {canu,flye,wtdbg2}
-postprocessing: {racon,medaka}
-quality: {quast,nanoplot}

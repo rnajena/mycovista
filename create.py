@@ -1,11 +1,13 @@
-#create folders for the output files from the hybrid data pipeline
+# create folders for output files generated during the de novo hybrid assembly pipeline
+
 import os
 
 configfile = open('config.yaml', 'r').read()
 liste = configfile.split('\n')
-for i in liste:
-    if i == '' or i[0] == '#' or i[0:3] == 'ref':
-        liste.remove(i)
+for elem in liste[:]:
+    if elem == '' or elem[0] == '#' or elem[0:3] == 'ref':
+        liste.remove(elem)
+
 if liste[0][:5] == 'path:':
     path = liste[0][7:len(liste[0]) - 1]
     if os.path.exists(path) == False:

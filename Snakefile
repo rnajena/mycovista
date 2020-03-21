@@ -1,4 +1,4 @@
-# hybrid assembly pipeline
+# de novo hybrid assembly pipeline
 
 # files and directories
 configfile: "config.yaml"
@@ -18,6 +18,8 @@ for elem in strains[:]:
 
 refgenome = config["refgenome"][0]
 refannotation = config["refannotation"][0]
+refdatabase = config["refdatabase"][0]
+
 
 rule all:
 	input:
@@ -32,9 +34,9 @@ rule all:
 		expand("{path}/quality/nanoplot/{strain}/{strain}_{demultiplex}_NanoPlot-report.html", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
 		# 
 		# preprocess short reads
-		# expand("{path}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = strains, paired_end = END),
-		# expand("{path}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], strain = strains, paired_unpaired = PU),
-		# expand("{path}/preprocessing/illumina/{strain}_unique.fastq", path = config["path"], strain = strains),
+		expand("{path}/quality/fastqc/{strain}/{strain}_{paired_end}_fastqc.html", path = config["path"], strain = strains, paired_end = END),
+		expand("{path}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], strain = strains, paired_unpaired = PU),
+		expand("{path}/preprocessing/illumina/{strain}_unique.fastq", path = config["path"], strain = strains),
 		# 
 		# assembly
 		expand("{path}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
@@ -43,8 +45,8 @@ rule all:
 		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_final.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# 
-		# quast
+		
+		quast
 		expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
 		# 
 		# prokka
@@ -54,12 +56,12 @@ rule all:
 		expand('{path}/ideel/hists/{strain}_{demultiplex}_{assembler}_final.pdf',  path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"])
 
 
-# create folders for the following steps
+# create folders for following steps
 rule create:
 	shell:
 		'python create.py'
 
-# quality check of all short raw reads
+# quality check of the short raw reads - FastQC
 rule fastqc:
 	input:
 		'{path}/raw_data/{strain}_{paired_end}.fastq.gz'
@@ -70,9 +72,10 @@ rule fastqc:
 		'envs/read_quality.yaml'
 	params:
 		outputdir = '{path}/quality/fastqc/{strain}/'
-	threads: 16
+	threads: 8
 	shell:
 		'fastqc -t {threads} {input} -o {params.outputdir}'
+
 
 # first preprocessing of the short reads - fastp
 rule fastp:
@@ -88,11 +91,12 @@ rule fastp:
 		outputdir = '{path}/preprocessing/illumina/fastp/',
 		html = '{strain}_fastp.html',
 		json = '{strain}_fastp.json'
-	threads: 16
+	threads: 8
 	shell:
 		'fastp -w {threads} -i {input.forward} -I {input.reverse} -o {output.forward} -O {output.reverse} --json {params.outputdir}{params.json} --html {params.outputdir}{params.html}'
 
-# second preprocessing of the short reads - trimmomatic
+
+# second preprocessing of the short reads - Trimmomatic
 rule trimmomatic:
 	input:
 		forward = rules.fastp.output.forward,
@@ -104,7 +108,7 @@ rule trimmomatic:
 		reverseU = '{path}/preprocessing/illumina/trimmomatic/{strain}_2U.fastq.gz'
 	conda:
 		'envs/preprocessing.yaml'
-	threads: 16
+	threads: 8
 	shell:
 		'trimmomatic PE -phred33 -threads {threads} {input.forward} {input.reverse} {output.forwardP} {output.forwardU} {output.reverseP} {output.reverseU} SLIDINGWINDOW:4:28 MINLEN:20'
 			# PE					for paired end reads
@@ -112,7 +116,8 @@ rule trimmomatic:
 			# SLIDINGWINDOW:4:28	quality score = 28, because the trimming can be done more restrictive due to the high coverage    window size = 4 to prevent to stop the trimming at a local score maximum within one read
 			# MINLEN:20				to get less random matches during mapping
 
-# concatenate all short reads separated by strain for postprocessing of the long reads assemblies later
+
+# concatenate short reads for further postprocessing of the assembly
 rule concat_short:
 	input:
 		forwardP = rules.trimmomatic.output.forwardP,
@@ -132,7 +137,8 @@ rule gunzip_short:
 	shell:
 		'gunzip {input.all}'
 
-# concatenate the read ID in one line to get unique read IDs for postprocessing of the long reads assemblies later
+
+# concatenate read ID to get unique read IDs for further postprocessing of the assembly
 rule unique_readID:
 	input:
 		all = rules.gunzip_short.output.gunzip
@@ -141,7 +147,8 @@ rule unique_readID:
 	shell:
 		"sed 's/ 2:N:0/:2:N:0/g' {input.all} | sed 's/ 1:N:0/:1:N:0/g' > {output.unique}"
 
-# quality check of all preprocessed short reads
+
+# quality check of the preprocessed short reads - FastQC
 rule fastqc_preprocessing:
 	input:
 		'{path}/preprocessing/illumina/trimmomatic/{strain}_{paired_unpaired}.fastq.gz'
@@ -152,12 +159,12 @@ rule fastqc_preprocessing:
 		'envs/read_quality.yaml'
 	params:
 		outputdir = '{path}/quality/fastqc/{strain}/'
-	threads: 16
+	threads: 8
 	shell:
 		'fastqc {input} -t {threads} -o {params.outputdir}'
 
 
-# demultiplexing the long reads with qcat
+# demultiplexing of the long reads - qcat
 rule qcat:
 	input:
 		'{path}/raw_data/nanopore.fastq'
@@ -168,9 +175,10 @@ rule qcat:
 		'envs/qcat.yaml'
 	params:
 		outputdir = '{path}/preprocessing/qcat/'
-	threads: 32 # default: 8
+	threads: 16 # default: 8
 	shell:
 		'qcat -t {threads} -k NBD104/NBD114 --trim -f {input} -b {params.outputdir}'
+
 
 # rename qcat output
 def get_input(strain):
@@ -191,7 +199,7 @@ rule rename_qcat:
         os.system(command)
 
 
-# filter demultiplexed long reads with Filtlong
+# filter demultiplexed long reads - Filtlong
 rule filtlong:
 	input:
 		reads = '{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
@@ -199,12 +207,12 @@ rule filtlong:
 		filtered = '{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz'
 	conda:
 		'envs/preprocessing.yaml'
-	threads: 16
+	threads: 8
 	shell:
 		'filtlong --min_length 1000 {input.reads} | gzip > {output.filtered}'
 
 
-# using nanoplot for quality statistics of the long reads
+# quality check of the preprocessed long reads - NanoPlot
 rule nanoplot:
 	input:
 		rules.filtlong.output.filtered
@@ -215,12 +223,12 @@ rule nanoplot:
 	params:
 		outputdir = '{path}/quality/nanoplot/{strain}/',
 		prefix = '{strain}_{demultiplex}_'
-	threads: 16
+	threads: 8
 	shell:
 		'NanoPlot -t {threads} --minlength 1000 --fastq {input} -o {params.outputdir} -p {params.prefix} --title {params.prefix}minlength1000'
 
-# long read assembler
-# Flye
+
+# long-read-only assembly - Flye
 rule flye:
 	input:
 		rules.filtlong.output.filtered
@@ -238,7 +246,8 @@ rule flye:
 		# --iterations 2			two runs of polishing
 		# --plasmids				for circular genomes and plasmids
 
-# rename flye output
+
+# rename Flye output
 rule rename_flye:
 	input:
 		contigs = rules.flye.output.contigs
@@ -247,7 +256,8 @@ rule rename_flye:
 	shell:
 		'mv {input.contigs} {output.flye}'
 
-# polishing the assembly with Racon four times using the long reads		use minimap2 for the mapping inbetween the polishing
+
+# assembly postprocessing (polishing) using long reads - Racon			including minimap2 for the mapping inbetween
 rule minimap2_racon_long:
 	input:
 		assembly = rules.rename_flye.output.flye,
@@ -261,11 +271,12 @@ rule minimap2_racon_long:
 		demultiplex = '{demultiplex}',
 		assembler = '{assembler}',
 		path = '{path}'
-	threads: 32
+	threads: 16
 	script:
 		'scripts/racon_long.py'
 
-# polishing the assembly with medaka
+
+# assembly postprocessing (polishing) using long reads - medaka
 rule medaka:
 	input:
 		reads = rules.filtlong.output.filtered,
@@ -276,11 +287,12 @@ rule medaka:
 		'envs/postprocessing.yaml'
 	params:
 		outputdir = '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/'
-	threads: 32
+	threads: 16
 	shell:
 		'medaka_consensus -i {input.reads} -d {input.racon_out} -o {params.outputdir} -t {threads} -m r941_min_high_g344'
 
-# polishing the assembly with Racon four times using the short reads		use minimap2 for the mapping inbetween the polishing
+
+# assembly postprocessing (polishing) using short reads - Racon			including minimap2 for the mapping inbetween
 rule minimap2_racon_short:
 	input:
 		assembly = rules.medaka.output.medaka,
@@ -294,10 +306,12 @@ rule minimap2_racon_short:
 		demultiplex = '{demultiplex}',
 		assembler = '{assembler}',
 		path = '{path}'
-	threads: 32
+	threads: 16
 	script:
 		'scripts/racon_short.py'
 
+
+# rename final assembly
 rule final:
 	input:
 		rules.minimap2_racon_short.output.out
@@ -305,7 +319,9 @@ rule final:
 		'{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_final.fasta'
 	shell:
 		'mv {input} {output}'
-		
+
+
+# assembly annotation - Prokka	
 rule prokka:
     input:
         assembly = rules.final.output
@@ -320,6 +336,8 @@ rule prokka:
     shell:
         'prokka --cpus {threads} --gcode 4 --force --outdir {params.outputdir} --prefix {params.prefix} {input.assembly}'
 
+
+# assembly statistics (of all generated assemblies) - QUAST
 def get_quast_in():
 	out = ''
 	for i in strains:
@@ -331,7 +349,6 @@ rule quast:
 		'{path}/postprocessing/' + strains[0] + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '/' + strains[0] + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '_final.fasta'
 	output:
 		report = '{path}/quality/quast/report.html'
-		#...
 	conda:
 		'envs/assembly_quality.yaml'
 	params:
@@ -342,7 +359,8 @@ rule quast:
 		'quast {params.i} -o {params.outputdir} -t {threads} -r ' + refgenome + ' -g ' + refannotation
 
 
-# ideel
+# ideel plot
+# Quick test for interrupted ORFs in bacterial/microbial genomes - https://github.com/phiweger/ideel
 rule prodigal:
     input:
         '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_final.fasta'
@@ -362,10 +380,9 @@ rule diamond:
         'envs/ideel.yaml'
     threads: 8
     params:
-        db = 'ideel/uniprot_sprot.dmnd',
         of = '6 qlen slen'
     shell:
-        'diamond blastp --threads {threads} --max-target-seqs 1 --db {params.db} --query {input} --outfmt {params.of} --out {output}'
+        'diamond blastp --threads {threads} --max-target-seqs 1 --db' + refdatabase + ' --query {input} --outfmt {params.of} --out {output}'
 
 rule hist:
     input:
@@ -375,5 +392,5 @@ rule hist:
     conda:
         'envs/ideel.yaml'
     script:
-        'ideel/scripts/hist.R'
+        'scripts/hist.R'
     # http://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#external-scripts
