@@ -45,8 +45,8 @@ rule all:
 		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_final.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		
-		quast
+		#
+		# quast
 		expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
 		# 
 		# prokka
@@ -129,6 +129,7 @@ rule concat_short:
 	shell:
 		'cat {input.forwardP} {input.forwardU} {input.reverseP} {input.reverseU} > {output.all}'
 
+# unzip short read files for further processing
 rule gunzip_short:
 	input:
 		all = rules.concat_short.output.all
@@ -343,10 +344,11 @@ def get_quast_in():
 	for i in strains:
 		out += config["path"][0] + '/postprocessing/' + i + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '/' + i + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '_final.fasta '
 	return out[0:len(out)-1]
+quast_input = get_quast_in().split(" ")
 
 rule quast:
 	input:
-		'{path}/postprocessing/' + strains[0] + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '/' + strains[0] + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '_final.fasta'
+		quast_input
 	output:
 		report = '{path}/quality/quast/report.html'
 	conda:
@@ -382,7 +384,7 @@ rule diamond:
     params:
         of = '6 qlen slen'
     shell:
-        'diamond blastp --threads {threads} --max-target-seqs 1 --db' + refdatabase + ' --query {input} --outfmt {params.of} --out {output}'
+        'diamond blastp --threads {threads} --max-target-seqs 1 --db ' + refdatabase + ' --query {input} --outfmt {params.of} --out {output}'
 
 rule hist:
     input:

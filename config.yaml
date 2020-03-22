@@ -4,7 +4,7 @@ path: [/path/to/target/folder]
 refgenome: [/path/to/refgenome.fasta]
 # insert path to reference annotation file (.gff)
 refannotation: [/path/to/refannotation.gff]
-# insert path to DIAMOND database file (.dmnd)            used during ideel plot generation
+# insert path to DIAMOND database file (.dmnd)            used during ideel plot creation
 refdatabase: [/path/to/refdatabase.dmnd]
 # insert the name of the strains to the corresponding barcodes.
 # e.g.  strains: {15DD0163: barcode01, 11DD0261: barcode02, ... }
