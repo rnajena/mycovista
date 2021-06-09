@@ -38,28 +38,38 @@ rule all:
 		expand("{path}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], strain = strains, paired_unpaired = PU),
 		expand("{path}/preprocessing/illumina/{strain}_unique.fastq", path = config["path"], strain = strains),
 		# 
-		# assembly
-		expand("{path}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		# 
-		# polishing - 4x Racon long -> medaka -> 4x Racon short
-		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_final.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# # assembly
+		# expand("{path}/assembly/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# # 
+		# # polishing - 4x Racon long -> medaka -> 4x Racon short
+		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_final.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		#
-		# quast
-		expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
+		# # quast
+		# expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
+		# # 
+		# # prokka
+		# expand("{path}/annotation/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# #
+		# # ideel
+		# expand('{path}/ideel/hists/{strain}_{demultiplex}_{assembler}_final.pdf',  path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"])
 		# 
-		# prokka
-		expand("{path}/annotation/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		# 
+		# quast
+		# expand("{path}/quast/report.html", path = config["path"], strain = strains),
+		# 
+		# # prokka
+		# expand("{path}/annotation/{strain}.gff", path = config["path"], strain = strains),
 		#
 		# ideel
-		expand('{path}/ideel/hists/{strain}_{demultiplex}_{assembler}_final.pdf',  path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"])
+		# expand('{path}/ideel/hists/{strain}.pdf',  path = config["path"], strain = strains)
 
 
 # create folders for following steps
 rule create:
 	shell:
-		'python create.py'
+		'python scripts/create.py'
 
 # quality check of the short raw reads - FastQC
 rule fastqc:
@@ -80,11 +90,11 @@ rule fastqc:
 # first preprocessing of the short reads - fastp
 rule fastp:
 	input:
-		forward = '{path}/raw_data/{strain}_1.fastq.gz',
-		reverse = '{path}/raw_data/{strain}_2.fastq.gz'
+		fw = '{path}/raw_data/{strain}_1.fastq.gz',
+		rv = '{path}/raw_data/{strain}_2.fastq.gz'
 	output:
-		forward = '{path}/preprocessing/illumina/fastp/{strain}_1_fastp.fastq.gz',
-		reverse = '{path}/preprocessing/illumina/fastp/{strain}_2_fastp.fastq.gz'
+		f = '{path}/preprocessing/illumina/fastp/{strain}_1_fastp.fastq.gz',
+		r = '{path}/preprocessing/illumina/fastp/{strain}_2_fastp.fastq.gz'
 	conda:
 		'envs/preprocessing.yaml'
 	params:
@@ -93,24 +103,24 @@ rule fastp:
 		json = '{strain}_fastp.json'
 	threads: 8
 	shell:
-		'fastp -w {threads} -i {input.forward} -I {input.reverse} -o {output.forward} -O {output.reverse} --json {params.outputdir}{params.json} --html {params.outputdir}{params.html}'
+		'fastp -w {threads} -i {input.fw} -I {input.rv} -o {output.f} -O {output.r}' # --json {params.outputdir}{params.json} --html {params.outputdir}{params.html}'
 
 
 # second preprocessing of the short reads - Trimmomatic
 rule trimmomatic:
 	input:
-		forward = rules.fastp.output.forward,
-		reverse = rules.fastp.output.reverse
+		fw = rules.fastp.output.f,
+		rv = rules.fastp.output.r
 	output:
-		forwardP = '{path}/preprocessing/illumina/trimmomatic/{strain}_1P.fastq.gz',
-		forwardU = '{path}/preprocessing/illumina/trimmomatic/{strain}_1U.fastq.gz',
-		reverseP = '{path}/preprocessing/illumina/trimmomatic/{strain}_2P.fastq.gz',
-		reverseU = '{path}/preprocessing/illumina/trimmomatic/{strain}_2U.fastq.gz'
+		fP = '{path}/preprocessing/illumina/trimmomatic/{strain}_1P.fastq.gz',
+		fU = '{path}/preprocessing/illumina/trimmomatic/{strain}_1U.fastq.gz',
+		rP = '{path}/preprocessing/illumina/trimmomatic/{strain}_2P.fastq.gz',
+		rU = '{path}/preprocessing/illumina/trimmomatic/{strain}_2U.fastq.gz'
 	conda:
 		'envs/preprocessing.yaml'
 	threads: 8
 	shell:
-		'trimmomatic PE -phred33 -threads {threads} {input.forward} {input.reverse} {output.forwardP} {output.forwardU} {output.reverseP} {output.reverseU} SLIDINGWINDOW:4:28 MINLEN:20'
+		'trimmomatic PE -phred33 -threads {threads} {input.fw} {input.rv} {output.fP} {output.fU} {output.rP} {output.rU} SLIDINGWINDOW:4:28 MINLEN:20'
 			# PE					for paired end reads
 			# -phred33				Illumina 1.9 uses phred +33
 			# SLIDINGWINDOW:4:28	quality score = 28, because the trimming can be done more restrictive due to the high coverage    window size = 4 to prevent to stop the trimming at a local score maximum within one read
@@ -120,14 +130,14 @@ rule trimmomatic:
 # concatenate short reads for further postprocessing of the assembly
 rule concat_short:
 	input:
-		forwardP = rules.trimmomatic.output.forwardP,
-		forwardU = rules.trimmomatic.output.forwardU,
-		reverseP = rules.trimmomatic.output.reverseP,
-		reverseU = rules.trimmomatic.output.reverseU
+		fwP = rules.trimmomatic.output.fP,
+		fwU = rules.trimmomatic.output.fU,
+		rvP = rules.trimmomatic.output.rP,
+		rvU = rules.trimmomatic.output.rU
 	output:
 		all = '{path}/preprocessing/illumina/{strain}_all_short.fastq.gz'
 	shell:
-		'cat {input.forwardP} {input.forwardU} {input.reverseP} {input.reverseU} > {output.all}'
+		'cat {input.fwP} {input.fwU} {input.rvP} {input.rvU} > {output.all}'
 
 # unzip short read files for further processing
 rule gunzip_short:
@@ -324,25 +334,25 @@ rule final:
 
 # assembly annotation - Prokka	
 rule prokka:
-    input:
-        assembly = rules.final.output
-    output:
-        gff = '{path}/annotation/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff'
-    conda:
-        'envs/annotation.yaml'
-    params:
-        outputdir = '{path}/annotation/{strain}_{demultiplex}_{assembler}/',
-        prefix = '{strain}_{demultiplex}_{assembler}'
-    threads: 16
-    shell:
-        'prokka --cpus {threads} --gcode 4 --force --outdir {params.outputdir} --prefix {params.prefix} {input.assembly}'
+	input:
+		assembly = '{path}/assemblies/{strain}.fasta'
+	output:
+		gff = '{path}/annotation/{strain}.gff'
+	conda:
+		'envs/annotation.yaml'
+	params:
+		outputdir = '{path}/annotation/',
+		prefix = '{strain}'
+	threads: 16
+	shell:
+		'prokka --cpus {threads} --gcode 4 --force --outdir {params.outputdir} --prefix {params.prefix} {input.assembly}'
 
 
 # assembly statistics (of all generated assemblies) - QUAST
 def get_quast_in():
 	out = ''
 	for i in strains:
-		out += config["path"][0] + '/postprocessing/' + i + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '/' + i + '_' + config["demultiplexing"][0] + '_' + config["assembly"][0] + '_final.fasta '
+		out += config["path"][0] + '/assemblies/' + i + '.fasta '
 	return out[0:len(out)-1]
 quast_input = get_quast_in().split(" ")
 
@@ -350,24 +360,24 @@ rule quast:
 	input:
 		quast_input
 	output:
-		report = '{path}/quality/quast/report.html'
+		report = '{path}/quast/report.html'
 	conda:
 		'envs/assembly_quality.yaml'
 	params:
-		outputdir = '{path}/quality/quast/',
+		outputdir = '{path}/quast/',
 		i = get_quast_in()
 	threads: 16
 	shell:
-		'quast {params.i} -o {params.outputdir} -t {threads} -r ' + refgenome + ' -g ' + refannotation
+		'quast {params.i} -o {params.outputdir} -t {threads}' # -r ' + refgenome + ' -g ' + refannotation
 
 
 # ideel plot
 # Quick test for interrupted ORFs in bacterial/microbial genomes - https://github.com/phiweger/ideel
 rule prodigal:
     input:
-        '{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_final.fasta'
+        '{path}/assemblies/{strain}.fasta'
     output:
-        temp('{path}/ideel/proteins/{strain}_{demultiplex}_{assembler}_final.faa')
+        temp('{path}/ideel/proteins/{strain}.faa')
     conda:
         'envs/ideel.yaml'
     shell:
@@ -375,9 +385,9 @@ rule prodigal:
 
 rule diamond:
     input:
-        '{path}/ideel/proteins/{strain}_{demultiplex}_{assembler}_final.faa'
+        '{path}/ideel/proteins/{strain}.faa'
     output:
-        temp('{path}/ideel/lengths/{strain}_{demultiplex}_{assembler}_final.data')
+        temp('{path}/ideel/lengths/{strain}.data')
     conda:
         'envs/ideel.yaml'
     threads: 8
@@ -388,9 +398,9 @@ rule diamond:
 
 rule hist:
     input:
-        '{path}/ideel/lengths/{strain}_{demultiplex}_{assembler}_final.data'
+        '{path}/ideel/lengths/{strain}.data'
     output:
-        '{path}/ideel/hists/{strain}_{demultiplex}_{assembler}_final.pdf'
+        '{path}/ideel/hists/{strain}.pdf'
     conda:
         'envs/ideel.yaml'
     script:
