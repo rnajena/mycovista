@@ -11,12 +11,12 @@ END = '1 2'.split() # paired_end
 # strains = list(barcode_strain.keys())
 strains = list(config["strains"])
 # barcodes = list(barcode_strain.values())
-for elem in strains[:]:
-	if elem[0:6] == 'strain':
-		help = strains.index(elem)
-		strains.remove(elem)
-		barcodes.pop(help)
-
+# for elem in strains[:]:
+# 	if elem[0:6] == 'strain':
+# 		help = strains.index(elem)
+# 		strains.remove(elem)
+# 		barcodes.pop(help)
+# 
 # refgenome = config["refgenome"][0]
 # refannotation = config["refannotation"][0]
 # refdatabase = config["refdatabase"][0]
