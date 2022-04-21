@@ -6,20 +6,20 @@ configfile: "config.yaml"
 PU = '1P 1U 2P 2U'.split() # paired_unpaired
 END = '1 2'.split() # paired_end
 
-barcode_strain = dict(config["strains"])
+# barcode_strain = dict(config["strains"])
 
 # strains = list(barcode_strain.keys())
 strains = list(config["strains"])
-barcodes = list(barcode_strain.values())
+# barcodes = list(barcode_strain.values())
 for elem in strains[:]:
 	if elem[0:6] == 'strain':
 		help = strains.index(elem)
 		strains.remove(elem)
 		barcodes.pop(help)
 
-refgenome = config["refgenome"][0]
-refannotation = config["refannotation"][0]
-refdatabase = config["refdatabase"][0]
+# refgenome = config["refgenome"][0]
+# refannotation = config["refannotation"][0]
+# refdatabase = config["refdatabase"][0]
 
 
 rule all:
