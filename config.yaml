@@ -1,5 +1,5 @@
 # insert path to the folder for saving all generated data
-path: [/path/to/target/folder]
+path: [/data/prostlocal2/projects/st_mycoplasma/myco_doubice]
 # insert path to reference genome file (.fasta)           reference genome files are used during QUAST
 refgenome: [/path/to/refgenome.fasta]
 # insert path to reference annotation file (.gff)
@@ -8,13 +8,14 @@ refannotation: [/path/to/refannotation.gff]
 refdatabase: [/path/to/refdatabase.dmnd]
 # insert the name of the strains to the corresponding barcodes.
 # e.g.  strains: {15DD0163: barcode01, 11DD0261: barcode02, ... }
-strains: {strain01: barcode01, strain02: barcode02, strain03: barcode03, strain04: barcode04, strain05: barcode05, strain06: barcode06, strain07: barcode07, strain08: barcode08, strain09: barcode09, strain10: barcode10, strain11: barcode11, strain12: barcode12, strain13: barcode13}
+# strains: {strain01: barcode01, strain02: barcode02, strain03: barcode03, strain04: barcode04, strain05: barcode05, strain06: barcode06, strain07: barcode07, strain08: barcode08, strain09: barcode09, strain10: barcode10, strain11: barcode11, strain12: barcode12, strain13: barcode13}
+strains = [15DD0163, 17DD0007, 17DD0020]
 #
 # The following lines inform you about the incorporated tools and help generating the required folders.
 # Please do not edit them.
 preprocessing_short: [fastp, trimmomatic]
 preprocessing_long: [filtlong]
-demultiplexing: [qcat]
+demultiplexing: [guppy]
 assembly: [flye]
 postprocessing: [racon, medaka]
 quality: [fastqc, nanoplot, quast]

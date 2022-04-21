@@ -8,7 +8,8 @@ END = '1 2'.split() # paired_end
 
 barcode_strain = dict(config["strains"])
 
-strains = list(barcode_strain.keys())
+# strains = list(barcode_strain.keys())
+strains = list(config["strains"])
 barcodes = list(barcode_strain.values())
 for elem in strains[:]:
 	if elem[0:6] == 'strain':
@@ -24,8 +25,8 @@ refdatabase = config["refdatabase"][0]
 rule all:
 	input:
 		# qcat
-		expand("{path}/preprocessing/qcat/none.fastq", path = config["path"]),
-		expand("{path}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], strain = strains),
+		# expand("{path}/preprocessing/qcat/none.fastq", path = config["path"]),
+		# expand("{path}/preprocessing/qcat/{strain}_qcat.fastq", path = config["path"], strain = strains),
 		# 
 		# filtlong
 		expand("{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz", path = config["path"],  strain = strains, demultiplex = config["demultiplexing"]),
@@ -213,7 +214,8 @@ rule rename_qcat:
 # filter demultiplexed long reads - Filtlong
 rule filtlong:
 	input:
-		reads = '{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
+		reads = '{path}/raw_data/{strain}_{demultiplex}.fastq'
+		# reads = '{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}.fastq'
 	output:
 		filtered = '{path}/preprocessing/{demultiplex}/{strain}_{demultiplex}_filtered.fastq.gz'
 	conda:
