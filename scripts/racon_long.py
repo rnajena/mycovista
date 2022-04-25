@@ -21,8 +21,10 @@ for i in range(4):
 	while os.path.isfile(out_path + paf) == False:
 		time.sleep(5)
 	if i == 0:
-		racon = 'docker run --rm --user $(id -u):$(id -g) -it -v ' + reads_path + ':/input1 -v ' + out_path + ':/input2 -v ' + assembly_path + ':/input3 -v ' + out_path + ':/output quay.io/biocontainers/racon:1.3.2--he941832_0 sh -c "racon -t ' + str(snakemake.threads) + ' /input1/' + only_reads + ' /input2/' + paf + ' /input3/' + racon_in_assembly + ' > /output/' + out_assembly + '"'
+		# racon = 'docker run --rm --user $(id -u):$(id -g) -it -v ' + reads_path + ':/input1 -v ' + out_path + ':/input2 -v ' + assembly_path + ':/input3 -v ' + out_path + ':/output quay.io/biocontainers/racon:1.3.2--he941832_0 sh -c "racon -t ' + str(snakemake.threads) + ' /input1/' + only_reads + ' /input2/' + paf + ' /input3/' + racon_in_assembly + ' > /output/' + out_assembly + '"'
+		racon = 'racon -t ' + str(snakemake.threads) + ' ' + reads_path + only_reads + ' ' + out_path + paf + ' ' + assembly_path + racon_in_assembly + ' > ' + out_path + out_assembly
 	else:
-		racon = 'docker run --rm --user $(id -u):$(id -g) -it -v ' + reads_path + ':/input1 -v ' + out_path + ':/input2 -v ' + out_path + ':/output quay.io/biocontainers/racon:1.3.2--he941832_0 sh -c "racon -t ' + str(snakemake.threads) + ' /input1/' + only_reads + ' /input2/' + paf + ' /input2/' + racon_in_assembly + ' > /output/' + out_assembly + '"'
+		# racon = 'docker run --rm --user $(id -u):$(id -g) -it -v ' + reads_path + ':/input1 -v ' + out_path + ':/input2 -v ' + out_path + ':/output quay.io/biocontainers/racon:1.3.2--he941832_0 sh -c "racon -t ' + str(snakemake.threads) + ' /input1/' + only_reads + ' /input2/' + paf + ' /input2/' + racon_in_assembly + ' > /output/' + out_assembly + '"'
+		racon = 'racon -t ' + str(snakemake.threads) + ' ' + reads_path + only_reads + ' ' + out_path + paf + ' ' + out_path + racon_in_assembly + ' > ' + out_path + out_assembly
 	print(racon + '\n')			
 	os.system(racon)

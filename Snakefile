@@ -17,9 +17,9 @@ strains = list(config["strains"])
 # 		strains.remove(elem)
 # 		barcodes.pop(help)
 # 
-# refgenome = config["refgenome"][0]
-# refannotation = config["refannotation"][0]
-# refdatabase = config["refdatabase"][0]
+refgenome = config["refgenome"][0]
+refannotation = config["refannotation"][0]
+refdatabase = config["refdatabase"][0]
 
 
 rule all:
@@ -48,13 +48,13 @@ rule all:
 		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_final.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		
 		# quast
-		expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
+		# expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
 		# 
 		# prokka
 		# expand("{path}/annotation/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		#
 		# ideel
-		expand('{path}/ideel/hists/{strain}_{demultiplex}_{assembler}_final.pdf',  path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"])
+		# expand('{path}/ideel/hists/{strain}_{demultiplex}_{assembler}_final.pdf',  path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"])
 		# 
 		# 
 		# quast
