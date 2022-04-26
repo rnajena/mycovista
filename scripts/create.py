@@ -18,6 +18,7 @@ else:
 os.mkdir(path + '/raw_data')
 os.mkdir(path + '/annotation')
 os.mkdir(path + '/ideel')
+os.mkdir(path + '/final_assemblies')
 for i in range(len(liste)):
     parameter = liste[i].split(': ', 1)
     details = parameter[1]

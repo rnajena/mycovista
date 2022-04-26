@@ -17,8 +17,8 @@ strains = list(config["strains"])
 # 		strains.remove(elem)
 # 		barcodes.pop(help)
 # 
-refgenome = config["refgenome"][0]
-refannotation = config["refannotation"][0]
+# refgenome = config["refgenome"][0]
+# refannotation = config["refannotation"][0]
 refdatabase = config["refdatabase"][0]
 
 
@@ -48,20 +48,20 @@ rule all:
 		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_final.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		
 		# quast
-		# expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
+		expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
 		# 
 		# prokka
 		# expand("{path}/annotation/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		#
 		# ideel
-		# expand('{path}/ideel/hists/{strain}_{demultiplex}_{assembler}_final.pdf',  path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"])
+		# expand('{path}/ideel/hists/{strain}_{demultiplex}_{assembler}_final.pdf',  path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		# 
 		# 
 		# quast
 		# expand("{path}/quast/report.html", path = config["path"], strain = strains),
 		# 
 		# prokka
-		# expand("{path}/annotation/{strain}.gff", path = config["path"], strain = strains),
+		expand("{path}/annotation/{strain}.gff", path = config["path"], strain = strains),
 		#
 		# ideel
 		# expand('{path}/ideel/hists/{strain}.pdf',  path = config["path"], strain = strains)
@@ -329,7 +329,7 @@ rule final:
 	input:
 		rules.minimap2_racon_short.output.out
 	output:
-		'{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_final.fasta'
+		'{path}/final_assemblies/{strain}.fasta'
 	shell:
 		'mv {input} {output}'
 
@@ -337,7 +337,7 @@ rule final:
 # assembly annotation - Prokka	
 rule prokka:
 	input:
-		assembly = '{path}/assemblies/{strain}.fasta'
+		assembly = '{path}/final_assemblies/{strain}.fasta'
 	output:
 		gff = '{path}/annotation/{strain}.gff'
 	conda:
@@ -354,7 +354,7 @@ rule prokka:
 def get_quast_in():
 	out = ''
 	for i in strains:
-		out += config["path"][0] + '/assemblies/' + i + '.fasta '
+		out += config["path"][0] + '/final_assemblies/' + i + '.fasta '
 	return out[0:len(out)-1]
 quast_input = get_quast_in().split(" ")
 
@@ -362,11 +362,11 @@ rule quast:
 	input:
 		quast_input
 	output:
-		report = '{path}/quast/report.html'
+		report = '{path}/quality/quast/report.html'
 	conda:
 		'envs/assembly_quality.yaml'
 	params:
-		outputdir = '{path}/quast/',
+		outputdir = '{path}/quality/quast/',
 		i = get_quast_in()
 	threads: 16
 	shell:
@@ -377,7 +377,7 @@ rule quast:
 # Quick test for interrupted ORFs in bacterial/microbial genomes - https://github.com/phiweger/ideel
 rule prodigal:
     input:
-        '{path}/assemblies/{strain}.fasta'
+        '{path}/final_assemblies/{strain}.fasta'
     output:
         temp('{path}/ideel/proteins/{strain}.faa')
     conda:
