@@ -1,5 +1,5 @@
 # insert path to the folder for saving all generated data
-path: [/data/prostlocal2/projects/st_mycoplasma/myco_doubice]
+path: [/data/prostlocal2/projects/st_mycoplasma/assemblies_new/myco_doubice]
 # insert path to reference genome file (.fasta)           reference genome files are used during QUAST
 refgenome: [/path/to/refgenome.fasta]
 # insert path to reference annotation file (.gff)
