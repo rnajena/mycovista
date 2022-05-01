@@ -45,7 +45,7 @@ rule all:
 		# polishing - 4x Racon long -> medaka -> 4x Racon short
 		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_long4.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/consensus.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
-		expand("{path}/postprocessing/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}_final.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
+		expand("{path}/final_assemblies/{strain}_{demultiplex}_{assembler}.fasta", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		
 		# quast
 		expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
@@ -61,7 +61,7 @@ rule all:
 		# expand("{path}/quast/report.html", path = config["path"], strain = strains),
 		# 
 		# prokka
-		expand("{path}/annotation/{strain}.gff", path = config["path"], strain = strains),
+		expand("{path}/annotation/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff", path = config["path"], strain = strains, demultiplex = config["demultiplexing"], assembler = config["assembly"]),
 		#
 		# ideel
 		# expand('{path}/ideel/hists/{strain}.pdf',  path = config["path"], strain = strains)
@@ -329,7 +329,7 @@ rule final:
 	input:
 		rules.minimap2_racon_short.output.out
 	output:
-		'{path}/final_assemblies/{strain}.fasta'
+		'{path}/final_assemblies/{strain}_{demultiplex}_{assembler}.fasta'
 	shell:
 		'mv {input} {output}'
 
@@ -337,14 +337,14 @@ rule final:
 # assembly annotation - Prokka	
 rule prokka:
 	input:
-		assembly = '{path}/final_assemblies/{strain}.fasta'
+		assembly = '{path}/final_assemblies/{strain}_{demultiplex}_{assembler}.fasta'
 	output:
-		gff = '{path}/annotation/{strain}.gff'
+		gff = '{path}/annotation/{strain}_{demultiplex}_{assembler}/{strain}_{demultiplex}_{assembler}.gff'
 	conda:
 		'envs/annotation.yaml'
 	params:
-		outputdir = '{path}/annotation/',
-		prefix = '{strain}'
+		outputdir = '{path}/annotation/{strain}_{demultiplex}_{assembler}/',
+		prefix = '{strain}_{demultiplex}_{assembler}'
 	threads: 16
 	shell:
 		'prokka --cpus {threads} --gcode 4 --force --outdir {params.outputdir} --prefix {params.prefix} {input.assembly}'
@@ -354,7 +354,7 @@ rule prokka:
 def get_quast_in():
 	out = ''
 	for i in strains:
-		out += config["path"][0] + '/final_assemblies/' + i + '.fasta '
+		out += config["path"][0] + '/final_assemblies/' + i + '_guppy_flye.fasta '
 	return out[0:len(out)-1]
 quast_input = get_quast_in().split(" ")
 
