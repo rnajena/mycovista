@@ -1,26 +1,11 @@
-# insert path to the folder for saving all generated data
-# path: [/data/prostlocal2/projects/st_mycoplasma/assemblies_new/myco_doubice]
-# path: [/data/prostlocal2/projects/st_mycoplasma/assemblies_new/myco2]
-path: [/data/prostlocal2/projects/st_mycoplasma/assemblies_new/myco3]
-# insert path to reference genome file (.fasta)           reference genome files are used during QUAST
-refgenome: [/path/to/refgenome.fasta]
-# insert path to reference annotation file (.gff)
-refannotation: [/path/to/refannotation.gff]
-# insert path to DIAMOND database file (.dmnd)            used during ideel plot creation
-refdatabase: [/path/to/refdatabase.dmnd]
-# insert the name of the strains to the corresponding barcodes.
-# e.g.  strains: {15DD0163: barcode01, 11DD0261: barcode02, ... }
-# strains: {strain01: barcode01, strain02: barcode02, strain03: barcode03, strain04: barcode04, strain05: barcode05, strain06: barcode06, strain07: barcode07, strain08: barcode08, strain09: barcode09, strain10: barcode10, strain11: barcode11, strain12: barcode12, strain13: barcode13}
-# strains: [15DD0163, 17DD0007, 17DD0020]
-# strains: [11DD0261, 13DD0918, 14DD0148, 14DD0156, 14DD0457, 15DD0123, 15DD0140, 15DD0141, 15DD0160, 15DD0161]
-strains: [15DD0163, 15DD0164, 15DD0165, 15DD0207, 15DD0228, 15DD0233, 15DD0261, 14DD0147, 15DD0210, 15DD0218, 15DD0234, 15DD0238]
-#
-# The following lines inform you about the incorporated tools and help generating the required folders.
-# Please do not edit them.
-preprocessing_short: [fastp, trimmomatic]
-preprocessing_long: [filtlong]
-demultiplexing: [guppy]
-assembly: [flye]
-postprocessing: [racon, medaka]
-quality: [fastqc, nanoplot, quast]
-annotation: [prokka]
+# pipeline type: long or hybrid
+pipeline: [long]
+# # insert path to the input folder - raw reads
+input_shortreads: [/path/to/short/reads/]
+input_longreads: [/path/to/long/reads/]
+# insert path to the output folder
+output: [/path/to/output/folder/]
+# insert the name of the strains
+# e.g.  strains: [15DD0163, 11DD0261, ... ]
+strains: [strain01, strain02, strain03, ...]
+# 11DD0261 , 13DD0918, 14DD0148, 14DD0156, 14DD0457, 15DD0123, 15DD0140, 15DD0141, 15DD0160, 15DD0161]

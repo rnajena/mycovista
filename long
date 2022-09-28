@@ -1,0 +1,175 @@
+# de novo hybrid assembly pipeline
+
+# files and directories
+configfile: "config.yaml"
+
+END = '1 2'.split() # paired_end
+PU = '1P 1U 2P 2U'.split() # paired_unpaired
+
+strains = list(config["strains"])
+
+
+rule all:
+	input:
+		# quality check - raw data
+		expand("{path}/quality/nanoplot/{strain}/{strain}_NanoPlot-report.html", path = config["output"],  strain = strains),
+		# 
+		# preprocessing
+		expand("{path}/preprocessing/long_reads/{strain}_filtered.fastq.gz", path = config["output"],  strain = strains),
+		# 
+		# quality check - preprocessed data
+		expand("{path}/quality/nanoplot/{strain}/{strain}_minlength1000_NanoPlot-report.html", path = config["output"],  strain = strains),
+		# 
+		# assembly
+		expand("{path}/assembly/{strain}_flye/assembly.fasta", path = config["output"], strain = strains),
+		# 
+		# polishing - 4x Racon long -> medaka
+		expand("{path}/final_assemblies/{strain}_flye.fasta", path = config["output"], strain = strains),
+		# 
+		# quality check - assembly
+		expand("{path}/quality/quast/report.html", path = config["output"], strain = strains),
+		# 
+		# annotation
+		expand("{path}/annotation/{strain}_flye/{strain}_flye.gff", path = config["output"], strain = strains),
+
+# quality check of long raw reads - NanoPlot
+rule nanoplot:
+	input:
+		'{path}/raw_data/{strain}.fastq'
+	output:
+		'{path}/quality/nanoplot/{strain}/{strain}_NanoPlot-report.html'
+	conda:
+		'envs/read_quality.yaml'
+	params:
+		outputdir = '{path}/quality/nanoplot/{strain}/',
+		prefix = '{strain}_'
+	threads: 8
+	shell:
+		'NanoPlot -t {threads} --fastq {input} -o {params.outputdir} -p {params.prefix} --title {params.prefix}'
+
+# preprocessing of long reads - Filtlong
+rule filtlong:
+	input:
+		reads = '{path}/raw_data/{strain}.fastq'
+	output:
+		filtered = '{path}/preprocessing/long_reads/{strain}_filtered.fastq.gz'
+	conda:
+		'envs/preprocessing.yaml'
+	threads: 8
+	shell:
+		'filtlong --min_length 1000 {input.reads} | gzip > {output.filtered}'
+
+# quality check of preprocessed long reads - NanoPlot
+rule nanoplot_preprocessing:
+	input:
+		rules.filtlong.output.filtered
+	output:
+		'{path}/quality/nanoplot/{strain}/{strain}_minlength1000_NanoPlot-report.html'
+	conda:
+		'envs/read_quality.yaml'
+	params:
+		outputdir = '{path}/quality/nanoplot/{strain}/',
+		prefix = '{strain}_minlength1000_'
+	threads: 8
+	shell:
+		'NanoPlot -t {threads} --fastq {input} -o {params.outputdir} -p {params.prefix} --title {params.prefix}'
+
+
+# assembly - Flye
+rule flye:
+	input:
+		rules.filtlong.output.filtered
+	output:
+		contigs = '{path}/assembly/{strain}_flye/assembly.fasta'
+	conda:
+		'envs/assembly.yaml'
+	params:
+		outputdir = '{path}/assembly/{strain}_flye/',
+	threads: 8
+	shell:
+		'flye --asm-coverage 50 --iterations 2 --plasmids --nano-raw {input} -o {params.outputdir} -t {threads} -g 1000000'
+        # --asm-coverage 50         coverage: 50X
+        # -g 1000000                genome size 1 million
+		# --iterations 2			two runs of polishing
+		# --plasmids				for circular genomes and plasmids
+
+# assembly polishing using long reads - Racon			including minimap2 for the mapping inbetween
+rule minimap2_racon_long:
+	input:
+		assembly = rules.flye.output.contigs,
+		reads = rules.filtlong.output.filtered
+	output:
+		out = '{path}/postprocessing/{strain}_flye/{strain}_flye_long4.fasta'
+	conda:
+		'envs/postprocessing.yaml'
+	params:
+		strain = '{strain}',
+		path = '{path}'
+	threads: 8
+	script:
+		'scripts/racon_long.py'
+
+
+# assembly polishing using long reads - medaka
+rule medaka:
+	input:
+		reads = rules.filtlong.output.filtered,
+		racon_out = rules.minimap2_racon_long.output.out
+	output:
+		medaka = '{path}/postprocessing/{strain}_flye/consensus.fasta'
+	conda:
+		'envs/postprocessing.yaml'
+	params:
+		outputdir = '{path}/postprocessing/{strain}_flye/'
+	threads: 8
+	shell:
+		'medaka_consensus -i {input.reads} -d {input.racon_out} -o {params.outputdir} -t {threads} -m r941_min_high_g344'
+
+
+# move final assembly
+rule final:
+	input:
+		rules.medaka.output.medaka
+	output:
+		'{path}/final_assemblies/{strain}_flye.fasta'
+	shell:
+		'mv {input} {output}'
+
+
+# assembly annotation - Prokka	
+rule prokka:
+	input:
+		assembly = '{path}/final_assemblies/{strain}_flye.fasta'
+	output:
+		gff = '{path}/annotation/{strain}_flye/{strain}_flye.gff'
+	conda:
+		'envs/annotation.yaml'
+	params:
+		outputdir = '{path}/annotation/{strain}_flye/',
+		prefix = '{strain}_flye'
+	threads: 8
+	shell:
+		'prokka --cpus {threads} --gcode 4 --force --outdir {params.outputdir} --prefix {params.prefix} {input.assembly}'
+
+
+# assembly statistics (of all generated assemblies) - QUAST
+def get_quast_in():
+	out = ''
+	for i in strains:
+		out += config["output"][0] + '/final_assemblies/' + i + '_flye.fasta '
+	return out[0:len(out)-1]
+quast_input = get_quast_in().split(" ")
+
+rule quast:
+	input:
+		quast_input
+	output:
+		report = '{path}/quality/quast/report.html'
+	conda:
+		'envs/assembly_quality.yaml'
+	params:
+		outputdir = '{path}/quality/quast/',
+		i = get_quast_in()
+	threads: 8
+	shell:
+		'quast {params.i} -o {params.outputdir} -t {threads}'
