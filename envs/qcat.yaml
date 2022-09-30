@@ -1,6 +1,0 @@
-name: qcat
-channels:
-  - conda-forge
-  - bioconda
-dependencies:
-  - qcat>=1.1.0
