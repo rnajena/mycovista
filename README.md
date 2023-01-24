@@ -1,12 +1,12 @@
-# TOOLNAME - a pipeline to assemble (highly repetitive) bacterial genomes
+# `Mycovista` - a pipeline to assemble (highly repetitive) bacterial genomes
 
 ## Installation
-In order to run TOOLNAME, you'll need to install:
+In order to run `Mycovista`, you'll need to install:
 * [conda](https://docs.conda.io/en/latest/)
 * [snakemake](https://snakemake.readthedocs.io/en/stable/)
 
 ## Usage
-To use TOOLNAME, edit the `config.yaml` file
+To use `Mycovista`, edit the `config.yaml` file
 * specify the pipeline you want to use: long or hybrid mode
 * insert additional information:
   * path of the input and output folders
@@ -18,7 +18,7 @@ A `python` script helps you to generate several folders for the output. Just run
 
 Afterwards, all required data should be linked in the `raw_data/` folder. Please check this!
 
-Now you can get started and assemble your bacterias. You can start TOOLNAME by using:
+Now you can get started and assemble your bacterias. You can start `Mycovista` by using:
 
 ``snakemake -s <mode> -c <#threads> --use-conda``
 * `mode - assembly mode file (long or hybrid)`
@@ -26,7 +26,7 @@ Now you can get started and assemble your bacterias. You can start TOOLNAME by u
 *Tip: You can use `-n` for a dry run to check if snakemake will start all required rules.*
 
 ## Tools
-When using TOOLNAME, please cite all incorporated tools as without them this pipeline wouldn't exist.
+When using `Mycovista`, please cite all incorporated tools as without them this pipeline wouldn't exist.
 
 [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and [NanoPlot](https://github.com/wdecoster/NanoPlot) are used for quality check of the reads (raw and preprocessed).
 Short reads are filtered by [fastp](https://github.com/OpenGene/fastp) for adapter clippling and [Trimmomatic](https://github.com/usadellab/Trimmomatic) for quality trimming.
