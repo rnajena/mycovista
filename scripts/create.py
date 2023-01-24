@@ -11,17 +11,17 @@ for elem in liste[:]:
         liste.remove(elem)
         continue
     config = elem.split(': [')[1][:-1]
-    if 'pipeline' in elem: pipeline = config
-    elif 'input_shortreads' in elem: input_short = config
-    elif 'input_longreads' in elem: input_long = config
-    elif 'output' in elem:
+    if 'pipeline:' in elem: pipeline = config
+    elif 'input_shortreads:' in elem: input_short = config
+    elif 'input_longreads:' in elem: input_long = config
+    elif 'output:' in elem:
         output_folder = config
         if os.path.exists(output_folder) == False:
             os.mkdir(output_folder)
         if len(output_folder) == 0:
             output_folder = os.getcwd()
-    elif 'strains' in elem:
-        strains = elem.split(': ')[1][1:-1].split(', ')
+    elif 'strains:' in elem:
+        strains = elem.split(': ')[1][1:-1].split(',')
 
 os.mkdir(f"{output_folder}/annotation")
 

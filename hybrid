@@ -11,28 +11,28 @@ strains = list(config["strains"])
 rule all:
 	input:
 		# quality check - raw data
-		expand("{path}/quality/fastqc/{strain}/{strain}_{end}_fastqc.html", path = config["path"], strain = strains, end = END),
-		expand("{path}/quality/nanoplot/{strain}/{strain}_NanoPlot-report.html", path = config["path"],  strain = strains),
+		expand("{path}/quality/fastqc/{strain}/{strain}_{end}_fastqc.html", path = config["output"], strain = strains, end = END),
+		expand("{path}/quality/nanoplot/{strain}/{strain}_NanoPlot-report.html", path = config["output"],  strain = strains),
 		# 
 		# preprocessing
-        expand("{path}/preprocessing/short_reads/{strain}_unique.fastq", path = config["path"], strain = strains),
-		expand("{path}/preprocessing/long_reads/{strain}_filtered.fastq.gz", path = config["path"],  strain = strains),
+        expand("{path}/preprocessing/short_reads/{strain}_unique.fastq", path = config["output"], strain = strains),
+		expand("{path}/preprocessing/long_reads/{strain}_filtered.fastq.gz", path = config["output"],  strain = strains),
 		# 
 		# quality check - preprocessed data
-		expand("{path}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html", path = config["path"], strain = strains, paired_unpaired = PU),
-		expand("{path}/quality/nanoplot/{strain}/{strain}_minlength1000_NanoPlot-report.html", path = config["path"],  strain = strains),
+		expand("{path}/quality/fastqc/{strain}/{strain}_{paired_unpaired}_fastqc.html", path = config["output"], strain = strains, paired_unpaired = PU),
+		expand("{path}/quality/nanoplot/{strain}/{strain}_minlength1000_NanoPlot-report.html", path = config["output"],  strain = strains),
 		# 
 		# assembly
-		expand("{path}/assembly/{strain}_flye/assembly.fasta", path = config["path"], strain = strains),
+		expand("{path}/assembly/{strain}_flye/assembly.fasta", path = config["output"], strain = strains),
 		# 
 		# polishing - 4x Racon long -> medaka
-		expand("{path}/final_assemblies/{strain}_flye.fasta", path = config["path"], strain = strains),
+		expand("{path}/final_assemblies/{strain}_flye.fasta", path = config["output"], strain = strains),
 		# 
 		# quality check - assembly
-		expand("{path}/quality/quast/report.html", path = config["path"], strain = strains),
+		expand("{path}/quality/quast/report.html", path = config["output"], strain = strains),
 		# 
 		# annotation
-		expand("{path}/annotation/{strain}_flye/{strain}_flye.gff", path = config["path"], strain = strains),
+		expand("{path}/annotation/{strain}_flye/{strain}_flye.gff", path = config["output"], strain = strains),
 		
 # quality check of short raw reads - FastQC
 rule fastqc:
@@ -256,7 +256,7 @@ rule prokka:
 def get_quast_in():
 	out = ''
 	for i in strains:
-		out += config["path"][0] + '/final_assemblies/' + i + '_flye.fasta '
+		out += config["output"][0] + '/final_assemblies/' + i + '_flye.fasta '
 	return out[0:len(out)-1]
 quast_input = get_quast_in().split(" ")
 
