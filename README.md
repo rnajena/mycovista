@@ -9,10 +9,14 @@ In order to run `Mycovista`, you'll need to install:
 To use `Mycovista`, edit the `config.yaml` file
 * specify the pipeline you want to use: long or hybrid mode
 * insert additional information:
-  * path of the input and output folders
+  * path to input short reads
+  * path to input long reads 
+  * path to output folder
   * names of the bacterial strains
 
-A `python` script helps you to generate several folders for the output. Just run:
+*Note: The raw read files must contain the name of the strain in the file name.*
+
+A `python` script helps you to generate all folders required for the output. Just run:
 
 ``python scripts/create.py``
 
@@ -33,6 +37,8 @@ Short reads are filtered by [fastp](https://github.com/OpenGene/fastp) for adapt
 Long reads are filtered by length using [Filtlong](https://github.com/rrwick/Filtlong).
 [Flye](https://github.com/fenderglass/Flye) assembles the long reads first. The assembly is then polished with long reads by [Racon](https://github.com/isovic/racon) using [minimap2](https://github.com/lh3/minimap2) as mapper inbetween. Afterwards, [medaka](https://github.com/nanoporetech/medaka) is incorporated as additional polishing step with long reads. In hybrid mode, the assembly postprocessed further with Racon and minimap2 using short reads.
 The final assembly is annotated by [Prokka](https://github.com/tseemann/prokka) and general assembly statistics are calculated by [QUAST](https://github.com/ablab/quast).
+
+Downstream analysis of our *M. bovis* assembly panel included pangenome analsis followed by a genome-wide association analysis (GWAS). We provided the R script for the GWAS in [`scripts/gwas.R`](https://github.com/sandraTriebel/mycovista/blob/master/scripts/gwas.R).
 
 
 <details>
@@ -70,6 +76,9 @@ The final assembly is annotated by [Prokka](https://github.com/tseemann/prokka) 
 
 * Prokka
   * ``Seemann T (2014) Prokka: rapid prokaryotic genome annotation. Bioinformatics 30(14):2068–2069``
+
+* R
+  * ``R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. https://www.R-project.org/.``
 </details>
 
 
